@@ -1,0 +1,71 @@
+﻿area_key,kode_buku,bab,bab_terverifikasi
+MATH0,BC,"Bab 1-8: deret, bilangan kompleks, matriks, kalkulus multivariabel, analisis vektor",0
+MATH0,YF,Lampiran/ulasan matematika,0
+MATH2,AWH,"Bab Fourier, PDP, fungsi khusus, delta, kalkulus variasi, tensor",0
+MATH2,BC,"Bab 7, 9-11, 13",0
+KIN,HRW,Bab 2-4,1
+KIN,OSX,Vol.1 Bab 3-4,0
+KIN,YF,Bab 2-3,0
+DYN,HRW,Bab 5-6,1
+DYN,OSX,Vol.1 Bab 5-6,0
+DYN,SJ,Bab 5-6,0
+ENE,HRW,Bab 7-8,1
+ENE,OSX,Vol.1 Bab 7-8,0
+MOM,HRW,Bab 9,1
+MOM,OSX,Vol.1 Bab 9,0
+ROT,HRW,Bab 10-12,1
+ROT,OSX,Vol.1 Bab 10-12,0
+GRA,HRW,Bab 13,1
+GRA,OSX,Vol.1 Bab 13,0
+FLU,HRW,Bab 14,1
+FLU,OSX,Vol.1 Bab 14,0
+OSC,HRW,Bab 15,1
+OSC,OSX,Vol.1 Bab 15,0
+OSC,TAY,Bab 5,1
+WAV,HRW,Bab 16-17,1
+WAV,OSX,Vol.1 Bab 16-17,0
+THM,HRW,Bab 18-20,1
+THM,OSX,Vol.2 Bab 1-4,0
+THM,SCH,Bab 1-4 (pendalaman),1
+EMB,HRW,Bab 21-31,1
+EMB,OSX,Vol.2 Bab 5-15,0
+OPT,HRW,Bab 33-36,1
+OPT,OSX,Vol.3 Bab 1-4,0
+CM,TAY,Bab 8-12,1
+CM,KK,Bab 7-8 (pengayaan),0
+CM,GOL,Bab 3-5,0
+LAG,TAY,Bab 6-7,1
+LAG,GOL,Bab 1-2,0
+HAM,TAY,Bab 13,1
+HAM,GOL,Bab 8-9,0
+EM2,GED,Bab 2-10,1
+EM2,HRW,Bab 32-33 (pengantar),1
+TH2,SCH,Bab 3-6,1
+OPT2,HRW,Bab 35-36,1
+OPT2,GED,Bab 9 (bagian polarisasi),1
+SR,TAY,Bab 15,1
+SR,HRW,Bab 37,1
+SR,GED,Bab 12,1
+MOD,KRA,Bab 3-5,0
+MOD,HRW,Bab 38-39,1
+ATM,KRA,Bab 6-8,0
+ATM,HRW,Bab 40,1
+NUC,KRA,Bab 12-13,0
+NUC,HRW,Bab 42-43,1
+SSP,KRA,Bab 10-11,0
+SSP,HRW,Bab 41,1
+QM,GQM,"Bab 1-7, 9, 11",1
+SM2,SCH,Bab 7,1
+SM2,GQM,Bab 5,1
+ADV_PP,KRA,Bab 14-15 (pengantar),0
+ADV_PP,HRW,Bab 44,1
+ADV_GR,HAR,"Bab 1-8, 14-16",0
+ADV_AST,KRA,Bab 16 (kosmologi),0
+ADV_AST,HAR,Bab 15-18,0
+ADV_PLA,KRA,(pengantar) - tambahkan literatur plasma khusus,0
+ADV_MAT,KRA,Bab 10-11,0
+ADV_GEO,HRW,"Bab 13, 16 (dasar)",1
+ADV_GEO,KRA,(pengantar) - tambahkan literatur geofisika khusus,0
+ADV_NUK,KRA,Bab 12-13,0
+ADV_CP,TAY,Bab 12 (simulasi nonlinier),1
+ADV_CP,AWH,(metode numerik) - tambahkan literatur komputasi khusus,0

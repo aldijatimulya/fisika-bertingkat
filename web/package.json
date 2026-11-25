@@ -1,0 +1,29 @@
+{
+  "name": "fisika-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --no-warnings tests/sync.test.mjs",
+    "sync-data": "python3 -I ../curriculum/tools/build.py && cp ../curriculum/data/knowledge_graph.json ../curriculum/data/equations.json src/data/"
+  },
+  "dependencies": {
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/literata": "^5.3.0",
+    "@supabase/supabase-js": "^2.119.2",
+    "cytoscape": "^3.35.0",
+    "katex": "^0.19.1",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/cytoscape": "^3.21.9",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.10",
+    "@types/react": "^19.3.3",
+    "typescript": "^5.9.3"
+  }
+}

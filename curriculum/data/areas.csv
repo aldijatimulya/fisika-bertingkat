@@ -1,0 +1,36 @@
+﻿area_key,level,nama,usulan_tambahan
+MATH0,0,Matematika dasar untuk fisika,0
+MATH2,2,Metode matematika fisika,0
+KIN,1,Kinematika,0
+DYN,1,Dinamika dan Hukum Newton,0
+ENE,1,Usaha dan energi,0
+MOM,1,Momentum dan impuls,0
+ROT,1,Gerak rotasi,0
+GRA,1,Gravitasi,0
+FLU,1,Fluida,0
+OSC,1,Osilasi,0
+WAV,1,Gelombang,0
+THM,1,Termodinamika dasar,0
+EMB,1,Listrik-magnet dasar,1
+OPT,1,Optik dasar,1
+CM,2,Mekanika klasik lanjut,0
+LAG,2,Mekanika Lagrangian,0
+HAM,2,Mekanika Hamiltonian,0
+EM2,2,Elektromagnetisme dan persamaan Maxwell,0
+TH2,2,Termodinamika lanjut dan fisika statistik,0
+OPT2,2,Optik fisis,0
+SR,3,Relativitas khusus,0
+MOD,3,Fisika modern: awal teori kuantum,0
+ATM,3,Fisika atom,0
+NUC,3,Fisika inti,0
+SSP,3,Fisika zat padat (pengantar),0
+QM,4,Mekanika kuantum,0
+SM2,4,Fisika statistik kuantum,0
+ADV_PP,5,Fisika partikel dan teori medan kuantum,0
+ADV_GR,5,Relativitas umum,0
+ADV_AST,5,Astrofisika dan kosmologi,0
+ADV_PLA,5,Fisika plasma,0
+ADV_MAT,5,Fisika material,0
+ADV_GEO,5,Geofisika,0
+ADV_NUK,5,Fisika nuklir lanjut,0
+ADV_CP,5,Fisika komputasi,0

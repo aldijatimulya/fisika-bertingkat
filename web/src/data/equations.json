@@ -1,0 +1,1127 @@
+[
+  {
+    "id": "eq.vel",
+    "concept": "k.kecepatan",
+    "title": "Kecepatan sesaat",
+    "latex": "v = \\frac{dx}{dt}",
+    "kind": "definisi",
+    "depends_on": [],
+    "assumptions": [
+      "Posisi x(t) fungsi kontinu dan terdiferensialkan"
+    ],
+    "validity": "Gerak 1D; berlaku umum pada mekanika klasik.",
+    "steps": [
+      {
+        "latex": "\\bar v = \\frac{\\Delta x}{\\Delta t}",
+        "why": "Kecepatan rata-rata didefinisikan sebagai perpindahan per selang waktu."
+      },
+      {
+        "latex": "v = \\lim_{\\Delta t \\to 0} \\frac{x(t+\\Delta t)-x(t)}{\\Delta t}",
+        "why": "Kecepatan sesaat adalah limit kecepatan rata-rata saat selang waktu menuju nol (konsep limit)."
+      },
+      {
+        "latex": "v = \\frac{dx}{dt}",
+        "why": "Limit tersebut adalah definisi turunan x terhadap t."
+      }
+    ],
+    "meaning": "Laju perubahan posisi terhadap waktu; tanda menunjukkan arah.",
+    "applied_in": [
+      "k.percepatan",
+      "k.vektor2d"
+    ]
+  },
+  {
+    "id": "eq.acc",
+    "concept": "k.percepatan",
+    "title": "Percepatan sesaat",
+    "latex": "a = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}",
+    "kind": "definisi",
+    "depends_on": [
+      "eq.vel"
+    ],
+    "assumptions": [
+      "v(t) terdiferensialkan"
+    ],
+    "validity": "Gerak 1D; versi vektor berlaku per komponen.",
+    "steps": [
+      {
+        "latex": "\\bar a = \\frac{\\Delta v}{\\Delta t}",
+        "why": "Analog dengan kecepatan rata-rata, tetapi untuk perubahan kecepatan."
+      },
+      {
+        "latex": "a = \\lim_{\\Delta t \\to 0}\\frac{\\Delta v}{\\Delta t} = \\frac{dv}{dt}",
+        "why": "Limit, sama seperti definisi kecepatan sesaat."
+      },
+      {
+        "latex": "a = \\frac{d}{dt}\\left(\\frac{dx}{dt}\\right) = \\frac{d^2x}{dt^2}",
+        "why": "Substitusi v = dx/dt dari eq.vel."
+      }
+    ],
+    "meaning": "Seberapa cepat kecepatan berubah; nol bila kecepatan konstan.",
+    "applied_in": [
+      "k.glbb",
+      "d.hukum2"
+    ]
+  },
+  {
+    "id": "eq.vt",
+    "concept": "k.glbb",
+    "title": "Kecepatan pada percepatan konstan",
+    "latex": "v = v_0 + at",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.acc"
+    ],
+    "assumptions": [
+      "a konstan terhadap waktu"
+    ],
+    "validity": "Hanya untuk percepatan KONSTAN; kerangka inersial; mekanika Newton.",
+    "steps": [
+      {
+        "latex": "\\frac{dv}{dt} = a",
+        "why": "Mulai dari definisi percepatan (eq.acc)."
+      },
+      {
+        "latex": "dv = a\\,dt",
+        "why": "Pisahkan variabel."
+      },
+      {
+        "latex": "\\int_{v_0}^{v} dv' = a\\int_0^t dt'",
+        "why": "Integrasikan kedua sisi; a konstan sehingga keluar dari integral."
+      },
+      {
+        "latex": "v - v_0 = at \\;\\Rightarrow\\; v = v_0 + at",
+        "why": "Hitung integral tentu."
+      }
+    ],
+    "meaning": "Kecepatan berubah linear terhadap waktu bila percepatan tetap.",
+    "applied_in": [
+      "k.jatuhbebas",
+      "k.proyektil"
+    ]
+  },
+  {
+    "id": "eq.xt",
+    "concept": "k.glbb",
+    "title": "Posisi pada percepatan konstan",
+    "latex": "x = x_0 + v_0 t + \\tfrac12 a t^2",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.vel",
+      "eq.vt"
+    ],
+    "assumptions": [
+      "a konstan"
+    ],
+    "validity": "Hanya untuk percepatan konstan.",
+    "steps": [
+      {
+        "latex": "\\frac{dx}{dt} = v_0 + at",
+        "why": "Gunakan v(t) dari eq.vt pada definisi kecepatan (eq.vel)."
+      },
+      {
+        "latex": "\\int_{x_0}^{x} dx' = \\int_0^t (v_0 + at')\\,dt'",
+        "why": "Pisahkan variabel dan integrasikan."
+      },
+      {
+        "latex": "x - x_0 = v_0 t + \\tfrac12 a t^2",
+        "why": "Hitung integral tentu."
+      }
+    ],
+    "meaning": "Luas di bawah grafik v-t adalah perpindahan.",
+    "applied_in": [
+      "k.proyektil"
+    ]
+  },
+  {
+    "id": "eq.v2",
+    "concept": "k.glbb",
+    "title": "Hubungan kecepatan-posisi (tanpa waktu)",
+    "latex": "v^2 = v_0^2 + 2a(x-x_0)",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.acc"
+    ],
+    "assumptions": [
+      "a konstan"
+    ],
+    "validity": "Hanya untuk percepatan konstan.",
+    "steps": [
+      {
+        "latex": "a = \\frac{dv}{dt} = \\frac{dv}{dx}\\frac{dx}{dt} = v\\frac{dv}{dx}",
+        "why": "Aturan rantai: ganti variabel bebas dari t ke x."
+      },
+      {
+        "latex": "a\\,dx = v\\,dv",
+        "why": "Pisahkan variabel."
+      },
+      {
+        "latex": "a(x-x_0) = \\tfrac12 (v^2 - v_0^2)",
+        "why": "Integrasikan; a konstan."
+      },
+      {
+        "latex": "v^2 = v_0^2 + 2a(x-x_0)",
+        "why": "Susun ulang."
+      }
+    ],
+    "meaning": "Berguna bila waktu tidak diketahui; juga bibit teorema usaha-energi.",
+    "applied_in": [
+      "e.ek"
+    ]
+  },
+  {
+    "id": "eq.range",
+    "concept": "k.proyektil",
+    "title": "Jangkauan proyektil",
+    "latex": "R = \\frac{v_0^2 \\sin 2\\theta}{g}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.xt",
+      "eq.vt"
+    ],
+    "assumptions": [
+      "Tanpa hambatan udara",
+      "g konstan",
+      "Permukaan datar, ketinggian awal = akhir",
+      "Bumi diperlakukan datar"
+    ],
+    "validity": "Jangkauan kecil dibanding jari-jari Bumi; tanpa drag.",
+    "steps": [
+      {
+        "latex": "x = v_0\\cos\\theta\\, t",
+        "why": "Komponen horizontal: a_x = 0, gunakan eq.xt."
+      },
+      {
+        "latex": "y = v_0\\sin\\theta\\, t - \\tfrac12 g t^2",
+        "why": "Komponen vertikal: a_y = -g, gunakan eq.xt."
+      },
+      {
+        "latex": "y=0 \\Rightarrow t = \\frac{2 v_0 \\sin\\theta}{g}",
+        "why": "Waktu terbang: y = 0 punya dua akar (t = 0 adalah titik awal); ambil akar nontrivial."
+      },
+      {
+        "latex": "R = v_0\\cos\\theta \\cdot \\frac{2v_0\\sin\\theta}{g} = \\frac{v_0^2 \\sin 2\\theta}{g}",
+        "why": "Substitusi t ke x dan gunakan 2 sin cos = sin 2theta."
+      }
+    ],
+    "meaning": "Jangkauan maksimum pada sudut 45 derajat (hanya dalam kondisi asumsi di atas).",
+    "applied_in": []
+  },
+  {
+    "id": "eq.ac",
+    "concept": "k.melingkar",
+    "title": "Percepatan sentripetal",
+    "latex": "a_c = \\frac{v^2}{r}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.vel",
+      "eq.acc"
+    ],
+    "assumptions": [
+      "Lintasan lingkaran jari-jari r",
+      "Laju sudut omega konstan"
+    ],
+    "validity": "Derivasi ini untuk gerak melingkar beraturan. Untuk omega tidak konstan, komponen radial tetap -v^2/r tetapi ada tambahan percepatan tangensial.",
+    "steps": [
+      {
+        "latex": "\\vec r(t) = r(\\cos\\omega t,\\ \\sin\\omega t)",
+        "why": "Parametrisasi lingkaran dengan laju sudut konstan."
+      },
+      {
+        "latex": "\\vec v = \\frac{d\\vec r}{dt} = r\\omega(-\\sin\\omega t,\\ \\cos\\omega t)",
+        "why": "Turunan pertama (kecepatan); besarnya v = r omega."
+      },
+      {
+        "latex": "\\vec a = \\frac{d\\vec v}{dt} = -\\omega^2 \\vec r",
+        "why": "Turunan kedua: percepatan berlawanan arah vektor posisi, yaitu menuju pusat."
+      },
+      {
+        "latex": "a = \\omega^2 r = \\frac{v^2}{r}",
+        "why": "Besar a, dengan v = omega r."
+      }
+    ],
+    "meaning": "Percepatan ada walaupun laju tetap, karena ARAH kecepatan berubah.",
+    "applied_in": [
+      "d.dinamika_melingkar",
+      "g.newton"
+    ]
+  },
+  {
+    "id": "eq.newton2",
+    "concept": "d.hukum2",
+    "title": "Hukum II Newton",
+    "latex": "\\sum \\vec F = \\frac{d\\vec p}{dt} = m\\vec a",
+    "kind": "hukum",
+    "depends_on": [
+      "eq.acc"
+    ],
+    "assumptions": [
+      "Kerangka inersial",
+      "Massa konstan (untuk bentuk F = ma)"
+    ],
+    "validity": "Kerangka inersial; skala makroskopik (bukan kuantum). F = dp/dt tetap berlaku secara relativistik dengan p = gamma m v; bentuk F = ma hanya untuk m konstan dan v << c. Bukan hasil derivasi - ini hukum empiris.",
+    "steps": [
+      {
+        "latex": "\\vec p = m\\vec v",
+        "why": "Definisi momentum linear."
+      },
+      {
+        "latex": "\\sum\\vec F = \\frac{d\\vec p}{dt}",
+        "why": "Pernyataan hukum: gaya total menentukan laju perubahan momentum (didukung eksperimen)."
+      },
+      {
+        "latex": "\\sum\\vec F = m\\frac{d\\vec v}{dt} = m\\vec a",
+        "why": "Bila m konstan, m keluar dari turunan."
+      }
+    ],
+    "meaning": "Gaya total adalah penyebab perubahan gerak (percepatan).",
+    "applied_in": [
+      "p.momentum",
+      "e.ek",
+      "o.shm"
+    ]
+  },
+  {
+    "id": "eq.work",
+    "concept": "e.kerja",
+    "title": "Usaha oleh gaya",
+    "latex": "W = \\int_{\\vec r_1}^{\\vec r_2} \\vec F \\cdot d\\vec r",
+    "kind": "definisi",
+    "depends_on": [],
+    "assumptions": [
+      "Lintasan terdefinisi"
+    ],
+    "validity": "Berlaku umum dalam mekanika klasik.",
+    "steps": [
+      {
+        "latex": "W = F\\,\\Delta x \\quad (F\\ \\text{konstan, searah gerak})",
+        "why": "Kasus paling sederhana sebagai intuisi."
+      },
+      {
+        "latex": "dW = \\vec F\\cdot d\\vec r",
+        "why": "Untuk perpindahan sangat kecil, gaya dianggap konstan (perkalian titik menangkap komponen searah gerak)."
+      },
+      {
+        "latex": "W = \\int \\vec F\\cdot d\\vec r",
+        "why": "Jumlahkan seluruh kontribusi sepanjang lintasan (integral garis)."
+      }
+    ],
+    "meaning": "Besaran skalar yang mengukur transfer energi lewat gaya.",
+    "applied_in": [
+      "e.ek",
+      "e.ep"
+    ]
+  },
+  {
+    "id": "eq.wke",
+    "concept": "e.ek",
+    "title": "Teorema usaha-energi kinetik",
+    "latex": "W_{net} = \\Delta K, \\quad K=\\tfrac12 mv^2",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.newton2",
+      "eq.work"
+    ],
+    "assumptions": [
+      "Massa konstan",
+      "Kerangka inersial"
+    ],
+    "validity": "Mekanika Newton (v << c). Gambaran 1D; 3D identik dengan perkalian titik.",
+    "steps": [
+      {
+        "latex": "W_{net} = \\int F\\,dx = \\int m\\frac{dv}{dt}\\,dx",
+        "why": "Substitusi F = ma = m dv/dt (eq.newton2)."
+      },
+      {
+        "latex": "dx = v\\,dt \\Rightarrow W_{net} = \\int m v\\,dv",
+        "why": "Ganti dx dengan v dt sehingga variabel integrasi menjadi v."
+      },
+      {
+        "latex": "W_{net} = \\tfrac12 m v_f^2 - \\tfrac12 m v_i^2",
+        "why": "Hitung integral; m konstan."
+      },
+      {
+        "latex": "K \\equiv \\tfrac12 mv^2 \\Rightarrow W_{net}=\\Delta K",
+        "why": "Definisikan energi kinetik."
+      }
+    ],
+    "meaning": "Usaha total menjadi perubahan energi kinetik.",
+    "applied_in": [
+      "e.kekekalan",
+      "f.bernoulli"
+    ]
+  },
+  {
+    "id": "eq.pe",
+    "concept": "e.ep",
+    "title": "Energi potensial dari gaya konservatif",
+    "latex": "\\Delta U = -W_c, \\quad F=-\\frac{dU}{dx}",
+    "kind": "definisi",
+    "depends_on": [
+      "eq.work"
+    ],
+    "assumptions": [
+      "Usaha tidak bergantung lintasan (gaya konservatif)",
+      "F hanya fungsi posisi (tidak bergantung kecepatan atau waktu)",
+      "U ditentukan sampai konstanta aditif; titik acuan bebas dipilih"
+    ],
+    "validity": "Hanya untuk gaya konservatif (gesekan tidak punya U).",
+    "steps": [
+      {
+        "latex": "W_c \\text{ tidak bergantung lintasan}",
+        "why": "Ini definisi gaya konservatif; membuat U fungsi posisi saja."
+      },
+      {
+        "latex": "\\Delta U \\equiv -W_c = -\\int F\\,dx",
+        "why": "Definisi perubahan energi potensial."
+      },
+      {
+        "latex": "F = -\\frac{dU}{dx}",
+        "why": "Turunkan kedua sisi terhadap x (teorema fundamental kalkulus)."
+      }
+    ],
+    "meaning": "U menyimpan kemampuan gaya konservatif untuk melakukan usaha.",
+    "applied_in": [
+      "e.kekekalan"
+    ]
+  },
+  {
+    "id": "eq.mechE",
+    "concept": "e.kekekalan",
+    "title": "Kekekalan energi mekanik",
+    "latex": "K + U = \\text{konstan}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.wke",
+      "eq.pe"
+    ],
+    "assumptions": [
+      "Semua gaya yang melakukan usaha adalah konservatif (W_nc = 0)"
+    ],
+    "validity": "Berlaku bila usaha gaya nonkonservatif nol. Gaya yang tegak lurus gerak (normal, tegangan tali) boleh ada; gesekan kinetik mengubah energi mekanik menjadi kalor.",
+    "steps": [
+      {
+        "latex": "W_{net} = W_c = \\Delta K",
+        "why": "Teorema usaha-energi (eq.wke) dengan hanya gaya konservatif."
+      },
+      {
+        "latex": "W_c = -\\Delta U",
+        "why": "Definisi energi potensial (eq.pe)."
+      },
+      {
+        "latex": "\\Delta K = -\\Delta U \\Rightarrow \\Delta(K+U)=0",
+        "why": "Gabungkan kedua persamaan."
+      }
+    ],
+    "meaning": "Energi berubah bentuk tetapi totalnya tetap, dalam batas asumsi.",
+    "applied_in": [
+      "o.energi",
+      "g.orbit"
+    ]
+  },
+  {
+    "id": "eq.impulse",
+    "concept": "p.momentum",
+    "title": "Teorema impuls-momentum",
+    "latex": "\\vec J = \\int \\vec F\\,dt = \\Delta\\vec p",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.newton2"
+    ],
+    "assumptions": [
+      "Hukum II Newton dalam bentuk F = dp/dt"
+    ],
+    "validity": "Kerangka inersial; berlaku juga untuk gaya yang berubah terhadap waktu.",
+    "steps": [
+      {
+        "latex": "\\vec F = \\frac{d\\vec p}{dt}",
+        "why": "Hukum II Newton (eq.newton2)."
+      },
+      {
+        "latex": "\\int_{t_1}^{t_2} \\vec F\\,dt = \\int_{\\vec p_1}^{\\vec p_2} d\\vec p",
+        "why": "Integrasikan terhadap waktu."
+      },
+      {
+        "latex": "\\vec J = \\Delta\\vec p",
+        "why": "Hitung; ruas kiri didefinisikan sebagai impuls."
+      }
+    ],
+    "meaning": "Gaya yang bekerja selama selang waktu mengubah momentum.",
+    "applied_in": [
+      "p.tumbukan"
+    ]
+  },
+  {
+    "id": "eq.pcons",
+    "concept": "p.kekekalan",
+    "title": "Kekekalan momentum linear",
+    "latex": "\\sum\\vec p = \\text{konstan}\\ (\\vec F_{ext}=0)",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.newton2"
+    ],
+    "assumptions": [
+      "Gaya eksternal total nol",
+      "Gaya internal mematuhi Hukum III Newton",
+      "Derivasi untuk dua partikel; N partikel dengan menjumlahkan semua pasangan"
+    ],
+    "validity": "Kerangka inersial. Bila medan (mis. EM antar muatan bergerak) membawa momentum, yang kekal adalah momentum partikel + medan.",
+    "steps": [
+      {
+        "latex": "\\frac{d\\vec p_1}{dt}=\\vec F_{12},\\quad \\frac{d\\vec p_2}{dt}=\\vec F_{21}",
+        "why": "Hukum II Newton untuk tiap partikel; hanya gaya internal."
+      },
+      {
+        "latex": "\\vec F_{12} = -\\vec F_{21}",
+        "why": "Hukum III Newton."
+      },
+      {
+        "latex": "\\frac{d}{dt}(\\vec p_1+\\vec p_2)=0",
+        "why": "Jumlahkan; gaya internal saling meniadakan."
+      }
+    ],
+    "meaning": "Gaya internal tidak mengubah momentum total.",
+    "applied_in": [
+      "p.tumbukan",
+      "sr.momenergi"
+    ]
+  },
+  {
+    "id": "eq.shm",
+    "concept": "o.shm",
+    "title": "Solusi osilasi harmonik sederhana",
+    "latex": "x(t)=A\\cos(\\omega t+\\varphi),\\ \\omega=\\sqrt{k/m}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.newton2",
+      "eq.pe"
+    ],
+    "assumptions": [
+      "Gaya pemulih linear F = -kx",
+      "Tanpa redaman"
+    ],
+    "validity": "Hanya untuk simpangan kecil di sekitar kesetimbangan (gaya linear).",
+    "steps": [
+      {
+        "latex": "m\\ddot x = -kx",
+        "why": "Hukum II Newton dengan gaya pegas (Hooke)."
+      },
+      {
+        "latex": "\\ddot x + \\omega^2 x = 0,\\quad \\omega^2 = k/m",
+        "why": "Susun ulang dan beri nama omega^2."
+      },
+      {
+        "latex": "x = e^{\\lambda t} \\Rightarrow \\lambda^2 + \\omega^2 = 0 \\Rightarrow \\lambda=\\pm i\\omega",
+        "why": "Coba solusi eksponensial (persamaan diferensial orde-2 linear), dapatkan persamaan karakteristik."
+      },
+      {
+        "latex": "x = C_1 e^{i\\omega t}+C_2 e^{-i\\omega t}",
+        "why": "Solusi umum dari dua akar."
+      },
+      {
+        "latex": "x(t)=A\\cos(\\omega t+\\varphi)",
+        "why": "Syarat x real dan rumus Euler memberi bentuk kosinus; A dan phi ditentukan oleh syarat awal."
+      }
+    ],
+    "meaning": "Periode bergantung pada k dan m, bukan pada amplitudo.",
+    "applied_in": [
+      "o.energi",
+      "o.pendulum",
+      "q.osilator"
+    ]
+  },
+  {
+    "id": "eq.pend",
+    "concept": "o.pendulum",
+    "title": "Periode pendulum sederhana (sudut kecil)",
+    "latex": "T \\approx 2\\pi\\sqrt{L/g}",
+    "kind": "aproksimasi",
+    "depends_on": [
+      "eq.shm",
+      "eq.torque_L"
+    ],
+    "assumptions": [
+      "Massa titik pada tali ringan tak mulur",
+      "Tanpa gesekan di pivot dan tanpa hambatan udara",
+      "g seragam, gerak planar",
+      "Sudut kecil: sin(theta) ~ theta"
+    ],
+    "validity": "Hanya untuk simpangan kecil (< sekitar 10 derajat); untuk sudut besar periode bergantung amplitudo.",
+    "steps": [
+      {
+        "latex": "I\\ddot\\theta = -mgL\\sin\\theta,\\quad I = mL^2",
+        "why": "Dinamika rotasi (tau = I theta-dot-dot, eq.torque_L): torsi pemulih dari gravitasi."
+      },
+      {
+        "latex": "\\ddot\\theta = -\\frac{g}{L}\\sin\\theta",
+        "why": "Sederhanakan; massa saling meniadakan."
+      },
+      {
+        "latex": "\\sin\\theta \\approx \\theta",
+        "why": "Ekspansi Taylor orde pertama (aproksimasi sudut kecil)."
+      },
+      {
+        "latex": "\\ddot\\theta + \\frac{g}{L}\\theta = 0 \\Rightarrow \\omega=\\sqrt{g/L}",
+        "why": "Bentuknya sama dengan eq.shm."
+      },
+      {
+        "latex": "T = \\frac{2\\pi}{\\omega}=2\\pi\\sqrt{L/g}",
+        "why": "Periode dari frekuensi sudut."
+      }
+    ],
+    "meaning": "Periode tidak bergantung massa; hanya aproksimasi untuk sudut kecil.",
+    "applied_in": []
+  },
+  {
+    "id": "eq.torque_L",
+    "concept": "r.momsudut",
+    "title": "Torsi dan laju perubahan momentum sudut",
+    "latex": "\\vec\\tau = \\frac{d\\vec L}{dt}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.newton2"
+    ],
+    "assumptions": [
+      "Titik acuan tetap di kerangka inersial"
+    ],
+    "validity": "Kerangka inersial; titik acuan tetap.",
+    "steps": [
+      {
+        "latex": "\\vec L = \\vec r\\times\\vec p",
+        "why": "Definisi momentum sudut partikel."
+      },
+      {
+        "latex": "\\frac{d\\vec L}{dt} = \\frac{d\\vec r}{dt}\\times\\vec p + \\vec r\\times\\frac{d\\vec p}{dt}",
+        "why": "Aturan turunan hasil kali untuk perkalian silang."
+      },
+      {
+        "latex": "\\frac{d\\vec r}{dt}\\times\\vec p = \\vec v\\times m\\vec v = 0",
+        "why": "Vektor sejajar: perkalian silang nol."
+      },
+      {
+        "latex": "\\frac{d\\vec L}{dt}=\\vec r\\times\\vec F=\\vec\\tau",
+        "why": "Gunakan eq.newton2 dan definisi torsi."
+      }
+    ],
+    "meaning": "Torsi adalah penyebab perubahan momentum sudut.",
+    "applied_in": [
+      "r.kekekalan",
+      "g.kepler"
+    ]
+  },
+  {
+    "id": "eq.kepler2",
+    "concept": "g.kepler",
+    "title": "Hukum Kepler II (luas sapuan)",
+    "latex": "\\frac{dA}{dt}=\\frac{L}{2m}=\\text{konstan}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.torque_L"
+    ],
+    "assumptions": [
+      "Gaya sentral (torsi terhadap pusat nol)"
+    ],
+    "validity": "Setiap gaya sentral, bukan hanya gravitasi. Secara historis Kepler II adalah temuan empiris; di sini ditunjukkan sebagai konsekuensi kekekalan momentum sudut.",
+    "steps": [
+      {
+        "latex": "\\vec\\tau=\\vec r\\times\\vec F_{sentral}=0 \\Rightarrow \\vec L=\\text{konstan}",
+        "why": "Gaya sentral sejajar r sehingga torsi nol (eq.torque_L); L konstan berarti gerak terkurung pada satu bidang tegak lurus L, sehingga koordinat polar di bidang itu sah."
+      },
+      {
+        "latex": "dA = \\tfrac12 r^2 d\\theta",
+        "why": "Luas sektor sempit yang disapu vektor posisi."
+      },
+      {
+        "latex": "L = mr^2\\dot\\theta \\Rightarrow \\frac{dA}{dt}=\\tfrac12 r^2\\dot\\theta=\\frac{L}{2m}",
+        "why": "Ganti theta-dot dengan L; L konstan sehingga dA/dt konstan."
+      }
+    ],
+    "meaning": "Hukum Kepler II adalah kekekalan momentum sudut.",
+    "applied_in": [
+      "g.orbit"
+    ]
+  },
+  {
+    "id": "eq.bernoulli",
+    "concept": "f.bernoulli",
+    "title": "Persamaan Bernoulli",
+    "latex": "p + \\tfrac12\\rho v^2 + \\rho g y = \\text{konstan}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.wke",
+      "eq.pe"
+    ],
+    "assumptions": [
+      "Fluida tak termampatkan",
+      "Tak kental (nonviscous)",
+      "Aliran tunak (steady)",
+      "Sepanjang satu garis arus",
+      "Tanpa pompa/turbin; g seragam"
+    ],
+    "validity": "Gagal untuk fluida kental, aliran turbulen, atau termampatkan (kompresibilitas mulai penting pada Mach sekitar 0,3 ke atas).",
+    "steps": [
+      {
+        "latex": "\\Delta V_1=\\Delta V_2=\\Delta V",
+        "why": "Persamaan kontinuitas: volume yang masuk sama dengan volume yang keluar (tak termampatkan)."
+      },
+      {
+        "latex": "W_{tek}=(p_1-p_2)\\Delta V",
+        "why": "Usaha oleh tekanan pada elemen fluida; tekanan pada dinding samping tabung arus tegak lurus gerak sehingga tidak melakukan usaha."
+      },
+      {
+        "latex": "\\Delta K=\\tfrac12\\rho\\Delta V(v_2^2-v_1^2),\\quad \\Delta U=\\rho\\Delta V g(y_2-y_1)",
+        "why": "Perubahan energi kinetik dan potensial elemen."
+      },
+      {
+        "latex": "W_{tek}+W_{grav}=\\Delta K,\\ W_{grav}=-\\Delta U\\ \\Rightarrow\\ W_{tek}=\\Delta K+\\Delta U",
+        "why": "Teorema usaha-energi (eq.wke) dengan usaha gravitasi = -Delta U (eq.pe)."
+      },
+      {
+        "latex": "p_1+\\tfrac12\\rho v_1^2+\\rho g y_1 = p_2+\\tfrac12\\rho v_2^2+\\rho g y_2",
+        "why": "Bagi dengan Delta V dan kelompokkan indeks 1 dan 2."
+      }
+    ],
+    "meaning": "Bernoulli adalah kekekalan energi untuk fluida ideal.",
+    "applied_in": []
+  },
+  {
+    "id": "eq.el",
+    "concept": "l.eulerlagrange",
+    "title": "Persamaan Euler-Lagrange",
+    "latex": "\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot q}-\\frac{\\partial L}{\\partial q}=0",
+    "kind": "turunan",
+    "depends_on": [],
+    "assumptions": [
+      "Prinsip aksi stasioner dipostulatkan (bukan diturunkan di sini)",
+      "Koordinat umum bebas (kendala holonomik)",
+      "Lagrangian mulus (integran kontinu)"
+    ],
+    "validity": "Berlaku untuk sistem yang memiliki Lagrangian (termasuk potensial bergantung kecepatan/waktu, mis. elektromagnetik); gaya disipatif murni (gesekan kinetik) tidak punya Lagrangian sederhana.",
+    "steps": [
+      {
+        "latex": "S[q]=\\int_{t_1}^{t_2}L(q,\\dot q,t)\\,dt",
+        "why": "Aksi didefinisikan sebagai integral Lagrangian."
+      },
+      {
+        "latex": "q\\to q+\\epsilon\\eta,\\ \\eta(t_1)=\\eta(t_2)=0",
+        "why": "Variasi lintasan dengan ujung tetap."
+      },
+      {
+        "latex": "\\frac{dS}{d\\epsilon}\\Big|_0=\\int\\left(\\frac{\\partial L}{\\partial q}\\eta+\\frac{\\partial L}{\\partial\\dot q}\\dot\\eta\\right)dt=0",
+        "why": "Syarat stasioner: aksi tidak berubah di orde pertama."
+      },
+      {
+        "latex": "\\int\\frac{\\partial L}{\\partial\\dot q}\\dot\\eta\\,dt = -\\int \\frac{d}{dt}\\!\\left(\\frac{\\partial L}{\\partial\\dot q}\\right)\\eta\\,dt",
+        "why": "Integrasi parsial; suku batas hilang karena eta = 0 di ujung."
+      },
+      {
+        "latex": "\\int\\left[\\frac{\\partial L}{\\partial q}-\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot q}\\right]\\eta\\,dt=0\\ \\forall\\eta",
+        "why": "Gabungkan suku-suku."
+      },
+      {
+        "latex": "\\Rightarrow \\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot q}-\\frac{\\partial L}{\\partial q}=0",
+        "why": "Lema dasar kalkulus variasi: integran harus nol."
+      }
+    ],
+    "meaning": "Persamaan gerak dari satu fungsi skalar (L), bebas pilihan koordinat.",
+    "applied_in": [
+      "l.simetri",
+      "h.hamiltonian",
+      "qft.kuantisasi"
+    ]
+  },
+  {
+    "id": "eq.el_newton",
+    "concept": "l.eulerlagrange",
+    "title": "Euler-Lagrange menghasilkan Hukum II Newton",
+    "latex": "m\\ddot x=-\\frac{dU}{dx}",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.el",
+      "eq.pe"
+    ],
+    "assumptions": [
+      "L = K - U",
+      "Satu dimensi, koordinat kartesius"
+    ],
+    "validity": "Menunjukkan konsistensi dengan mekanika Newton.",
+    "steps": [
+      {
+        "latex": "L=\\tfrac12 m\\dot x^2-U(x)",
+        "why": "Pilih Lagrangian L = K - U."
+      },
+      {
+        "latex": "\\frac{\\partial L}{\\partial\\dot x}=m\\dot x\\ \\Rightarrow\\ \\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot x}=m\\ddot x",
+        "why": "Hitung suku pertama eq.el."
+      },
+      {
+        "latex": "\\frac{\\partial L}{\\partial x}=-\\frac{dU}{dx}",
+        "why": "Hitung suku kedua."
+      },
+      {
+        "latex": "m\\ddot x+\\frac{dU}{dx}=0\\ \\Rightarrow\\ m\\ddot x=F",
+        "why": "Masukkan ke eq.el dan gunakan F = -dU/dx (eq.pe)."
+      }
+    ],
+    "meaning": "Mekanika Lagrangian mencakup Newton sebagai kasus khusus.",
+    "applied_in": []
+  },
+  {
+    "id": "eq.maxwell_wave",
+    "concept": "x.gelombang_em",
+    "title": "Persamaan gelombang EM di ruang hampa",
+    "latex": "\\nabla^2\\vec E=\\mu_0\\varepsilon_0\\frac{\\partial^2\\vec E}{\\partial t^2},\\quad c=\\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}}",
+    "kind": "turunan",
+    "depends_on": [],
+    "assumptions": [
+      "Persamaan Maxwell (Gauss, Faraday, Ampere-Maxwell) diterima sebagai hukum dasar",
+      "Ruang hampa: tanpa muatan dan arus (rho = 0, J = 0)",
+      "Medan cukup mulus (turunan ruang dan waktu dapat dipertukarkan)"
+    ],
+    "validity": "Ruang hampa. Di dalam materi, mu0 dan epsilon0 diganti mu dan epsilon hanya untuk dielektrik linear, homogen, isotropik, tak berdispersi, tanpa muatan/arus bebas.",
+    "steps": [
+      {
+        "latex": "\\nabla\\times\\vec E=-\\frac{\\partial\\vec B}{\\partial t},\\quad \\nabla\\times\\vec B=\\mu_0\\varepsilon_0\\frac{\\partial\\vec E}{\\partial t}",
+        "why": "Hukum Faraday dan Ampere-Maxwell di ruang hampa."
+      },
+      {
+        "latex": "\\nabla\\times(\\nabla\\times\\vec E)=-\\frac{\\partial}{\\partial t}(\\nabla\\times\\vec B)=-\\mu_0\\varepsilon_0\\frac{\\partial^2\\vec E}{\\partial t^2}",
+        "why": "Ambil curl hukum Faraday, lalu masukkan hukum Ampere-Maxwell."
+      },
+      {
+        "latex": "\\nabla\\times(\\nabla\\times\\vec E)=\\nabla(\\nabla\\cdot\\vec E)-\\nabla^2\\vec E=-\\nabla^2\\vec E",
+        "why": "Identitas vektor, dan Gauss ruang hampa: divergensi E = 0."
+      },
+      {
+        "latex": "\\nabla^2\\vec E=\\mu_0\\varepsilon_0\\frac{\\partial^2\\vec E}{\\partial t^2}",
+        "why": "Samakan kedua hasil."
+      },
+      {
+        "latex": "v=\\frac{1}{\\sqrt{\\mu_0\\varepsilon_0}}=c",
+        "why": "Bandingkan dengan persamaan gelombang bentuk standar; kecepatan rambat adalah c."
+      }
+    ],
+    "meaning": "Cahaya adalah gelombang elektromagnetik; c ditentukan oleh konstanta listrik dan magnet.",
+    "applied_in": [
+      "sr.postulat",
+      "o2.interferensi"
+    ]
+  },
+  {
+    "id": "eq.timedil",
+    "concept": "sr.dilatasi",
+    "title": "Dilatasi waktu",
+    "latex": "\\Delta t=\\gamma\\,\\Delta\\tau,\\quad \\gamma=\\frac{1}{\\sqrt{1-v^2/c^2}}",
+    "kind": "turunan",
+    "depends_on": [],
+    "assumptions": [
+      "Kecepatan cahaya sama di semua kerangka inersial (postulat 2)",
+      "Prinsip relativitas (postulat 1)",
+      "Jam cahaya tegak lurus terhadap v; panjang transversal d sama di kedua kerangka (konsekuensi prinsip relativitas)",
+      "Delta tau = waktu proper: selang antara dua kejadian di tempat yang sama dalam kerangka diam jam"
+    ],
+    "validity": "Kerangka inersial; berlaku untuk semua v < c.",
+    "steps": [
+      {
+        "latex": "\\Delta\\tau=\\frac{2d}{c}",
+        "why": "Jam cahaya: dalam kerangka diam jam, cahaya menempuh jarak 2d."
+      },
+      {
+        "latex": "\\left(\\frac{c\\Delta t}{2}\\right)^2=d^2+\\left(\\frac{v\\Delta t}{2}\\right)^2",
+        "why": "Dalam kerangka pengamat, jam bergerak sehingga lintasan cahaya miring; c tetap (postulat 2). Gunakan Pythagoras."
+      },
+      {
+        "latex": "\\Delta t^2\\left(c^2-v^2\\right)=4d^2",
+        "why": "Susun ulang."
+      },
+      {
+        "latex": "\\Delta t=\\frac{2d/c}{\\sqrt{1-v^2/c^2}}=\\gamma\\Delta\\tau",
+        "why": "Substitusi 2d/c = Delta tau."
+      }
+    ],
+    "meaning": "Jam yang bergerak terukur lebih lambat oleh pengamat yang relatif bergerak.",
+    "applied_in": [
+      "n.peluruhan"
+    ]
+  },
+  {
+    "id": "eq.E2",
+    "concept": "sr.momenergi",
+    "title": "Hubungan energi-momentum relativistik",
+    "latex": "E^2=(pc)^2+(mc^2)^2",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.timedil"
+    ],
+    "assumptions": [
+      "Definisi relativistik: p = gamma m v dan E = gamma m c^2 (m = massa diam)",
+      "Faktor gamma dari kedua postulat relativitas khusus"
+    ],
+    "validity": "Relativitas khusus; berlaku untuk benda bermassa dengan semua v < c. Untuk foton (m = 0), E = pc diterima sebagai limit/perluasan (norma empat-momentum nol), bukan hasil derivasi ini.",
+    "steps": [
+      {
+        "latex": "E=\\gamma mc^2,\\quad p=\\gamma mv,\\quad \\gamma=\\frac{1}{\\sqrt{1-v^2/c^2}}",
+        "why": "Definisi energi dan momentum relativistik; gamma berasal dari transformasi Lorentz/dilatasi waktu (eq.timedil)."
+      },
+      {
+        "latex": "E^2-(pc)^2=\\gamma^2m^2c^4\\left(1-\\frac{v^2}{c^2}\\right)",
+        "why": "Kuadratkan keduanya dan kurangkan."
+      },
+      {
+        "latex": "\\gamma^2\\left(1-\\frac{v^2}{c^2}\\right)=1\\ \\Rightarrow\\ E^2-(pc)^2=(mc^2)^2",
+        "why": "Gunakan definisi gamma."
+      },
+      {
+        "latex": "P^\\mu=(E/c,\\vec p),\\ P^\\mu P_\\mu=(mc)^2",
+        "why": "Tafsir geometris: kombinasi ini adalah norma empat-momentum, invarian di semua kerangka inersial."
+      }
+    ],
+    "meaning": "Benda diam (p = 0): E = mc^2. Foton: E = pc diterima sebagai limit m -> 0.",
+    "applied_in": [
+      "mo.compton",
+      "n.struktur",
+      "q.relativistik"
+    ]
+  },
+  {
+    "id": "eq.bohr",
+    "concept": "a.bohr",
+    "title": "Tingkat energi atom Bohr (hidrogen, Z = 1)",
+    "latex": "E_n=-\\frac{13{,}6\\ \\text{eV}}{n^2}",
+    "kind": "model",
+    "depends_on": [
+      "eq.newton2",
+      "eq.ac"
+    ],
+    "assumptions": [
+      "Orbit lingkaran klasik",
+      "Postulat Bohr 1: orbit stasioner tidak memancar (bertentangan dengan elektrodinamika klasik)",
+      "Postulat Bohr 2: L = n hbar; transisi memancarkan foton dengan h nu = E_i - E_f",
+      "Inti diam (massa tereduksi diabaikan), satu elektron"
+    ],
+    "validity": "Hidrogen (Z = 1) dalam aproksimasi inti diam; untuk ion mirip-hidrogen E_n memuat faktor Z^2. Gagal secara kualitatif: keadaan dasar Bohr punya L = hbar, padahal yang benar L = 0; tidak menjelaskan spin, struktur halus, intensitas garis, atau atom multielektron.",
+    "steps": [
+      {
+        "latex": "\\frac{mv^2}{r}=\\frac{ke^2}{r^2}",
+        "why": "Hukum II Newton untuk orbit lingkaran dengan gaya Coulomb (eq.ac)."
+      },
+      {
+        "latex": "mvr=n\\hbar\\quad (\\text{postulat})",
+        "why": "Kuantisasi momentum sudut - ini asumsi baru Bohr, bukan hasil derivasi."
+      },
+      {
+        "latex": "r_n=\\frac{n^2\\hbar^2}{mke^2}=n^2a_0",
+        "why": "Eliminasi v dari dua persamaan."
+      },
+      {
+        "latex": "E=\\tfrac12mv^2-\\frac{ke^2}{r}=-\\frac{ke^2}{2r}",
+        "why": "Energi total dengan v dari langkah pertama."
+      },
+      {
+        "latex": "E_n=-\\frac{mk^2e^4}{2\\hbar^2}\\frac{1}{n^2}=-\\frac{13{,}6\\ \\text{eV}}{n^2}",
+        "why": "Substitusi r_n."
+      }
+    ],
+    "meaning": "Menjelaskan spektrum hidrogen dengan baik, tetapi kuantisasinya dipostulatkan; dijelaskan lebih mendalam oleh persamaan Schrodinger.",
+    "applied_in": [
+      "a.spektrum",
+      "q.hidrogen"
+    ]
+  },
+  {
+    "id": "eq.tdse",
+    "concept": "q.tdse",
+    "title": "Persamaan Schrodinger bergantung waktu",
+    "latex": "i\\hbar\\frac{\\partial\\psi}{\\partial t}=-\\frac{\\hbar^2}{2m}\\frac{\\partial^2\\psi}{\\partial x^2}+V\\psi",
+    "kind": "postulat",
+    "depends_on": [],
+    "assumptions": [
+      "Postulat mekanika kuantum",
+      "Partikel non-relativistik",
+      "V riil (agar peluang kekal)",
+      "Persamaan linear dalam psi"
+    ],
+    "validity": "v << c; tidak menjelaskan spin atau pasangan partikel-antipartikel tanpa perluasan.",
+    "steps": [
+      {
+        "latex": "\\psi=e^{i(kx-\\omega t)},\\ p=\\hbar k,\\ E=\\hbar\\omega",
+        "why": "Heuristik (bukan derivasi): gelombang bidang untuk partikel bebas, hubungan de Broglie dan Planck."
+      },
+      {
+        "latex": "E=\\frac{p^2}{2m}+V",
+        "why": "Energi klasik partikel non-relativistik."
+      },
+      {
+        "latex": "i\\hbar\\frac{\\partial}{\\partial t}\\to E,\\quad -i\\hbar\\frac{\\partial}{\\partial x}\\to p",
+        "why": "Aturan korespondensi dari bentuk gelombang bidang."
+      },
+      {
+        "latex": "i\\hbar\\partial_t\\psi=-\\frac{\\hbar^2}{2m}\\partial_x^2\\psi+V\\psi",
+        "why": "Terapkan operator ke psi. Kecocokan dengan eksperimen adalah pembenarannya."
+      }
+    ],
+    "meaning": "Tidak diturunkan dari fisika klasik: ia adalah postulat yang dimotivasi oleh gelombang materi dan diuji eksperimen.",
+    "applied_in": [
+      "eq.tise"
+    ]
+  },
+  {
+    "id": "eq.tise",
+    "concept": "q.tise",
+    "title": "Persamaan Schrodinger tak bergantung waktu",
+    "latex": "-\\frac{\\hbar^2}{2m}\\frac{d^2\\varphi}{dx^2}+V\\varphi=E\\varphi",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.tdse"
+    ],
+    "assumptions": [
+      "V tidak bergantung waktu",
+      "Solusi dapat dipisah: psi = phi(x) T(t)"
+    ],
+    "validity": "Hanya untuk potensial yang tidak bergantung waktu.",
+    "steps": [
+      {
+        "latex": "\\psi(x,t)=\\varphi(x)T(t)",
+        "why": "Separasi variabel."
+      },
+      {
+        "latex": "i\\hbar\\frac{T'}{T}=\\frac{1}{\\varphi}\\left[-\\frac{\\hbar^2}{2m}\\varphi''+V\\varphi\\right]",
+        "why": "Substitusi ke eq.tdse dan bagi dengan phi T."
+      },
+      {
+        "latex": "\\text{kedua sisi} = E\\ (\\text{konstanta})",
+        "why": "Ruas kiri hanya bergantung t, ruas kanan hanya x, jadi keduanya konstanta."
+      },
+      {
+        "latex": "T(t)=e^{-iEt/\\hbar}",
+        "why": "Selesaikan persamaan waktu."
+      },
+      {
+        "latex": "-\\frac{\\hbar^2}{2m}\\varphi''+V\\varphi=E\\varphi",
+        "why": "Persamaan ruang; E menjadi nilai eigen energi."
+      }
+    ],
+    "meaning": "Keadaan stasioner: rapat peluang tidak berubah terhadap waktu.",
+    "applied_in": [
+      "q.kotak",
+      "q.osilator",
+      "q.hidrogen"
+    ]
+  },
+  {
+    "id": "eq.uncertainty",
+    "concept": "q.komutator",
+    "title": "Prinsip ketidakpastian umum",
+    "latex": "\\sigma_A\\sigma_B\\ge\\tfrac12\\left|\\langle[\\hat A,\\hat B]\\rangle\\right|",
+    "kind": "turunan",
+    "depends_on": [],
+    "assumptions": [
+      "Operator hermitian A dan B",
+      "Keadaan ternormalisasi dan berada di domain operator; variansi berhingga"
+    ],
+    "validity": "Mekanika kuantum; bentuk x-p: sigma_x sigma_p >= hbar/2 dari [x,p] = i hbar.",
+    "steps": [
+      {
+        "latex": "\\sigma_A^2\\sigma_B^2\\ge|\\langle f|g\\rangle|^2",
+        "why": "Definisikan f = (A - <A>)psi dan g = (B - <B>)psi. Karena A, B hermitian: sigma_A^2 = <f|f> dan sigma_B^2 = <g|g>; lalu gunakan ketaksamaan Cauchy-Schwarz <f|f><g|g> >= |<f|g>|^2."
+      },
+      {
+        "latex": "\\langle f|g\\rangle=\\tfrac12\\langle\\{\\Delta A,\\Delta B\\}\\rangle+\\tfrac12\\langle[\\hat A,\\hat B]\\rangle",
+        "why": "Pisahkan ke bagian simetris (riil) dan antisimetris (imajiner murni)."
+      },
+      {
+        "latex": "|\\langle f|g\\rangle|^2\\ge\\left|\\tfrac12\\langle[\\hat A,\\hat B]\\rangle\\right|^2",
+        "why": "Buang bagian riil yang tidak negatif."
+      },
+      {
+        "latex": "[\\hat x,\\hat p]=i\\hbar\\ \\Rightarrow\\ \\sigma_x\\sigma_p\\ge\\hbar/2",
+        "why": "Kasus posisi-momentum."
+      }
+    ],
+    "meaning": "Ketidakpastian bukan cacat alat ukur: ia lahir dari non-komutatifnya observabel.",
+    "applied_in": [
+      "q.hidrogen"
+    ]
+  },
+  {
+    "id": "eq.kinetic_p",
+    "concept": "t.kinetik",
+    "title": "Tekanan dari teori kinetik",
+    "latex": "pV=\\tfrac13Nm\\langle v^2\\rangle\\ \\Rightarrow\\ \\langle K\\rangle=\\tfrac32kT",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.impulse",
+      "eq.pcons"
+    ],
+    "assumptions": [
+      "Gas ideal: tumbukan elastis dengan dinding",
+      "Tanpa interaksi antarmolekul",
+      "Distribusi kecepatan isotropik",
+      "pV = NkT diterima sebagai hukum gas empiris, dipakai untuk MENGIDENTIFIKASI suhu T",
+      "Gaya pada dinding dari Hukum III Newton (dinding mendorong balik dengan impuls yang sama)"
+    ],
+    "validity": "Gas encer; non-relativistik (v << c); suhu tidak terlalu rendah (efek kuantum diabaikan). Hasil 3/2 kT adalah energi kinetik TRANSLASI rata-rata per molekul.",
+    "steps": [
+      {
+        "latex": "\\Delta p=2mv_x\\ \\text{per tumbukan}",
+        "why": "Tumbukan elastis dengan dinding membalik v_x."
+      },
+      {
+        "latex": "F=\\frac{N}{V}\\cdot\\tfrac12 A v_x\\Delta t\\cdot\\frac{2mv_x}{\\Delta t}",
+        "why": "Jumlah tumbukan per selang waktu (setengah molekul bergerak ke dinding), kali impuls per tumbukan (eq.impulse)."
+      },
+      {
+        "latex": "p=\\frac{F}{A}=\\frac{N}{V}m\\langle v_x^2\\rangle=\\tfrac13\\frac{N}{V}m\\langle v^2\\rangle",
+        "why": "Isotropi: <v_x^2> = <v^2>/3."
+      },
+      {
+        "latex": "pV=NkT\\ \\Rightarrow\\ \\tfrac13 m\\langle v^2\\rangle=kT",
+        "why": "Identifikasi suhu: samakan dengan hukum gas empiris pV = NkT."
+      },
+      {
+        "latex": "\\langle K\\rangle=\\tfrac12m\\langle v^2\\rangle=\\tfrac32kT",
+        "why": "Energi kinetik translasi rata-rata per molekul."
+      }
+    ],
+    "meaning": "Suhu adalah ukuran energi kinetik acak rata-rata molekul.",
+    "applied_in": [
+      "s.mb"
+    ]
+  },
+  {
+    "id": "eq.carnot",
+    "concept": "t.carnot",
+    "title": "Efisiensi Carnot",
+    "latex": "\\eta=1-\\frac{T_c}{T_h}",
+    "kind": "turunan",
+    "depends_on": [],
+    "assumptions": [
+      "Gas ideal dengan gamma konstan",
+      "Siklus reversibel (proses kuasi-statik)",
+      "Dua isoterm dan dua adiabat; T adalah suhu gas ideal (setara suhu termodinamika)"
+    ],
+    "validity": "Efisiensi siklus Carnot gas ideal. Bahwa ini batas atas untuk SEMUA mesin kalor antara T_h dan T_c dibuktikan terpisah dengan hukum II termodinamika (t.hukum2), bukan oleh derivasi ini.",
+    "steps": [
+      {
+        "latex": "Q_h=nRT_h\\ln\\frac{V_2}{V_1},\\quad Q_c=nRT_c\\ln\\frac{V_3}{V_4}",
+        "why": "Kalor pada dua isoterm (energi dalam gas ideal tidak berubah pada isoterm)."
+      },
+      {
+        "latex": "T_hV_2^{\\gamma-1}=T_cV_3^{\\gamma-1},\\quad T_hV_1^{\\gamma-1}=T_cV_4^{\\gamma-1}\\ \\Rightarrow\\ \\frac{V_2}{V_1}=\\frac{V_3}{V_4}",
+        "why": "Tulis TV^(gamma-1) = konstan untuk kedua adiabat (2->3 dan 4->1), lalu bagi persamaannya."
+      },
+      {
+        "latex": "\\frac{Q_c}{Q_h}=\\frac{T_c}{T_h}",
+        "why": "Bagi kedua kalor; logaritma sama."
+      },
+      {
+        "latex": "\\eta=\\frac{W}{Q_h}=1-\\frac{Q_c}{Q_h}=1-\\frac{T_c}{T_h}",
+        "why": "Definisi efisiensi dan hukum I (W = Q_h - Q_c)."
+      }
+    ],
+    "meaning": "Efisiensi hanya bergantung pada dua suhu reservoir. (Teorema Carnot: tidak ada mesin yang lebih efisien - dibuktikan dengan hukum II.)",
+    "applied_in": [
+      "t.hukum2"
+    ]
+  }
+]

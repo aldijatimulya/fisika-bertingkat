@@ -1,0 +1,289 @@
+# Format baris konsep:  id | judul | prasyarat (;) | diturunkan_dari (;)
+# Header bagian:        ## kunci_area | level | nama area | tandai (opsional: usulan)
+# "usulan" = bagian yang TIDAK ada di Jalan Program awal, ditambahkan karena dibutuhkan prasyarat level berikutnya.
+
+## MATH0 | 0 | Matematika dasar untuk fisika
+m.satuan | Besaran, satuan SI, dan dimensi | |
+m.dimensi | Analisis dimensi dan ketidakpastian pengukuran | m.satuan |
+m.aljabar | Aljabar: persamaan, pertidaksamaan, manipulasi simbolik | |
+m.trigo | Trigonometri dan identitas | m.aljabar |
+m.fungsi | Fungsi, grafik, eksponensial dan logaritma | m.aljabar |
+m.vektor | Vektor: komponen dan penjumlahan | m.trigo |
+m.dot | Perkalian titik (skalar) | m.vektor |
+m.cross | Perkalian silang (vektor) | m.vektor |
+m.koord | Sistem koordinat: kartesius, polar, silinder, bola | m.vektor;m.trigo |
+m.limit | Limit dan kontinuitas | m.fungsi |
+m.turunan | Turunan: definisi, aturan, aturan rantai | m.limit |
+m.turunan_apl | Aplikasi turunan: laju perubahan, ekstrem, aproksimasi linear | m.turunan |
+m.integral | Integral tak tentu dan tentu, teorema fundamental kalkulus | m.turunan |
+m.teknik_int | Teknik integrasi dan integral numerik | m.integral |
+m.deret | Deret dan ekspansi Taylor | m.limit;m.turunan |
+m.kompleks | Bilangan kompleks dan rumus Euler | m.trigo;m.deret |
+m.pd1 | Persamaan diferensial orde-1 | m.integral |
+m.pd2 | Persamaan diferensial orde-2 linear koefisien konstan | m.pd1;m.kompleks |
+m.vektorfungsi | Fungsi vektor dan turunan terhadap parameter | m.vektor;m.turunan |
+m.parsial | Turunan parsial dan diferensial total | m.turunan;m.fungsi |
+m.gradien | Gradien, divergensi, dan curl | m.parsial;m.dot;m.cross |
+m.integral_multi | Integral lipat dua dan lipat tiga | m.integral;m.koord |
+m.integral_garis | Integral garis dan integral permukaan | m.integral_multi;m.vektorfungsi |
+m.teorema_vektor | Teorema Green, Stokes, dan divergensi (Gauss) | m.gradien;m.integral_garis |
+m.matriks | Matriks dan determinan | m.aljabar;m.vektor |
+m.eigen | Nilai dan vektor eigen, diagonalisasi | m.matriks |
+m.ruangvektor | Ruang vektor, basis, dan inner product | m.matriks;m.dot |
+m.probabilitas | Probabilitas dan statistika dasar | m.integral;m.aljabar |
+
+## MATH2 | 2 | Metode matematika fisika
+m.fourier | Deret dan transformasi Fourier | m.integral;m.kompleks;m.deret |
+m.pdp | Persamaan diferensial parsial dan separasi variabel | m.pd2;m.parsial;m.fourier |
+m.fungsikhusus | Fungsi khusus: Legendre, Bessel, harmonik sferis | m.pdp;m.koord |
+m.delta | Fungsi delta Dirac dan distribusi | m.integral |
+m.variasi | Kalkulus variasi | m.parsial;m.pd2 |
+m.tensor | Tensor dan geometri diferensial dasar | m.ruangvektor;m.parsial |
+
+## KIN | 1 | Kinematika
+k.posisi | Posisi, perpindahan, jarak (1D) | m.satuan;m.fungsi |
+k.kecepatan | Kecepatan rata-rata dan sesaat | k.posisi;m.turunan |
+k.percepatan | Percepatan | k.kecepatan |
+k.glbb | Gerak percepatan konstan (GLBB) | k.percepatan;m.integral | k.percepatan
+k.jatuhbebas | Jatuh bebas | k.glbb |
+k.vektor2d | Gerak 2D/3D: vektor posisi, kecepatan, percepatan | k.percepatan;m.vektorfungsi |
+k.proyektil | Gerak proyektil | k.vektor2d;k.glbb;m.trigo | k.glbb;k.vektor2d
+k.melingkar | Gerak melingkar dan percepatan sentripetal | k.vektor2d;m.koord | k.vektor2d
+k.relatif | Gerak relatif dan transformasi Galileo | k.vektor2d |
+
+## DYN | 1 | Dinamika dan Hukum Newton
+d.hukum1 | Hukum I Newton: inersia dan kerangka inersial | k.percepatan;m.vektor |
+d.hukum2 | Hukum II Newton | d.hukum1;k.vektor2d |
+d.hukum3 | Hukum III Newton | d.hukum2 |
+d.gayaberat | Gaya berat dan massa | d.hukum2;k.jatuhbebas |
+d.normal_tali | Gaya normal dan tegangan tali | d.hukum3 |
+d.gesekan | Gesekan statis dan kinetik | d.normal_tali |
+d.hooke | Gaya pegas (hukum Hooke) | d.hukum2 |
+d.dinamika_melingkar | Dinamika gerak melingkar | d.hukum2;k.melingkar |
+d.hambat | Gaya hambat dan kecepatan terminal | d.hukum2;m.pd1 |
+
+## ENE | 1 | Usaha dan energi
+e.kerja | Usaha oleh gaya | d.hukum2;m.dot;m.integral |
+e.ek | Energi kinetik dan teorema usaha-energi | e.kerja | d.hukum2;e.kerja
+e.konservatif | Gaya konservatif dan kebebasan lintasan | e.kerja;m.integral_garis |
+e.ep | Energi potensial | e.konservatif | e.konservatif
+e.kekekalan | Kekekalan energi mekanik | e.ek;e.ep | e.ek;e.ep
+e.diagram | Diagram energi potensial dan titik setimbang | e.ep;m.turunan_apl |
+e.daya | Daya | e.kerja |
+
+## MOM | 1 | Momentum dan impuls
+p.momentum | Momentum linear dan impuls | d.hukum2 | d.hukum2
+p.kekekalan | Kekekalan momentum linear | p.momentum;d.hukum3 | p.momentum;d.hukum3
+p.pm | Pusat massa | p.kekekalan;m.integral |
+p.tumbukan | Tumbukan elastis dan inelastis | p.kekekalan;e.kekekalan |
+
+## ROT | 1 | Gerak rotasi
+r.kinematika | Kinematika rotasi | k.melingkar |
+r.torsi | Torsi | m.cross;d.hukum2 |
+r.inersia | Momen inersia | r.kinematika;p.pm;m.integral |
+r.dinamika | Dinamika rotasi (torsi dan percepatan sudut) | r.torsi;r.inersia | d.hukum2;r.torsi;r.inersia
+r.momsudut | Momentum sudut | r.torsi;p.momentum | d.hukum2;r.torsi
+r.kekekalan | Kekekalan momentum sudut | r.momsudut | r.momsudut
+r.energi | Energi kinetik rotasi dan menggelinding | r.inersia;e.ek |
+r.statis | Kesetimbangan statis dan elastisitas | r.torsi;d.hukum1 |
+
+## GRA | 1 | Gravitasi
+g.newton | Hukum gravitasi Newton | d.hukum2;k.melingkar |
+g.medan | Medan dan energi potensial gravitasi | g.newton;e.ep | g.newton;e.ep
+g.kepler | Hukum Kepler | g.newton;r.kekekalan | g.newton;r.kekekalan
+g.orbit | Orbit dan kecepatan lepas | g.medan;g.kepler |
+
+## FLU | 1 | Fluida
+f.tekanan | Tekanan dan fluida statis | d.hukum1;m.integral |
+f.archimedes | Hukum Archimedes | f.tekanan | f.tekanan
+f.kontinuitas | Persamaan kontinuitas | f.tekanan;k.kecepatan |
+f.bernoulli | Persamaan Bernoulli | f.kontinuitas;e.ek | e.ek;f.kontinuitas
+f.viskositas | Viskositas dan aliran laminar | f.kontinuitas;d.hambat |
+
+## OSC | 1 | Osilasi
+o.shm | Osilasi harmonik sederhana | d.hooke;m.pd2 | d.hooke
+o.energi | Energi pada osilasi harmonik | o.shm;e.kekekalan |
+o.pendulum | Pendulum sederhana dan fisis | o.shm;r.dinamika;m.deret | r.dinamika;o.shm
+o.teredam | Osilasi teredam | o.shm;d.hambat |
+o.paksa | Osilasi paksa dan resonansi | o.teredam |
+
+## WAV | 1 | Gelombang
+w.mekanik | Gelombang mekanik dan gelombang berjalan | o.shm;m.parsial |
+w.persamaan | Persamaan gelombang (tali) | w.mekanik;d.hukum2 | d.hukum2;w.mekanik
+w.superposisi | Superposisi dan interferensi | w.mekanik |
+w.berdiri | Gelombang berdiri dan resonansi | w.superposisi |
+w.bunyi | Gelombang bunyi dan efek Doppler | w.persamaan;f.tekanan |
+
+## THM | 1 | Termodinamika dasar
+t.suhu | Suhu, kalor, dan kesetimbangan termal | e.kekekalan |
+t.gasideal | Gas ideal dan persamaan keadaan | t.suhu;f.tekanan |
+t.kinetik | Teori kinetik gas | t.gasideal;p.tumbukan;m.probabilitas | p.momentum;t.gasideal
+t.hukum1 | Hukum I Termodinamika | t.suhu;e.kerja |
+t.proses | Proses termodinamika dan kapasitas kalor | t.hukum1;t.gasideal;m.integral |
+t.hukum2 | Hukum II Termodinamika dan entropi (makroskopik) | t.proses |
+t.carnot | Siklus Carnot dan efisiensi mesin kalor | t.hukum2 | t.hukum2;t.proses
+
+## EMB | 1 | Listrik-magnet dasar | usulan
+b.coulomb | Muatan dan hukum Coulomb | d.hukum2;m.vektor |
+b.medanlistrik | Medan listrik | b.coulomb;m.integral |
+b.gauss | Hukum Gauss | b.medanlistrik;m.integral_garis |
+b.potensial | Potensial dan energi potensial listrik | b.medanlistrik;e.ep | b.medanlistrik;e.konservatif
+b.kapasitor | Kapasitor dan dielektrik (dasar) | b.potensial |
+b.arus | Arus, resistansi, dan hukum Ohm | b.potensial |
+b.rangkaian | Rangkaian DC dan hukum Kirchhoff | b.arus;e.kekekalan |
+b.medanmagnet | Medan magnet dan gaya Lorentz | b.arus;m.cross |
+b.biotsavart | Hukum Biot-Savart dan hukum Ampere | b.medanmagnet;m.integral_garis |
+b.faraday | Induksi Faraday dan hukum Lenz | b.biotsavart |
+b.induktansi | Induktansi, rangkaian RL/LC/AC | b.faraday;m.pd2 |
+
+## OPT | 1 | Optik dasar | usulan
+op.geometri | Optik geometri: pemantulan, pembiasan, lensa | w.mekanik;m.trigo |
+op.cahaya | Interferensi dan difraksi cahaya (dasar) | w.superposisi;op.geometri |
+
+## CM | 2 | Mekanika klasik lanjut
+c.sentral | Gaya sentral dan masalah dua benda | g.kepler;r.kekekalan;e.diagram;e.kekekalan | r.kekekalan;e.kekekalan
+c.orbit | Potensial efektif dan orbit Kepler | c.sentral |
+c.noninersial | Kerangka non-inersial: gaya Coriolis dan sentrifugal | k.relatif;d.hukum2;m.vektorfungsi | k.relatif;d.hukum2
+c.osilterkopel | Osilasi terkopel dan mode normal | o.shm;m.eigen | o.shm
+c.bendategar3d | Benda tegar 3D dan tensor inersia | r.dinamika;m.matriks;m.eigen |
+c.nonlinier | Dinamika nonlinier dan kekacauan (pengantar) | o.pendulum;m.pd2 |
+
+## LAG | 2 | Mekanika Lagrangian
+l.koordumum | Koordinat umum dan kendala | d.hukum2;k.vektor2d |
+l.aksi | Prinsip aksi stasioner (Hamilton) | m.variasi;e.ek;e.ep |
+l.eulerlagrange | Persamaan Euler-Lagrange | l.aksi;l.koordumum | l.aksi;m.variasi
+l.simetri | Simetri dan teorema Noether | l.eulerlagrange | l.eulerlagrange
+
+## HAM | 2 | Mekanika Hamiltonian
+h.hamiltonian | Transformasi Legendre dan Hamiltonian | l.eulerlagrange;m.parsial | l.eulerlagrange
+h.hamilton_eq | Persamaan Hamilton dan ruang fase | h.hamiltonian | h.hamiltonian
+h.poisson | Kurung Poisson dan transformasi kanonik | h.hamilton_eq;l.simetri |
+
+## EM2 | 2 | Elektromagnetisme dan persamaan Maxwell
+x.statik_lanjut | Persamaan Poisson-Laplace, metode gambar, separasi variabel | b.potensial;b.gauss;m.pdp;m.teorema_vektor |
+x.multipol | Ekspansi multipol | x.statik_lanjut;m.fungsikhusus;m.deret |
+x.dielektrik | Medan listrik dalam materi | x.statik_lanjut |
+x.magnetostatik | Magnetostatik dan potensial vektor | b.biotsavart;m.gradien;m.teorema_vektor |
+x.magnetmateri | Medan magnet dalam materi | x.magnetostatik |
+x.induksi | Elektrodinamika: hukum Faraday umum | b.faraday;x.magnetostatik |
+x.maxwell | Persamaan Maxwell dan arus pergeseran | x.induksi;x.dielektrik;b.gauss | b.gauss;b.biotsavart;b.faraday
+x.energi | Energi dan momentum EM, vektor Poynting | x.maxwell | x.maxwell
+x.gelombang_em | Gelombang elektromagnetik di ruang hampa | x.maxwell;w.persamaan | x.maxwell
+x.media | Gelombang EM dalam materi: pantulan, pembiasan | x.gelombang_em;x.dielektrik |
+x.potensial | Potensial skalar-vektor dan kebebasan gauge | x.maxwell |
+x.radiasi | Radiasi dipol dan muatan bergerak | x.potensial;x.multipol |
+
+## TH2 | 2 | Termodinamika lanjut dan fisika statistik
+s.potensial | Potensial termodinamika (U, H, F, G) | t.hukum2;m.parsial |
+s.maxwellrel | Relasi Maxwell | s.potensial | s.potensial
+s.transisifase | Transisi fase dan persamaan Clausius-Clapeyron | s.potensial |
+s.mikro | Ensembel mikrokanonik dan entropi Boltzmann | t.hukum2;m.probabilitas |
+s.kanonik | Ensembel kanonik dan fungsi partisi | s.mikro | s.mikro
+s.mb | Distribusi Maxwell-Boltzmann dan ekipartisi | s.kanonik;t.kinetik | s.kanonik
+
+## OPT2 | 2 | Optik fisis
+o2.interferensi | Interferensi dan koherensi | op.cahaya;x.gelombang_em |
+o2.difraksi | Difraksi Fraunhofer dan Fresnel | o2.interferensi;m.fourier |
+o2.polarisasi | Polarisasi | x.media |
+
+## SR | 3 | Relativitas khusus
+sr.postulat | Postulat relativitas khusus dan relativitas simultanitas | x.gelombang_em;k.relatif |
+sr.lorentz | Transformasi Lorentz | sr.postulat | sr.postulat
+sr.dilatasi | Dilatasi waktu dan kontraksi panjang | sr.lorentz | sr.lorentz
+sr.kecepatan | Penjumlahan kecepatan relativistik | sr.lorentz | sr.lorentz
+sr.empatvektor | Ruang-waktu Minkowski dan empat-vektor | sr.lorentz;m.matriks |
+sr.momenergi | Momentum dan energi relativistik | sr.empatvektor;p.kekekalan;e.ek | sr.empatvektor;p.kekekalan
+sr.elektro | Elektrodinamika kovarian | sr.empatvektor;x.maxwell |
+
+## MOD | 3 | Fisika modern: awal teori kuantum
+mo.bendahitam | Radiasi benda hitam dan hipotesis Planck | s.mb;x.gelombang_em |
+mo.fotolistrik | Efek fotolistrik | mo.bendahitam |
+mo.compton | Efek Compton | mo.fotolistrik;sr.momenergi | sr.momenergi;mo.fotolistrik
+mo.debroglie | Gelombang materi de Broglie dan dualisme gelombang-partikel | mo.compton;w.superposisi |
+
+## ATM | 3 | Fisika atom
+a.rutherford | Model atom Thomson dan Rutherford | c.sentral;b.coulomb |
+a.bohr | Model atom Bohr | a.rutherford;mo.debroglie;d.dinamika_melingkar | d.dinamika_melingkar;b.coulomb
+a.spektrum | Spektrum atom dan deret garis | a.bohr |
+a.multielektron | Atom multielektron, asas Pauli (kualitatif), tabel periodik | a.spektrum |
+a.xray | Sinar-X dan hukum Moseley | a.multielektron |
+
+## NUC | 3 | Fisika inti
+n.struktur | Struktur inti dan energi ikat | sr.momenergi;a.rutherford |
+n.peluruhan | Peluruhan radioaktif | n.struktur;m.pd1 |
+n.reaksi | Reaksi inti, fisi, dan fusi | n.struktur |
+
+## SSP | 3 | Fisika zat padat (pengantar)
+z.kristal | Struktur kristal dan kisi resiprokal | m.ruangvektor |
+z.pita | Teori pita dan klasifikasi konduktor-semikonduktor (pengantar) | z.kristal;mo.debroglie |
+z.semikonduktor | Semikonduktor dan sambungan p-n | z.pita;b.arus |
+
+## QM | 4 | Mekanika kuantum
+q.dasar | Dari krisis fisika klasik ke postulat mekanika kuantum | mo.debroglie;a.bohr |
+q.psi | Fungsi gelombang dan interpretasi Born | q.dasar;m.probabilitas;m.kompleks |
+q.tdse | Persamaan Schrodinger bergantung waktu | q.psi;w.persamaan;m.pdp |
+q.tise | Persamaan Schrodinger tak bergantung waktu | q.tdse;m.pdp | q.tdse
+q.kotak | Partikel dalam kotak | q.tise |
+q.operator | Operator dan observabel | q.psi;m.ruangvektor;m.eigen |
+q.eigen | Nilai eigen, fungsi eigen, dan pengukuran | q.operator |
+q.hilbert | Ruang Hilbert dan notasi Dirac | q.operator;m.ruangvektor;m.delta |
+q.komutator | Komutator dan prinsip ketidakpastian Heisenberg | q.operator | q.operator
+q.osilator | Osilator harmonik kuantum | q.tise;q.operator;o.shm |
+q.potensial | Potensial step, penghalang, dan efek terobosan | q.tise |
+q.sentral3d | Mekanika kuantum 3D dan momentum sudut orbital | q.tise;q.komutator;m.fungsikhusus;m.koord;c.sentral |
+q.spin | Spin dan momentum sudut intrinsik | q.sentral3d;m.matriks |
+q.hidrogen | Atom hidrogen | q.sentral3d;b.potensial |
+q.partikelidentik | Partikel identik dan asas Pauli | q.spin |
+q.perturbasi | Teori perturbasi tak bergantung waktu | q.hidrogen;q.hilbert |
+q.variasional | Metode variasional | q.perturbasi;m.variasi |
+q.perturbasi_t | Teori perturbasi bergantung waktu dan aturan emas Fermi | q.perturbasi;q.tdse |
+q.hamburan | Teori hamburan | q.perturbasi_t;q.potensial |
+q.pengukuran | Pengukuran, keterbelitan, dan interpretasi | q.hilbert;q.partikelidentik |
+q.relativistik | Persamaan Klein-Gordon dan Dirac (pengantar) | q.spin;sr.momenergi |
+
+## SM2 | 4 | Fisika statistik kuantum
+s2.kuantumstat | Statistik Bose-Einstein dan Fermi-Dirac | s.kanonik;q.partikelidentik |
+
+## ADV_PP | 5 | Fisika partikel dan teori medan kuantum
+pp.model | Model Standar dan partikel fundamental | q.relativistik;sr.momenergi;n.struktur |
+pp.interaksi | Interaksi fundamental dan simetri gauge (dasar) | pp.model;x.potensial |
+pp.akselerator | Akselerator, detektor, dan hamburan partikel | pp.model;q.hamburan |
+qft.kuantisasi | Kuantisasi medan | q.relativistik;h.hamilton_eq;l.eulerlagrange |
+qft.feynman | Diagram Feynman dan QED | qft.kuantisasi;q.perturbasi_t |
+
+## ADV_GR | 5 | Relativitas umum
+gr.ekuivalensi | Prinsip ekuivalensi dan ruang-waktu lengkung | sr.empatvektor;g.newton |
+gr.tensor | Tensor, metrik, dan turunan kovarian | m.tensor;gr.ekuivalensi |
+gr.einstein | Persamaan medan Einstein | gr.tensor |
+gr.schwarzschild | Solusi Schwarzschild dan lubang hitam | gr.einstein | gr.einstein
+gr.gelombang | Gelombang gravitasi | gr.einstein;x.gelombang_em |
+
+## ADV_AST | 5 | Astrofisika dan kosmologi
+ast.bintang | Struktur dan evolusi bintang | n.reaksi;s.mb;mo.bendahitam |
+ast.degenerasi | Bintang kompak: kerdil putih dan bintang neutron | ast.bintang;s2.kuantumstat |
+ast.galaksi | Galaksi dan materi gelap | g.orbit;ast.bintang |
+cos.friedmann | Persamaan Friedmann dan ekspansi alam semesta | gr.einstein;ast.galaksi |
+cos.cmb | Radiasi latar gelombang mikro dan nukleosintesis awal | cos.friedmann;mo.bendahitam;n.reaksi |
+
+## ADV_PLA | 5 | Fisika plasma
+pl.dasar | Parameter dasar plasma | x.maxwell;s.mb |
+pl.mhd | Magnetohidrodinamika | pl.dasar;f.bernoulli |
+
+## ADV_MAT | 5 | Fisika material
+mat.elektron | Sifat elektronik material | z.pita;s2.kuantumstat |
+mat.magnet | Magnetisme material | x.magnetmateri;q.spin |
+
+## ADV_GEO | 5 | Geofisika
+geo.seismik | Gelombang seismik dan struktur bumi | w.persamaan;r.statis |
+geo.gravmag | Metode gravitasi dan magnetik | g.medan;x.magnetostatik |
+geo.listrik | Metode geolistrik (resistivitas) | b.arus;x.statik_lanjut |
+
+## ADV_NUK | 5 | Fisika nuklir lanjut
+nk.reaktor | Fisika reaktor dan transportasi neutron | n.reaksi;n.peluruhan |
+nk.pengion | Interaksi radiasi-materi dan dosimetri | n.peluruhan;mo.compton |
+
+## ADV_CP | 5 | Fisika komputasi
+cp.numerik | Metode numerik: persamaan diferensial biasa dan parsial | m.pd2;m.pdp |
+cp.montecarlo | Simulasi Monte Carlo | m.probabilitas;s.mikro |
+cp.md | Dinamika molekuler | cp.numerik;s.kanonik |
+cp.kuantumkomp | Komputasi kuantum (pengantar) | q.pengukuran;m.matriks |

@@ -1,0 +1,217 @@
+﻿id,level,area_key,judul,kedalaman_graf,jumlah_prasyarat,jumlah_dipakai_oleh,status_konten
+m.satuan,0,MATH0,"Besaran, satuan SI, dan dimensi",0,0,2,rencana
+m.dimensi,0,MATH0,Analisis dimensi dan ketidakpastian pengukuran,1,1,0,rencana
+m.aljabar,0,MATH0,"Aljabar: persamaan, pertidaksamaan, manipulasi simbolik",0,0,4,rencana
+m.trigo,0,MATH0,Trigonometri dan identitas,1,1,5,rencana
+m.fungsi,0,MATH0,"Fungsi, grafik, eksponensial dan logaritma",1,1,3,rencana
+m.vektor,0,MATH0,Vektor: komponen dan penjumlahan,2,1,7,rencana
+m.dot,0,MATH0,Perkalian titik (skalar),3,1,3,rencana
+m.cross,0,MATH0,Perkalian silang (vektor),3,1,3,rencana
+m.koord,0,MATH0,"Sistem koordinat: kartesius, polar, silinder, bola",3,2,4,rencana
+m.limit,0,MATH0,Limit dan kontinuitas,2,1,2,rencana
+m.turunan,0,MATH0,"Turunan: definisi, aturan, aturan rantai",3,1,6,rencana
+m.turunan_apl,0,MATH0,"Aplikasi turunan: laju perubahan, ekstrem, aproksimasi linear",4,1,1,rencana
+m.integral,0,MATH0,"Integral tak tentu dan tentu, teorema fundamental kalkulus",4,1,13,rencana
+m.teknik_int,0,MATH0,Teknik integrasi dan integral numerik,5,1,0,rencana
+m.deret,0,MATH0,Deret dan ekspansi Taylor,4,2,4,rencana
+m.kompleks,0,MATH0,Bilangan kompleks dan rumus Euler,5,2,3,rencana
+m.pd1,0,MATH0,Persamaan diferensial orde-1,5,1,3,rencana
+m.pd2,0,MATH0,Persamaan diferensial orde-2 linear koefisien konstan,6,2,6,rencana
+m.vektorfungsi,0,MATH0,Fungsi vektor dan turunan terhadap parameter,4,2,3,rencana
+m.parsial,0,MATH0,Turunan parsial dan diferensial total,4,2,7,rencana
+m.gradien,0,MATH0,"Gradien, divergensi, dan curl",5,3,2,rencana
+m.integral_multi,0,MATH0,Integral lipat dua dan lipat tiga,5,2,1,rencana
+m.integral_garis,0,MATH0,Integral garis dan integral permukaan,6,2,4,rencana
+m.teorema_vektor,0,MATH0,"Teorema Green, Stokes, dan divergensi (Gauss)",7,2,2,rencana
+m.matriks,0,MATH0,Matriks dan determinan,3,2,6,rencana
+m.eigen,0,MATH0,"Nilai dan vektor eigen, diagonalisasi",4,1,3,rencana
+m.ruangvektor,0,MATH0,"Ruang vektor, basis, dan inner product",4,2,4,rencana
+m.probabilitas,0,MATH0,Probabilitas dan statistika dasar,5,2,4,rencana
+m.fourier,2,MATH2,Deret dan transformasi Fourier,6,3,2,rencana
+m.pdp,2,MATH2,Persamaan diferensial parsial dan separasi variabel,7,3,5,rencana
+m.fungsikhusus,2,MATH2,"Fungsi khusus: Legendre, Bessel, harmonik sferis",8,2,2,rencana
+m.delta,2,MATH2,Fungsi delta Dirac dan distribusi,5,1,1,rencana
+m.variasi,2,MATH2,Kalkulus variasi,7,2,2,rencana
+m.tensor,2,MATH2,Tensor dan geometri diferensial dasar,5,2,1,rencana
+k.posisi,1,KIN,"Posisi, perpindahan, jarak (1D)",2,2,1,rencana
+k.kecepatan,1,KIN,Kecepatan rata-rata dan sesaat,4,2,2,rencana
+k.percepatan,1,KIN,Percepatan,5,1,3,rencana
+k.glbb,1,KIN,Gerak percepatan konstan (GLBB),6,2,2,rencana
+k.jatuhbebas,1,KIN,Jatuh bebas,7,1,1,rencana
+k.vektor2d,1,KIN,"Gerak 2D/3D: vektor posisi, kecepatan, percepatan",6,2,5,rencana
+k.proyektil,1,KIN,Gerak proyektil,7,3,0,rencana
+k.melingkar,1,KIN,Gerak melingkar dan percepatan sentripetal,7,2,3,rencana
+k.relatif,1,KIN,Gerak relatif dan transformasi Galileo,7,1,2,rencana
+d.hukum1,1,DYN,Hukum I Newton: inersia dan kerangka inersial,6,2,3,rencana
+d.hukum2,1,DYN,Hukum II Newton,7,2,13,rencana
+d.hukum3,1,DYN,Hukum III Newton,8,1,2,rencana
+d.gayaberat,1,DYN,Gaya berat dan massa,8,2,0,rencana
+d.normal_tali,1,DYN,Gaya normal dan tegangan tali,9,1,1,rencana
+d.gesekan,1,DYN,Gesekan statis dan kinetik,10,1,0,rencana
+d.hooke,1,DYN,Gaya pegas (hukum Hooke),8,1,1,rencana
+d.dinamika_melingkar,1,DYN,Dinamika gerak melingkar,8,2,1,rencana
+d.hambat,1,DYN,Gaya hambat dan kecepatan terminal,8,2,2,rencana
+e.kerja,1,ENE,Usaha oleh gaya,8,3,4,rencana
+e.ek,1,ENE,Energi kinetik dan teorema usaha-energi,9,1,5,rencana
+e.konservatif,1,ENE,Gaya konservatif dan kebebasan lintasan,9,2,1,rencana
+e.ep,1,ENE,Energi potensial,10,1,5,rencana
+e.kekekalan,1,ENE,Kekekalan energi mekanik,11,2,5,rencana
+e.diagram,1,ENE,Diagram energi potensial dan titik setimbang,11,2,1,rencana
+e.daya,1,ENE,Daya,9,1,0,rencana
+p.momentum,1,MOM,Momentum linear dan impuls,8,1,2,rencana
+p.kekekalan,1,MOM,Kekekalan momentum linear,9,2,3,rencana
+p.pm,1,MOM,Pusat massa,10,2,1,rencana
+p.tumbukan,1,MOM,Tumbukan elastis dan inelastis,12,2,1,rencana
+r.kinematika,1,ROT,Kinematika rotasi,8,1,1,rencana
+r.torsi,1,ROT,Torsi,8,2,3,rencana
+r.inersia,1,ROT,Momen inersia,11,3,2,rencana
+r.dinamika,1,ROT,Dinamika rotasi (torsi dan percepatan sudut),12,2,2,rencana
+r.momsudut,1,ROT,Momentum sudut,9,2,1,rencana
+r.kekekalan,1,ROT,Kekekalan momentum sudut,10,1,2,rencana
+r.energi,1,ROT,Energi kinetik rotasi dan menggelinding,12,2,0,rencana
+r.statis,1,ROT,Kesetimbangan statis dan elastisitas,9,2,1,rencana
+g.newton,1,GRA,Hukum gravitasi Newton,8,2,3,rencana
+g.medan,1,GRA,Medan dan energi potensial gravitasi,11,2,2,rencana
+g.kepler,1,GRA,Hukum Kepler,11,2,2,rencana
+g.orbit,1,GRA,Orbit dan kecepatan lepas,12,2,1,rencana
+f.tekanan,1,FLU,Tekanan dan fluida statis,7,2,4,rencana
+f.archimedes,1,FLU,Hukum Archimedes,8,1,0,rencana
+f.kontinuitas,1,FLU,Persamaan kontinuitas,8,2,2,rencana
+f.bernoulli,1,FLU,Persamaan Bernoulli,10,2,1,rencana
+f.viskositas,1,FLU,Viskositas dan aliran laminar,9,2,0,rencana
+o.shm,1,OSC,Osilasi harmonik sederhana,9,2,6,rencana
+o.energi,1,OSC,Energi pada osilasi harmonik,12,2,0,rencana
+o.pendulum,1,OSC,Pendulum sederhana dan fisis,13,3,1,rencana
+o.teredam,1,OSC,Osilasi teredam,10,2,1,rencana
+o.paksa,1,OSC,Osilasi paksa dan resonansi,11,1,0,rencana
+w.mekanik,1,WAV,Gelombang mekanik dan gelombang berjalan,10,2,3,rencana
+w.persamaan,1,WAV,Persamaan gelombang (tali),11,2,4,rencana
+w.superposisi,1,WAV,Superposisi dan interferensi,11,1,3,rencana
+w.berdiri,1,WAV,Gelombang berdiri dan resonansi,12,1,0,rencana
+w.bunyi,1,WAV,Gelombang bunyi dan efek Doppler,12,2,0,rencana
+t.suhu,1,THM,"Suhu, kalor, dan kesetimbangan termal",12,1,2,rencana
+t.gasideal,1,THM,Gas ideal dan persamaan keadaan,13,2,2,rencana
+t.kinetik,1,THM,Teori kinetik gas,14,3,1,rencana
+t.hukum1,1,THM,Hukum I Termodinamika,13,2,1,rencana
+t.proses,1,THM,Proses termodinamika dan kapasitas kalor,14,3,1,rencana
+t.hukum2,1,THM,Hukum II Termodinamika dan entropi (makroskopik),15,1,3,rencana
+t.carnot,1,THM,Siklus Carnot dan efisiensi mesin kalor,16,1,0,rencana
+b.coulomb,1,EMB,Muatan dan hukum Coulomb,8,2,2,rencana
+b.medanlistrik,1,EMB,Medan listrik,9,2,2,rencana
+b.gauss,1,EMB,Hukum Gauss,10,2,2,rencana
+b.potensial,1,EMB,Potensial dan energi potensial listrik,11,2,4,rencana
+b.kapasitor,1,EMB,Kapasitor dan dielektrik (dasar),12,1,0,rencana
+b.arus,1,EMB,"Arus, resistansi, dan hukum Ohm",12,1,4,rencana
+b.rangkaian,1,EMB,Rangkaian DC dan hukum Kirchhoff,13,2,0,rencana
+b.medanmagnet,1,EMB,Medan magnet dan gaya Lorentz,13,2,1,rencana
+b.biotsavart,1,EMB,Hukum Biot-Savart dan hukum Ampere,14,2,2,rencana
+b.faraday,1,EMB,Induksi Faraday dan hukum Lenz,15,1,2,rencana
+b.induktansi,1,EMB,"Induktansi, rangkaian RL/LC/AC",16,2,0,rencana
+op.geometri,1,OPT,"Optik geometri: pemantulan, pembiasan, lensa",11,2,1,rencana
+op.cahaya,1,OPT,Interferensi dan difraksi cahaya (dasar),12,2,1,rencana
+c.sentral,2,CM,Gaya sentral dan masalah dua benda,12,4,3,rencana
+c.orbit,2,CM,Potensial efektif dan orbit Kepler,13,1,0,rencana
+c.noninersial,2,CM,Kerangka non-inersial: gaya Coriolis dan sentrifugal,8,3,0,rencana
+c.osilterkopel,2,CM,Osilasi terkopel dan mode normal,10,2,0,rencana
+c.bendategar3d,2,CM,Benda tegar 3D dan tensor inersia,13,3,0,rencana
+c.nonlinier,2,CM,Dinamika nonlinier dan kekacauan (pengantar),14,2,0,rencana
+l.koordumum,2,LAG,Koordinat umum dan kendala,8,2,1,rencana
+l.aksi,2,LAG,Prinsip aksi stasioner (Hamilton),11,3,1,rencana
+l.eulerlagrange,2,LAG,Persamaan Euler-Lagrange,12,2,3,rencana
+l.simetri,2,LAG,Simetri dan teorema Noether,13,1,1,rencana
+h.hamiltonian,2,HAM,Transformasi Legendre dan Hamiltonian,13,2,1,rencana
+h.hamilton_eq,2,HAM,Persamaan Hamilton dan ruang fase,14,1,2,rencana
+h.poisson,2,HAM,Kurung Poisson dan transformasi kanonik,15,2,0,rencana
+x.statik_lanjut,2,EM2,"Persamaan Poisson-Laplace, metode gambar, separasi variabel",12,4,3,rencana
+x.multipol,2,EM2,Ekspansi multipol,13,3,1,rencana
+x.dielektrik,2,EM2,Medan listrik dalam materi,13,1,2,rencana
+x.magnetostatik,2,EM2,Magnetostatik dan potensial vektor,15,3,3,rencana
+x.magnetmateri,2,EM2,Medan magnet dalam materi,16,1,1,rencana
+x.induksi,2,EM2,Elektrodinamika: hukum Faraday umum,16,2,1,rencana
+x.maxwell,2,EM2,Persamaan Maxwell dan arus pergeseran,17,3,5,rencana
+x.energi,2,EM2,"Energi dan momentum EM, vektor Poynting",18,1,0,rencana
+x.gelombang_em,2,EM2,Gelombang elektromagnetik di ruang hampa,18,2,5,rencana
+x.media,2,EM2,"Gelombang EM dalam materi: pantulan, pembiasan",19,2,1,rencana
+x.potensial,2,EM2,Potensial skalar-vektor dan kebebasan gauge,18,1,2,rencana
+x.radiasi,2,EM2,Radiasi dipol dan muatan bergerak,19,2,0,rencana
+s.potensial,2,TH2,"Potensial termodinamika (U, H, F, G)",16,2,2,rencana
+s.maxwellrel,2,TH2,Relasi Maxwell,17,1,0,rencana
+s.transisifase,2,TH2,Transisi fase dan persamaan Clausius-Clapeyron,17,1,0,rencana
+s.mikro,2,TH2,Ensembel mikrokanonik dan entropi Boltzmann,16,2,2,rencana
+s.kanonik,2,TH2,Ensembel kanonik dan fungsi partisi,17,1,3,rencana
+s.mb,2,TH2,Distribusi Maxwell-Boltzmann dan ekipartisi,18,2,3,rencana
+o2.interferensi,2,OPT2,Interferensi dan koherensi,19,2,1,rencana
+o2.difraksi,2,OPT2,Difraksi Fraunhofer dan Fresnel,20,2,0,rencana
+o2.polarisasi,2,OPT2,Polarisasi,20,1,0,rencana
+sr.postulat,3,SR,Postulat relativitas khusus dan relativitas simultanitas,19,2,1,rencana
+sr.lorentz,3,SR,Transformasi Lorentz,20,1,3,rencana
+sr.dilatasi,3,SR,Dilatasi waktu dan kontraksi panjang,21,1,0,rencana
+sr.kecepatan,3,SR,Penjumlahan kecepatan relativistik,21,1,0,rencana
+sr.empatvektor,3,SR,Ruang-waktu Minkowski dan empat-vektor,21,2,3,rencana
+sr.momenergi,3,SR,Momentum dan energi relativistik,22,3,4,rencana
+sr.elektro,3,SR,Elektrodinamika kovarian,22,2,0,rencana
+mo.bendahitam,3,MOD,Radiasi benda hitam dan hipotesis Planck,19,2,3,rencana
+mo.fotolistrik,3,MOD,Efek fotolistrik,20,1,1,rencana
+mo.compton,3,MOD,Efek Compton,23,2,2,rencana
+mo.debroglie,3,MOD,Gelombang materi de Broglie dan dualisme gelombang-partikel,24,2,3,rencana
+a.rutherford,3,ATM,Model atom Thomson dan Rutherford,13,2,2,rencana
+a.bohr,3,ATM,Model atom Bohr,25,3,2,rencana
+a.spektrum,3,ATM,Spektrum atom dan deret garis,26,1,1,rencana
+a.multielektron,3,ATM,"Atom multielektron, asas Pauli (kualitatif), tabel periodik",27,1,1,rencana
+a.xray,3,ATM,Sinar-X dan hukum Moseley,28,1,0,rencana
+n.struktur,3,NUC,Struktur inti dan energi ikat,23,2,3,rencana
+n.peluruhan,3,NUC,Peluruhan radioaktif,24,2,2,rencana
+n.reaksi,3,NUC,"Reaksi inti, fisi, dan fusi",24,1,3,rencana
+z.kristal,3,SSP,Struktur kristal dan kisi resiprokal,5,1,1,rencana
+z.pita,3,SSP,Teori pita dan klasifikasi konduktor-semikonduktor (pengantar),25,2,2,rencana
+z.semikonduktor,3,SSP,Semikonduktor dan sambungan p-n,26,2,0,rencana
+q.dasar,4,QM,Dari krisis fisika klasik ke postulat mekanika kuantum,26,2,1,rencana
+q.psi,4,QM,Fungsi gelombang dan interpretasi Born,27,3,2,rencana
+q.tdse,4,QM,Persamaan Schrodinger bergantung waktu,28,3,2,rencana
+q.tise,4,QM,Persamaan Schrodinger tak bergantung waktu,29,2,4,rencana
+q.kotak,4,QM,Partikel dalam kotak,30,1,0,rencana
+q.operator,4,QM,Operator dan observabel,28,3,4,rencana
+q.eigen,4,QM,"Nilai eigen, fungsi eigen, dan pengukuran",29,1,0,rencana
+q.hilbert,4,QM,Ruang Hilbert dan notasi Dirac,29,3,2,rencana
+q.komutator,4,QM,Komutator dan prinsip ketidakpastian Heisenberg,29,1,1,rencana
+q.osilator,4,QM,Osilator harmonik kuantum,30,3,0,rencana
+q.potensial,4,QM,"Potensial step, penghalang, dan efek terobosan",30,1,1,rencana
+q.sentral3d,4,QM,Mekanika kuantum 3D dan momentum sudut orbital,30,5,2,rencana
+q.spin,4,QM,Spin dan momentum sudut intrinsik,31,2,3,rencana
+q.hidrogen,4,QM,Atom hidrogen,31,2,1,rencana
+q.partikelidentik,4,QM,Partikel identik dan asas Pauli,32,1,2,rencana
+q.perturbasi,4,QM,Teori perturbasi tak bergantung waktu,32,2,2,rencana
+q.variasional,4,QM,Metode variasional,33,2,0,rencana
+q.perturbasi_t,4,QM,Teori perturbasi bergantung waktu dan aturan emas Fermi,33,2,2,rencana
+q.hamburan,4,QM,Teori hamburan,34,2,1,rencana
+q.pengukuran,4,QM,"Pengukuran, keterbelitan, dan interpretasi",33,2,1,rencana
+q.relativistik,4,QM,Persamaan Klein-Gordon dan Dirac (pengantar),32,2,2,rencana
+s2.kuantumstat,4,SM2,Statistik Bose-Einstein dan Fermi-Dirac,33,2,2,rencana
+pp.model,5,ADV_PP,Model Standar dan partikel fundamental,33,3,2,rencana
+pp.interaksi,5,ADV_PP,Interaksi fundamental dan simetri gauge (dasar),34,2,0,rencana
+pp.akselerator,5,ADV_PP,"Akselerator, detektor, dan hamburan partikel",35,2,0,rencana
+qft.kuantisasi,5,ADV_PP,Kuantisasi medan,33,3,1,rencana
+qft.feynman,5,ADV_PP,Diagram Feynman dan QED,34,2,0,rencana
+gr.ekuivalensi,5,ADV_GR,Prinsip ekuivalensi dan ruang-waktu lengkung,22,2,1,rencana
+gr.tensor,5,ADV_GR,"Tensor, metrik, dan turunan kovarian",23,2,1,rencana
+gr.einstein,5,ADV_GR,Persamaan medan Einstein,24,1,3,rencana
+gr.schwarzschild,5,ADV_GR,Solusi Schwarzschild dan lubang hitam,25,1,0,rencana
+gr.gelombang,5,ADV_GR,Gelombang gravitasi,25,2,0,rencana
+ast.bintang,5,ADV_AST,Struktur dan evolusi bintang,25,3,2,rencana
+ast.degenerasi,5,ADV_AST,Bintang kompak: kerdil putih dan bintang neutron,34,2,0,rencana
+ast.galaksi,5,ADV_AST,Galaksi dan materi gelap,26,2,1,rencana
+cos.friedmann,5,ADV_AST,Persamaan Friedmann dan ekspansi alam semesta,27,2,1,rencana
+cos.cmb,5,ADV_AST,Radiasi latar gelombang mikro dan nukleosintesis awal,28,3,0,rencana
+pl.dasar,5,ADV_PLA,Parameter dasar plasma,19,2,1,rencana
+pl.mhd,5,ADV_PLA,Magnetohidrodinamika,20,2,0,rencana
+mat.elektron,5,ADV_MAT,Sifat elektronik material,34,2,0,rencana
+mat.magnet,5,ADV_MAT,Magnetisme material,32,2,0,rencana
+geo.seismik,5,ADV_GEO,Gelombang seismik dan struktur bumi,12,2,0,rencana
+geo.gravmag,5,ADV_GEO,Metode gravitasi dan magnetik,16,2,0,rencana
+geo.listrik,5,ADV_GEO,Metode geolistrik (resistivitas),13,2,0,rencana
+nk.reaktor,5,ADV_NUK,Fisika reaktor dan transportasi neutron,25,2,0,rencana
+nk.pengion,5,ADV_NUK,Interaksi radiasi-materi dan dosimetri,25,2,0,rencana
+cp.numerik,5,ADV_CP,Metode numerik: persamaan diferensial biasa dan parsial,8,2,1,rencana
+cp.montecarlo,5,ADV_CP,Simulasi Monte Carlo,17,2,0,rencana
+cp.md,5,ADV_CP,Dinamika molekuler,18,2,0,rencana
+cp.kuantumkomp,5,ADV_CP,Komputasi kuantum (pengantar),34,2,0,rencana

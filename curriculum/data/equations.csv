@@ -1,0 +1,31 @@
+﻿id,konsep,judul,latex,jenis,bergantung_pada,jumlah_langkah
+eq.vel,k.kecepatan,Kecepatan sesaat,v = \frac{dx}{dt},definisi,,3
+eq.acc,k.percepatan,Percepatan sesaat,a = \frac{dv}{dt} = \frac{d^2x}{dt^2},definisi,eq.vel,3
+eq.vt,k.glbb,Kecepatan pada percepatan konstan,v = v_0 + at,turunan,eq.acc,4
+eq.xt,k.glbb,Posisi pada percepatan konstan,x = x_0 + v_0 t + \tfrac12 a t^2,turunan,eq.vel;eq.vt,3
+eq.v2,k.glbb,Hubungan kecepatan-posisi (tanpa waktu),v^2 = v_0^2 + 2a(x-x_0),turunan,eq.acc,4
+eq.range,k.proyektil,Jangkauan proyektil,R = \frac{v_0^2 \sin 2\theta}{g},turunan,eq.xt;eq.vt,4
+eq.ac,k.melingkar,Percepatan sentripetal,a_c = \frac{v^2}{r},turunan,eq.vel;eq.acc,4
+eq.newton2,d.hukum2,Hukum II Newton,\sum \vec F = \frac{d\vec p}{dt} = m\vec a,hukum,eq.acc,3
+eq.work,e.kerja,Usaha oleh gaya,W = \int_{\vec r_1}^{\vec r_2} \vec F \cdot d\vec r,definisi,,3
+eq.wke,e.ek,Teorema usaha-energi kinetik,"W_{net} = \Delta K, \quad K=\tfrac12 mv^2",turunan,eq.newton2;eq.work,4
+eq.pe,e.ep,Energi potensial dari gaya konservatif,"\Delta U = -W_c, \quad F=-\frac{dU}{dx}",definisi,eq.work,3
+eq.mechE,e.kekekalan,Kekekalan energi mekanik,K + U = \text{konstan},turunan,eq.wke;eq.pe,3
+eq.impulse,p.momentum,Teorema impuls-momentum,"\vec J = \int \vec F\,dt = \Delta\vec p",turunan,eq.newton2,3
+eq.pcons,p.kekekalan,Kekekalan momentum linear,\sum\vec p = \text{konstan}\ (\vec F_{ext}=0),turunan,eq.newton2,3
+eq.shm,o.shm,Solusi osilasi harmonik sederhana,"x(t)=A\cos(\omega t+\varphi),\ \omega=\sqrt{k/m}",turunan,eq.newton2;eq.pe,5
+eq.pend,o.pendulum,Periode pendulum sederhana (sudut kecil),T \approx 2\pi\sqrt{L/g},aproksimasi,eq.shm;eq.torque_L,5
+eq.torque_L,r.momsudut,Torsi dan laju perubahan momentum sudut,\vec\tau = \frac{d\vec L}{dt},turunan,eq.newton2,4
+eq.kepler2,g.kepler,Hukum Kepler II (luas sapuan),\frac{dA}{dt}=\frac{L}{2m}=\text{konstan},turunan,eq.torque_L,3
+eq.bernoulli,f.bernoulli,Persamaan Bernoulli,p + \tfrac12\rho v^2 + \rho g y = \text{konstan},turunan,eq.wke;eq.pe,5
+eq.el,l.eulerlagrange,Persamaan Euler-Lagrange,\frac{d}{dt}\frac{\partial L}{\partial\dot q}-\frac{\partial L}{\partial q}=0,turunan,,6
+eq.el_newton,l.eulerlagrange,Euler-Lagrange menghasilkan Hukum II Newton,m\ddot x=-\frac{dU}{dx},turunan,eq.el;eq.pe,4
+eq.maxwell_wave,x.gelombang_em,Persamaan gelombang EM di ruang hampa,"\nabla^2\vec E=\mu_0\varepsilon_0\frac{\partial^2\vec E}{\partial t^2},\quad c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}",turunan,,5
+eq.timedil,sr.dilatasi,Dilatasi waktu,"\Delta t=\gamma\,\Delta\tau,\quad \gamma=\frac{1}{\sqrt{1-v^2/c^2}}",turunan,,4
+eq.E2,sr.momenergi,Hubungan energi-momentum relativistik,E^2=(pc)^2+(mc^2)^2,turunan,eq.timedil,4
+eq.bohr,a.bohr,"Tingkat energi atom Bohr (hidrogen, Z = 1)","E_n=-\frac{13{,}6\ \text{eV}}{n^2}",model,eq.newton2;eq.ac,5
+eq.tdse,q.tdse,Persamaan Schrodinger bergantung waktu,i\hbar\frac{\partial\psi}{\partial t}=-\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2}+V\psi,postulat,,4
+eq.tise,q.tise,Persamaan Schrodinger tak bergantung waktu,-\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2}+V\varphi=E\varphi,turunan,eq.tdse,5
+eq.uncertainty,q.komutator,Prinsip ketidakpastian umum,"\sigma_A\sigma_B\ge\tfrac12\left|\langle[\hat A,\hat B]\rangle\right|",turunan,,4
+eq.kinetic_p,t.kinetik,Tekanan dari teori kinetik,pV=\tfrac13Nm\langle v^2\rangle\ \Rightarrow\ \langle K\rangle=\tfrac32kT,turunan,eq.impulse;eq.pcons,5
+eq.carnot,t.carnot,Efisiensi Carnot,\eta=1-\frac{T_c}{T_h},turunan,,4

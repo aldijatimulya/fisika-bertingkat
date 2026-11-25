@@ -1,0 +1,4600 @@
+{
+ "levels": {
+  "0": "Mathematical & Scientific Foundation",
+  "1": "Fundamental Physics",
+  "2": "Classical Physics",
+  "3": "Modern Physics",
+  "4": "Quantum Physics",
+  "5": "Advanced & Applied Physics"
+ },
+ "areas": [
+  {
+   "key": "MATH0",
+   "level": 0,
+   "name": "Matematika dasar untuk fisika",
+   "proposed": false
+  },
+  {
+   "key": "MATH2",
+   "level": 2,
+   "name": "Metode matematika fisika",
+   "proposed": false
+  },
+  {
+   "key": "KIN",
+   "level": 1,
+   "name": "Kinematika",
+   "proposed": false
+  },
+  {
+   "key": "DYN",
+   "level": 1,
+   "name": "Dinamika dan Hukum Newton",
+   "proposed": false
+  },
+  {
+   "key": "ENE",
+   "level": 1,
+   "name": "Usaha dan energi",
+   "proposed": false
+  },
+  {
+   "key": "MOM",
+   "level": 1,
+   "name": "Momentum dan impuls",
+   "proposed": false
+  },
+  {
+   "key": "ROT",
+   "level": 1,
+   "name": "Gerak rotasi",
+   "proposed": false
+  },
+  {
+   "key": "GRA",
+   "level": 1,
+   "name": "Gravitasi",
+   "proposed": false
+  },
+  {
+   "key": "FLU",
+   "level": 1,
+   "name": "Fluida",
+   "proposed": false
+  },
+  {
+   "key": "OSC",
+   "level": 1,
+   "name": "Osilasi",
+   "proposed": false
+  },
+  {
+   "key": "WAV",
+   "level": 1,
+   "name": "Gelombang",
+   "proposed": false
+  },
+  {
+   "key": "THM",
+   "level": 1,
+   "name": "Termodinamika dasar",
+   "proposed": false
+  },
+  {
+   "key": "EMB",
+   "level": 1,
+   "name": "Listrik-magnet dasar",
+   "proposed": true
+  },
+  {
+   "key": "OPT",
+   "level": 1,
+   "name": "Optik dasar",
+   "proposed": true
+  },
+  {
+   "key": "CM",
+   "level": 2,
+   "name": "Mekanika klasik lanjut",
+   "proposed": false
+  },
+  {
+   "key": "LAG",
+   "level": 2,
+   "name": "Mekanika Lagrangian",
+   "proposed": false
+  },
+  {
+   "key": "HAM",
+   "level": 2,
+   "name": "Mekanika Hamiltonian",
+   "proposed": false
+  },
+  {
+   "key": "EM2",
+   "level": 2,
+   "name": "Elektromagnetisme dan persamaan Maxwell",
+   "proposed": false
+  },
+  {
+   "key": "TH2",
+   "level": 2,
+   "name": "Termodinamika lanjut dan fisika statistik",
+   "proposed": false
+  },
+  {
+   "key": "OPT2",
+   "level": 2,
+   "name": "Optik fisis",
+   "proposed": false
+  },
+  {
+   "key": "SR",
+   "level": 3,
+   "name": "Relativitas khusus",
+   "proposed": false
+  },
+  {
+   "key": "MOD",
+   "level": 3,
+   "name": "Fisika modern: awal teori kuantum",
+   "proposed": false
+  },
+  {
+   "key": "ATM",
+   "level": 3,
+   "name": "Fisika atom",
+   "proposed": false
+  },
+  {
+   "key": "NUC",
+   "level": 3,
+   "name": "Fisika inti",
+   "proposed": false
+  },
+  {
+   "key": "SSP",
+   "level": 3,
+   "name": "Fisika zat padat (pengantar)",
+   "proposed": false
+  },
+  {
+   "key": "QM",
+   "level": 4,
+   "name": "Mekanika kuantum",
+   "proposed": false
+  },
+  {
+   "key": "SM2",
+   "level": 4,
+   "name": "Fisika statistik kuantum",
+   "proposed": false
+  },
+  {
+   "key": "ADV_PP",
+   "level": 5,
+   "name": "Fisika partikel dan teori medan kuantum",
+   "proposed": false
+  },
+  {
+   "key": "ADV_GR",
+   "level": 5,
+   "name": "Relativitas umum",
+   "proposed": false
+  },
+  {
+   "key": "ADV_AST",
+   "level": 5,
+   "name": "Astrofisika dan kosmologi",
+   "proposed": false
+  },
+  {
+   "key": "ADV_PLA",
+   "level": 5,
+   "name": "Fisika plasma",
+   "proposed": false
+  },
+  {
+   "key": "ADV_MAT",
+   "level": 5,
+   "name": "Fisika material",
+   "proposed": false
+  },
+  {
+   "key": "ADV_GEO",
+   "level": 5,
+   "name": "Geofisika",
+   "proposed": false
+  },
+  {
+   "key": "ADV_NUK",
+   "level": 5,
+   "name": "Fisika nuklir lanjut",
+   "proposed": false
+  },
+  {
+   "key": "ADV_CP",
+   "level": 5,
+   "name": "Fisika komputasi",
+   "proposed": false
+  }
+ ],
+ "nodes": [
+  {
+   "id": "m.satuan",
+   "title": "Besaran, satuan SI, dan dimensi",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 0
+  },
+  {
+   "id": "m.dimensi",
+   "title": "Analisis dimensi dan ketidakpastian pengukuran",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 1
+  },
+  {
+   "id": "m.aljabar",
+   "title": "Aljabar: persamaan, pertidaksamaan, manipulasi simbolik",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 0
+  },
+  {
+   "id": "m.trigo",
+   "title": "Trigonometri dan identitas",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 1
+  },
+  {
+   "id": "m.fungsi",
+   "title": "Fungsi, grafik, eksponensial dan logaritma",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 1
+  },
+  {
+   "id": "m.vektor",
+   "title": "Vektor: komponen dan penjumlahan",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 2
+  },
+  {
+   "id": "m.dot",
+   "title": "Perkalian titik (skalar)",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 3
+  },
+  {
+   "id": "m.cross",
+   "title": "Perkalian silang (vektor)",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 3
+  },
+  {
+   "id": "m.koord",
+   "title": "Sistem koordinat: kartesius, polar, silinder, bola",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 3
+  },
+  {
+   "id": "m.limit",
+   "title": "Limit dan kontinuitas",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 2
+  },
+  {
+   "id": "m.turunan",
+   "title": "Turunan: definisi, aturan, aturan rantai",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 3
+  },
+  {
+   "id": "m.turunan_apl",
+   "title": "Aplikasi turunan: laju perubahan, ekstrem, aproksimasi linear",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.integral",
+   "title": "Integral tak tentu dan tentu, teorema fundamental kalkulus",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.teknik_int",
+   "title": "Teknik integrasi dan integral numerik",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.deret",
+   "title": "Deret dan ekspansi Taylor",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.kompleks",
+   "title": "Bilangan kompleks dan rumus Euler",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.pd1",
+   "title": "Persamaan diferensial orde-1",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.pd2",
+   "title": "Persamaan diferensial orde-2 linear koefisien konstan",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 6
+  },
+  {
+   "id": "m.vektorfungsi",
+   "title": "Fungsi vektor dan turunan terhadap parameter",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.parsial",
+   "title": "Turunan parsial dan diferensial total",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.gradien",
+   "title": "Gradien, divergensi, dan curl",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.integral_multi",
+   "title": "Integral lipat dua dan lipat tiga",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.integral_garis",
+   "title": "Integral garis dan integral permukaan",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 6
+  },
+  {
+   "id": "m.teorema_vektor",
+   "title": "Teorema Green, Stokes, dan divergensi (Gauss)",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 7
+  },
+  {
+   "id": "m.matriks",
+   "title": "Matriks dan determinan",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 3
+  },
+  {
+   "id": "m.eigen",
+   "title": "Nilai dan vektor eigen, diagonalisasi",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.ruangvektor",
+   "title": "Ruang vektor, basis, dan inner product",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 4
+  },
+  {
+   "id": "m.probabilitas",
+   "title": "Probabilitas dan statistika dasar",
+   "level": 0,
+   "area": "MATH0",
+   "depth": 5
+  },
+  {
+   "id": "m.fourier",
+   "title": "Deret dan transformasi Fourier",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 6
+  },
+  {
+   "id": "m.pdp",
+   "title": "Persamaan diferensial parsial dan separasi variabel",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 7
+  },
+  {
+   "id": "m.fungsikhusus",
+   "title": "Fungsi khusus: Legendre, Bessel, harmonik sferis",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 8
+  },
+  {
+   "id": "m.delta",
+   "title": "Fungsi delta Dirac dan distribusi",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 5
+  },
+  {
+   "id": "m.variasi",
+   "title": "Kalkulus variasi",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 7
+  },
+  {
+   "id": "m.tensor",
+   "title": "Tensor dan geometri diferensial dasar",
+   "level": 2,
+   "area": "MATH2",
+   "depth": 5
+  },
+  {
+   "id": "k.posisi",
+   "title": "Posisi, perpindahan, jarak (1D)",
+   "level": 1,
+   "area": "KIN",
+   "depth": 2
+  },
+  {
+   "id": "k.kecepatan",
+   "title": "Kecepatan rata-rata dan sesaat",
+   "level": 1,
+   "area": "KIN",
+   "depth": 4
+  },
+  {
+   "id": "k.percepatan",
+   "title": "Percepatan",
+   "level": 1,
+   "area": "KIN",
+   "depth": 5
+  },
+  {
+   "id": "k.glbb",
+   "title": "Gerak percepatan konstan (GLBB)",
+   "level": 1,
+   "area": "KIN",
+   "depth": 6
+  },
+  {
+   "id": "k.jatuhbebas",
+   "title": "Jatuh bebas",
+   "level": 1,
+   "area": "KIN",
+   "depth": 7
+  },
+  {
+   "id": "k.vektor2d",
+   "title": "Gerak 2D/3D: vektor posisi, kecepatan, percepatan",
+   "level": 1,
+   "area": "KIN",
+   "depth": 6
+  },
+  {
+   "id": "k.proyektil",
+   "title": "Gerak proyektil",
+   "level": 1,
+   "area": "KIN",
+   "depth": 7
+  },
+  {
+   "id": "k.melingkar",
+   "title": "Gerak melingkar dan percepatan sentripetal",
+   "level": 1,
+   "area": "KIN",
+   "depth": 7
+  },
+  {
+   "id": "k.relatif",
+   "title": "Gerak relatif dan transformasi Galileo",
+   "level": 1,
+   "area": "KIN",
+   "depth": 7
+  },
+  {
+   "id": "d.hukum1",
+   "title": "Hukum I Newton: inersia dan kerangka inersial",
+   "level": 1,
+   "area": "DYN",
+   "depth": 6
+  },
+  {
+   "id": "d.hukum2",
+   "title": "Hukum II Newton",
+   "level": 1,
+   "area": "DYN",
+   "depth": 7
+  },
+  {
+   "id": "d.hukum3",
+   "title": "Hukum III Newton",
+   "level": 1,
+   "area": "DYN",
+   "depth": 8
+  },
+  {
+   "id": "d.gayaberat",
+   "title": "Gaya berat dan massa",
+   "level": 1,
+   "area": "DYN",
+   "depth": 8
+  },
+  {
+   "id": "d.normal_tali",
+   "title": "Gaya normal dan tegangan tali",
+   "level": 1,
+   "area": "DYN",
+   "depth": 9
+  },
+  {
+   "id": "d.gesekan",
+   "title": "Gesekan statis dan kinetik",
+   "level": 1,
+   "area": "DYN",
+   "depth": 10
+  },
+  {
+   "id": "d.hooke",
+   "title": "Gaya pegas (hukum Hooke)",
+   "level": 1,
+   "area": "DYN",
+   "depth": 8
+  },
+  {
+   "id": "d.dinamika_melingkar",
+   "title": "Dinamika gerak melingkar",
+   "level": 1,
+   "area": "DYN",
+   "depth": 8
+  },
+  {
+   "id": "d.hambat",
+   "title": "Gaya hambat dan kecepatan terminal",
+   "level": 1,
+   "area": "DYN",
+   "depth": 8
+  },
+  {
+   "id": "e.kerja",
+   "title": "Usaha oleh gaya",
+   "level": 1,
+   "area": "ENE",
+   "depth": 8
+  },
+  {
+   "id": "e.ek",
+   "title": "Energi kinetik dan teorema usaha-energi",
+   "level": 1,
+   "area": "ENE",
+   "depth": 9
+  },
+  {
+   "id": "e.konservatif",
+   "title": "Gaya konservatif dan kebebasan lintasan",
+   "level": 1,
+   "area": "ENE",
+   "depth": 9
+  },
+  {
+   "id": "e.ep",
+   "title": "Energi potensial",
+   "level": 1,
+   "area": "ENE",
+   "depth": 10
+  },
+  {
+   "id": "e.kekekalan",
+   "title": "Kekekalan energi mekanik",
+   "level": 1,
+   "area": "ENE",
+   "depth": 11
+  },
+  {
+   "id": "e.diagram",
+   "title": "Diagram energi potensial dan titik setimbang",
+   "level": 1,
+   "area": "ENE",
+   "depth": 11
+  },
+  {
+   "id": "e.daya",
+   "title": "Daya",
+   "level": 1,
+   "area": "ENE",
+   "depth": 9
+  },
+  {
+   "id": "p.momentum",
+   "title": "Momentum linear dan impuls",
+   "level": 1,
+   "area": "MOM",
+   "depth": 8
+  },
+  {
+   "id": "p.kekekalan",
+   "title": "Kekekalan momentum linear",
+   "level": 1,
+   "area": "MOM",
+   "depth": 9
+  },
+  {
+   "id": "p.pm",
+   "title": "Pusat massa",
+   "level": 1,
+   "area": "MOM",
+   "depth": 10
+  },
+  {
+   "id": "p.tumbukan",
+   "title": "Tumbukan elastis dan inelastis",
+   "level": 1,
+   "area": "MOM",
+   "depth": 12
+  },
+  {
+   "id": "r.kinematika",
+   "title": "Kinematika rotasi",
+   "level": 1,
+   "area": "ROT",
+   "depth": 8
+  },
+  {
+   "id": "r.torsi",
+   "title": "Torsi",
+   "level": 1,
+   "area": "ROT",
+   "depth": 8
+  },
+  {
+   "id": "r.inersia",
+   "title": "Momen inersia",
+   "level": 1,
+   "area": "ROT",
+   "depth": 11
+  },
+  {
+   "id": "r.dinamika",
+   "title": "Dinamika rotasi (torsi dan percepatan sudut)",
+   "level": 1,
+   "area": "ROT",
+   "depth": 12
+  },
+  {
+   "id": "r.momsudut",
+   "title": "Momentum sudut",
+   "level": 1,
+   "area": "ROT",
+   "depth": 9
+  },
+  {
+   "id": "r.kekekalan",
+   "title": "Kekekalan momentum sudut",
+   "level": 1,
+   "area": "ROT",
+   "depth": 10
+  },
+  {
+   "id": "r.energi",
+   "title": "Energi kinetik rotasi dan menggelinding",
+   "level": 1,
+   "area": "ROT",
+   "depth": 12
+  },
+  {
+   "id": "r.statis",
+   "title": "Kesetimbangan statis dan elastisitas",
+   "level": 1,
+   "area": "ROT",
+   "depth": 9
+  },
+  {
+   "id": "g.newton",
+   "title": "Hukum gravitasi Newton",
+   "level": 1,
+   "area": "GRA",
+   "depth": 8
+  },
+  {
+   "id": "g.medan",
+   "title": "Medan dan energi potensial gravitasi",
+   "level": 1,
+   "area": "GRA",
+   "depth": 11
+  },
+  {
+   "id": "g.kepler",
+   "title": "Hukum Kepler",
+   "level": 1,
+   "area": "GRA",
+   "depth": 11
+  },
+  {
+   "id": "g.orbit",
+   "title": "Orbit dan kecepatan lepas",
+   "level": 1,
+   "area": "GRA",
+   "depth": 12
+  },
+  {
+   "id": "f.tekanan",
+   "title": "Tekanan dan fluida statis",
+   "level": 1,
+   "area": "FLU",
+   "depth": 7
+  },
+  {
+   "id": "f.archimedes",
+   "title": "Hukum Archimedes",
+   "level": 1,
+   "area": "FLU",
+   "depth": 8
+  },
+  {
+   "id": "f.kontinuitas",
+   "title": "Persamaan kontinuitas",
+   "level": 1,
+   "area": "FLU",
+   "depth": 8
+  },
+  {
+   "id": "f.bernoulli",
+   "title": "Persamaan Bernoulli",
+   "level": 1,
+   "area": "FLU",
+   "depth": 10
+  },
+  {
+   "id": "f.viskositas",
+   "title": "Viskositas dan aliran laminar",
+   "level": 1,
+   "area": "FLU",
+   "depth": 9
+  },
+  {
+   "id": "o.shm",
+   "title": "Osilasi harmonik sederhana",
+   "level": 1,
+   "area": "OSC",
+   "depth": 9
+  },
+  {
+   "id": "o.energi",
+   "title": "Energi pada osilasi harmonik",
+   "level": 1,
+   "area": "OSC",
+   "depth": 12
+  },
+  {
+   "id": "o.pendulum",
+   "title": "Pendulum sederhana dan fisis",
+   "level": 1,
+   "area": "OSC",
+   "depth": 13
+  },
+  {
+   "id": "o.teredam",
+   "title": "Osilasi teredam",
+   "level": 1,
+   "area": "OSC",
+   "depth": 10
+  },
+  {
+   "id": "o.paksa",
+   "title": "Osilasi paksa dan resonansi",
+   "level": 1,
+   "area": "OSC",
+   "depth": 11
+  },
+  {
+   "id": "w.mekanik",
+   "title": "Gelombang mekanik dan gelombang berjalan",
+   "level": 1,
+   "area": "WAV",
+   "depth": 10
+  },
+  {
+   "id": "w.persamaan",
+   "title": "Persamaan gelombang (tali)",
+   "level": 1,
+   "area": "WAV",
+   "depth": 11
+  },
+  {
+   "id": "w.superposisi",
+   "title": "Superposisi dan interferensi",
+   "level": 1,
+   "area": "WAV",
+   "depth": 11
+  },
+  {
+   "id": "w.berdiri",
+   "title": "Gelombang berdiri dan resonansi",
+   "level": 1,
+   "area": "WAV",
+   "depth": 12
+  },
+  {
+   "id": "w.bunyi",
+   "title": "Gelombang bunyi dan efek Doppler",
+   "level": 1,
+   "area": "WAV",
+   "depth": 12
+  },
+  {
+   "id": "t.suhu",
+   "title": "Suhu, kalor, dan kesetimbangan termal",
+   "level": 1,
+   "area": "THM",
+   "depth": 12
+  },
+  {
+   "id": "t.gasideal",
+   "title": "Gas ideal dan persamaan keadaan",
+   "level": 1,
+   "area": "THM",
+   "depth": 13
+  },
+  {
+   "id": "t.kinetik",
+   "title": "Teori kinetik gas",
+   "level": 1,
+   "area": "THM",
+   "depth": 14
+  },
+  {
+   "id": "t.hukum1",
+   "title": "Hukum I Termodinamika",
+   "level": 1,
+   "area": "THM",
+   "depth": 13
+  },
+  {
+   "id": "t.proses",
+   "title": "Proses termodinamika dan kapasitas kalor",
+   "level": 1,
+   "area": "THM",
+   "depth": 14
+  },
+  {
+   "id": "t.hukum2",
+   "title": "Hukum II Termodinamika dan entropi (makroskopik)",
+   "level": 1,
+   "area": "THM",
+   "depth": 15
+  },
+  {
+   "id": "t.carnot",
+   "title": "Siklus Carnot dan efisiensi mesin kalor",
+   "level": 1,
+   "area": "THM",
+   "depth": 16
+  },
+  {
+   "id": "b.coulomb",
+   "title": "Muatan dan hukum Coulomb",
+   "level": 1,
+   "area": "EMB",
+   "depth": 8
+  },
+  {
+   "id": "b.medanlistrik",
+   "title": "Medan listrik",
+   "level": 1,
+   "area": "EMB",
+   "depth": 9
+  },
+  {
+   "id": "b.gauss",
+   "title": "Hukum Gauss",
+   "level": 1,
+   "area": "EMB",
+   "depth": 10
+  },
+  {
+   "id": "b.potensial",
+   "title": "Potensial dan energi potensial listrik",
+   "level": 1,
+   "area": "EMB",
+   "depth": 11
+  },
+  {
+   "id": "b.kapasitor",
+   "title": "Kapasitor dan dielektrik (dasar)",
+   "level": 1,
+   "area": "EMB",
+   "depth": 12
+  },
+  {
+   "id": "b.arus",
+   "title": "Arus, resistansi, dan hukum Ohm",
+   "level": 1,
+   "area": "EMB",
+   "depth": 12
+  },
+  {
+   "id": "b.rangkaian",
+   "title": "Rangkaian DC dan hukum Kirchhoff",
+   "level": 1,
+   "area": "EMB",
+   "depth": 13
+  },
+  {
+   "id": "b.medanmagnet",
+   "title": "Medan magnet dan gaya Lorentz",
+   "level": 1,
+   "area": "EMB",
+   "depth": 13
+  },
+  {
+   "id": "b.biotsavart",
+   "title": "Hukum Biot-Savart dan hukum Ampere",
+   "level": 1,
+   "area": "EMB",
+   "depth": 14
+  },
+  {
+   "id": "b.faraday",
+   "title": "Induksi Faraday dan hukum Lenz",
+   "level": 1,
+   "area": "EMB",
+   "depth": 15
+  },
+  {
+   "id": "b.induktansi",
+   "title": "Induktansi, rangkaian RL/LC/AC",
+   "level": 1,
+   "area": "EMB",
+   "depth": 16
+  },
+  {
+   "id": "op.geometri",
+   "title": "Optik geometri: pemantulan, pembiasan, lensa",
+   "level": 1,
+   "area": "OPT",
+   "depth": 11
+  },
+  {
+   "id": "op.cahaya",
+   "title": "Interferensi dan difraksi cahaya (dasar)",
+   "level": 1,
+   "area": "OPT",
+   "depth": 12
+  },
+  {
+   "id": "c.sentral",
+   "title": "Gaya sentral dan masalah dua benda",
+   "level": 2,
+   "area": "CM",
+   "depth": 12
+  },
+  {
+   "id": "c.orbit",
+   "title": "Potensial efektif dan orbit Kepler",
+   "level": 2,
+   "area": "CM",
+   "depth": 13
+  },
+  {
+   "id": "c.noninersial",
+   "title": "Kerangka non-inersial: gaya Coriolis dan sentrifugal",
+   "level": 2,
+   "area": "CM",
+   "depth": 8
+  },
+  {
+   "id": "c.osilterkopel",
+   "title": "Osilasi terkopel dan mode normal",
+   "level": 2,
+   "area": "CM",
+   "depth": 10
+  },
+  {
+   "id": "c.bendategar3d",
+   "title": "Benda tegar 3D dan tensor inersia",
+   "level": 2,
+   "area": "CM",
+   "depth": 13
+  },
+  {
+   "id": "c.nonlinier",
+   "title": "Dinamika nonlinier dan kekacauan (pengantar)",
+   "level": 2,
+   "area": "CM",
+   "depth": 14
+  },
+  {
+   "id": "l.koordumum",
+   "title": "Koordinat umum dan kendala",
+   "level": 2,
+   "area": "LAG",
+   "depth": 8
+  },
+  {
+   "id": "l.aksi",
+   "title": "Prinsip aksi stasioner (Hamilton)",
+   "level": 2,
+   "area": "LAG",
+   "depth": 11
+  },
+  {
+   "id": "l.eulerlagrange",
+   "title": "Persamaan Euler-Lagrange",
+   "level": 2,
+   "area": "LAG",
+   "depth": 12
+  },
+  {
+   "id": "l.simetri",
+   "title": "Simetri dan teorema Noether",
+   "level": 2,
+   "area": "LAG",
+   "depth": 13
+  },
+  {
+   "id": "h.hamiltonian",
+   "title": "Transformasi Legendre dan Hamiltonian",
+   "level": 2,
+   "area": "HAM",
+   "depth": 13
+  },
+  {
+   "id": "h.hamilton_eq",
+   "title": "Persamaan Hamilton dan ruang fase",
+   "level": 2,
+   "area": "HAM",
+   "depth": 14
+  },
+  {
+   "id": "h.poisson",
+   "title": "Kurung Poisson dan transformasi kanonik",
+   "level": 2,
+   "area": "HAM",
+   "depth": 15
+  },
+  {
+   "id": "x.statik_lanjut",
+   "title": "Persamaan Poisson-Laplace, metode gambar, separasi variabel",
+   "level": 2,
+   "area": "EM2",
+   "depth": 12
+  },
+  {
+   "id": "x.multipol",
+   "title": "Ekspansi multipol",
+   "level": 2,
+   "area": "EM2",
+   "depth": 13
+  },
+  {
+   "id": "x.dielektrik",
+   "title": "Medan listrik dalam materi",
+   "level": 2,
+   "area": "EM2",
+   "depth": 13
+  },
+  {
+   "id": "x.magnetostatik",
+   "title": "Magnetostatik dan potensial vektor",
+   "level": 2,
+   "area": "EM2",
+   "depth": 15
+  },
+  {
+   "id": "x.magnetmateri",
+   "title": "Medan magnet dalam materi",
+   "level": 2,
+   "area": "EM2",
+   "depth": 16
+  },
+  {
+   "id": "x.induksi",
+   "title": "Elektrodinamika: hukum Faraday umum",
+   "level": 2,
+   "area": "EM2",
+   "depth": 16
+  },
+  {
+   "id": "x.maxwell",
+   "title": "Persamaan Maxwell dan arus pergeseran",
+   "level": 2,
+   "area": "EM2",
+   "depth": 17
+  },
+  {
+   "id": "x.energi",
+   "title": "Energi dan momentum EM, vektor Poynting",
+   "level": 2,
+   "area": "EM2",
+   "depth": 18
+  },
+  {
+   "id": "x.gelombang_em",
+   "title": "Gelombang elektromagnetik di ruang hampa",
+   "level": 2,
+   "area": "EM2",
+   "depth": 18
+  },
+  {
+   "id": "x.media",
+   "title": "Gelombang EM dalam materi: pantulan, pembiasan",
+   "level": 2,
+   "area": "EM2",
+   "depth": 19
+  },
+  {
+   "id": "x.potensial",
+   "title": "Potensial skalar-vektor dan kebebasan gauge",
+   "level": 2,
+   "area": "EM2",
+   "depth": 18
+  },
+  {
+   "id": "x.radiasi",
+   "title": "Radiasi dipol dan muatan bergerak",
+   "level": 2,
+   "area": "EM2",
+   "depth": 19
+  },
+  {
+   "id": "s.potensial",
+   "title": "Potensial termodinamika (U, H, F, G)",
+   "level": 2,
+   "area": "TH2",
+   "depth": 16
+  },
+  {
+   "id": "s.maxwellrel",
+   "title": "Relasi Maxwell",
+   "level": 2,
+   "area": "TH2",
+   "depth": 17
+  },
+  {
+   "id": "s.transisifase",
+   "title": "Transisi fase dan persamaan Clausius-Clapeyron",
+   "level": 2,
+   "area": "TH2",
+   "depth": 17
+  },
+  {
+   "id": "s.mikro",
+   "title": "Ensembel mikrokanonik dan entropi Boltzmann",
+   "level": 2,
+   "area": "TH2",
+   "depth": 16
+  },
+  {
+   "id": "s.kanonik",
+   "title": "Ensembel kanonik dan fungsi partisi",
+   "level": 2,
+   "area": "TH2",
+   "depth": 17
+  },
+  {
+   "id": "s.mb",
+   "title": "Distribusi Maxwell-Boltzmann dan ekipartisi",
+   "level": 2,
+   "area": "TH2",
+   "depth": 18
+  },
+  {
+   "id": "o2.interferensi",
+   "title": "Interferensi dan koherensi",
+   "level": 2,
+   "area": "OPT2",
+   "depth": 19
+  },
+  {
+   "id": "o2.difraksi",
+   "title": "Difraksi Fraunhofer dan Fresnel",
+   "level": 2,
+   "area": "OPT2",
+   "depth": 20
+  },
+  {
+   "id": "o2.polarisasi",
+   "title": "Polarisasi",
+   "level": 2,
+   "area": "OPT2",
+   "depth": 20
+  },
+  {
+   "id": "sr.postulat",
+   "title": "Postulat relativitas khusus dan relativitas simultanitas",
+   "level": 3,
+   "area": "SR",
+   "depth": 19
+  },
+  {
+   "id": "sr.lorentz",
+   "title": "Transformasi Lorentz",
+   "level": 3,
+   "area": "SR",
+   "depth": 20
+  },
+  {
+   "id": "sr.dilatasi",
+   "title": "Dilatasi waktu dan kontraksi panjang",
+   "level": 3,
+   "area": "SR",
+   "depth": 21
+  },
+  {
+   "id": "sr.kecepatan",
+   "title": "Penjumlahan kecepatan relativistik",
+   "level": 3,
+   "area": "SR",
+   "depth": 21
+  },
+  {
+   "id": "sr.empatvektor",
+   "title": "Ruang-waktu Minkowski dan empat-vektor",
+   "level": 3,
+   "area": "SR",
+   "depth": 21
+  },
+  {
+   "id": "sr.momenergi",
+   "title": "Momentum dan energi relativistik",
+   "level": 3,
+   "area": "SR",
+   "depth": 22
+  },
+  {
+   "id": "sr.elektro",
+   "title": "Elektrodinamika kovarian",
+   "level": 3,
+   "area": "SR",
+   "depth": 22
+  },
+  {
+   "id": "mo.bendahitam",
+   "title": "Radiasi benda hitam dan hipotesis Planck",
+   "level": 3,
+   "area": "MOD",
+   "depth": 19
+  },
+  {
+   "id": "mo.fotolistrik",
+   "title": "Efek fotolistrik",
+   "level": 3,
+   "area": "MOD",
+   "depth": 20
+  },
+  {
+   "id": "mo.compton",
+   "title": "Efek Compton",
+   "level": 3,
+   "area": "MOD",
+   "depth": 23
+  },
+  {
+   "id": "mo.debroglie",
+   "title": "Gelombang materi de Broglie dan dualisme gelombang-partikel",
+   "level": 3,
+   "area": "MOD",
+   "depth": 24
+  },
+  {
+   "id": "a.rutherford",
+   "title": "Model atom Thomson dan Rutherford",
+   "level": 3,
+   "area": "ATM",
+   "depth": 13
+  },
+  {
+   "id": "a.bohr",
+   "title": "Model atom Bohr",
+   "level": 3,
+   "area": "ATM",
+   "depth": 25
+  },
+  {
+   "id": "a.spektrum",
+   "title": "Spektrum atom dan deret garis",
+   "level": 3,
+   "area": "ATM",
+   "depth": 26
+  },
+  {
+   "id": "a.multielektron",
+   "title": "Atom multielektron, asas Pauli (kualitatif), tabel periodik",
+   "level": 3,
+   "area": "ATM",
+   "depth": 27
+  },
+  {
+   "id": "a.xray",
+   "title": "Sinar-X dan hukum Moseley",
+   "level": 3,
+   "area": "ATM",
+   "depth": 28
+  },
+  {
+   "id": "n.struktur",
+   "title": "Struktur inti dan energi ikat",
+   "level": 3,
+   "area": "NUC",
+   "depth": 23
+  },
+  {
+   "id": "n.peluruhan",
+   "title": "Peluruhan radioaktif",
+   "level": 3,
+   "area": "NUC",
+   "depth": 24
+  },
+  {
+   "id": "n.reaksi",
+   "title": "Reaksi inti, fisi, dan fusi",
+   "level": 3,
+   "area": "NUC",
+   "depth": 24
+  },
+  {
+   "id": "z.kristal",
+   "title": "Struktur kristal dan kisi resiprokal",
+   "level": 3,
+   "area": "SSP",
+   "depth": 5
+  },
+  {
+   "id": "z.pita",
+   "title": "Teori pita dan klasifikasi konduktor-semikonduktor (pengantar)",
+   "level": 3,
+   "area": "SSP",
+   "depth": 25
+  },
+  {
+   "id": "z.semikonduktor",
+   "title": "Semikonduktor dan sambungan p-n",
+   "level": 3,
+   "area": "SSP",
+   "depth": 26
+  },
+  {
+   "id": "q.dasar",
+   "title": "Dari krisis fisika klasik ke postulat mekanika kuantum",
+   "level": 4,
+   "area": "QM",
+   "depth": 26
+  },
+  {
+   "id": "q.psi",
+   "title": "Fungsi gelombang dan interpretasi Born",
+   "level": 4,
+   "area": "QM",
+   "depth": 27
+  },
+  {
+   "id": "q.tdse",
+   "title": "Persamaan Schrodinger bergantung waktu",
+   "level": 4,
+   "area": "QM",
+   "depth": 28
+  },
+  {
+   "id": "q.tise",
+   "title": "Persamaan Schrodinger tak bergantung waktu",
+   "level": 4,
+   "area": "QM",
+   "depth": 29
+  },
+  {
+   "id": "q.kotak",
+   "title": "Partikel dalam kotak",
+   "level": 4,
+   "area": "QM",
+   "depth": 30
+  },
+  {
+   "id": "q.operator",
+   "title": "Operator dan observabel",
+   "level": 4,
+   "area": "QM",
+   "depth": 28
+  },
+  {
+   "id": "q.eigen",
+   "title": "Nilai eigen, fungsi eigen, dan pengukuran",
+   "level": 4,
+   "area": "QM",
+   "depth": 29
+  },
+  {
+   "id": "q.hilbert",
+   "title": "Ruang Hilbert dan notasi Dirac",
+   "level": 4,
+   "area": "QM",
+   "depth": 29
+  },
+  {
+   "id": "q.komutator",
+   "title": "Komutator dan prinsip ketidakpastian Heisenberg",
+   "level": 4,
+   "area": "QM",
+   "depth": 29
+  },
+  {
+   "id": "q.osilator",
+   "title": "Osilator harmonik kuantum",
+   "level": 4,
+   "area": "QM",
+   "depth": 30
+  },
+  {
+   "id": "q.potensial",
+   "title": "Potensial step, penghalang, dan efek terobosan",
+   "level": 4,
+   "area": "QM",
+   "depth": 30
+  },
+  {
+   "id": "q.sentral3d",
+   "title": "Mekanika kuantum 3D dan momentum sudut orbital",
+   "level": 4,
+   "area": "QM",
+   "depth": 30
+  },
+  {
+   "id": "q.spin",
+   "title": "Spin dan momentum sudut intrinsik",
+   "level": 4,
+   "area": "QM",
+   "depth": 31
+  },
+  {
+   "id": "q.hidrogen",
+   "title": "Atom hidrogen",
+   "level": 4,
+   "area": "QM",
+   "depth": 31
+  },
+  {
+   "id": "q.partikelidentik",
+   "title": "Partikel identik dan asas Pauli",
+   "level": 4,
+   "area": "QM",
+   "depth": 32
+  },
+  {
+   "id": "q.perturbasi",
+   "title": "Teori perturbasi tak bergantung waktu",
+   "level": 4,
+   "area": "QM",
+   "depth": 32
+  },
+  {
+   "id": "q.variasional",
+   "title": "Metode variasional",
+   "level": 4,
+   "area": "QM",
+   "depth": 33
+  },
+  {
+   "id": "q.perturbasi_t",
+   "title": "Teori perturbasi bergantung waktu dan aturan emas Fermi",
+   "level": 4,
+   "area": "QM",
+   "depth": 33
+  },
+  {
+   "id": "q.hamburan",
+   "title": "Teori hamburan",
+   "level": 4,
+   "area": "QM",
+   "depth": 34
+  },
+  {
+   "id": "q.pengukuran",
+   "title": "Pengukuran, keterbelitan, dan interpretasi",
+   "level": 4,
+   "area": "QM",
+   "depth": 33
+  },
+  {
+   "id": "q.relativistik",
+   "title": "Persamaan Klein-Gordon dan Dirac (pengantar)",
+   "level": 4,
+   "area": "QM",
+   "depth": 32
+  },
+  {
+   "id": "s2.kuantumstat",
+   "title": "Statistik Bose-Einstein dan Fermi-Dirac",
+   "level": 4,
+   "area": "SM2",
+   "depth": 33
+  },
+  {
+   "id": "pp.model",
+   "title": "Model Standar dan partikel fundamental",
+   "level": 5,
+   "area": "ADV_PP",
+   "depth": 33
+  },
+  {
+   "id": "pp.interaksi",
+   "title": "Interaksi fundamental dan simetri gauge (dasar)",
+   "level": 5,
+   "area": "ADV_PP",
+   "depth": 34
+  },
+  {
+   "id": "pp.akselerator",
+   "title": "Akselerator, detektor, dan hamburan partikel",
+   "level": 5,
+   "area": "ADV_PP",
+   "depth": 35
+  },
+  {
+   "id": "qft.kuantisasi",
+   "title": "Kuantisasi medan",
+   "level": 5,
+   "area": "ADV_PP",
+   "depth": 33
+  },
+  {
+   "id": "qft.feynman",
+   "title": "Diagram Feynman dan QED",
+   "level": 5,
+   "area": "ADV_PP",
+   "depth": 34
+  },
+  {
+   "id": "gr.ekuivalensi",
+   "title": "Prinsip ekuivalensi dan ruang-waktu lengkung",
+   "level": 5,
+   "area": "ADV_GR",
+   "depth": 22
+  },
+  {
+   "id": "gr.tensor",
+   "title": "Tensor, metrik, dan turunan kovarian",
+   "level": 5,
+   "area": "ADV_GR",
+   "depth": 23
+  },
+  {
+   "id": "gr.einstein",
+   "title": "Persamaan medan Einstein",
+   "level": 5,
+   "area": "ADV_GR",
+   "depth": 24
+  },
+  {
+   "id": "gr.schwarzschild",
+   "title": "Solusi Schwarzschild dan lubang hitam",
+   "level": 5,
+   "area": "ADV_GR",
+   "depth": 25
+  },
+  {
+   "id": "gr.gelombang",
+   "title": "Gelombang gravitasi",
+   "level": 5,
+   "area": "ADV_GR",
+   "depth": 25
+  },
+  {
+   "id": "ast.bintang",
+   "title": "Struktur dan evolusi bintang",
+   "level": 5,
+   "area": "ADV_AST",
+   "depth": 25
+  },
+  {
+   "id": "ast.degenerasi",
+   "title": "Bintang kompak: kerdil putih dan bintang neutron",
+   "level": 5,
+   "area": "ADV_AST",
+   "depth": 34
+  },
+  {
+   "id": "ast.galaksi",
+   "title": "Galaksi dan materi gelap",
+   "level": 5,
+   "area": "ADV_AST",
+   "depth": 26
+  },
+  {
+   "id": "cos.friedmann",
+   "title": "Persamaan Friedmann dan ekspansi alam semesta",
+   "level": 5,
+   "area": "ADV_AST",
+   "depth": 27
+  },
+  {
+   "id": "cos.cmb",
+   "title": "Radiasi latar gelombang mikro dan nukleosintesis awal",
+   "level": 5,
+   "area": "ADV_AST",
+   "depth": 28
+  },
+  {
+   "id": "pl.dasar",
+   "title": "Parameter dasar plasma",
+   "level": 5,
+   "area": "ADV_PLA",
+   "depth": 19
+  },
+  {
+   "id": "pl.mhd",
+   "title": "Magnetohidrodinamika",
+   "level": 5,
+   "area": "ADV_PLA",
+   "depth": 20
+  },
+  {
+   "id": "mat.elektron",
+   "title": "Sifat elektronik material",
+   "level": 5,
+   "area": "ADV_MAT",
+   "depth": 34
+  },
+  {
+   "id": "mat.magnet",
+   "title": "Magnetisme material",
+   "level": 5,
+   "area": "ADV_MAT",
+   "depth": 32
+  },
+  {
+   "id": "geo.seismik",
+   "title": "Gelombang seismik dan struktur bumi",
+   "level": 5,
+   "area": "ADV_GEO",
+   "depth": 12
+  },
+  {
+   "id": "geo.gravmag",
+   "title": "Metode gravitasi dan magnetik",
+   "level": 5,
+   "area": "ADV_GEO",
+   "depth": 16
+  },
+  {
+   "id": "geo.listrik",
+   "title": "Metode geolistrik (resistivitas)",
+   "level": 5,
+   "area": "ADV_GEO",
+   "depth": 13
+  },
+  {
+   "id": "nk.reaktor",
+   "title": "Fisika reaktor dan transportasi neutron",
+   "level": 5,
+   "area": "ADV_NUK",
+   "depth": 25
+  },
+  {
+   "id": "nk.pengion",
+   "title": "Interaksi radiasi-materi dan dosimetri",
+   "level": 5,
+   "area": "ADV_NUK",
+   "depth": 25
+  },
+  {
+   "id": "cp.numerik",
+   "title": "Metode numerik: persamaan diferensial biasa dan parsial",
+   "level": 5,
+   "area": "ADV_CP",
+   "depth": 8
+  },
+  {
+   "id": "cp.montecarlo",
+   "title": "Simulasi Monte Carlo",
+   "level": 5,
+   "area": "ADV_CP",
+   "depth": 17
+  },
+  {
+   "id": "cp.md",
+   "title": "Dinamika molekuler",
+   "level": 5,
+   "area": "ADV_CP",
+   "depth": 18
+  },
+  {
+   "id": "cp.kuantumkomp",
+   "title": "Komputasi kuantum (pengantar)",
+   "level": 5,
+   "area": "ADV_CP",
+   "depth": 34
+  }
+ ],
+ "edges": [
+  {
+   "source": "m.satuan",
+   "target": "m.dimensi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.aljabar",
+   "target": "m.trigo",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.aljabar",
+   "target": "m.fungsi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.trigo",
+   "target": "m.vektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "m.dot",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "m.cross",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "m.koord",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.trigo",
+   "target": "m.koord",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fungsi",
+   "target": "m.limit",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.limit",
+   "target": "m.turunan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "m.turunan_apl",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "m.integral",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.teknik_int",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.limit",
+   "target": "m.deret",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "m.deret",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.trigo",
+   "target": "m.kompleks",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.deret",
+   "target": "m.kompleks",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.pd1",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd1",
+   "target": "m.pd2",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.kompleks",
+   "target": "m.pd2",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "m.vektorfungsi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "m.vektorfungsi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "m.parsial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fungsi",
+   "target": "m.parsial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "m.gradien",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.dot",
+   "target": "m.gradien",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.cross",
+   "target": "m.gradien",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.integral_multi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.koord",
+   "target": "m.integral_multi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral_multi",
+   "target": "m.integral_garis",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektorfungsi",
+   "target": "m.integral_garis",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.gradien",
+   "target": "m.teorema_vektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral_garis",
+   "target": "m.teorema_vektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.aljabar",
+   "target": "m.matriks",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "m.matriks",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "m.eigen",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "m.ruangvektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.dot",
+   "target": "m.ruangvektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.probabilitas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.aljabar",
+   "target": "m.probabilitas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.fourier",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.kompleks",
+   "target": "m.fourier",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.deret",
+   "target": "m.fourier",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "m.pdp",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "m.pdp",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fourier",
+   "target": "m.pdp",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pdp",
+   "target": "m.fungsikhusus",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.koord",
+   "target": "m.fungsikhusus",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "m.delta",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "m.variasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "m.variasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.ruangvektor",
+   "target": "m.tensor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "m.tensor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.satuan",
+   "target": "k.posisi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fungsi",
+   "target": "k.posisi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.posisi",
+   "target": "k.kecepatan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan",
+   "target": "k.kecepatan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.kecepatan",
+   "target": "k.percepatan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.percepatan",
+   "target": "k.glbb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "k.glbb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.percepatan",
+   "target": "k.glbb",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "k.glbb",
+   "target": "k.jatuhbebas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.percepatan",
+   "target": "k.vektor2d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektorfungsi",
+   "target": "k.vektor2d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "k.proyektil",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.glbb",
+   "target": "k.proyektil",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.trigo",
+   "target": "k.proyektil",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.glbb",
+   "target": "k.proyektil",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "k.proyektil",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "k.melingkar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.koord",
+   "target": "k.melingkar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "k.melingkar",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "k.relatif",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.percepatan",
+   "target": "d.hukum1",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "d.hukum1",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum1",
+   "target": "d.hukum2",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "d.hukum2",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "d.hukum3",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "d.gayaberat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.jatuhbebas",
+   "target": "d.gayaberat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum3",
+   "target": "d.normal_tali",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.normal_tali",
+   "target": "d.gesekan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "d.hooke",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "d.dinamika_melingkar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.melingkar",
+   "target": "d.dinamika_melingkar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "d.hambat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd1",
+   "target": "d.hambat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "e.kerja",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.dot",
+   "target": "e.kerja",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "e.kerja",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kerja",
+   "target": "e.ek",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "e.ek",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.kerja",
+   "target": "e.ek",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.kerja",
+   "target": "e.konservatif",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral_garis",
+   "target": "e.konservatif",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.konservatif",
+   "target": "e.ep",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.konservatif",
+   "target": "e.ep",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "e.kekekalan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "e.kekekalan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "e.kekekalan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "e.kekekalan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "e.diagram",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.turunan_apl",
+   "target": "e.diagram",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kerja",
+   "target": "e.daya",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "p.momentum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "p.momentum",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "p.momentum",
+   "target": "p.kekekalan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum3",
+   "target": "p.kekekalan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.momentum",
+   "target": "p.kekekalan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "d.hukum3",
+   "target": "p.kekekalan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "p.kekekalan",
+   "target": "p.pm",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "p.pm",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.kekekalan",
+   "target": "p.tumbukan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "p.tumbukan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.melingkar",
+   "target": "r.kinematika",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.cross",
+   "target": "r.torsi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "r.torsi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.kinematika",
+   "target": "r.inersia",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.pm",
+   "target": "r.inersia",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "r.inersia",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.torsi",
+   "target": "r.dinamika",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.inersia",
+   "target": "r.dinamika",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "r.dinamika",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.torsi",
+   "target": "r.dinamika",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.inersia",
+   "target": "r.dinamika",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.torsi",
+   "target": "r.momsudut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.momentum",
+   "target": "r.momsudut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "r.momsudut",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.torsi",
+   "target": "r.momsudut",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.momsudut",
+   "target": "r.kekekalan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.momsudut",
+   "target": "r.kekekalan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.inersia",
+   "target": "r.energi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "r.energi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.torsi",
+   "target": "r.statis",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum1",
+   "target": "r.statis",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "g.newton",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.melingkar",
+   "target": "g.newton",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.newton",
+   "target": "g.medan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "g.medan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.newton",
+   "target": "g.medan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "g.medan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "g.newton",
+   "target": "g.kepler",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.kekekalan",
+   "target": "g.kepler",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.newton",
+   "target": "g.kepler",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.kekekalan",
+   "target": "g.kepler",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "g.medan",
+   "target": "g.orbit",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.kepler",
+   "target": "g.orbit",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum1",
+   "target": "f.tekanan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "f.tekanan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.tekanan",
+   "target": "f.archimedes",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.tekanan",
+   "target": "f.archimedes",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "f.tekanan",
+   "target": "f.kontinuitas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.kecepatan",
+   "target": "f.kontinuitas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.kontinuitas",
+   "target": "f.bernoulli",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "f.bernoulli",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "f.bernoulli",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "f.kontinuitas",
+   "target": "f.bernoulli",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "f.kontinuitas",
+   "target": "f.viskositas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hambat",
+   "target": "f.viskositas",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hooke",
+   "target": "o.shm",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "o.shm",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hooke",
+   "target": "o.shm",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "o.energi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "o.energi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "o.pendulum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.dinamika",
+   "target": "o.pendulum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.deret",
+   "target": "o.pendulum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.dinamika",
+   "target": "o.pendulum",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "o.pendulum",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "o.teredam",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hambat",
+   "target": "o.teredam",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.teredam",
+   "target": "o.paksa",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "w.mekanik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "w.mekanik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.mekanik",
+   "target": "w.persamaan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "w.persamaan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "w.persamaan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "w.mekanik",
+   "target": "w.persamaan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "w.mekanik",
+   "target": "w.superposisi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.superposisi",
+   "target": "w.berdiri",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.persamaan",
+   "target": "w.bunyi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.tekanan",
+   "target": "w.bunyi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "t.suhu",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.suhu",
+   "target": "t.gasideal",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.tekanan",
+   "target": "t.gasideal",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.gasideal",
+   "target": "t.kinetik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.tumbukan",
+   "target": "t.kinetik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.probabilitas",
+   "target": "t.kinetik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.momentum",
+   "target": "t.kinetik",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "t.gasideal",
+   "target": "t.kinetik",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "t.suhu",
+   "target": "t.hukum1",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kerja",
+   "target": "t.hukum1",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.hukum1",
+   "target": "t.proses",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.gasideal",
+   "target": "t.proses",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "t.proses",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.proses",
+   "target": "t.hukum2",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.hukum2",
+   "target": "t.carnot",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.hukum2",
+   "target": "t.carnot",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "t.proses",
+   "target": "t.carnot",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "b.coulomb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektor",
+   "target": "b.coulomb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.coulomb",
+   "target": "b.medanlistrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral",
+   "target": "b.medanlistrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.medanlistrik",
+   "target": "b.gauss",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral_garis",
+   "target": "b.gauss",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.medanlistrik",
+   "target": "b.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "b.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.medanlistrik",
+   "target": "b.potensial",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.konservatif",
+   "target": "b.potensial",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "b.potensial",
+   "target": "b.kapasitor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.potensial",
+   "target": "b.arus",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.arus",
+   "target": "b.rangkaian",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "b.rangkaian",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.arus",
+   "target": "b.medanmagnet",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.cross",
+   "target": "b.medanmagnet",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.medanmagnet",
+   "target": "b.biotsavart",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.integral_garis",
+   "target": "b.biotsavart",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.biotsavart",
+   "target": "b.faraday",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.faraday",
+   "target": "b.induktansi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "b.induktansi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.mekanik",
+   "target": "op.geometri",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.trigo",
+   "target": "op.geometri",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.superposisi",
+   "target": "op.cahaya",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "op.geometri",
+   "target": "op.cahaya",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.kepler",
+   "target": "c.sentral",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.kekekalan",
+   "target": "c.sentral",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.diagram",
+   "target": "c.sentral",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "c.sentral",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.kekekalan",
+   "target": "c.sentral",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "c.sentral",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "c.sentral",
+   "target": "c.orbit",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.relatif",
+   "target": "c.noninersial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "c.noninersial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.vektorfungsi",
+   "target": "c.noninersial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.relatif",
+   "target": "c.noninersial",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "c.noninersial",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "c.osilterkopel",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.eigen",
+   "target": "c.osilterkopel",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "c.osilterkopel",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "r.dinamika",
+   "target": "c.bendategar3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "c.bendategar3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.eigen",
+   "target": "c.bendategar3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.pendulum",
+   "target": "c.nonlinier",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "c.nonlinier",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.hukum2",
+   "target": "l.koordumum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.vektor2d",
+   "target": "l.koordumum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.variasi",
+   "target": "l.aksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "l.aksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ep",
+   "target": "l.aksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.aksi",
+   "target": "l.eulerlagrange",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.koordumum",
+   "target": "l.eulerlagrange",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.aksi",
+   "target": "l.eulerlagrange",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "m.variasi",
+   "target": "l.eulerlagrange",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "l.eulerlagrange",
+   "target": "l.simetri",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.eulerlagrange",
+   "target": "l.simetri",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "l.eulerlagrange",
+   "target": "h.hamiltonian",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "h.hamiltonian",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.eulerlagrange",
+   "target": "h.hamiltonian",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "h.hamiltonian",
+   "target": "h.hamilton_eq",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "h.hamiltonian",
+   "target": "h.hamilton_eq",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "h.hamilton_eq",
+   "target": "h.poisson",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.simetri",
+   "target": "h.poisson",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.potensial",
+   "target": "x.statik_lanjut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.gauss",
+   "target": "x.statik_lanjut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pdp",
+   "target": "x.statik_lanjut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.teorema_vektor",
+   "target": "x.statik_lanjut",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.statik_lanjut",
+   "target": "x.multipol",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fungsikhusus",
+   "target": "x.multipol",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.deret",
+   "target": "x.multipol",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.statik_lanjut",
+   "target": "x.dielektrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.biotsavart",
+   "target": "x.magnetostatik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.gradien",
+   "target": "x.magnetostatik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.teorema_vektor",
+   "target": "x.magnetostatik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.magnetostatik",
+   "target": "x.magnetmateri",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.faraday",
+   "target": "x.induksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.magnetostatik",
+   "target": "x.induksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.induksi",
+   "target": "x.maxwell",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.dielektrik",
+   "target": "x.maxwell",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.gauss",
+   "target": "x.maxwell",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.gauss",
+   "target": "x.maxwell",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "b.biotsavart",
+   "target": "x.maxwell",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "b.faraday",
+   "target": "x.maxwell",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "x.energi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "x.energi",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "x.gelombang_em",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.persamaan",
+   "target": "x.gelombang_em",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "x.gelombang_em",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "x.gelombang_em",
+   "target": "x.media",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.dielektrik",
+   "target": "x.media",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "x.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.potensial",
+   "target": "x.radiasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.multipol",
+   "target": "x.radiasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.hukum2",
+   "target": "s.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.parsial",
+   "target": "s.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.potensial",
+   "target": "s.maxwellrel",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.potensial",
+   "target": "s.maxwellrel",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "s.potensial",
+   "target": "s.transisifase",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.hukum2",
+   "target": "s.mikro",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.probabilitas",
+   "target": "s.mikro",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mikro",
+   "target": "s.kanonik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mikro",
+   "target": "s.kanonik",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "s.kanonik",
+   "target": "s.mb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "t.kinetik",
+   "target": "s.mb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.kanonik",
+   "target": "s.mb",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "op.cahaya",
+   "target": "o2.interferensi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.gelombang_em",
+   "target": "o2.interferensi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o2.interferensi",
+   "target": "o2.difraksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fourier",
+   "target": "o2.difraksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.media",
+   "target": "o2.polarisasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.gelombang_em",
+   "target": "sr.postulat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "k.relatif",
+   "target": "sr.postulat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.postulat",
+   "target": "sr.lorentz",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.postulat",
+   "target": "sr.lorentz",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "sr.dilatasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "sr.dilatasi",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "sr.kecepatan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "sr.kecepatan",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "sr.empatvektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "sr.empatvektor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.empatvektor",
+   "target": "sr.momenergi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "p.kekekalan",
+   "target": "sr.momenergi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "e.ek",
+   "target": "sr.momenergi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.empatvektor",
+   "target": "sr.momenergi",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "p.kekekalan",
+   "target": "sr.momenergi",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "sr.empatvektor",
+   "target": "sr.elektro",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "sr.elektro",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mb",
+   "target": "mo.bendahitam",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.gelombang_em",
+   "target": "mo.bendahitam",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.bendahitam",
+   "target": "mo.fotolistrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.fotolistrik",
+   "target": "mo.compton",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "mo.compton",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "mo.compton",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "mo.fotolistrik",
+   "target": "mo.compton",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "mo.compton",
+   "target": "mo.debroglie",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.superposisi",
+   "target": "mo.debroglie",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "c.sentral",
+   "target": "a.rutherford",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.coulomb",
+   "target": "a.rutherford",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "a.rutherford",
+   "target": "a.bohr",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.debroglie",
+   "target": "a.bohr",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.dinamika_melingkar",
+   "target": "a.bohr",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "d.dinamika_melingkar",
+   "target": "a.bohr",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "b.coulomb",
+   "target": "a.bohr",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "a.bohr",
+   "target": "a.spektrum",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "a.spektrum",
+   "target": "a.multielektron",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "a.multielektron",
+   "target": "a.xray",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "n.struktur",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "a.rutherford",
+   "target": "n.struktur",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.struktur",
+   "target": "n.peluruhan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd1",
+   "target": "n.peluruhan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.struktur",
+   "target": "n.reaksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.ruangvektor",
+   "target": "z.kristal",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "z.kristal",
+   "target": "z.pita",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.debroglie",
+   "target": "z.pita",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "z.pita",
+   "target": "z.semikonduktor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.arus",
+   "target": "z.semikonduktor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.debroglie",
+   "target": "q.dasar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "a.bohr",
+   "target": "q.dasar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.dasar",
+   "target": "q.psi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.probabilitas",
+   "target": "q.psi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.kompleks",
+   "target": "q.psi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.psi",
+   "target": "q.tdse",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.persamaan",
+   "target": "q.tdse",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pdp",
+   "target": "q.tdse",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.tdse",
+   "target": "q.tise",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pdp",
+   "target": "q.tise",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.tdse",
+   "target": "q.tise",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "q.tise",
+   "target": "q.kotak",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.psi",
+   "target": "q.operator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.ruangvektor",
+   "target": "q.operator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.eigen",
+   "target": "q.operator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.operator",
+   "target": "q.eigen",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.operator",
+   "target": "q.hilbert",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.ruangvektor",
+   "target": "q.hilbert",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.delta",
+   "target": "q.hilbert",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.operator",
+   "target": "q.komutator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.operator",
+   "target": "q.komutator",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "q.tise",
+   "target": "q.osilator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.operator",
+   "target": "q.osilator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "o.shm",
+   "target": "q.osilator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.tise",
+   "target": "q.potensial",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.tise",
+   "target": "q.sentral3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.komutator",
+   "target": "q.sentral3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.fungsikhusus",
+   "target": "q.sentral3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.koord",
+   "target": "q.sentral3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "c.sentral",
+   "target": "q.sentral3d",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.sentral3d",
+   "target": "q.spin",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "q.spin",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.sentral3d",
+   "target": "q.hidrogen",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.potensial",
+   "target": "q.hidrogen",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.spin",
+   "target": "q.partikelidentik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.hidrogen",
+   "target": "q.perturbasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.hilbert",
+   "target": "q.perturbasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.perturbasi",
+   "target": "q.variasional",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.variasi",
+   "target": "q.variasional",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.perturbasi",
+   "target": "q.perturbasi_t",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.tdse",
+   "target": "q.perturbasi_t",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.perturbasi_t",
+   "target": "q.hamburan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.potensial",
+   "target": "q.hamburan",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.hilbert",
+   "target": "q.pengukuran",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.partikelidentik",
+   "target": "q.pengukuran",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.spin",
+   "target": "q.relativistik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "q.relativistik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.kanonik",
+   "target": "s2.kuantumstat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.partikelidentik",
+   "target": "s2.kuantumstat",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.relativistik",
+   "target": "pp.model",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "pp.model",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.struktur",
+   "target": "pp.model",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "pp.model",
+   "target": "pp.interaksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.potensial",
+   "target": "pp.interaksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "pp.model",
+   "target": "pp.akselerator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.hamburan",
+   "target": "pp.akselerator",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.relativistik",
+   "target": "qft.kuantisasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "h.hamilton_eq",
+   "target": "qft.kuantisasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.eulerlagrange",
+   "target": "qft.kuantisasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "qft.kuantisasi",
+   "target": "qft.feynman",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.perturbasi_t",
+   "target": "qft.feynman",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "sr.empatvektor",
+   "target": "gr.ekuivalensi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.newton",
+   "target": "gr.ekuivalensi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.tensor",
+   "target": "gr.tensor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "gr.ekuivalensi",
+   "target": "gr.tensor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "gr.tensor",
+   "target": "gr.einstein",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "gr.einstein",
+   "target": "gr.schwarzschild",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "gr.einstein",
+   "target": "gr.schwarzschild",
+   "type": "derived_from",
+   "note": ""
+  },
+  {
+   "source": "gr.einstein",
+   "target": "gr.gelombang",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.gelombang_em",
+   "target": "gr.gelombang",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.reaksi",
+   "target": "ast.bintang",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mb",
+   "target": "ast.bintang",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.bendahitam",
+   "target": "ast.bintang",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "ast.bintang",
+   "target": "ast.degenerasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s2.kuantumstat",
+   "target": "ast.degenerasi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.orbit",
+   "target": "ast.galaksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "ast.bintang",
+   "target": "ast.galaksi",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "gr.einstein",
+   "target": "cos.friedmann",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "ast.galaksi",
+   "target": "cos.friedmann",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "cos.friedmann",
+   "target": "cos.cmb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.bendahitam",
+   "target": "cos.cmb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.reaksi",
+   "target": "cos.cmb",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.maxwell",
+   "target": "pl.dasar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mb",
+   "target": "pl.dasar",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "pl.dasar",
+   "target": "pl.mhd",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "f.bernoulli",
+   "target": "pl.mhd",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "z.pita",
+   "target": "mat.elektron",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s2.kuantumstat",
+   "target": "mat.elektron",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.magnetmateri",
+   "target": "mat.magnet",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.spin",
+   "target": "mat.magnet",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "w.persamaan",
+   "target": "geo.seismik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "r.statis",
+   "target": "geo.seismik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "g.medan",
+   "target": "geo.gravmag",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.magnetostatik",
+   "target": "geo.gravmag",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "b.arus",
+   "target": "geo.listrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "x.statik_lanjut",
+   "target": "geo.listrik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.reaksi",
+   "target": "nk.reaktor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.peluruhan",
+   "target": "nk.reaktor",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "n.peluruhan",
+   "target": "nk.pengion",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "mo.compton",
+   "target": "nk.pengion",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pd2",
+   "target": "cp.numerik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.pdp",
+   "target": "cp.numerik",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.probabilitas",
+   "target": "cp.montecarlo",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.mikro",
+   "target": "cp.montecarlo",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "cp.numerik",
+   "target": "cp.md",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "s.kanonik",
+   "target": "cp.md",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "q.pengukuran",
+   "target": "cp.kuantumkomp",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "m.matriks",
+   "target": "cp.kuantumkomp",
+   "type": "prerequisite",
+   "note": ""
+  },
+  {
+   "source": "l.simetri",
+   "target": "p.kekekalan",
+   "type": "special_case_of",
+   "note": "invarians translasi ruang -> momentum konstan"
+  },
+  {
+   "source": "l.simetri",
+   "target": "e.kekekalan",
+   "type": "special_case_of",
+   "note": "invarians translasi waktu -> energi konstan"
+  },
+  {
+   "source": "l.simetri",
+   "target": "r.kekekalan",
+   "type": "special_case_of",
+   "note": "invarians rotasi -> momentum sudut konstan"
+  },
+  {
+   "source": "sr.momenergi",
+   "target": "e.ek",
+   "type": "approximation_of",
+   "note": "K = (gamma-1)mc^2 -> (1/2)mv^2 untuk v << c"
+  },
+  {
+   "source": "sr.lorentz",
+   "target": "k.relatif",
+   "type": "approximation_of",
+   "note": "transformasi Lorentz -> Galileo untuk v << c"
+  },
+  {
+   "source": "gr.einstein",
+   "target": "g.newton",
+   "type": "approximation_of",
+   "note": "medan lemah dan kecepatan rendah"
+  },
+  {
+   "source": "q.hidrogen",
+   "target": "a.bohr",
+   "type": "approximation_of",
+   "note": "tingkat energi Bohr = hasil Schrodinger (tanpa spin/halus)"
+  },
+  {
+   "source": "d.hukum2",
+   "target": "l.eulerlagrange",
+   "type": "generalized_by",
+   "note": "Euler-Lagrange mereproduksi Hukum II Newton untuk L = T - U"
+  },
+  {
+   "source": "e.kekekalan",
+   "target": "t.hukum1",
+   "type": "generalized_by",
+   "note": "kekekalan energi diperluas dengan kalor"
+  },
+  {
+   "source": "t.kinetik",
+   "target": "s.mb",
+   "type": "generalized_by",
+   "note": "teori kinetik -> mekanika statistik umum"
+  },
+  {
+   "source": "mo.debroglie",
+   "target": "q.tdse",
+   "type": "motivated_by",
+   "note": "gelombang materi -> persamaan gelombang untuk psi"
+  },
+  {
+   "source": "w.persamaan",
+   "target": "q.tdse",
+   "type": "motivated_by",
+   "note": "analogi persamaan gelombang"
+  },
+  {
+   "source": "x.maxwell",
+   "target": "sr.postulat",
+   "type": "motivated_by",
+   "note": "kovarian persamaan Maxwell dan konstansi c"
+  },
+  {
+   "source": "e.ek",
+   "target": "sr.momenergi",
+   "type": "generalized_by",
+   "note": "energi kinetik klasik -> energi relativistik"
+  }
+ ]
+}

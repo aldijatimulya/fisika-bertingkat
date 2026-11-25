@@ -1,0 +1,19 @@
+# Relasi tambahan di luar prasyarat/derived_from.  Arah: asal | tujuan | tipe | catatan
+# special_case_of : tujuan adalah kasus khusus dari asal
+# approximation_of: tujuan adalah aproksimasi dari asal (berlaku dalam batas tertentu)
+# generalized_by  : tujuan adalah generalisasi dari asal
+# motivated_by    : tujuan (postulat) dimotivasi oleh asal, bukan diturunkan darinya
+l.simetri | p.kekekalan | special_case_of | invarians translasi ruang -> momentum konstan
+l.simetri | e.kekekalan | special_case_of | invarians translasi waktu -> energi konstan
+l.simetri | r.kekekalan | special_case_of | invarians rotasi -> momentum sudut konstan
+sr.momenergi | e.ek | approximation_of | K = (gamma-1)mc^2 -> (1/2)mv^2 untuk v << c
+sr.lorentz | k.relatif | approximation_of | transformasi Lorentz -> Galileo untuk v << c
+gr.einstein | g.newton | approximation_of | medan lemah dan kecepatan rendah
+q.hidrogen | a.bohr | approximation_of | tingkat energi Bohr = hasil Schrodinger (tanpa spin/halus)
+d.hukum2 | l.eulerlagrange | generalized_by | Euler-Lagrange mereproduksi Hukum II Newton untuk L = T - U
+e.kekekalan | t.hukum1 | generalized_by | kekekalan energi diperluas dengan kalor
+t.kinetik | s.mb | generalized_by | teori kinetik -> mekanika statistik umum
+mo.debroglie | q.tdse | motivated_by | gelombang materi -> persamaan gelombang untuk psi
+w.persamaan | q.tdse | motivated_by | analogi persamaan gelombang
+x.maxwell | sr.postulat | motivated_by | kovarian persamaan Maxwell dan konstansi c
+e.ek | sr.momenergi | generalized_by | energi kinetik klasik -> energi relativistik

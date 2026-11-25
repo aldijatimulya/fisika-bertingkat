@@ -1,0 +1,37 @@
+﻿area_key,bloom,luaran_belajar,indikator_penguasaan
+MATH0,C3,"Menggunakan turunan, integral, vektor, dan persamaan diferensial untuk memodelkan besaran fisis",Dapat menurunkan x(t) dari a(t) dengan syarat awal dan menjelaskan arti tiap integral
+MATH2,C3,"Menerapkan Fourier, PDP, fungsi khusus, dan kalkulus variasi pada masalah fisika",Dapat menyelesaikan persamaan Laplace dengan separasi variabel dan menjelaskan syarat batasnya
+KIN,C2,Menjelaskan hubungan posisi-kecepatan-percepatan sebagai turunan berantai terhadap waktu,"Diberi grafik x-t, dapat menggambar v-t dan a-t beserta alasan"
+KIN,C3,"Menyelesaikan gerak 1D/2D dengan menyebut asumsi (a konstan, tanpa drag)",Menyebut kapan v = v0 + at TIDAK berlaku
+DYN,C4,Menganalisis sistem gaya dengan diagram benda bebas dan hukum Newton,"Dapat memilih sistem, menggambar semua gaya, dan menjelaskan mengapa tiap gaya ada"
+ENE,C3,Menurunkan teorema usaha-energi dari hukum II Newton dan menerapkannya,Dapat menjelaskan kapan energi mekanik kekal dan kapan tidak
+MOM,C3,Menerapkan kekekalan momentum pada tumbukan,Dapat membedakan tumbukan elastis/inelastis dan memeriksa kekekalan energi dan momentum secara terpisah
+ROT,C3,"Menerapkan torsi, momen inersia, dan kekekalan momentum sudut",Dapat menurunkan dL/dt = torsi dari hukum II Newton
+GRA,C3,Menjelaskan orbit melalui hukum gravitasi dan kekekalan momentum sudut/energi,Dapat menurunkan hukum Kepler II dari kekekalan momentum sudut
+FLU,C3,"Menerapkan tekanan, kontinuitas, dan Bernoulli dengan asumsi yang benar",Dapat menyebut empat asumsi Bernoulli dan kasus kegagalannya
+OSC,C3,Memodelkan osilasi dengan persamaan diferensial dan menjelaskan resonansi,Dapat menurunkan solusi SHM dari F = -kx dan menjelaskan batas aproksimasi sudut kecil
+WAV,C3,"Menurunkan dan menerapkan persamaan gelombang, superposisi, dan gelombang berdiri",Dapat menjelaskan perbedaan kecepatan rambat gelombang dan kecepatan partikel medium
+THM,C3,"Menghubungkan besaran makroskopik (suhu, tekanan) dengan gerak molekul dan hukum termodinamika",Dapat menurunkan tekanan gas dari teori kinetik
+EMB,C3,"Menggunakan hukum Coulomb, Gauss, Ampere, dan Faraday pada geometri sederhana",Dapat memilih permukaan Gauss yang tepat dan menjelaskan alasannya
+OPT,C3,Menerapkan optik geometri dan interferensi dasar,Dapat menjelaskan kapan optik geometri berhenti berlaku
+CM,C4,"Menganalisis gerak sentral, kerangka non-inersial, dan osilasi terkopel",Dapat menggunakan potensial efektif dan mode normal untuk menjelaskan perilaku sistem
+LAG,C5,Menurunkan persamaan gerak dari prinsip aksi dan mengaitkan simetri dengan besaran kekal,"Dapat menunjukkan bahwa Euler-Lagrange menghasilkan Newton, dan menyebut simetri di balik tiap hukum kekekalan"
+HAM,C4,Menggunakan formalisme Hamilton dan ruang fase,Dapat melakukan transformasi Legendre dan menggambar potret fase
+EM2,C5,Menurunkan gelombang EM dari persamaan Maxwell dan menganalisis energi/radiasi,Dapat menjelaskan peran arus pergeseran dan menurunkan c dari mu0 dan epsilon0
+TH2,C4,"Menghubungkan mikrostat, entropi, dan potensial termodinamika",Dapat menurunkan distribusi Boltzmann dari ensembel kanonik
+OPT2,C3,"Menganalisis interferensi, difraksi, dan polarisasi dengan model gelombang",Dapat menurunkan pola difraksi celah tunggal dengan transformasi Fourier
+SR,C4,Menurunkan konsekuensi postulat relativitas khusus dan menggunakan empat-vektor,"Dapat menurunkan dilatasi waktu dan E^2 = (pc)^2 + (mc^2)^2, dan menyebut batas klasiknya"
+MOD,C4,"Menjelaskan kegagalan fisika klasik (benda hitam, fotolistrik, Compton) dan munculnya kuantisasi",Dapat menjelaskan mengapa eksperimen tertentu tidak dapat dijelaskan gelombang klasik
+ATM,C3,Menerapkan model Bohr dan menjelaskan keterbatasannya,Dapat menghitung spektrum hidrogen dan menyebut dua hal yang gagal dijelaskan Bohr
+NUC,C3,"Menghitung energi ikat, peluruhan, dan energi reaksi inti",Dapat menurunkan hukum peluruhan eksponensial dari laju peluruhan tetap
+SSP,C2,Menjelaskan struktur kristal dan teori pita secara kualitatif,Dapat menjelaskan mengapa celah pita membedakan konduktor dan isolator
+QM,C5,"Menggunakan postulat, operator, dan persamaan Schrodinger untuk sistem satu dimensi hingga atom hidrogen",Dapat menjelaskan postulat mana yang tidak diturunkan dan mengapa; menurunkan ketidakpastian dari komutator
+SM2,C4,Membedakan statistik klasik dan kuantum dan menerapkannya,Dapat menjelaskan asal distribusi Fermi-Dirac dari asas Pauli
+ADV_PP,C2,Menjelaskan Model Standar dan kerangka dasar teori medan kuantum,Dapat menjelaskan peran simetri gauge dan diagram Feynman
+ADV_GR,C4,Menjelaskan prinsip ekuivalensi dan persamaan Einstein serta penerapannya,Dapat menjelaskan bagaimana Newton muncul sebagai limit medan lemah
+ADV_AST,C3,Menerapkan fisika dasar pada bintang dan kosmologi,Dapat menjelaskan keseimbangan hidrostatik bintang
+ADV_PLA,C2,Menjelaskan perilaku plasma dan MHD dasar,Dapat menghitung panjang Debye dan frekuensi plasma
+ADV_MAT,C3,Menjelaskan sifat elektronik/magnetik material dengan model kuantum,Dapat menghubungkan struktur pita dengan sifat listrik
+ADV_GEO,C3,"Menerapkan fisika pada metode geofisika (seismik, gravitasi-magnetik, geolistrik)",Dapat menghubungkan persamaan gelombang/potensial dengan interpretasi data lapangan
+ADV_NUK,C3,Menjelaskan reaktor dan interaksi radiasi-materi,Dapat menghitung laju reaksi dan dosis sederhana
+ADV_CP,C6,Merancang simulasi numerik untuk masalah fisika,Dapat menguji konvergensi dan membandingkan hasil numerik dengan solusi analitik
