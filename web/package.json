@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --no-warnings tests/sync.test.mjs",
+    "test": "node --experimental-strip-types --no-warnings tests/sync.test.mjs && node --experimental-strip-types --no-warnings tests/content.test.mjs",
     "sync-data": "python3 -I ../curriculum/tools/build.py && cp ../curriculum/data/knowledge_graph.json ../curriculum/data/equations.json src/data/"
   },
   "dependencies": {

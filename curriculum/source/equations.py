@@ -48,6 +48,21 @@ eq("eq.v2", "k.glbb", "Hubungan kecepatan-posisi (tanpa waktu)", r"v^2 = v_0^2 +
     (r"v^2 = v_0^2 + 2a(x-x_0)", "Susun ulang.")],
    "Berguna bila waktu tidak diketahui; juga bibit teorema usaha-energi.", ["e.ek"])
 
+eq("eq.acc_avg", "k.percepatan", "Percepatan rata-rata", r"\bar a = \frac{\Delta v}{\Delta t} = \frac{v_2 - v_1}{t_2 - t_1}", "definisi", [],
+   ["Kecepatan v(t) diketahui pada dua saat t1 dan t2"], "Selang waktu berhingga. Hasilnya hanya menggambarkan perubahan kecepatan rata-rata; percepatan sesungguhnya di setiap saat bisa berbeda-beda.",
+   [(r"v_1 = v(t_1),\quad v_2 = v(t_2)", "Ambil kecepatan pada dua saat yang berbeda."),
+    (r"\Delta v = v_2 - v_1,\quad \Delta t = t_2 - t_1", "Hitung perubahan kecepatan dan selang waktunya; tanda Delta v membawa informasi arah."),
+    (r"\bar a = \frac{\Delta v}{\Delta t}", "Definisi: perubahan kecepatan per satuan waktu. Satuannya (m/s)/s = m/s^2.")],
+   "Sama seperti kemiringan garis yang menghubungkan dua titik pada grafik v-t.", ["k.glbb"])
+
+eq("eq.acc_from_x", "k.percepatan", "Percepatan dari fungsi posisi kuadratik", r"x=x_0+v_0t+\tfrac12at^2\ \Rightarrow\ \frac{d^2x}{dt^2}=a", "turunan", ["eq.vel", "eq.acc", "eq.xt"],
+   ["Posisi berbentuk x(t) = x0 + v0 t + (1/2) a t^2 dengan x0, v0, a konstan"], "Hanya memeriksa konsistensi untuk percepatan konstan; fungsi posisi lain memberi percepatan lain.",
+   [(r"x(t)=x_0+v_0t+\tfrac12at^2", "Fungsi posisi gerak dengan percepatan konstan (eq.xt)."),
+    (r"v=\frac{dx}{dt}=0+v_0\cdot1+\tfrac12a\cdot2t=v_0+at", "Turunkan suku demi suku (eq.vel): turunan konstanta = 0, turunan t = 1, turunan t^2 = 2t."),
+    (r"a=\frac{dv}{dt}=0+a=a", "Turunkan sekali lagi (eq.acc): v0 konstan sehingga turunannya 0, turunan a t terhadap t adalah a."),
+    (r"\frac{d^2x}{dt^2}=a", "Hasilnya a, sama dengan percepatan yang dipakai membangun x(t): konsisten.")],
+   "Menegaskan bahwa percepatan adalah turunan kedua posisi: kelengkungan grafik x-t.", ["k.glbb"])
+
 eq("eq.range", "k.proyektil", "Jangkauan proyektil", r"R = \frac{v_0^2 \sin 2\theta}{g}", "turunan", ["eq.xt", "eq.vt"],
    ["Tanpa hambatan udara", "g konstan", "Permukaan datar, ketinggian awal = akhir", "Bumi diperlakukan datar"],
    "Jangkauan kecil dibanding jari-jari Bumi; tanpa drag.",

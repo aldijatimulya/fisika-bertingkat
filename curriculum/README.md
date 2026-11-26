@@ -8,7 +8,7 @@ Hasil eksekusi tahap 1 dari dokumen "Jalan Program" (Concept-Driven Physics Lear
 |---|---|---|---|
 | 1 | Master Curriculum Map | `data/levels.csv`, `areas.csv`, `concepts.csv` | 6 level, 35 area, **216 konsep** |
 | 2 | Learning Dependency Framework | `data/edges.csv`, `knowledge_graph.json` | **477 relasi**: prerequisite, derived_from, special_case_of, approximation_of, generalized_by, motivated_by |
-| 3 | Equation Derivation Database | `data/equations.json`, `equations.csv` | **30 persamaan** (119 langkah, tiap langkah beralasan), irisan Kinematika → Newton → Energi → Osilasi → Lagrange → Maxwell → Relativitas → Bohr/Schrodinger → Termo |
+| 3 | Equation Derivation Database | `data/equations.json`, `equations.csv` | **32 persamaan** (126 langkah, tiap langkah beralasan), irisan Kinematika → Newton → Energi → Osilasi → Lagrange → Maxwell → Relativitas → Bohr/Schrodinger → Termo |
 | 4 | Mathematical Foundation Mapping | `data/math_mapping.csv` | Matematika yang dibutuhkan tiap area, langsung/tidak langsung, dihitung otomatis dari graf |
 | 5 | Reference & Bibliography | `data/references.csv`, `area_references.csv` | 14 buku, rujukan per area |
 | 6 | Learning Outcome Framework | `data/learning_outcomes.csv` | Luaran (Bloom) dan indikator penguasaan per area |
@@ -33,7 +33,7 @@ Sunting hanya berkas di `source/` (`concepts.txt`, `extra_edges.txt`, `equations
 4. **Persamaan Schrodinger dan Hukum II Newton ditandai jujur** sebagai `postulat` dan `hukum`, bukan turunan. Model Bohr ditandai `model` dengan semua postulat dan kegagalannya.
 5. **Nomor bab referensi** hanya `chapters_verified = true` untuk HRW, Taylor, Griffiths (EM dan QM), dan Schroeder. Sisanya (OpenStax, Krane, Hartle, Boas, dst.) masih perlu dicocokkan dengan edisi yang Anda pegang.
 6. **Derivasi sudah ditinjau silang** oleh pemeriksa independen; 20 temuan (asumsi hilang, klaim terlalu luas, `depends_on` kurang) sudah diperbaiki. Tetap perlu **tinjauan pakar fisika Anda/dosen** sebelum konten terbit, terutama untuk Level 03-05 yang baru berisi kerangka konsep, belum derivasi.
-7. Status semua konsep masih `rencana`; derivasi baru tersedia untuk 30 persamaan inti.
+7. Status semua konsep masih `rencana`; derivasi baru tersedia untuk 32 persamaan inti; modul penuh pertama (Percepatan) ada di `web/src/content`.
 
 ## Langkah berikutnya yang disarankan
 

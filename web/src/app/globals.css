@@ -206,3 +206,54 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tabs { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); font-family: var(--sans); }
 .tabs button { border: 0; background: transparent; padding: 7px 12px; border-radius: 7px; font: inherit; font-size: 0.9375rem; color: var(--ink-2); cursor: pointer; }
 .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* ===== Modul penuh: simulasi, kuis, contoh soal ===== */
+.module { scroll-margin-top: 72px; }
+.module h3 { margin: 18px 0 6px; }
+.tbl { border-collapse: collapse; font-family: var(--sans); font-size: 0.9375rem; margin: 10px 0 14px; }
+.tbl th, .tbl td { border: 1px solid var(--rule); padding: 6px 12px; text-align: left; }
+.tbl th { background: var(--surface); font-weight: 600; }
+
+.secnav ol { list-style: none; padding: 0; margin: 0 0 18px; font-family: var(--sans); font-size: 0.875rem; }
+.secnav li { margin: 3px 0; }
+.secnav a { color: var(--ink-2); text-decoration: none; }
+.secnav a:hover { color: var(--ink); text-decoration: underline; }
+
+.sim { border: 1px solid var(--rule); border-radius: 12px; background: var(--surface); padding: 16px; margin-top: 10px; display: grid; gap: 14px; }
+.sim .tabs { flex-wrap: wrap; justify-self: start; }
+.sim .pred { border: 1px dashed var(--ink-3); border-radius: 10px; padding: 12px 14px; margin: 0; font-family: var(--sans); }
+.sim .pred legend { font-weight: 600; padding: 0 6px; }
+.choices { display: grid; gap: 6px; margin: 8px 0 10px; font-family: var(--sans); }
+.choice { display: flex; gap: 8px; align-items: flex-start; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 8px; cursor: pointer; background: var(--paper); }
+.choice[data-state="right"] { border-color: var(--ok); }
+.choice[data-state="wrong"] { border-color: var(--lv5); }
+.choice input { margin-top: 4px; }
+.track { width: 100%; height: auto; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.controls .grow { flex: 1 1 180px; }
+.controls input[type="range"], .sliders input[type="range"] { width: 100%; }
+.tval { font-variant-numeric: tabular-nums; min-width: 6.5em; }
+.sliders { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.plots { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.plot { margin: 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 8px; }
+.plot figcaption { font-family: var(--sans); font-size: 0.8125rem; font-weight: 600; margin-bottom: 2px; }
+.plot svg { width: 100%; height: auto; display: block; }
+.readout .vals { display: flex; flex-wrap: wrap; gap: 6px 20px; font-variant-numeric: tabular-nums; }
+.readout .status { margin: 6px 0; font-weight: 600; }
+.readout .subs { overflow-x: auto; }
+
+.example { border: 1px solid var(--rule); border-radius: 10px; margin: 10px 0; background: var(--surface); }
+.example > summary { cursor: pointer; padding: 10px 14px; font-family: var(--sans); font-weight: 600; }
+.example .lvl { font-weight: 500; color: var(--ink-2); margin-right: 8px; }
+.example .ex-body { padding: 0 14px 12px; }
+.example .answer { margin-top: 8px; border-top: 1px solid var(--rule); padding-top: 8px; }
+.example .answer > summary { cursor: pointer; font-family: var(--sans); font-size: 0.9375rem; color: var(--ink-2); }
+
+.quiz { display: grid; gap: 14px; }
+.quiz .q { border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; margin: 0; background: var(--surface); }
+.quiz .q legend { font-family: var(--sans); font-weight: 600; padding: 0 6px; }
+.quiz .prompt { margin-top: 0; }
+.quiz .summary { border: 1px solid var(--ink); border-radius: 10px; padding: 14px 16px; }
+.quiz .mk { padding-left: 18px; }
+.quiz .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.readout .subs > div { margin: 2px 0; }

@@ -8,6 +8,7 @@ import { Level } from "@/components/Level";
 import { MasteryButton } from "@/components/MasteryButton";
 import { Tex } from "@/components/Tex";
 import { Linked } from "@/components/Linked";
+import { MODULES } from "@/content/modules";
 
 export function generateStaticParams() { return nodes.map((n) => ({ id: n.id })); }
 
@@ -28,6 +29,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
   const forward = usedBy(id);
   const eqs = equationsOf(id);
   const area = areaByKey.get(n.area);
+  const M = MODULES[id];
 
   return (
     <div className="wrap">
@@ -43,10 +45,10 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
 
       <div className="layout">
         <div className="stack">
-          <Module no="Fenomena fisik" todo="Mengapa ini terjadi? Dibuka dengan situasi nyata sebelum rumus." />
-          <Module no="Pemahaman konsep" todo="Apa yang sebenarnya dipelajari, dijelaskan tanpa rumus." />
+          {M ? <Sec id="fenomena" title="Fenomena fisik">{M.fenomena}</Sec> : <Module id="fenomena" no="Fenomena fisik" todo="Mengapa ini terjadi? Dibuka dengan situasi nyata sebelum rumus." />}
+          {M ? <Sec id="konsep" title="Pemahaman konsep">{M.konsep}</Sec> : <Module id="konsep" no="Pemahaman konsep" todo="Apa yang sebenarnya dipelajari, dijelaskan tanpa rumus." />}
 
-          <section className="module">
+          <section className="module" id="matematika">
             <h2>Fondasi matematika <span className={`state ${math.length ? "ready" : ""}`}>{math.length ? "otomatis dari peta" : "tidak ada prasyarat matematika langsung"}</span></h2>
             {math.length ? (
               <>
@@ -54,10 +56,12 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
                 <ul>{math.map((m) => <li key={m.id}><Link href={`/konsep/${m.id}/`}>{m.title}</Link></li>)}</ul>
               </>
             ) : <p className="muted">Konsep ini memakai matematika yang sudah dicakup prasyarat fisikanya.</p>}
+            {M && <div style={{ marginTop: 14 }}>{M.matematika}</div>}
           </section>
 
-          <section className="module">
+          <section className="module" id="derivasi">
             <h2>Derivasi <span className={`state ${eqs.length ? "ready" : ""}`}>{eqs.length ? `${eqs.length} persamaan siap` : "belum ditulis"}</span></h2>
+            {M?.derivasiPengantar}
             {eqs.length ? (
               <div className="stack" style={{ marginTop: 8 }}>
                 {eqs.map((e) => (
@@ -78,21 +82,24 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
             ) : (
               <p className="todo">Derivasi untuk konsep ini belum ditulis. Format yang dipakai: tiap langkah beralasan, dengan asumsi dan batas berlaku.</p>
             )}
+            {M?.derivasiPenutup}
           </section>
 
-          <section className="module">
+          <section className="module" id="interpretasi">
             <h2>Interpretasi fisis <span className={`state ${eqs.length ? "ready" : ""}`}>{eqs.length ? "tersedia" : "belum ditulis"}</span></h2>
             {eqs.length ? eqs.map((e) => (
               <p key={e.id}><Tex tex={e.latex} /> — <Linked text={e.meaning} /></p>
             )) : <p className="todo">Makna fisis dari hasil akan dituliskan di sini.</p>}
+            {M?.interpretasi}
           </section>
 
-          <Module no="Visualisasi dan simulasi" todo="Ubah parameter dan lihat persamaan yang aktif ikut berubah." />
-          <Module no="Contoh soal" todo="Tiga tingkat: konseptual, matematis, aplikatif." />
-          <Module no="Evaluasi konseptual" todo="Soal yang menguji pemahaman, bukan hanya hitungan; tiap pilihan salah dipetakan ke satu miskonsepsi." />
+          {M ? <Sec id="simulasi" title="Visualisasi dan simulasi">{M.simulasi}</Sec> : <Module id="simulasi" no="Visualisasi dan simulasi" todo="Ubah parameter dan lihat persamaan yang aktif ikut berubah." />}
+          {M ? <Sec id="contoh" title="Contoh soal">{M.contoh}</Sec> : <Module id="contoh" no="Contoh soal" todo="Tiga tingkat: konseptual, matematis, aplikatif." />}
+          {M ? <Sec id="evaluasi" title="Evaluasi konseptual">{M.evaluasi}</Sec> : <Module id="evaluasi" no="Evaluasi konseptual" todo="Soal yang menguji pemahaman, bukan hanya hitungan; tiap pilihan salah dipetakan ke satu miskonsepsi." />}
 
-          <section className="module">
+          <section className="module" id="keterkaitan">
             <h2>Keterkaitan <span className="state ready">otomatis dari peta</span></h2>
+            {M?.keterkaitan}
             {ORDER.filter((t) => forward.has(t)).map((t) => (
               <div key={t}>
                 <div className="group-title">Konsep ini menjadi {EDGE_LABEL[t]} bagi</div>
@@ -107,6 +114,12 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
 
         <aside className="side">
           <div className="sticky">
+            {M && (
+              <nav aria-label="Bagian modul" className="secnav">
+                <h3>Bagian modul</h3>
+                <ol>{SECTIONS.map(([k, t]) => <li key={k}><a href={`#${k}`}>{t}</a></li>)}</ol>
+              </nav>
+            )}
             <h3>Prasyarat langsung</h3>
             {direct.length ? (
               <ul className="chain">{direct.map((p) => (
@@ -125,9 +138,23 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
   );
 }
 
-function Module({ no, todo }: { no: string; todo: string }) {
+const SECTIONS: [string, string][] = [
+  ["fenomena", "Fenomena fisik"], ["konsep", "Pemahaman konsep"], ["matematika", "Fondasi matematika"], ["derivasi", "Derivasi"],
+  ["interpretasi", "Interpretasi fisis"], ["simulasi", "Simulasi"], ["contoh", "Contoh soal"], ["evaluasi", "Evaluasi"], ["keterkaitan", "Keterkaitan"],
+];
+
+function Sec({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="module">
+    <section className="module" id={id}>
+      <h2>{title} <span className="state ready">tersedia</span></h2>
+      {children}
+    </section>
+  );
+}
+
+function Module({ id, no, todo }: { id: string; no: string; todo: string }) {
+  return (
+    <section className="module" id={id}>
       <h2>{no} <span className="state">belum ditulis</span></h2>
       <p className="todo">{todo}</p>
     </section>

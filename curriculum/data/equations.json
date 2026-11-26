@@ -170,6 +170,74 @@
     ]
   },
   {
+    "id": "eq.acc_avg",
+    "concept": "k.percepatan",
+    "title": "Percepatan rata-rata",
+    "latex": "\\bar a = \\frac{\\Delta v}{\\Delta t} = \\frac{v_2 - v_1}{t_2 - t_1}",
+    "kind": "definisi",
+    "depends_on": [],
+    "assumptions": [
+      "Kecepatan v(t) diketahui pada dua saat t1 dan t2"
+    ],
+    "validity": "Selang waktu berhingga. Hasilnya hanya menggambarkan perubahan kecepatan rata-rata; percepatan sesungguhnya di setiap saat bisa berbeda-beda.",
+    "steps": [
+      {
+        "latex": "v_1 = v(t_1),\\quad v_2 = v(t_2)",
+        "why": "Ambil kecepatan pada dua saat yang berbeda."
+      },
+      {
+        "latex": "\\Delta v = v_2 - v_1,\\quad \\Delta t = t_2 - t_1",
+        "why": "Hitung perubahan kecepatan dan selang waktunya; tanda Delta v membawa informasi arah."
+      },
+      {
+        "latex": "\\bar a = \\frac{\\Delta v}{\\Delta t}",
+        "why": "Definisi: perubahan kecepatan per satuan waktu. Satuannya (m/s)/s = m/s^2."
+      }
+    ],
+    "meaning": "Sama seperti kemiringan garis yang menghubungkan dua titik pada grafik v-t.",
+    "applied_in": [
+      "k.glbb"
+    ]
+  },
+  {
+    "id": "eq.acc_from_x",
+    "concept": "k.percepatan",
+    "title": "Percepatan dari fungsi posisi kuadratik",
+    "latex": "x=x_0+v_0t+\\tfrac12at^2\\ \\Rightarrow\\ \\frac{d^2x}{dt^2}=a",
+    "kind": "turunan",
+    "depends_on": [
+      "eq.vel",
+      "eq.acc",
+      "eq.xt"
+    ],
+    "assumptions": [
+      "Posisi berbentuk x(t) = x0 + v0 t + (1/2) a t^2 dengan x0, v0, a konstan"
+    ],
+    "validity": "Hanya memeriksa konsistensi untuk percepatan konstan; fungsi posisi lain memberi percepatan lain.",
+    "steps": [
+      {
+        "latex": "x(t)=x_0+v_0t+\\tfrac12at^2",
+        "why": "Fungsi posisi gerak dengan percepatan konstan (eq.xt)."
+      },
+      {
+        "latex": "v=\\frac{dx}{dt}=0+v_0\\cdot1+\\tfrac12a\\cdot2t=v_0+at",
+        "why": "Turunkan suku demi suku (eq.vel): turunan konstanta = 0, turunan t = 1, turunan t^2 = 2t."
+      },
+      {
+        "latex": "a=\\frac{dv}{dt}=0+a=a",
+        "why": "Turunkan sekali lagi (eq.acc): v0 konstan sehingga turunannya 0, turunan a t terhadap t adalah a."
+      },
+      {
+        "latex": "\\frac{d^2x}{dt^2}=a",
+        "why": "Hasilnya a, sama dengan percepatan yang dipakai membangun x(t): konsisten."
+      }
+    ],
+    "meaning": "Menegaskan bahwa percepatan adalah turunan kedua posisi: kelengkungan grafik x-t.",
+    "applied_in": [
+      "k.glbb"
+    ]
+  },
+  {
     "id": "eq.range",
     "concept": "k.proyektil",
     "title": "Jangkauan proyektil",

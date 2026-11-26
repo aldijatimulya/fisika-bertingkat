@@ -41,7 +41,7 @@ Buka **SQL Editor** → **New query**. Jalankan **satu per satu, berurutan**: te
 | 1 | `schema.sql` | Tabel, aturan keamanan (RLS), dan fungsi graf. **Jalankan sekali saja.** |
 | 2 | `seed_1_kurikulum.sql` | Tingkat, area, 216 konsep, 477 relasi |
 | 3 | `seed_2_pendukung.sql` | Buku acuan, luaran belajar, pemetaan matematika |
-| 4 | `seed_3_persamaan.sql` | 30 persamaan dan langkah derivasinya |
+| 4 | `seed_3_persamaan.sql` | 32 persamaan dan langkah derivasinya (jalankan ulang berkas ini setiap persamaan ditambah atau diubah; aman diulang) |
 
 Berkas seed aman dijalankan ulang kapan saja.
 
@@ -158,6 +158,7 @@ Ulangi daftar periksa Bagian B nomor 3-6, kali ini di alamat GitHub Pages.
 | Tambah/ubah derivasi | Sunting `curriculum/source/equations.py` |
 | Aturan penulisan modul | `curriculum/docs/content_standard.md` |
 | Tampilan | Berkas di `web/src/` |
+| Modul penuh (9 bagian) | Teladan: `web/src/content/modules.tsx` (teks), `percepatan.ts` (kuis + skenario simulasi), `components/Simulation.tsx` dan `Quiz.tsx`. Modul baru didaftarkan di `MODULES`; konsep tanpa modul tetap menampilkan penanda *belum ditulis*. Jalankan `npm test` agar angka contoh soal dan kuis ikut diperiksa. |
 
 Alur kerja biasa:
 
