@@ -1,0 +1,467 @@
+{
+  "id": "k.vektor2d",
+  "status": "draf",
+  "fenomena": [
+    "Sepeda motor melaju di tikungan jalan dengan speedometer yang tetap menunjuk 36 km/jam. Lajunya tidak berubah, tetapi pengendara merasa tubuhnya terdorong ke arah luar tikungan. Di jalan lurus dengan laju yang sama, rasa itu tidak ada. Jadi ada sesuatu yang berubah di tikungan, dan itu bukan angka di speedometer.",
+    "Contoh lain: pemain menendang bola ke atas dan ke depan. Dilihat dari samping, bola naik lalu turun. Dilihat dari atas lapangan, bola bergerak maju dalam garis lurus. Satu gerak, dua tampilan yang berbeda. Keduanya benar, dan keduanya ada dalam satu gerak yang sama.",
+    "Di satu dimensi, arah cukup dinyatakan dengan tanda plus atau minus. Di bidang, arah punya banyak kemungkinan, sehingga posisi, kecepatan, dan percepatan harus dijadikan vektor. Modul ini membangun cara berpikir itu.",
+    "Pertanyaan penuntun: apa arti kecepatan dan percepatan bila arah ikut dihitung, dan bolehkah gerak di bidang dipecah menjadi dua gerak lurus?"
+  ],
+  "konsep": [
+    {
+      "h": "Vektor posisi, perpindahan, dan lintasan"
+    },
+    "Pilih titik acuan dan dua sumbu tegak lurus, x dan y. Posisi benda adalah panah dari titik acuan ke benda, ditulis $\\vec r=(x,y)$. Saat benda bergerak, ujung panah ini menggambar lintasan. Perpindahan $\\Delta\\vec r=\\vec r_2-\\vec r_1$ adalah panah lurus dari posisi awal ke posisi akhir, tidak peduli lintasan yang ditempuh.",
+    {
+      "h": "Kecepatan adalah vektor"
+    },
+    "Kecepatan rata-rata adalah perpindahan dibagi selang waktu, $\\bar{\\vec v}=\\Delta\\vec r/\\Delta t$, sehingga searah dengan perpindahan. Bila selang waktu dikecilkan sampai mendekati nol, kita mendapat kecepatan sesaat $\\vec v=d\\vec r/dt$. Arahnya menyinggung lintasan di titik itu, dan besarnya adalah laju.",
+    {
+      "h": "Percepatan adalah vektor"
+    },
+    "Percepatan adalah laju perubahan vektor kecepatan, $\\vec a=d\\vec v/dt$. Vektor berubah bila besarnya berubah, atau arahnya berubah, atau keduanya. Di satu dimensi hanya perubahan besar yang mungkin (arah hanya dua). Di bidang, perubahan arah saja sudah cukup untuk menimbulkan percepatan.",
+    {
+      "table": {
+        "head": [
+          "Yang berubah pada kecepatan",
+          "Contoh",
+          "Percepatan"
+        ],
+        "rows": [
+          [
+            "Hanya besarnya (laju)",
+            "Mobil menambah gas di jalan lurus",
+            "Ada, sejajar kecepatan"
+          ],
+          [
+            "Hanya arahnya",
+            "Motor di tikungan dengan laju tetap",
+            "Ada, tegak lurus kecepatan"
+          ],
+          [
+            "Besar dan arah",
+            "Bola dilempar miring",
+            "Ada, menyudut terhadap kecepatan"
+          ],
+          [
+            "Tidak ada",
+            "Pesawat lurus dengan laju tetap",
+            "Nol"
+          ]
+        ]
+      }
+    },
+    {
+      "h": "Gagasan utama: pecah menjadi komponen"
+    },
+    "Di bidang, $\\vec v$ dan $\\vec a$ bisa diuraikan menjadi komponen sepanjang x dan y. Hasil terpenting modul ini: kecepatan dan percepatan diturunkan komponen demi komponen, sehingga $v_x$ hanya ditentukan oleh $x(t)$ dan $a_y$ hanya oleh $v_y(t)$. Gerak di bidang dapat diperlakukan sebagai dua gerak satu dimensi yang berjalan bersamaan dan saling tidak mengganggu dalam penghitungannya. Penurunannya ada di bagian Derivasi, dan inilah dasar untuk k.proyektil nanti.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Laju tetap tidak berarti percepatan nol. Bila arah kecepatan berubah, ada percepatan.",
+        "Satu komponen nol tidak berarti vektornya nol. Bola di puncak lintasan bisa punya $v_y=0$ sementara $v_x\\neq0$.",
+        "Besar vektor bukan jumlah komponennya. Komponen 3 dan 4 memberi besar 5, bukan 7."
+      ]
+    },
+    "Gerak 3D sama persis, hanya ada satu komponen lagi, $z$. Modul ini memakai bidang karena gambarnya mudah, dan semua kesimpulannya berlaku ke ruang."
+  ],
+  "matematika": [
+    "Alat yang dipakai ada tiga, dan ketiganya berasal dari prasyarat yang sudah ada.",
+    {
+      "ul": [
+        "Komponen dan besar vektor. Vektor $\\vec v=(v_x,v_y)$ memiliki besar $|\\vec v|=\\sqrt{v_x^2+v_y^2}$ (teorema Pythagoras). Arahnya terhadap sumbu x memenuhi $\\tan\\varphi=v_y/v_x$; tanda kedua komponen menentukan kuadran, sehingga $\\tan^{-1}$ saja bisa salah 180 derajat (lihat m.vektor dan m.trigo).",
+        "Fungsi vektor. Posisi $\\vec r(t)=(x(t),y(t))$ adalah fungsi bernilai vektor dari waktu. Turunannya terhadap parameter $t$ diambil komponen demi komponen: $\\dfrac{d\\vec r}{dt}=\\left(\\dfrac{dx}{dt},\\dfrac{dy}{dt}\\right)$ (lihat m.vektorfungsi).",
+        "Aturan turunan satu variabel. Karena tiap komponen adalah fungsi biasa, aturan turunan yang sama dengan modul k.kecepatan dan k.percepatan berlaku tanpa perubahan."
+      ]
+    },
+    "Contoh: bila $\\vec r(t)=(t^2,\\;6t-t^2)$ (meter), maka $\\vec v=(2t,\\;6-2t)$ dan $\\vec a=(2,\\;-2)$. Percepatan di sini tetap, tetapi arah kecepatan berubah terus, karena $v_x$ bertambah dan $v_y$ berkurang."
+  ],
+  "derivasi": {
+    "intro": [
+      "Modul ini tidak memuat persamaan baru di basis data persamaan. $\\vec v=d\\vec r/dt$ dan $\\vec a=d\\vec v/dt$ adalah definisi yang sama dengan $\\text{eq.vel}$ dan $\\text{eq.acc}$, hanya diterapkan pada vektor. Yang bisa dibuktikan, dan perlu dibuktikan, adalah bahwa definisi vektor itu bekerja per komponen. Hasil itu bukan tebakan: ia diturunkan dari definisi limit.",
+      "Di bawah ada dua turunan tambahan: (1) kecepatan dan percepatan per komponen, (2) apa yang diubah percepatan pada laju."
+    ],
+    "extra": [
+      {
+        "title": "Kecepatan dan percepatan bekerja per komponen",
+        "steps": [
+          {
+            "tex": "\\vec r(t)=x(t)\\,\\hat\\imath+y(t)\\,\\hat\\jmath",
+            "why": "Uraian vektor pada sumbu yang dipilih: $\\hat\\imath$ dan $\\hat\\jmath$ adalah vektor satuan sepanjang x dan y, dan arahnya tidak berubah terhadap waktu."
+          },
+          {
+            "tex": "\\frac{\\Delta\\vec r}{\\Delta t}=\\frac{x(t+\\Delta t)-x(t)}{\\Delta t}\\,\\hat\\imath+\\frac{y(t+\\Delta t)-y(t)}{\\Delta t}\\,\\hat\\jmath",
+            "why": "Selisih $\\vec r(t+\\Delta t)-\\vec r(t)$ dihitung komponen demi komponen. Karena $\\hat\\imath$ dan $\\hat\\jmath$ konstan, keduanya tidak ikut berubah dan tinggal ditulis di luar selisih. Pembagian dengan skalar $\\Delta t$ membagi tiap komponen."
+          },
+          {
+            "tex": "\\vec v=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\vec r}{\\Delta t}=\\frac{dx}{dt}\\,\\hat\\imath+\\frac{dy}{dt}\\,\\hat\\jmath",
+            "why": "Limit vektor dihitung komponen demi komponen (limit dari jumlah adalah jumlah limit, selama tiap limit ada). Tiap limit adalah turunan biasa, persis seperti definisi $\\text{eq.vel}$."
+          },
+          {
+            "tex": "v_x=\\frac{dx}{dt},\\qquad v_y=\\frac{dy}{dt}",
+            "why": "Samakan koefisien $\\hat\\imath$ dan $\\hat\\jmath$ pada kedua ruas. Hasilnya: $v_x$ hanya bergantung pada $x(t)$, dan $v_y$ hanya pada $y(t)$."
+          },
+          {
+            "tex": "\\vec a=\\lim_{\\Delta t\\to0}\\frac{\\Delta\\vec v}{\\Delta t}=\\frac{dv_x}{dt}\\,\\hat\\imath+\\frac{dv_y}{dt}\\,\\hat\\jmath",
+            "why": "Langkah yang sama diulang untuk $\\vec v(t)=v_x\\hat\\imath+v_y\\hat\\jmath$: vektor satuan konstan, limit dihitung per komponen."
+          },
+          {
+            "tex": "a_x=\\frac{dv_x}{dt}=\\frac{d^2x}{dt^2},\\qquad a_y=\\frac{dv_y}{dt}=\\frac{d^2y}{dt^2}",
+            "why": "Samakan koefisien, lalu masukkan $v=dx/dt$ dari langkah sebelumnya sehingga bentuknya sama dengan $\\text{eq.acc}$ untuk tiap sumbu."
+          }
+        ],
+        "validity": "Sumbu kartesius yang arahnya tetap (vektor satuan konstan) dan kerangka acuan yang tidak berputar. Bila vektor satuan sendiri berubah terhadap waktu (misalnya sumbu yang ikut berputar, lihat k.melingkar), turunannya muncul tambahan suku dan penguraian sederhana ini tidak cukup."
+      },
+      {
+        "title": "Percepatan mana yang mengubah laju",
+        "steps": [
+          {
+            "tex": "s^2=v_x^2+v_y^2",
+            "why": "Laju $s=|\\vec v|$ adalah besar kecepatan; kuadratkan Pythagoras supaya tidak ada akar."
+          },
+          {
+            "tex": "\\frac{d(s^2)}{dt}=2v_x\\frac{dv_x}{dt}+2v_y\\frac{dv_y}{dt}=2(v_xa_x+v_ya_y)",
+            "why": "Turunkan kedua ruas terhadap waktu. Tiap $v^2$ diturunkan dengan aturan rantai: $d(v^2)/dt=2v\\,dv/dt$. Lalu pakai $a_x=dv_x/dt$ dan $a_y=dv_y/dt$ dari turunan pertama."
+          },
+          {
+            "tex": "\\frac{d(s^2)}{dt}=2s\\,\\frac{ds}{dt}",
+            "why": "Aturan rantai yang sama diterapkan ke ruas kiri, dengan $s$ sebagai fungsi waktu."
+          },
+          {
+            "tex": "\\frac{ds}{dt}=\\frac{v_xa_x+v_ya_y}{s}=a_x\\frac{v_x}{s}+a_y\\frac{v_y}{s}",
+            "why": "Samakan kedua bentuk turunan, lalu bagi dengan $2s$ (perlu $s\\neq0$). Pecahan $(v_x/s,\\;v_y/s)$ adalah vektor satuan searah kecepatan, sehingga jumlah di kanan adalah komponen $\\vec a$ pada arah $\\vec v$."
+          },
+          {
+            "tex": "v_xa_x+v_ya_y=0\\ \\Rightarrow\\ \\frac{ds}{dt}=0",
+            "why": "Bila $\\vec a$ tegak lurus $\\vec v$, tidak ada komponen searah kecepatan, sehingga laju tidak berubah walaupun $\\vec a\\neq0$. Percepatan itu hanya mengubah arah."
+          }
+        ],
+        "validity": "Berlaku pada setiap saat selama $s\\neq0$ (kecepatan bukan vektor nol), pada sumbu kartesius tetap. Pada saat benda berhenti sesaat, arah kecepatan tidak terdefinisi dan rumus ini tidak dipakai."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: semua hasil ini menyatakan gerak sebagai fungsi waktu tanpa menyebut penyebabnya. Penyebab percepatan, yaitu gaya, dibahas di d.hukum2."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Dua gerak dalam satu"
+    },
+    "Hasil penguraian komponen bisa dibaca begini: komponen x bergerak seolah-olah tidak tahu ada komponen y, dan sebaliknya, asalkan $a_x$ dan $a_y$ diberikan sebagai fungsi yang tidak saling bergantung (misalnya gerak proyektil). Bila $a_x$ bergantung pada $v_y$, keduanya tidak lagi terpisah. Itu bukan klaim tentang dunia yang kita periksa lewat eksperimen, melainkan akibat langsung dari definisi turunan dengan sumbu tetap. Hal ini membuat soal 2D menjadi dua soal 1D yang digabung di akhir.",
+    {
+      "h": "Laju dan arah punya jalur sendiri"
+    },
+    "Dari turunan kedua di atas: bagian percepatan yang searah kecepatan mengubah laju, dan bagian yang tegak lurus kecepatan hanya mengubah arah. Itulah sebabnya motor di tikungan dengan laju tetap tetap memiliki percepatan. Besarnya dan alasannya dibahas di k.melingkar.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "36 km/jam sama dengan 10 m/s, dan 1 m/s = 3,6 km/jam.",
+        "Pesawat drone konsumen terbang mendatar dengan laju beberapa m/s sampai sekitar 15–20 m/s. Ini perkiraan kasar dan bergantung pada model drone.",
+        "Percepatan 1 m/s² pada kendaraan terasa seperti tarikan lembut; sekitar 0,1 g. Nilai pembanding g: sekitar 9,8 m/s²."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Benda dianggap titik. Benda yang berputar punya kecepatan berbeda di tiap bagiannya.",
+        "Sumbu kartesius tetap pada kerangka diam. Kerangka yang bergerak atau berputar memerlukan k.relatif dan perlakuan khusus.",
+        "Simulasi interaktif di situs ini baru mendukung gerak lurus satu dimensi, jadi modul ini belum memiliki simulasi. Visualisasi lintasan 2D (panah $\\vec v$ dan $\\vec a$ sepanjang lintasan) menyusul. Sementara itu, gambarlah sendiri lintasan pada contoh soal, lalu gambar $\\vec v$ dan $\\vec a$ pada beberapa titik."
+      ]
+    }
+  ],
+  "simulasi": null,
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Motor di tikungan, laju tetap",
+      "problem": [
+        "Sebuah motor berlaju tetap 10 m/s (36 km/jam). Mula-mula ia menuju timur. Lima detik kemudian, setelah berbelok ke kiri, ia menuju utara dengan laju yang sama. (a) Apakah ia mengalami percepatan? (b) Ke arah mana percepatan rata-ratanya, dan berapa besarnya?"
+      ],
+      "answer": [
+        "(a) Ya. Laju tetap, tetapi kecepatan adalah vektor dan arahnya berubah dari timur ke utara. Perubahan vektor kecepatan tidak nol, jadi percepatan rata-ratanya tidak nol.",
+        "(b) Pakai komponen (timur = +x, utara = +y). $\\vec v_1=(10,0)$ dan $\\vec v_2=(0,10)$ m/s. $\\Delta\\vec v=(-10,\\,10)$ m/s, besarnya $\\sqrt{200}\\approx14{,}14$ m/s. $\\bar a=14{,}14/5\\approx2{,}83$ m/s². Arahnya $(-1,1)$, yaitu barat laut, mengarah ke sisi dalam tikungan.",
+        {
+          "note": "Asumsi: percepatan rata-rata antara dua saat saja. Percepatan sesaat sepanjang tikungan bisa berbeda dari rata-rata ini."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Dari posisi ke kecepatan dan percepatan",
+      "problem": [
+        "Posisi sebuah benda $\\vec r(t)=(t^2,\\;6t-t^2)$ (meter, t dalam sekon). Tentukan (1) posisi, kecepatan, laju, dan arah kecepatan pada $t=2$ s, (2) percepatan, besar dan arahnya, (3) saat $v_y=0$ beserta kecepatan dan lajunya, (4) laju berubah dengan laju berapa pada $t=2$ s, dan kapan laju paling kecil."
+      ],
+      "answer": [
+        "Turunkan per komponen: $\\vec v=(2t,\\;6-2t)$ dan $\\vec a=(2,\\;-2)$ m/s².",
+        {
+          "ol": [
+            "$\\vec r(2)=(4,\\;8)$ m. $\\vec v(2)=(4,\\;2)$ m/s. Laju $=\\sqrt{16+4}=\\sqrt{20}\\approx4{,}47$ m/s. Arah $\\varphi=\\tan^{-1}(2/4)\\approx26{,}6^\\circ$ di atas sumbu x.",
+            "$\\vec a=(2,-2)$ m/s² tetap. Besar $=\\sqrt{8}\\approx2{,}83$ m/s², arah $-45^\\circ$ (miring ke bawah-kanan).",
+            "$v_y=6-2t=0$ pada $t=3$ s. Di situ $\\vec r=(9,9)$ m, $\\vec v=(6,0)$ m/s, laju 6 m/s. Percepatan tetap $(2,-2)$, jadi $v_y=0$ bukan percepatan nol.",
+            "Pakai $ds/dt=(v_xa_x+v_ya_y)/s$. Pada $t=2$: $(4\\cdot2+2\\cdot(-2))/4{,}47=4/4{,}47\\approx0{,}89$ m/s², laju sedang bertambah. Laju paling kecil saat $v_xa_x+v_ya_y=0$: $2t\\cdot2+(6-2t)(-2)=8t-12=0$, yaitu $t=1{,}5$ s. Di situ $\\vec v=(3,3)$, laju $\\sqrt{18}\\approx4{,}24$ m/s, dan $\\vec v\\perp\\vec a$."
+          ]
+        },
+        {
+          "note": "Catatan: pada $t=0$ dan $t=3$ s laju sama-sama 6 m/s, tetapi kecepatannya berbeda arah: $(0,6)$ dan $(6,0)$. Laju sama tidak berarti kecepatan sama."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Drone yang berbelok",
+      "problem": [
+        "Sebuah drone terbang mendatar. Dari titik asal ia bergerak dengan kecepatan tetap $(3,\\;4)$ m/s selama 10 s. Lalu selama 4 s berikutnya kecepatannya berubah secara merata menjadi $(7,\\;1)$ m/s. (a) Posisi, jarak dari titik asal, laju, dan arah pada akhir 10 s pertama. (b) Percepatan selama 4 s berikutnya, besar dan arahnya. (c) Berapa laju pada akhir, dan mengapa tidak sama dengan 5 m/s? Anggap sumbu x ke timur dan y ke utara."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$\\vec r=\\vec v\\,t=(30,\\;40)$ m. Jarak dari titik asal $=\\sqrt{900+1600}=50$ m. Laju $=\\sqrt{9+16}=5$ m/s (cek: $50/10=5$). Arah $\\tan^{-1}(4/3)\\approx53{,}1^\\circ$ dari timur ke utara.",
+            "$\\vec a=\\dfrac{(7,1)-(3,4)}{4}=\\dfrac{(4,-3)}{4}=(1,\\;-0{,}75)$ m/s². Besar $\\sqrt{1+0{,}5625}=1{,}25$ m/s². Arah $\\tan^{-1}(-0{,}75)\\approx-36{,}9^\\circ$ (ke timur dan agak ke selatan).",
+            "Laju akhir $=\\sqrt{49+1}=\\sqrt{50}\\approx7{,}07$ m/s. Ini bukan 5 karena $\\vec v$ terus berputar: walau $\\vec a$ awalnya tegak lurus $\\vec v_0$, seiring waktu $\\vec a$ punya komponen searah $\\vec v$ (lihat $ds/dt=(v_xa_x+v_ya_y)/s$ pada Derivasi) yang menambah laju, bukan sekadar mengubah arah. Menghitung laju sebagai $5+1{,}25\\times4$ juga salah karena arah dan besar bergabung secara vektor."
+          ]
+        },
+        {
+          "note": "Asumsi: gerak di bidang datar tanpa memperhitungkan ketinggian; percepatan konstan selama 4 s; angin dan lain-lain tidak dimodelkan terpisah."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.percepatan (satu dimensi, yang kini dijadikan vektor), m.vektorfungsi (turunan fungsi vektor), dan m.vektor (komponen dan penjumlahan).",
+    "Ke depan: k.proyektil memakai penguraian komponen secara langsung. k.melingkar meneliti kasus percepatan yang hanya mengubah arah. k.relatif membahas bila dua pengamat bergerak. Penyebab percepatan, yang belum dipakai di modul ini, dijelaskan oleh d.hukum2."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "V1": {
+        "title": "Mengira percepatan hanya ada bila laju berubah",
+        "fix": "Kecepatan adalah vektor. Perubahan arah saja sudah merupakan perubahan kecepatan, sehingga ada percepatan. Lihat tabel di bagian Konsep dan contoh motor di tikungan."
+      },
+      "V2": {
+        "title": "Menjumlahkan besar komponen untuk mendapat besar vektor",
+        "fix": "Besar vektor $=\\sqrt{v_x^2+v_y^2}$ (Pythagoras), bukan $v_x+v_y$. Komponen 3 dan 4 memberi besar 5, bukan 7."
+      },
+      "V3": {
+        "title": "Mengira percepatan selalu searah kecepatan",
+        "fix": "Hanya komponen percepatan yang searah kecepatan yang mengubah laju. Komponen tegak lurus mengubah arah. Lihat turunan kedua di bagian Derivasi."
+      },
+      "V4": {
+        "title": "Mengabaikan satu komponen atau menyamakan komponen nol dengan vektor nol",
+        "fix": "Setiap vektor 2D punya dua komponen yang sama pentingnya. $v_y=0$ tidak berarti kecepatan nol bila $v_x\\neq0$."
+      },
+      "V5": {
+        "title": "Menyamakan jarak tempuh dengan besar perpindahan",
+        "fix": "Kecepatan rata-rata memakai perpindahan (panah lurus awal-akhir), laju rata-rata memakai jarak tempuh. Keduanya hanya sama bila lintasan lurus tanpa balik."
+      },
+      "V6": {
+        "title": "Mengira percepatan pada satu sumbu mengubah komponen sumbu lain",
+        "fix": "$a_x$ hanya mengubah $v_x$ dan $a_y$ hanya mengubah $v_y$. Itulah arti penguraian komponen pada bagian Derivasi."
+      },
+      "V7": {
+        "title": "Salah menentukan sudut arah vektor (tanda atau tukar x-y)",
+        "fix": "Gunakan $\\tan\\varphi=v_y/v_x$ dan periksa kuadran dari tanda kedua komponen."
+      },
+      "V8": {
+        "title": "Salah arah kecepatan sesaat terhadap lintasan",
+        "fix": "Kecepatan sesaat selalu menyinggung lintasan. Garis sekan menjadi garis singgung bila selang waktu mendekati nol."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Sebuah benda memiliki kecepatan $\\vec v=(6,\\,-8)$ m/s. Berapa lajunya?",
+        "options": [
+          {
+            "text": "10 m/s",
+            "why": "Laju adalah besar vektor: $\\sqrt{6^2+8^2}=\\sqrt{100}=10$ m/s.",
+            "correct": true
+          },
+          {
+            "text": "14 m/s",
+            "why": "Itu penjumlahan besar komponen, $6+8$. Besar vektor harus dihitung dengan Pythagoras karena komponennya saling tegak lurus.",
+            "tag": "V2"
+          },
+          {
+            "text": "2 m/s",
+            "why": "Itu $6-8$ tanpa tanda, kecepatan bukan selisih aljabar komponen. Besar vektor memakai $\\sqrt{v_x^2+v_y^2}$.",
+            "tag": "V2"
+          },
+          {
+            "text": "8 m/s",
+            "why": "Itu hanya komponen y. Laju melibatkan kedua komponen, dan komponen x ($6$ m/s) tidak boleh diabaikan.",
+            "tag": "V4"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Mobil melaju di tikungan setengah lingkaran dengan laju tetap 20 m/s. Pernyataan mana yang benar tentang percepatannya?",
+        "options": [
+          {
+            "text": "Nol, karena lajunya tetap.",
+            "why": "Laju tetap hanya berarti besar kecepatan tetap. Arahnya berubah, jadi vektor kecepatan berubah dan percepatan tidak nol.",
+            "tag": "V1"
+          },
+          {
+            "text": "Ada, tetapi hanya pada saat rem diinjak.",
+            "why": "Percepatan tidak memerlukan rem. Perubahan arah kecepatan saja sudah menimbulkan percepatan.",
+            "tag": "V1"
+          },
+          {
+            "text": "Ada, karena arah kecepatannya berubah. Percepatannya tegak lurus kecepatan sehingga hanya mengubah arah.",
+            "why": "Dari turunan laju: komponen percepatan yang searah kecepatan mengubah laju, sedangkan komponen tegak lurus hanya mengubah arah.",
+            "correct": true
+          },
+          {
+            "text": "Ada, dan selalu searah dengan kecepatan karena mobil bergerak maju.",
+            "why": "Bila percepatan searah kecepatan, lajulah yang berubah. Di sini laju tetap, jadi percepatan tidak boleh searah kecepatan.",
+            "tag": "V3"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Pada suatu saat benda berkecepatan $(5,\\,0)$ m/s dan berpercepatan tetap $(0,\\,-3)$ m/s². Setelah 1 s, apa kecepatannya?",
+        "options": [
+          {
+            "text": "$(5,\\,0)$ m/s, karena percepatan tegak lurus kecepatan tidak mengubah apa-apa.",
+            "why": "Percepatan tegak lurus tetap mengubah kecepatan: ia menambah komponen y. Yang tidak berubah hanya lajunya pada saat itu, bukan vektornya.",
+            "tag": "V1"
+          },
+          {
+            "text": "$(2,\\,0)$ m/s, karena percepatan ke bawah mengurangi kecepatan mendatar.",
+            "why": "Percepatan sepanjang y hanya mengubah $v_y$. Komponen x dipengaruhi $a_x$, dan $a_x=0$ di sini.",
+            "tag": "V6"
+          },
+          {
+            "text": "$(0,\\,0)$ m/s, karena $v_y=0$ berarti benda berhenti.",
+            "why": "$v_y=0$ tidak berarti vektor nol. Komponen x bernilai 5 m/s, dan lagi pula $a_y\\neq0$ membuat $v_y$ segera berubah.",
+            "tag": "V4"
+          },
+          {
+            "text": "$(5,\\,-3)$ m/s.",
+            "why": "$v_x$ tetap 5 karena $a_x=0$, dan $v_y=0+(-3)(1)=-3$ m/s. Besarnya $\\approx5{,}83$ m/s.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Sebuah benda bergerak dari titik asal 3 m lurus ke timur, lalu 4 m lurus ke utara, seluruhnya dalam 5 s. Berapa besar kecepatan rata-ratanya?",
+        "options": [
+          {
+            "text": "1,4 m/s",
+            "why": "Itu laju rata-rata, jarak 7 m dibagi 5 s. Kecepatan rata-rata memakai perpindahan (5 m), bukan panjang lintasan.",
+            "tag": "V5"
+          },
+          {
+            "text": "1,0 m/s",
+            "why": "Perpindahan $=\\sqrt{3^2+4^2}=5$ m, sehingga besar kecepatan rata-rata $=5/5=1{,}0$ m/s.",
+            "correct": true
+          },
+          {
+            "text": "0,8 m/s",
+            "why": "Itu hanya komponen y ($4/5$). Perpindahan memuat kedua komponen: $(3,4)$.",
+            "tag": "V4"
+          },
+          {
+            "text": "5 m/s, karena perpindahannya 5 m.",
+            "why": "Itu perpindahan (5 m) tanpa dibagi selang waktu. Kecepatan rata-rata = perpindahan ÷ waktu = 5 m ÷ 5 s.",
+            "tag": "V5"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Bagaimana arah kecepatan sesaat sebuah benda yang bergerak sepanjang lintasan melengkung?",
+        "options": [
+          {
+            "text": "Tegak lurus lintasan, ke sisi luar.",
+            "why": "Kecepatan sesaat adalah batas perpindahan kecil sepanjang lintasan, sehingga sejajar lintasan, bukan tegak lurus.",
+            "tag": "V8"
+          },
+          {
+            "text": "Menuju pusat kelengkungan lintasan.",
+            "why": "Yang menuju pusat adalah percepatan pada gerak melingkar laju tetap, bukan kecepatan.",
+            "tag": "V8"
+          },
+          {
+            "text": "Selalu sama dengan arah percepatan.",
+            "why": "Keduanya berbeda: pada belokan dengan laju tetap, percepatan tegak lurus kecepatan.",
+            "tag": "V3"
+          },
+          {
+            "text": "Menyinggung lintasan di titik itu.",
+            "why": "Garis sekan antara dua titik dekat menjadi garis singgung pada limit, dan kecepatan searah dengannya.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Benda berkecepatan awal $(0,\\,4)$ m/s dan berpercepatan tetap $(2,\\,0)$ m/s². Berapa kecepatannya setelah 3 s?",
+        "options": [
+          {
+            "text": "$(0,\\,4)$ m/s, karena percepatan tegak lurus kecepatan tidak berpengaruh.",
+            "why": "Percepatan yang tegak lurus tetap mengubah kecepatan, hanya saja komponen yang diubah adalah $v_x$, bukan $v_y$.",
+            "tag": "V1"
+          },
+          {
+            "text": "$(6,\\,4)$ m/s",
+            "why": "$v_x=0+2\\cdot3=6$ m/s, sedangkan $v_y=4$ m/s tidak berubah karena $a_y=0$.",
+            "correct": true
+          },
+          {
+            "text": "$(6,\\,10)$ m/s, karena percepatan menambah kedua komponen.",
+            "why": "Komponen y hanya berubah oleh $a_y$. Percepatan di sini berada sepanjang x, sehingga $v_y$ tetap 4 m/s.",
+            "tag": "V6"
+          },
+          {
+            "text": "Lajunya $6+4=10$ m/s.",
+            "why": "Laju diperoleh dari $\\sqrt{6^2+4^2}\\approx7{,}2$ m/s, bukan dari penjumlahan komponen.",
+            "tag": "V2"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": false,
+        "prompt": "Pengayaan. Sebuah benda berkecepatan $\\vec v=(-3,\\,4)$ m/s. Berapa sudut arah kecepatan terhadap sumbu +x (diukur berlawanan arah jarum jam)?",
+        "options": [
+          {
+            "text": "$53{,}1^\\circ$",
+            "why": "Itu $\\tan^{-1}(4/3)$ tanpa memperhatikan tanda. Karena $v_x$ negatif, vektor berada di kuadran II.",
+            "tag": "V7"
+          },
+          {
+            "text": "$126{,}9^\\circ$",
+            "why": "Vektor di kuadran II: $180^\\circ-\\tan^{-1}(4/3)\\approx180^\\circ-53{,}1^\\circ=126{,}9^\\circ$.",
+            "correct": true
+          },
+          {
+            "text": "$36{,}9^\\circ$",
+            "why": "Itu $\\tan^{-1}(3/4)$, hasil menukar peran komponen x dan y. Sudut terhadap sumbu x memakai $v_y/v_x$.",
+            "tag": "V7"
+          },
+          {
+            "text": "$-53{,}1^\\circ$",
+            "why": "Sudut negatif dengan nilai ini berada di kuadran IV ($v_x>0$, $v_y<0$), padahal $v_x<0$ dan $v_y>0$.",
+            "tag": "V7"
+          }
+        ]
+      }
+    ]
+  }
+}

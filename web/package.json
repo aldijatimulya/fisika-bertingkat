@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "gen-modul": "node tools/gen-modul-index.mjs",
+    "prebuild": "node tools/gen-modul-index.mjs",
+    "pretest": "node tools/gen-modul-index.mjs",
     "build": "next build",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --no-warnings tests/sync.test.mjs && node --experimental-strip-types --no-warnings tests/content.test.mjs",
+    "test": "node --experimental-strip-types --no-warnings tests/sync.test.mjs && node --experimental-strip-types --no-warnings tests/content.test.mjs && node --experimental-strip-types --no-warnings tests/kecepatan.test.mjs && node tests/modul.test.mjs",
     "sync-data": "python3 -I ../curriculum/tools/build.py && cp ../curriculum/data/knowledge_graph.json ../curriculum/data/equations.json src/data/"
   },
   "dependencies": {

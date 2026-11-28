@@ -1,4 +1,5 @@
 ﻿id,konsep,judul,latex,jenis,bergantung_pada,jumlah_langkah
+eq.vel_avg,k.kecepatan,Kecepatan rata-rata,\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1},definisi,,3
 eq.vel,k.kecepatan,Kecepatan sesaat,v = \frac{dx}{dt},definisi,,3
 eq.acc,k.percepatan,Percepatan sesaat,a = \frac{dv}{dt} = \frac{d^2x}{dt^2},definisi,eq.vel,3
 eq.vt,k.glbb,Kecepatan pada percepatan konstan,v = v_0 + at,turunan,eq.acc,4

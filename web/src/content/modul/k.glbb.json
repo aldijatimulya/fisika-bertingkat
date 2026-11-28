@@ -1,0 +1,576 @@
+{
+  "id": "k.glbb",
+  "status": "draf",
+  "fenomena": [
+    "Lampu lalu lintas berubah hijau. Mobil di depan mulai bergerak dari diam. Tiap detik, speedometernya menunjuk angka yang makin besar, dan kenaikannya terasa teratur. Pada saat lain, pengemudi yang sama menginjak rem pada jalan lurus. Speedometer turun, juga dengan teratur, sampai nol.",
+    "Contoh lain: benda yang meluncur naik pada bidang miring yang licin. Ia melambat, berhenti sesaat, lalu meluncur turun makin cepat. Perubahan kecepatannya tampak sama besar tiap detik, baik saat naik maupun saat turun, dan tidak ada patahan di tengah.",
+    "Gerak seperti ini sangat umum: kecepatan berubah dengan laju yang tetap. Dari k.percepatan kita tahu bahwa laju perubahan kecepatan itu disebut percepatan. Di sini percepatannya konstan, dan pertanyaannya menjadi: bila kita tahu $a$, bagaimana menghitung kecepatan dan posisi benda pada saat mana pun?",
+    "Pertanyaan penuntun: dari $a$ yang tetap, bagaimana kita memperoleh $v(t)$, $x(t)$, dan hubungan $v$ dengan $x$ tanpa waktu, dan kapan hasil itu berhenti berlaku?"
+  ],
+  "konsep": [
+    {
+      "h": "Apa itu gerak dengan percepatan konstan"
+    },
+    "Gerak lurus berubah beraturan (GLBB) adalah gerak pada satu garis lurus dengan percepatan yang nilainya tetap terhadap waktu. Kecepatannya berubah, tetapi berubah dengan cara yang sama tiap detik. Contoh: mobil yang dipercepat atau direm secara teratur, dan benda pada bidang miring licin.",
+    {
+      "h": "Gagasan utama: kecepatan berubah merata, posisi berubah melengkung"
+    },
+    "Karena percepatan tetap, kecepatan bertambah (atau berkurang) dengan jumlah yang sama pada tiap selang waktu yang sama. Grafik $v$ terhadap $t$ berupa garis lurus dengan kemiringan $a$. Posisi tidak berubah merata, karena kecepatannya terus berganti. Grafik $x$ terhadap $t$ berupa lengkung (parabola), makin curam bila benda makin cepat.",
+    {
+      "table": {
+        "head": [
+          "Besaran",
+          "Bentuk grafik terhadap waktu",
+          "Apa yang tetap"
+        ],
+        "rows": [
+          [
+            "Percepatan $a$",
+            "Garis mendatar",
+            "Nilainya"
+          ],
+          [
+            "Kecepatan $v$",
+            "Garis lurus miring",
+            "Kemiringannya, yaitu $a$"
+          ],
+          [
+            "Posisi $x$",
+            "Parabola",
+            "Kelengkungannya, yaitu $a$"
+          ]
+        ]
+      }
+    },
+    {
+      "h": "Tanda percepatan dan arah gerak"
+    },
+    "Pilih satu arah sebagai positif. Kecepatan dan percepatan masing-masing bisa bertanda positif atau negatif. Benda melambat bila $v$ dan $a$ berlawanan tanda, dan bertambah laju bila sejenis. Tanda negatif pada $a$ bukan berarti benda pasti melambat. Jadi periksa tanda keduanya sekaligus.",
+    {
+      "h": "Percepatan konstan tidak berarti benda berhenti di tengah"
+    },
+    "Pada bola di bidang miring, kecepatan melewati nol di titik balik, tetapi percepatannya tetap sama. Kecepatan nol hanya berarti benda berhenti sesaat. Percepatan tetap bekerja, itulah sebabnya bola berbalik arah dan tidak diam di titik itu.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Percepatan konstan tidak sama dengan kecepatan konstan. Yang tetap adalah laju perubahan kecepatan.",
+        "Jarak tidak sebanding dengan waktu. Dari diam, melipatduakan waktu membuat jarak empat kali.",
+        "Rumus hanya untuk percepatan tetap. Bila percepatan berubah, hasil di bawah tidak boleh dipakai."
+      ]
+    },
+    "Rumus lengkap dan turunannya ada di bagian Derivasi."
+  ],
+  "matematika": [
+    "Modul ini memakai dua alat dari prasyarat.",
+    {
+      "ul": [
+        "Turunan (lihat k.percepatan): $a=dv/dt$ dan $v=dx/dt$. Percepatan adalah turunan kecepatan, dan kecepatan adalah turunan posisi.",
+        "Integral tentu (lihat m.integral): integral adalah operasi kebalikan turunan. Bila $dv/dt=a$ dengan $a$ konstan, maka $\\int dv=a\\int dt$, dan batas integralnya diisi nilai awal dan akhir. Konstanta boleh dikeluarkan dari integral, dan $\\int t\\,dt=\\tfrac12t^2$."
+      ]
+    },
+    "Contoh: $a=2$ m/s² dari diam. $v=\\int_0^t2\\,dt'=2t$ dan $x=\\int_0^t2t'\\,dt'=t^2$. Pada $t=3$ s: $v=6$ m/s dan $x=9$ m.",
+    "Aljabar biasa juga dipakai untuk menghilangkan $t$ dari dua persamaan."
+  ],
+  "derivasi": {
+    "intro": [
+      "Tiga persamaan pokok tampil otomatis di atas, yaitu $\\text{eq.vt}$, $\\text{eq.xt}$, dan $\\text{eq.v2}$. Jangan menyalinnya lagi. Ringkas jalurnya:",
+      {
+        "ol": [
+          "Mulai dari definisi $a=dv/dt$ ($\\text{eq.acc}$) dengan $a$ konstan. Pisahkan variabel dan integralkan sekali: diperoleh $v=v_0+at$.",
+          "Masukkan $v=dx/dt$ dan integralkan sekali lagi: diperoleh $x=x_0+v_0t+\\tfrac12at^2$. Konstanta $v_0$ dan $x_0$ adalah nilai awal yang menentukan batas integral.",
+          "Bila waktu tidak diketahui, ubah variabel bebas dari $t$ ke $x$ dengan aturan rantai, $a=v\\,dv/dx$. Integralkan sekali: diperoleh $v^2=v_0^2+2a(x-x_0)$."
+        ]
+      },
+      "Semua turunan itu bergantung pada satu asumsi: $a$ konstan. Dua turunan tambahan di bawah ini melengkapinya dengan jalan aljabar. Keduanya berguna sebagai pemeriksaan silang dan untuk soal berhenti."
+    ],
+    "extra": [
+      {
+        "title": "Cek silang v² tanpa integral: menghilangkan waktu, dan hubungan kecepatan rata-rata",
+        "steps": [
+          {
+            "tex": "v=v_0+at",
+            "why": "Persamaan $\\text{eq.vt}$, hasil integral pertama."
+          },
+          {
+            "tex": "t=\\frac{v-v_0}{a}",
+            "why": "Selesaikan untuk $t$. Ini memerlukan $a\\neq0$. Untuk $a=0$ tidak ada yang perlu diselesaikan karena $v$ tetap."
+          },
+          {
+            "tex": "\\Delta x=v_0t+\\tfrac12at^2",
+            "why": "Persamaan $\\text{eq.xt}$ ditulis sebagai perpindahan $\\Delta x=x-x_0$."
+          },
+          {
+            "tex": "\\Delta x=v_0\\frac{v-v_0}{a}+\\frac{(v-v_0)^2}{2a}",
+            "why": "Substitusi $t$ ke kedua suku. Waktu sekarang hilang."
+          },
+          {
+            "tex": "\\Delta x=\\frac{(v-v_0)\\,[\\,2v_0+(v-v_0)\\,]}{2a}=\\frac{(v-v_0)(v+v_0)}{2a}",
+            "why": "Samakan penyebut $2a$, lalu gabungkan. Di dalam kurung siku, $2v_0+v-v_0=v+v_0$."
+          },
+          {
+            "tex": "2a\\,\\Delta x=v^2-v_0^2\\ \\Rightarrow\\ v^2=v_0^2+2a(x-x_0)",
+            "why": "Hasil kali $(v-v_0)(v+v_0)$ adalah selisih kuadrat. Hasilnya sama dengan $\\text{eq.v2}$ yang diturunkan lewat aturan rantai, sehingga kedua jalan saling mengecek."
+          },
+          {
+            "tex": "\\Delta x=\\frac{v_0+v}{2}\\,t",
+            "why": "Dari $\\Delta x=(v-v_0)(v+v_0)/(2a)$ dan $a=(v-v_0)/t$, faktor $(v-v_0)$ saling meniadakan. Artinya, pada percepatan konstan, perpindahan sama dengan kecepatan rata-rata aritmetika dikali waktu. Ini sesuai dengan luas trapesium di bawah grafik $v$-$t$."
+          }
+        ],
+        "validity": "Hanya untuk $a$ konstan dan gerak lurus (1D). Kecepatan rata-rata $(v_0+v)/2$ hanya berlaku untuk $a$ konstan. Pada percepatan yang berubah, rata-rata aritmetika itu tidak memberi perpindahan yang benar."
+      },
+      {
+        "title": "Waktu henti dan jarak henti",
+        "steps": [
+          {
+            "tex": "v=0",
+            "why": "Benda berhenti saat kecepatannya nol. Ini terjadi pada benda yang diperlambat, yaitu $v_0$ dan $a$ berlawanan tanda."
+          },
+          {
+            "tex": "0=v_0+at_h\\ \\Rightarrow\\ t_h=-\\frac{v_0}{a}",
+            "why": "Masukkan $v=0$ ke $\\text{eq.vt}$ dan selesaikan. Karena $v_0$ dan $a$ berlawanan tanda, $t_h$ bernilai positif."
+          },
+          {
+            "tex": "0=v_0^2+2a\\,\\Delta x_h\\ \\Rightarrow\\ \\Delta x_h=-\\frac{v_0^2}{2a}",
+            "why": "Masukkan $v=0$ ke $\\text{eq.v2}$. Hasilnya tidak memuat waktu, dan sebanding dengan kuadrat $v_0$."
+          },
+          {
+            "tex": "\\Delta x_h=v_0t_h+\\tfrac12at_h^2=-\\frac{v_0^2}{a}+\\frac{v_0^2}{2a}=-\\frac{v_0^2}{2a}",
+            "why": "Cek silang lewat $\\text{eq.xt}$ dengan $t_h$. Hasilnya sama."
+          },
+          {
+            "tex": "\\text{Sesudah }t_h:\\ \\text{rumus hanya berlaku bila }a\\text{ tetap bekerja}",
+            "why": "Pada bola di bidang miring licin, $a$ memang tetap bekerja sesudah titik balik, sehingga bola berbalik. Pada rem mobil, perlambatan hanya ada selama mobil bergerak. Mobil diam dan rumus tidak lagi berlaku, karena percepatan tidak lagi konstan."
+          }
+        ],
+        "validity": "$a$ konstan. Jarak henti $-v_0^2/(2a)$ dan waktu henti $-v_0/a$ hanya bermakna bila percepatan benar-benar memperlambat sampai nol dan tidak berlanjut sesudahnya, seperti rem yang bekerja sampai benda diam."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: semua persamaan di atas berlaku pada gerak lurus dengan percepatan konstan, dalam kerangka acuan inersial. Untuk percepatan yang berubah, kembali ke $a=dv/dt$ dan integralkan dengan $a(t)$ yang sebenarnya."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Makna grafik"
+    },
+    "Kemiringan grafik $v$-$t$ adalah percepatan. Luas di bawah grafik $v$-$t$ adalah perpindahan. Pada percepatan konstan, luas itu berupa trapesium atau segitiga, sehingga $x-x_0=\\tfrac12(v_0+v)t$.",
+    {
+      "h": "Mengapa jarak berbanding kuadrat waktu"
+    },
+    "Dari diam, $x=\\tfrac12at^2$. Waktu dua kali lipat membuat jarak empat kali, tiga kali waktu membuat jarak sembilan kali. Penyebabnya, kecepatan ikut membesar, sehingga tiap detik berikutnya menempuh jarak lebih jauh daripada detik sebelumnya.",
+    {
+      "h": "Mengapa jarak henti berbanding kuadrat kecepatan"
+    },
+    "Jarak henti $v_0^2/(2|a|)$. Dengan perlambatan sama, melipatduakan laju awal membuat jarak henti empat kali. Inilah alasan jarak aman antar kendaraan perlu bertambah cepat bila laju naik.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "Perlambatan rem mobil pada jalan kering kira-kira 5 sampai 8 m/s² (perkiraan; bergantung pada ban dan jalan). Contoh di bawah memakai 5 m/s² sebagai perkiraan konservatif.",
+        "Waktu reaksi pengemudi sekitar 1 s (perkiraan kasar; nilai sebenarnya bervariasi antar orang dan keadaan).",
+        "Laju 72 km/jam sama dengan 20 m/s. Mengubah km/jam ke m/s berarti dibagi 3,6."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Percepatan harus konstan. Mobil sebenarnya sering tidak memenuhinya, misalnya saat berganti gigi, dan hambatan udara berubah dengan laju.",
+        "Hanya gerak lurus satu dimensi. Untuk gerak di bidang, uraikan per komponen (lihat k.vektor2d dan k.proyektil).",
+        "Rumus tidak otomatis berhenti sendiri saat benda berhenti. Menerapkannya sesudah benda berhenti menghasilkan benda yang bergerak mundur, dan itu tidak selalu sesuai dengan keadaan nyata."
+      ]
+    }
+  ],
+  "simulasi": {
+    "question": [
+      "Ubah $x_0$, $v_0$, dan $a$, lalu amati grafik $v$-$t$ dan $x$-$t$. Percepatan dibuat tetap sepanjang gerak. Jawab dulu tiap skenario sebelum melihat hasilnya."
+    ],
+    "scenarios": [
+      {
+        "id": "kuadrat",
+        "label": "Dari diam: waktu dua kali",
+        "motion": {
+          "x0": 0,
+          "v0": 0,
+          "a": 3
+        },
+        "T": 4,
+        "ask": "Benda mulai dari diam dengan percepatan 3 m/s². Dalam 4 s pertama, jaraknya berapa kali jarak dalam 2 s pertama?",
+        "choices": [
+          "2 kali",
+          "4 kali",
+          "8 kali"
+        ],
+        "answer": 1,
+        "reveal": "x = ½at². Pada 2 s: ½·3·4 = 6 m. Pada 4 s: ½·3·16 = 24 m. Perbandingannya 4. Jarak berbanding kuadrat waktu, bukan waktu."
+      },
+      {
+        "id": "balik",
+        "label": "Bidang miring: naik lalu kembali",
+        "motion": {
+          "x0": 0,
+          "v0": 8,
+          "a": -2
+        },
+        "T": 8,
+        "focusTurn": true,
+        "ask": "Bola meluncur naik pada bidang miring licin dengan v₀ = 8 m/s dan percepatan tetap −2 m/s². Kapan bola kembali ke titik awal?",
+        "choices": [
+          "4 s",
+          "8 s",
+          "16 s"
+        ],
+        "answer": 1,
+        "reveal": "x = 8t − t² = t(8 − t) = 0 untuk t = 0 dan t = 8 s. Titik balik pada 4 s (v = 0) di x = 16 m. Percepatan tetap −2 m/s² sepanjang gerak, juga di titik balik. Waktu naik dan waktu turun sama."
+      },
+      {
+        "id": "henti",
+        "label": "Jarak henti",
+        "motion": {
+          "x0": 0,
+          "v0": 10,
+          "a": -2
+        },
+        "T": 5,
+        "ask": "Benda bergerak 10 m/s lalu diperlambat tetap dengan −2 m/s². Berapa jauh ia bergerak sebelum berhenti?",
+        "choices": [
+          "10 m",
+          "25 m",
+          "50 m"
+        ],
+        "answer": 1,
+        "reveal": "Berhenti pada t = 5 s. Jarak = v₀²/(2|a|) = 100/4 = 25 m. Angka 50 m adalah v₀t = 10·5 yang mengira kecepatan tidak berkurang. Simulasi berhenti di t = 5 s, karena sesudahnya rumus tidak lagi menggambarkan benda yang berhenti."
+      }
+    ],
+    "free": {
+      "id": "bebas",
+      "label": "Atur sendiri",
+      "motion": {
+        "x0": 0,
+        "v0": 4,
+        "a": 1
+      },
+      "T": 8,
+      "ask": "",
+      "choices": [],
+      "answer": 0,
+      "reveal": ""
+    }
+  },
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Dua kali waktu, berapa kali jarak",
+      "problem": [
+        "Sebuah mobil mulai dari diam di jalan lurus dengan percepatan tetap 2 m/s². Dibandingkan dengan jarak dalam 1 s pertama, berapa kali lebih jauh jarak yang ditempuh dalam 2 s pertama dan dalam 3 s pertama? Jelaskan tanpa menghitung rumit, lalu cek dengan angka."
+      ],
+      "answer": [
+        "Perbandingannya 1 : 4 : 9, bukan 1 : 2 : 3. Dari diam, $x=\\tfrac12at^2$, jadi $x\\propto t^2$. Alasannya: kecepatan terus membesar, sehingga tiap detik berikutnya menempuh jarak lebih jauh daripada detik sebelumnya.",
+        "Pengecekan angka: $x(1)=\\tfrac12\\cdot2\\cdot1=1$ m, $x(2)=\\tfrac12\\cdot2\\cdot4=4$ m, $x(3)=\\tfrac12\\cdot2\\cdot9=9$ m. Jarak tiap detik: 1 m, 3 m, 5 m, bertambah 2 m tiap detik, tepat sebesar $a$ kali 1 s kali 1 s.",
+        {
+          "note": "Asumsi: percepatan konstan 2 m/s², gerak lurus, dimulai dari diam di $x_0=0$."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Diperlambat sampai berhenti, dan menggunakan rumus melewati batas",
+      "problem": [
+        "Sebuah benda bergerak lurus dengan $v_0=20$ m/s pada $x_0=0$, lalu diperlambat dengan percepatan tetap $-4$ m/s² sampai berhenti. Tentukan (1) waktu henti, (2) jarak henti lewat dua cara, (3) posisi dan kecepatan pada $t=3$ s, dan (4) apa yang terjadi bila rumus dipakai untuk $t=7$ s."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$t_h=-v_0/a=-20/(-4)=5$ s.",
+            "Lewat $\\text{eq.v2}$: $\\Delta x=-v_0^2/(2a)=-400/(-8)=50$ m. Lewat $\\text{eq.xt}$: $\\Delta x=20\\cdot5+\\tfrac12(-4)(25)=100-50=50$ m. Keduanya sama. Cek lewat luas segitiga: $\\tfrac12\\cdot20\\cdot5=50$ m.",
+            "$x(3)=20\\cdot3+\\tfrac12(-4)(9)=60-18=42$ m dan $v(3)=20-4\\cdot3=8$ m/s. Cek: $v^2=400+2(-4)(42)=64$, jadi $v=8$ m/s.",
+            "Rumus memberi $x(7)=20\\cdot7-2\\cdot49=42$ m dan $v(7)=20-28=-8$ m/s, seolah benda sudah kembali ke $x=42$ m dan bergerak mundur. Itu hanya benar bila percepatan $-4$ m/s² tetap bekerja sesudah benda diam, seperti pada bola di bidang miring licin. Untuk benda yang direm lalu diam, rumus berhenti berlaku di $t=5$ s."
+          ]
+        },
+        {
+          "note": "Asumsi: $a=-4$ m/s² tetap sampai benda berhenti, gerak lurus. Tiga cara (rumus kecepatan-posisi, rumus posisi, luas segitiga) memberi 50 m, sehingga hasilnya konsisten."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Jarak berhenti sebuah mobil",
+      "problem": [
+        "Mobil melaju lurus pada jalan kering dengan 72 km/jam. Pengemudi melihat bahaya, bereaksi selama 1 s (perkiraan) tanpa mengubah laju, lalu mengerem dengan perlambatan tetap 5 m/s² (perkiraan). Berapa jarak total sejak bahaya terlihat sampai mobil berhenti? Bandingkan dengan laju 36 km/jam dan 108 km/jam."
+      ],
+      "answer": [
+        "Ubah satuan: $72/3{,}6=20$ m/s, $36/3{,}6=10$ m/s, $108/3{,}6=30$ m/s.",
+        {
+          "ul": [
+            "20 m/s: jarak reaksi $20\\times1=20$ m. Jarak rem $v_0^2/(2|a|)=400/10=40$ m. Waktu rem $20/5=4$ s. Total $60$ m.",
+            "10 m/s: reaksi 10 m, rem $100/10=10$ m, total 20 m.",
+            "30 m/s: reaksi 30 m, rem $900/10=90$ m, total 120 m."
+          ]
+        },
+        "Jarak rem berbanding kuadrat laju: 10, 40, 90 m. Jarak reaksi hanya berbanding lurus: 10, 20, 30 m. Melipatduakan laju dari 36 ke 72 km/jam membuat jarak total tiga kali lipat (dari 20 ke 60 m), dan jarak rem sendiri empat kali.",
+        {
+          "note": "Asumsi dan keterbatasan: percepatan rem 5 m/s² dan waktu reaksi 1 s adalah perkiraan, bukan data pengukuran. Jalan basah, ban aus, atau turunan mengubah percepatan dan jarak. Hasilnya hanya perkiraan awal dan bukan pedoman keselamatan."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.percepatan (percepatan sebagai turunan kecepatan, yang menjadi titik awal semua turunan di sini) dan m.integral (integral tentu dan kaitannya dengan turunan).",
+    "Ke depan: k.jatuhbebas adalah GLBB dengan $a=-g$. k.proyektil memakai persamaan ini pada tiap komponen gerak di bidang. e.ek memakai bentuk $v^2=v_0^2+2a\\Delta x$ sebagai bibit teorema usaha-energi. Penjelasan mengapa suatu benda punya percepatan tertentu ada di d.hukum2 dan belum dipakai di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "G1": {
+        "title": "Mengira percepatan nol saat kecepatan nol",
+        "fix": "Kecepatan nol hanya berarti benda berhenti sesaat. Percepatan adalah laju perubahan kecepatan, dan bisa tetap tidak nol, seperti bola di titik balik."
+      },
+      "G2": {
+        "title": "Salah menangani tanda percepatan",
+        "fix": "Tanda $a$ dan $v$ harus dibaca bersama dan dipakai apa adanya dalam rumus. Melambat berarti tanda berlawanan, bukan sekadar $a$ bertanda negatif."
+      },
+      "G3": {
+        "title": "Menganggap jarak sebanding waktu atau kecepatan tetap saat menghitung jarak",
+        "fix": "Pada percepatan konstan kecepatan berubah, jadi $x=vt$ dengan satu nilai $v$ salah. Dari diam $x\\propto t^2$. Perpindahan sama dengan luas bertanda di bawah grafik $v$-$t$; jarak tempuh sama dengan luas itu bila benda tidak berbalik arah."
+      },
+      "G4": {
+        "title": "Memakai rumus GLBB saat percepatan tidak konstan",
+        "fix": "$\\text{eq.vt}$, $\\text{eq.xt}$, dan $\\text{eq.v2}$ diturunkan dengan $a$ konstan. Bila $a$ berubah, rata-rata atau nilai terakhir $a$ tidak memberi hasil benar. Integralkan dengan $a(t)$ yang sebenarnya."
+      },
+      "G5": {
+        "title": "Mengira benda yang direm akan bergerak mundur menurut rumus",
+        "fix": "Rumus mengasumsikan $a$ terus bekerja. Rem hanya ada saat benda bergerak. Sesudah berhenti, rumus tidak berlaku lagi dan benda diam."
+      },
+      "G6": {
+        "title": "Salah faktor konstanta di rumus",
+        "fix": "$x=\\tfrac12at^2$ memuat $\\tfrac12$ dan $v^2=v_0^2+2a\\Delta x$ memuat 2. Cek dengan kasus sederhana atau luas grafik $v$-$t$."
+      },
+      "G7": {
+        "title": "Mencampur percepatan, kecepatan, posisi, dan waktu",
+        "fix": "Tiap besaran punya satuan sendiri: $a$ dalam m/s², $v$ dalam m/s, $x$ dalam m, $t$ dalam s. Hasil yang satuannya tidak cocok pasti ada yang keliru."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Sebuah mobil mulai dari diam dengan percepatan tetap 2 m/s². Berapa jauh ia bergerak dalam 3 s pertama?",
+        "options": [
+          {
+            "text": "3 m",
+            "why": "Itu mengira jarak 1 m tiap detik. Jarak bukan sebanding waktu, karena kecepatan terus membesar.",
+            "tag": "G3"
+          },
+          {
+            "text": "6 m",
+            "why": "6 itu kecepatan pada 3 s, $2\\cdot3=6$ m/s. Satuannya m/s, bukan jarak.",
+            "tag": "G7"
+          },
+          {
+            "text": "18 m",
+            "why": "Itu $at^2=2\\cdot9$. Rumus yang benar memuat $\\tfrac12$: $\\tfrac12at^2$.",
+            "tag": "G6"
+          },
+          {
+            "text": "9 m",
+            "why": "$x=\\tfrac12at^2=\\tfrac12\\cdot2\\cdot9=9$ m.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Bola dilempar tegak ke atas. Pada saat bola berhenti sesaat di titik tertinggi, apa yang benar tentang percepatannya (arah atas positif, $g=9{,}8$ m/s²)?",
+        "options": [
+          {
+            "text": "$-9{,}8$ m/s², sama seperti titik lain.",
+            "why": "Percepatan tetap $-g$ di setiap titik, termasuk puncak.",
+            "correct": true
+          },
+          {
+            "text": "Nol, karena bola berhenti sesaat.",
+            "why": "Berhenti sesaat adalah $v=0$. Percepatan tidak ikut nol. Kalau nol, bola akan melayang di sana.",
+            "tag": "G1"
+          },
+          {
+            "text": "$+9{,}8$ m/s², karena bola sedang naik.",
+            "why": "Tanda percepatan ditentukan arahnya, ke bawah, bukan oleh arah gerak sebelumnya.",
+            "tag": "G2"
+          },
+          {
+            "text": "Nol sesaat, lalu $-9{,}8$ m/s² saat mulai turun.",
+            "why": "Percepatan tidak berganti. Ia sudah $-9{,}8$ m/s² sejak bola lepas.",
+            "tag": "G1"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Sebuah benda bergerak ke kanan (positif) dengan kecepatan 10 m/s dan percepatan $-2$ m/s². Apa yang terjadi pada lajunya dalam 1 s berikutnya?",
+        "options": [
+          {
+            "text": "Bertambah menjadi 12 m/s, karena tanda negatif hanya menunjukkan arah.",
+            "why": "Tanda $a$ berlawanan dengan $v$, jadi laju berkurang: $10-2=8$ m/s.",
+            "tag": "G2"
+          },
+          {
+            "text": "Menjadi $-2$ m/s.",
+            "why": "$-2$ adalah percepatan, bukan kecepatan. Kecepatan baru $10+(-2)(1)=8$ m/s.",
+            "tag": "G7"
+          },
+          {
+            "text": "Tetap 10 m/s sampai percepatan dibuat positif.",
+            "why": "Percepatan tidak nol, jadi kecepatan berubah tiap saat.",
+            "tag": "G2"
+          },
+          {
+            "text": "Berkurang menjadi 8 m/s.",
+            "why": "$v=v_0+at=10+(-2)(1)=8$ m/s. $v$ dan $a$ berlawanan, jadi melambat.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Benda melaju 20 m/s lalu diperlambat dengan percepatan tetap $-4$ m/s² sampai berhenti. Berapa jarak yang ditempuh sampai berhenti?",
+        "options": [
+          {
+            "text": "100 m",
+            "why": "Itu $v_0^2/a=400/4$. Rumus yang benar memuat 2 di penyebut: $v_0^2/(2|a|)$.",
+            "tag": "G6"
+          },
+          {
+            "text": "50 m",
+            "why": "$0=v_0^2+2a\\Delta x\\Rightarrow\\Delta x=400/8=50$ m.",
+            "correct": true
+          },
+          {
+            "text": "5 m",
+            "why": "5 adalah waktu henti dalam detik, bukan jarak.",
+            "tag": "G7"
+          },
+          {
+            "text": "150 m",
+            "why": "Itu menjumlahkan $v_0t+\\tfrac12|a|t^2$ dengan tanda percepatan diabaikan. Tanda negatif harus dipakai: $100-50$.",
+            "tag": "G2"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Kecepatan sebuah benda naik, tetapi percepatannya membesar: 1, 2, 3 m/s² pada detik pertama, kedua, ketiga. Bolehkah memakai $x=\\tfrac12at^2$ dengan $a=3$ m/s² untuk menghitung jarak dalam 3 s?",
+        "options": [
+          {
+            "text": "Boleh, asalkan memakai percepatan terakhir.",
+            "why": "Rumus mengandaikan $a$ tetap dari awal. Percepatan terakhir tidak mewakili seluruh gerak.",
+            "tag": "G4"
+          },
+          {
+            "text": "Boleh, asalkan benda mulai dari diam.",
+            "why": "Mulai dari diam tidak menggantikan syarat $a$ konstan.",
+            "tag": "G4"
+          },
+          {
+            "text": "Tidak boleh, karena rumus itu hanya untuk percepatan konstan.",
+            "why": "$\\text{eq.xt}$ diturunkan dengan $a$ konstan. Untuk $a(t)$ yang berubah harus integralkan $a(t)$.",
+            "correct": true
+          },
+          {
+            "text": "Boleh dengan percepatan rata-rata 2 m/s², hasilnya pasti benar.",
+            "why": "Rata-rata $a$ hanya kebetulan benar untuk bentuk $a(t)$ tertentu dan tidak bisa dijamin. Hasilnya perkiraan, bukan hasil pasti.",
+            "tag": "G4"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Sebuah mobil melaju 20 m/s lalu direm dengan percepatan tetap $-4$ m/s². Kalkulator memberi $v(7)=20-4\\cdot7=-8$ m/s. Bagaimana menafsirkannya?",
+        "options": [
+          {
+            "text": "Mobil sudah berhenti pada $t=5$ s dan rumus tidak berlaku sesudahnya.",
+            "why": "Rem hanya ada saat bergerak. Sesudah $t=5$ s, $v=0$ dan benda diam.",
+            "correct": true
+          },
+          {
+            "text": "Mobil masih bergerak maju 8 m/s, tanda negatif hanya menunjukkan percepatan.",
+            "why": "Dalam rumus, tanda $v$ menunjukkan arah gerak, jadi $-8$ bukan maju.",
+            "tag": "G2"
+          },
+          {
+            "text": "Mobil berbalik arah seperti bola yang dilempar ke atas.",
+            "why": "Bola mengalami percepatan tetap sesudah titik balik. Rem mobil tidak bekerja lagi sesudah mobil diam.",
+            "tag": "G5"
+          },
+          {
+            "text": "Mobil bergerak mundur 8 m/s.",
+            "why": "Rem tidak membuat mobil mundur. Mobil sudah berhenti pada $t=5$ s.",
+            "tag": "G5"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": true,
+        "prompt": "Grafik $v$-$t$ sebuah benda berupa garis lurus dari 4 m/s pada $t=0$ ke 12 m/s pada $t=2$ s. Berapa perpindahannya dalam 2 s itu?",
+        "options": [
+          {
+            "text": "4 m",
+            "why": "4 itu kemiringan grafik, yaitu percepatan 4 m/s². Perpindahan adalah luas di bawah grafik.",
+            "tag": "G7"
+          },
+          {
+            "text": "24 m",
+            "why": "Itu $12\\times2$, mengira kecepatan akhir berlaku sepanjang waktu.",
+            "tag": "G3"
+          },
+          {
+            "text": "16 m",
+            "why": "Luas trapesium $=\\tfrac12(4+12)\\cdot2=16$ m.",
+            "correct": true
+          },
+          {
+            "text": "8 m",
+            "why": "Itu $4\\times2$, mengira kecepatan awal tetap sepanjang waktu.",
+            "tag": "G3"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "core": false,
+        "prompt": "Pengayaan. Mobil dari diam dengan percepatan tetap. Dibandingkan saat menempuh jarak $d$, bagaimana kecepatannya setelah menempuh jarak $4d$?",
+        "options": [
+          {
+            "text": "Menjadi 4 kali, karena jarak 4 kali.",
+            "why": "Dari $v^2=2a\\Delta x$, $v\\propto\\sqrt{\\Delta x}$. Jarak 4 kali berarti $v$ 2 kali.",
+            "tag": "G3"
+          },
+          {
+            "text": "Tetap sama, karena percepatannya tetap.",
+            "why": "Percepatan tetap bukan berarti kecepatan tetap. Kecepatan terus bertambah.",
+            "tag": "G7"
+          },
+          {
+            "text": "Menjadi 16 kali.",
+            "why": "Angka 16 muncul bila $v$ dikira sebanding dengan kuadrat jarak ($v\\propto\\Delta x^2$). Padahal $v^2\\propto\\Delta x$, sehingga jarak 4 kali lipat membuat $v$ hanya naik 2 kali.",
+            "tag": "G6"
+          },
+          {
+            "text": "Menjadi 2 kali.",
+            "why": "$v^2=2a\\Delta x$. Jarak 4 kali membuat $v^2$ 4 kali dan $v$ 2 kali.",
+            "correct": true
+          }
+        ]
+      }
+    ]
+  }
+}

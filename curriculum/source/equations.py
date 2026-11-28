@@ -11,12 +11,21 @@ def eq(id, concept, title, latex, kind, depends, assumptions, validity, steps, m
                   steps=[dict(latex=l, why=w) for l, w in steps],
                   meaning=meaning, applied_in=applied))
 
+eq("eq.vel_avg", "k.kecepatan", "Kecepatan rata-rata", r"\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}", "definisi", [],
+   ["Posisi x(t) diketahui pada dua saat t1 dan t2", "Gerak satu dimensi; arah dinyatakan dengan tanda"],
+   "Selang waktu berhingga. Hanya memuat posisi awal dan akhir: tidak memberi tahu apa yang terjadi di antaranya (benda bisa berbalik arah), dan tidak sama dengan laju rata-rata (jarak tempuh dibagi waktu).",
+   [(r"x_1 = x(t_1),\quad x_2 = x(t_2)", "Ambil posisi pada dua saat yang berbeda."),
+    (r"\Delta x = x_2 - x_1,\quad \Delta t = t_2 - t_1", "Hitung perpindahan (bukan jarak tempuh) dan selang waktu; tanda Delta x membawa informasi arah."),
+    (r"\bar v = \frac{\Delta x}{\Delta t}", "Definisi: perpindahan per satuan waktu. Satuannya m/s. Secara grafik, ini kemiringan garis sekan yang menghubungkan dua titik pada grafik x-t.")],
+   "Kecepatan rata-rata bisa nol walau benda bergerak (pergi lalu kembali ke titik awal); laju rata-rata tidak bisa nol bila benda bergerak.", ["k.percepatan"])
+
 eq("eq.vel", "k.kecepatan", "Kecepatan sesaat", r"v = \frac{dx}{dt}", "definisi", [],
    ["Posisi x(t) fungsi kontinu dan terdiferensialkan"], "Gerak 1D; berlaku umum pada mekanika klasik.",
    [(r"\bar v = \frac{\Delta x}{\Delta t}", "Kecepatan rata-rata didefinisikan sebagai perpindahan per selang waktu."),
     (r"v = \lim_{\Delta t \to 0} \frac{x(t+\Delta t)-x(t)}{\Delta t}", "Kecepatan sesaat adalah limit kecepatan rata-rata saat selang waktu menuju nol (konsep limit)."),
     (r"v = \frac{dx}{dt}", "Limit tersebut adalah definisi turunan x terhadap t.")],
    "Laju perubahan posisi terhadap waktu; tanda menunjukkan arah.", ["k.percepatan", "k.vektor2d"])
+
 
 eq("eq.acc", "k.percepatan", "Percepatan sesaat", r"a = \frac{dv}{dt} = \frac{d^2x}{dt^2}", "definisi", ["eq.vel"],
    ["v(t) terdiferensialkan"], "Gerak 1D; versi vektor berlaku per komponen.",

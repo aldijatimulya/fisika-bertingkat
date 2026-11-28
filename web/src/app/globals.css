@@ -133,7 +133,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Pages */
 .page-head { padding: 40px 0 24px; }
 .page-head .crumbs { font-family: var(--sans); font-size: 0.875rem; color: var(--ink-2); margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
-.layout { display: grid; gap: 40px; grid-template-columns: 1fr; padding-bottom: 80px; }
+.layout { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); padding-bottom: 80px; }
 @media (min-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr) 300px; } }
 .stack > * + * { margin-top: 36px; }
 .module { border-top: 1px solid var(--rule); padding-top: 20px; }
@@ -257,3 +257,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .quiz .mk { padding-left: 18px; }
 .quiz .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .readout .subs > div { margin: 2px 0; }
+.status-badge { display: inline-block; margin: 10px 0 0; padding: 4px 10px; border: 1px dashed var(--lv3); border-radius: 6px; color: var(--ink-2); }
+.status-badge[data-s="ditinjau"], .status-badge[data-s="terbit"] { border-style: solid; border-color: var(--ok); }
+
+.stack, .module { min-width: 0; }
+.module .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.tbl { display: block; max-width: 100%; overflow-x: auto; }

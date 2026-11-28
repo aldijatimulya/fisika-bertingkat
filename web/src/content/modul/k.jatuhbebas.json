@@ -1,0 +1,571 @@
+{
+  "id": "k.jatuhbebas",
+  "status": "draf",
+  "fenomena": [
+    "Seseorang berdiri di tepi jembatan dan menjatuhkan sebuah batu ke sungai di bawahnya. Batu itu tampak melaju makin cepat, dan bunyi cipratannya terdengar sekitar dua detik kemudian. Kalau batu yang lebih besar dijatuhkan dari tempat yang sama pada saat yang sama, hampir tak ada yang bisa membedakan mana yang tiba lebih dulu.",
+    "Contoh lain: di dalam gedung bertingkat, kunci yang terlepas dari tangan menghantam lantai sebelum kita sempat menangkapnya. Kunci yang jatuh dari meja dan kunci yang jatuh dari lantai lebih tinggi sama-sama jatuh dengan cara yang sama, hanya lamanya berbeda.",
+    "Banyak orang mengira benda yang lebih berat jatuh lebih cepat. Pengamatan yang teliti menunjukkan bahwa bila hambatan udara bisa diabaikan, semua benda jatuh dengan percepatan yang sama. Selembar kertas yang dibuat menjadi gumpalan jatuh hampir sama dengan batu, padahal kertas yang terbuka jatuh lebih lambat.",
+    "Pertanyaan penuntun: bila percepatan jatuh sama, bagaimana menghitung waktu jatuh dan kecepatan saat menumbuk tanah dari ketinggian tertentu, dan kapan perhitungan itu tidak bisa dipercaya?"
+  ],
+  "konsep": [
+    {
+      "h": "Apa itu jatuh bebas"
+    },
+    "Jatuh bebas adalah gerak benda yang hanya dipengaruhi gravitasi, tanpa hambatan udara dan tanpa dorongan lain. Modul ini membahas model paling sederhana: gerak lurus tegak, di dekat permukaan Bumi, dengan percepatan yang sama di semua titik. Dalam arti ketat, benda yang dilempar ke atas atau ke bawah juga mengalami gerak ini, selama hanya gravitasi yang bekerja. Bagian awal membahas benda yang dijatuhkan dari diam.",
+    {
+      "h": "Masukan dari pengamatan"
+    },
+    "Dari pengukuran benda jatuh di dekat permukaan Bumi, percepatannya sekitar $g\\approx9{,}8$ m/s² ke bawah, sama untuk semua benda bila hambatan udara bisa diabaikan, dan tidak bergantung pada massa. Nilai $g$ ini adalah hasil pengamatan. Modul ini memakainya sebagai data dan tidak menjelaskan mengapa nilainya demikian. Penjelasannya ada di modul lain, yang disebut di bagian Keterkaitan.",
+    {
+      "h": "Gagasan utama: kasus khusus percepatan konstan"
+    },
+    "Karena percepatannya tetap, semua hasil dari k.glbb berlaku. Pilih sumbu tegak dengan arah atas positif. Maka $a=-g$, dengan $g\\approx9{,}8$ m/s² bernilai positif. Tanda negatif menunjukkan arah ke bawah. Jangan memasukkan tanda minus dua kali.",
+    {
+      "table": {
+        "head": [
+          "Besaran (jatuh dari diam)",
+          "Perilaku terhadap waktu",
+          "Makna"
+        ],
+        "rows": [
+          [
+            "Percepatan $a$",
+            "Tetap, $-g$",
+            "Sama sejak lepas sampai tumbuk"
+          ],
+          [
+            "Kecepatan $v$",
+            "Makin negatif, linear dalam $t$",
+            "Makin cepat ke bawah, tambahan sama tiap detik"
+          ],
+          [
+            "Jarak jatuh",
+            "Berbanding kuadrat $t$",
+            "Detik berikutnya menempuh lebih jauh"
+          ]
+        ]
+      }
+    },
+    {
+      "h": "Benda ringan dan berat"
+    },
+    "Kalau percepatan sama, mengapa benda berat terasa jatuh lebih cepat? Di udara, hambatan ikut bekerja dan besarnya bergantung pada bentuk dan luas benda, bukan hanya beratnya. Batu dan kertas terbuka jatuh berbeda karena itu. Di ruang hampa, atau bila hambatan udara kecil dibanding berat, benda jatuh bersamaan. Percobaan seperti ini dilakukan di tabung hampa. Modul ini memakai model tanpa hambatan udara dan tidak menghitung besarnya hambatan.",
+    {
+      "h": "Apa yang terjadi di puncak lemparan ke atas"
+    },
+    "Benda yang dilempar ke atas melambat, berhenti sesaat di puncak, lalu turun. Selama itu percepatannya tetap $-g$. Kecepatan nol di puncak, percepatan tidak nol.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Massa tidak menentukan waktu jatuh dalam model tanpa hambatan udara.",
+        "Percepatan tetap, kecepatanlah yang bertambah. Tidak ada saat ketika percepatan nol, bahkan di puncak lemparan ke atas.",
+        "Jarak berbanding kuadrat waktu, dan kecepatan tumbuk berbanding akar ketinggian, bukan ketinggian."
+      ]
+    },
+    "Hasil untuk tinggi jatuh dan kecepatan tumbuk diturunkan di bagian Derivasi."
+  ],
+  "matematika": [
+    "Alat yang dipakai berasal dari prasyarat.",
+    {
+      "ul": [
+        "Persamaan percepatan konstan dari k.glbb: $\\text{eq.vt}$, $\\text{eq.xt}$, dan $\\text{eq.v2}$, dengan $a=-g$.",
+        "Akar kuadrat dan persamaan kuadrat sederhana. Bentuk $\\tfrac12gt^2=h$ diselesaikan untuk $t$ dengan mengakarkan, dan hanya akar positif yang bermakna sebagai waktu.",
+        "Perbandingan dan pangkat. Dua kali waktu berarti empat kali jarak, empat kali ketinggian berarti dua kali kecepatan."
+      ]
+    },
+    "Contoh: dari $h=20$ m, $t=\\sqrt{2h/g}=\\sqrt{40/9{,}8}\\approx2{,}02$ s. Cek: $\\tfrac12(9{,}8)(2{,}02)^2\\approx20$ m."
+  ],
+  "derivasi": {
+    "intro": [
+      "$\\text{eq.vt}$, $\\text{eq.xt}$, dan $\\text{eq.v2}$ dari k.glbb tampil otomatis dan tidak diulang. Di sini keduanya dikhususkan untuk jatuh dari diam: titik awal ketinggian $h$ di atas tanah, $v_0=0$, dan $a=-g$ dengan sumbu atas positif. Dua turunan: (1) waktu dan tinggi jatuh, (2) kecepatan tumbuk dan hubungannya dengan tinggi."
+    ],
+    "extra": [
+      {
+        "title": "Tinggi jatuh dan waktu jatuh dari diam",
+        "steps": [
+          {
+            "tex": "y_0=h,\\quad v_0=0,\\quad a=-g",
+            "why": "Titik asal sumbu di tanah, sumbu atas positif. Benda dilepas dari ketinggian $h$ tanpa kecepatan awal, dan hanya gravitasi bekerja."
+          },
+          {
+            "tex": "y=h-\\tfrac12gt^2",
+            "why": "Masukkan ketiganya ke $\\text{eq.xt}$. Suku $v_0t$ hilang karena $v_0=0$."
+          },
+          {
+            "tex": "y=0\\ \\Rightarrow\\ \\tfrac12gt^2=h",
+            "why": "Benda sampai di tanah ketika ketinggiannya nol. Pindahkan suku kuadrat ke sisi lain."
+          },
+          {
+            "tex": "t^2=\\frac{2h}{g}",
+            "why": "Kalikan kedua sisi dengan $2/g$."
+          },
+          {
+            "tex": "t_\\text{jatuh}=\\sqrt{\\frac{2h}{g}}",
+            "why": "Ambil akar positif, karena waktu yang dicari berjalan maju dari saat lepas. Akar negatif tidak bermakna di sini. Massa tidak muncul di rumus ini, sesuai dengan pengamatan bahwa semua benda jatuh sama."
+          },
+          {
+            "tex": "\\frac{t(2h)}{t(h)}=\\sqrt2",
+            "why": "Cek dimensi dan perilaku: ketinggian dua kali hanya membuat waktu $\\sqrt2\\approx1{,}41$ kali, bukan dua kali. Rumus masuk akal secara dimensi: akar dari (meter / (meter per detik kuadrat)) adalah detik."
+          }
+        ],
+        "validity": "Tanpa hambatan udara, $g$ konstan (tinggi jatuh kecil dibanding jari-jari Bumi), benda dilepas dari diam, gerak lurus tegak. Pengamatan menunjukkan $g\\approx9{,}8$ m/s² di dekat permukaan Bumi. Nilai ini bervariasi sedikit antar tempat."
+      },
+      {
+        "title": "Kecepatan tumbuk dan hubungannya dengan tinggi",
+        "steps": [
+          {
+            "tex": "v=-g\\,t",
+            "why": "$\\text{eq.vt}$ dengan $v_0=0$ dan $a=-g$. Tanda negatif berarti ke bawah karena sumbu atas positif."
+          },
+          {
+            "tex": "v_\\text{tumbuk}=-g\\sqrt{\\frac{2h}{g}}=-\\sqrt{2gh}",
+            "why": "Masukkan $t_\\text{jatuh}$ dari turunan pertama. Dengan $g=\\sqrt{g}\\sqrt{g}$, hasilnya $g\\sqrt{2h/g}=\\sqrt{2gh}$. Kecepatan menuju ke bawah."
+          },
+          {
+            "tex": "v^2=v_0^2+2a(y-y_0)=0+2(-g)(0-h)=2gh",
+            "why": "Cek silang lewat $\\text{eq.v2}$ tanpa waktu. Lawan arah ($a$ negatif) dikalikan perpindahan ke bawah (negatif) memberi hasil positif, sehingga $v^2$ positif. Ini sama dengan $(-\\sqrt{2gh})^2$."
+          },
+          {
+            "tex": "|v_\\text{tumbuk}|=\\sqrt{2gh}",
+            "why": "Laju adalah besar kecepatan. Akar kuadrat dari $v^2$ memberi dua tanda, dan pilihan yang benar mengikuti arah gerak, yaitu ke bawah."
+          },
+          {
+            "tex": "\\frac{|v|(4h)}{|v|(h)}=2",
+            "why": "Empat kali tinggi hanya membuat laju dua kali, karena $v\\propto\\sqrt{h}$. Cek angka: $h=5$ m memberi 9,9 m/s dan $h=20$ m memberi 19,8 m/s."
+          },
+          {
+            "tex": "v^2-v_0^2=2a\\Delta y\\ \\text{untuk }v_0\\neq0",
+            "why": "Bentuk umum, berlaku juga bila benda dilempar ke bawah. Untuk dilempar ke atas dari tanah dengan $v_0>0$, di puncak $v=0$ sehingga tinggi puncak $H=v_0^2/(2g)$ dan waktu naik $v_0/g$."
+          }
+        ],
+        "validity": "Tanpa hambatan udara, $g$ konstan, dilepas dari diam untuk dua langkah pertama. Hambatan udara membatasi kecepatan benda yang jatuh jauh (hasil ini tidak memperhitungkan laju batas), sehingga untuk ketinggian besar hasil model terlalu besar. Besar penyimpangan bergantung pada benda dan tidak dihitung di modul ini."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: jatuh bebas model ini adalah GLBB dengan $a=-g$. Tiga asumsi menentukan: tanpa hambatan udara, $g$ konstan, dan gerak lurus. Hambatan udara dibahas di d.hambat dan tidak dipakai di sini."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Makna $g$"
+    },
+    "$g\\approx9{,}8$ m/s² berarti tiap detik kecepatan ke bawah bertambah sekitar 9,8 m/s. Dari diam: 9,8; 19,6; 29,4 m/s pada 1, 2, 3 s. Jarak jatuhnya berbeda dari kecepatan: 4,9; 19,6; 44,1 m. Jarak tiap detik: 4,9; 14,7; 24,5 m, atau perbandingan 1 : 3 : 5.",
+    {
+      "h": "Mengapa semua benda jatuh sama"
+    },
+    "Tidak ada massa dalam $t=\\sqrt{2h/g}$ dan $v=\\sqrt{2gh}$. Sesuai dengan pengamatan: percepatan jatuh sama untuk semua benda bila hambatan udara kecil. Modul ini memakainya sebagai masukan dan tidak menurunkannya. Alasan mendalamnya akan datang lewat d.hukum2 dan d.gayaberat.",
+    {
+      "h": "Simetri naik dan turun"
+    },
+    "Untuk lemparan ke atas dari tanah, waktu naik sama dengan waktu turun, $2v_0/g$ total. Saat kembali ke titik lempar, laju sama dengan laju lempar dan arahnya berlawanan.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "$g\\approx9{,}8$ m/s²; untuk perkiraan cepat sering dibulatkan 10. Nilainya sedikit berbeda antar tempat di Bumi.",
+        "Jatuh dari 5 m (kira-kira lantai dua) menghasilkan kecepatan tumbuk sekitar 9,9 m/s atau 36 km/jam menurut model tanpa hambatan udara. Tinggi 5 m sendiri hanya perkiraan.",
+        "Pada jatuh dari ketinggian besar, hambatan udara menjadi penting dan laju tidak terus naik. Besarnya bergantung pada bentuk benda dan tidak dihitung di modul ini."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Tanpa hambatan udara. Ini asumsi terbesar. Untuk benda ringan atau berpermukaan lebar, hasil model menyimpang jauh.",
+        "$g$ dianggap konstan. Berlaku untuk ketinggian yang kecil dibanding jari-jari Bumi.",
+        "Benda dianggap titik, tanpa putaran, dan gerak hanya tegak."
+      ]
+    }
+  ],
+  "simulasi": {
+    "question": [
+      "Ubah $x_0$, $v_0$, dan $a$, lalu amati grafik. Sumbu atas positif, jadi $a=-9{,}8$ m/s². Jawab dulu tiap skenario sebelum melihat hasilnya."
+    ],
+    "scenarios": [
+      {
+        "id": "jatuh",
+        "label": "Dijatuhkan dari 20 m",
+        "motion": {
+          "x0": 20,
+          "v0": 0,
+          "a": -9.8
+        },
+        "T": 2.02,
+        "ask": "Batu dijatuhkan dari diam di ketinggian 20 m (arah atas positif, g = 9,8 m/s²). Kira-kira berapa lama sampai tanah?",
+        "choices": [
+          "1 s",
+          "2 s",
+          "4 s"
+        ],
+        "answer": 1,
+        "reveal": "t = √(2h/g) = √(40/9,8) ≈ 2,02 s. Kecepatan saat tumbuk ≈ −19,8 m/s (ke bawah). Waktu jatuh sebanding dengan akar tinggi, bukan dengan tingginya."
+      },
+      {
+        "id": "bawah",
+        "label": "Dilempar ke bawah",
+        "motion": {
+          "x0": 20,
+          "v0": -5,
+          "a": -9.8
+        },
+        "T": 1.57,
+        "ask": "Batu dilempar ke bawah dengan laju awal 5 m/s dari 20 m. Dibandingkan dengan batu yang dijatuhkan dari diam, percepatannya…",
+        "choices": [
+          "lebih besar",
+          "sama, −9,8 m/s²",
+          "lebih kecil"
+        ],
+        "answer": 1,
+        "reveal": "Percepatan sama: hanya gravitasi yang bekerja, $a=-9{,}8$ m/s². Yang berbeda adalah kecepatan awal. Waktu sampai tanah ≈ 1,57 s, lebih singkat dari 2,02 s karena mulai dengan kecepatan ke bawah."
+      },
+      {
+        "id": "atas",
+        "label": "Dilempar ke atas",
+        "motion": {
+          "x0": 0,
+          "v0": 19.6,
+          "a": -9.8
+        },
+        "T": 4,
+        "focusTurn": true,
+        "ask": "Bola dilempar ke atas dengan 19,6 m/s dari tanah. Berapa lama sampai kembali ke titik lempar?",
+        "choices": [
+          "2 s",
+          "4 s",
+          "8 s"
+        ],
+        "answer": 1,
+        "reveal": "Puncak pada t = v₀/g = 2 s (v = 0), tinggi H = v₀²/(2g) = 19,6 m. Kembali pada 4 s, dengan kecepatan −19,6 m/s. Percepatan tetap −9,8 m/s² selama itu, termasuk di puncak."
+      }
+    ],
+    "free": {
+      "id": "bebas",
+      "label": "Atur sendiri",
+      "motion": {
+        "x0": 10,
+        "v0": 0,
+        "a": -9.8
+      },
+      "T": 1.4,
+      "ask": "",
+      "choices": [],
+      "answer": 0,
+      "reveal": ""
+    }
+  },
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Dua batu, berat berbeda",
+      "problem": [
+        "Dua bola kecil, satu bermassa 0,1 kg dan satu 1 kg, dijatuhkan dari diam pada saat yang sama dari ketinggian 20 m. Anggap hambatan udara bisa diabaikan. (a) Mana yang tiba lebih dulu? (b) Bagaimana kecepatan saat tumbuk? Jelaskan tanpa menghitung dulu, lalu cek dengan angka."
+      ],
+      "answer": [
+        "(a) Bersamaan. Percepatan keduanya $g$, tidak bergantung massa. Waktu jatuh $\\sqrt{2h/g}$ tidak memuat massa.",
+        "(b) Sama. Kecepatan tumbuk $\\sqrt{2gh}$ juga tidak memuat massa.",
+        "Pengecekan angka: $t=\\sqrt{2\\cdot20/9{,}8}\\approx2{,}02$ s dan $v=gt\\approx19{,}8$ m/s, sama dengan $\\sqrt{2\\cdot9{,}8\\cdot20}\\approx19{,}8$ m/s. Massa bola tidak muncul dalam perhitungan: dalam model ini waktu dan kecepatan jatuh tidak bergantung pada massa.",
+        {
+          "note": "Asumsi: tanpa hambatan udara, $g=9{,}8$ m/s² konstan, bola kecil dan padat dianggap titik."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Jatuh dari 45 m",
+      "problem": [
+        "Batu dijatuhkan dari diam di ketinggian 45 m. Pakai $g=9{,}8$ m/s² dan abaikan hambatan udara. Tentukan (1) waktu jatuh, (2) kecepatan tumbuk dalam m/s dan km/jam, (3) tinggi batu pada 1, 2, dan 3 s, dan (4) jarak yang ditempuh pada detik pertama, kedua, dan ketiga."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$t=\\sqrt{2\\cdot45/9{,}8}=\\sqrt{9{,}184}\\approx3{,}03$ s.",
+            "$|v|=\\sqrt{2gh}=\\sqrt{2\\cdot9{,}8\\cdot45}=\\sqrt{882}\\approx29{,}7$ m/s. Cek: $gt=9{,}8\\times3{,}03\\approx29{,}7$ m/s. Dalam km/jam: $29{,}7\\times3{,}6\\approx107$ km/jam.",
+            "$y=45-4{,}9t^2$: $y(1)=40{,}1$ m, $y(2)=25{,}4$ m, $y(3)=0{,}9$ m. Pada 3 s batu masih 0,9 m di atas tanah dan tumbuk sekitar 0,03 s kemudian.",
+            "Jarak tiap detik, dari tinggi $45-40{,}1=4{,}9$ m, $40{,}1-25{,}4=14{,}7$ m, $25{,}4-0{,}9=24{,}5$ m. Perbandingannya 1 : 3 : 5, sesuai dengan jarak berbanding kuadrat waktu."
+          ]
+        },
+        {
+          "note": "Asumsi: $g=9{,}8$ m/s² konstan, tanpa hambatan udara, benda dilepas dari diam, sumbu atas positif."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Memperkirakan kedalaman sumur dengan batu",
+      "problem": [
+        "Sebuah batu dijatuhkan ke sumur dari bibir sumur. Dari saat lepas sampai terdengar cipratan terukur 2,0 s (perkiraan hasil pengukuran dengan stopwatch). (a) Berapa kedalaman sumur bila bunyi dianggap tiba seketika? (b) Perbaiki dengan memperhitungkan waktu tempuh bunyi, laju bunyi 340 m/s (perkiraan). (c) Seberapa sensitif hasilnya terhadap ketidakpastian waktu $\\pm0{,}2$ s?"
+      ],
+      "answer": [
+        "(a) $h=\\tfrac12gt^2=\\tfrac12\\cdot9{,}8\\cdot4=19{,}6$ m. Kecepatan tumbuk sekitar $gt=19{,}6$ m/s.",
+        "(b) Waktu total $2{,}0=t_\\text{jatuh}+h/340$. Selesaikan: $\\sqrt{2h/9{,}8}+h/340=2{,}0$ memberi $h\\approx18{,}5$ m, $t_\\text{jatuh}\\approx1{,}945$ s, dan waktu bunyi $\\approx0{,}055$ s. Koreksi sekitar 5 persen, jadi 19,6 m menjadi sekitar 18,5 m.",
+        "(c) Tanpa koreksi bunyi: $t=1{,}8$ s memberi $15{,}9$ m, $t=2{,}2$ s memberi $23{,}7$ m. Selang waktu $\\pm10$ persen menghasilkan selang kedalaman $-19$ persen sampai $+21$ persen, kira-kira dua kali lipat, karena $h\\propto t^2$.",
+        {
+          "note": "Asumsi dan keterbatasan: tanpa hambatan udara, dinding sumur tidak mengganggu, batu dianggap titik. Waktu 2,0 s dan 340 m/s adalah perkiraan, bukan data pengukuran. Hasilnya hanya perkiraan awal."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.glbb (persamaan percepatan konstan, dengan $a=-g$ sebagai kasus khusus).",
+    "Ke depan: k.proyektil memakai jatuh bebas sebagai komponen tegak gerak di bidang. d.gayaberat menjelaskan hubungan $g$ dengan gaya berat dan massa, dan d.hambat menjelaskan pengaruh hambatan udara. Itu semua belum dipakai di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "J1": {
+        "title": "Mengira benda lebih berat jatuh lebih cepat",
+        "fix": "Dalam model tanpa hambatan udara, percepatan jatuh sama untuk semua benda dan tidak memuat massa. Beda di udara berasal dari hambatan udara, bukan dari $g$."
+      },
+      "J2": {
+        "title": "Mengira percepatan nol saat kecepatan nol",
+        "fix": "Saat dilepas atau di puncak lemparan, $v=0$, tetapi $a=-g$. Percepatan adalah laju perubahan kecepatan, bukan kecepatan itu sendiri."
+      },
+      "J3": {
+        "title": "Menganggap jarak jatuh sebanding waktu, atau mencampur kecepatan dengan jarak",
+        "fix": "Jarak jatuh dari diam $\\tfrac12gt^2$, berbanding kuadrat waktu. Kecepatan $gt$ berbanding lurus waktu. Keduanya punya satuan berbeda."
+      },
+      "J4": {
+        "title": "Salah hubungan kecepatan tumbuk dengan tinggi jatuh",
+        "fix": "$|v|=\\sqrt{2gh}$. Kecepatan sebanding dengan akar ketinggian: empat kali tinggi hanya membuat kecepatan dua kali."
+      },
+      "J5": {
+        "title": "Salah tanda kecepatan atau percepatan terhadap sumbu",
+        "fix": "Dengan sumbu atas positif, $a=-g$ dan benda yang jatuh punya $v<0$. Tanda ditentukan oleh sumbu, dan harus konsisten."
+      },
+      "J6": {
+        "title": "Mengira model jatuh bebas gagal bila ada udara, atau berlaku selalu",
+        "fix": "Model tanpa hambatan udara hanya berlaku bila hambatan udara bisa diabaikan. Di udara, benda ringan atau lebar menyimpang, tetapi itu bukan berarti hukum percepatan sama salah."
+      },
+      "J7": {
+        "title": "Mengira percepatan berubah selama jatuh",
+        "fix": "Pada model ini $a=-g$ tetap sepanjang gerak. Kecepatan yang bertambah, bukan percepatannya."
+      },
+      "J8": {
+        "title": "Mengabaikan kecepatan awal pada benda yang dilempar",
+        "fix": "Untuk benda yang dilempar, $v=v_0-gt$. Memakai $v=-gt$ hanya benar bila $v_0=0$."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Dua batu, 1 kg dan 5 kg, dijatuhkan dari diam pada saat yang sama dari ketinggian sama. Abaikan hambatan udara. Mana yang tiba lebih dulu?",
+        "options": [
+          {
+            "text": "Keduanya tiba bersamaan.",
+            "why": "Percepatan $-g$ sama, ketinggian sama, jadi $t=\\sqrt{2h/g}$ sama.",
+            "correct": true
+          },
+          {
+            "text": "Batu 1 kg, karena lebih ringan lebih mudah bergerak.",
+            "why": "Percepatan sama untuk keduanya dalam model ini. Mudah atau sulit bergerak tidak mengubah waktu jatuh.",
+            "tag": "J1"
+          },
+          {
+            "text": "Batu 5 kg, karena lebih berat ditarik lebih kuat.",
+            "why": "Dalam model ini percepatan jatuh sama untuk semua benda (masukan dari pengamatan), sehingga massa tidak menentukan waktu jatuh. Penjelasan mengapa demikian dibahas di modul Gaya berat dan massa.",
+            "tag": "J1"
+          },
+          {
+            "text": "Tidak bisa ditentukan tanpa mengetahui bentuk batu.",
+            "why": "Bentuk hanya penting bila ada hambatan udara. Soal menyatakan hambatan udara diabaikan.",
+            "tag": "J6"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Sebuah bola dilepas dari diam. Bagaimana percepatannya pada 0,1 s, 1 s, dan 2 s sesudah dilepas (abaikan hambatan udara)?",
+        "options": [
+          {
+            "text": "Membesar, karena bola makin cepat.",
+            "why": "Kecepatan yang membesar, bukan percepatan. $a=-g$ tetap.",
+            "tag": "J7"
+          },
+          {
+            "text": "Nol saat baru dilepas karena $v=0$, lalu 9,8 m/s².",
+            "why": "Kecepatan nol saat lepas tidak berarti percepatan nol. $a=-g$ sejak awal.",
+            "tag": "J2"
+          },
+          {
+            "text": "Tetap sekitar 9,8 m/s² ke bawah.",
+            "why": "Hanya gravitasi bekerja dan $g$ konstan, sehingga $a=-g$ tetap.",
+            "correct": true
+          },
+          {
+            "text": "Mengecil, karena bola makin dekat ke tanah.",
+            "why": "Perubahan $g$ akibat ketinggian beberapa meter dapat diabaikan, jadi $a$ tetap.",
+            "tag": "J7"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Batu dijatuhkan dari diam. Pada 1 s pertama ia jatuh 4,9 m. Berapa jauh jatuhnya dalam 3 s pertama ($g=9{,}8$ m/s²)?",
+        "options": [
+          {
+            "text": "14,7 m",
+            "why": "Itu $3\\times4{,}9$. Jarak bukan sebanding waktu, melainkan kuadrat waktu.",
+            "tag": "J3"
+          },
+          {
+            "text": "44,1 m",
+            "why": "$\\tfrac12gt^2=\\tfrac12\\cdot9{,}8\\cdot9=44{,}1$ m, yaitu $9\\times4{,}9$.",
+            "correct": true
+          },
+          {
+            "text": "88,2 m",
+            "why": "Itu kecepatan akhir dikali waktu, $29{,}4\\cdot3$. Kecepatan tidak tetap, dan lupa $\\tfrac12$.",
+            "tag": "J3"
+          },
+          {
+            "text": "29,4 m",
+            "why": "Itu kecepatan pada 3 s, $9{,}8\\cdot3$ m/s. Satuannya m/s, bukan jarak.",
+            "tag": "J3"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Sebuah benda dijatuhkan dari diam di ketinggian 5 m dan tumbuk dengan 9,9 m/s. Berapa kecepatan tumbuknya bila dijatuhkan dari 20 m (tanpa hambatan udara)?",
+        "options": [
+          {
+            "text": "9,9 m/s, karena percepatannya sama.",
+            "why": "Percepatan sama, tetapi benda jatuh lebih lama dan lebih jauh sehingga lebih cepat. $v=\\sqrt{2gh}$.",
+            "tag": "J4"
+          },
+          {
+            "text": "19,8 m/s",
+            "why": "$v\\propto\\sqrt h$. Tinggi 4 kali berarti $v$ 2 kali: $9{,}9\\times2=19{,}8$ m/s.",
+            "correct": true
+          },
+          {
+            "text": "39,6 m/s, karena tingginya empat kali.",
+            "why": "Itu mengira $v\\propto h$. Yang benar $v\\propto\\sqrt h$.",
+            "tag": "J4"
+          },
+          {
+            "text": "14,0 m/s, karena $\\sqrt2$ kali.",
+            "why": "$\\sqrt2$ adalah perbandingan untuk tinggi dua kali, bukan empat kali.",
+            "tag": "J4"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Sumbu tegak dipilih dengan arah atas positif. Benda dijatuhkan dari diam. Bagaimana tanda kecepatan dan percepatannya sesudah dilepas?",
+        "options": [
+          {
+            "text": "Kecepatan positif dan percepatan positif, karena bendanya bergerak.",
+            "why": "Gerak ke bawah berarti kecepatan negatif untuk sumbu atas positif, dan $a=-g$.",
+            "tag": "J5"
+          },
+          {
+            "text": "Kecepatan positif dan percepatan negatif.",
+            "why": "Benda bergerak ke bawah, jadi $v<0$, bukan positif.",
+            "tag": "J5"
+          },
+          {
+            "text": "Kecepatan negatif dan percepatan negatif.",
+            "why": "Keduanya mengarah ke bawah, yaitu negatif terhadap sumbu atas positif.",
+            "correct": true
+          },
+          {
+            "text": "Kecepatan negatif dan percepatan positif.",
+            "why": "Percepatan juga mengarah ke bawah, jadi $a=-g$ negatif.",
+            "tag": "J5"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Selembar kertas terbuka jatuh lebih lambat daripada batu di ruangan biasa. Apakah itu menunjukkan bahwa percepatan jatuh bergantung pada benda?",
+        "options": [
+          {
+            "text": "Tidak. Model memakai tanpa hambatan udara, dan pada kertas hambatan udara ikut menentukan.",
+            "why": "Pada kertas, hambatan udara membuat model tidak berlaku. Bila kertas diremas atau diuji di ruang hampa, selisihnya menyusut.",
+            "correct": true
+          },
+          {
+            "text": "Ya, kertas lebih ringan sehingga $g$-nya lebih kecil.",
+            "why": "$g$ bukan sifat benda. Perbedaan datang dari hambatan udara yang lebih besar pada kertas.",
+            "tag": "J1"
+          },
+          {
+            "text": "Tidak, karena kertas dan batu sama-sama jatuh dengan percepatan sama di udara.",
+            "why": "Tidak benar: di udara kertas terbukti jatuh lebih lambat. Perbedaan itu nyata.",
+            "tag": "J6"
+          },
+          {
+            "text": "Ya, jadi hukum 'semua benda jatuh sama' salah.",
+            "why": "Hukum itu berlaku bila hambatan udara bisa diabaikan. Pada kertas, hambatan udara besar dibanding beratnya.",
+            "tag": "J6"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": true,
+        "prompt": "Bola dilempar tegak ke atas dari tanah dengan 19,6 m/s (arah atas positif, $g=9{,}8$ m/s²). Berapa kecepatannya pada $t=3$ s?",
+        "options": [
+          {
+            "text": "$+9{,}8$ m/s",
+            "why": "Itu besar yang benar tetapi tandanya salah: pada 3 s bola sudah lewat puncak (2 s) dan sedang turun, jadi negatif.",
+            "tag": "J5"
+          },
+          {
+            "text": "$-9{,}8$ m/s",
+            "why": "$v=v_0-gt=19{,}6-9{,}8\\cdot3=-9{,}8$ m/s, ke bawah.",
+            "correct": true
+          },
+          {
+            "text": "$-29{,}4$ m/s",
+            "why": "Itu $-gt$, mengabaikan kecepatan awal 19,6 m/s.",
+            "tag": "J8"
+          },
+          {
+            "text": "0 m/s, karena bola berhenti di puncak.",
+            "why": "Bola berhenti sesaat di puncak pada $t=2$ s, bukan pada 3 s. Sesudahnya ia turun.",
+            "tag": "J2"
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "core": false,
+        "prompt": "Pengayaan. Benda dijatuhkan dari ketinggian $h$ dan tumbuk dengan laju $v$. Dari ketinggian berapa ia harus dijatuhkan agar lajunya $3v$ (tanpa hambatan udara)?",
+        "options": [
+          {
+            "text": "$3h$",
+            "why": "Itu mengira $v\\propto h$. Yang benar $v\\propto\\sqrt h$.",
+            "tag": "J4"
+          },
+          {
+            "text": "$6h$",
+            "why": "Tidak ada dasarnya. $h\\propto v^2$ memberi 9.",
+            "tag": "J4"
+          },
+          {
+            "text": "$\\sqrt3\\,h$",
+            "why": "Akar tidak berlaku untuk $h$. $h$ sebanding kuadrat $v$.",
+            "tag": "J4"
+          },
+          {
+            "text": "$9h$",
+            "why": "$v^2=2gh$, jadi $v$ tiga kali memerlukan $h$ sembilan kali.",
+            "correct": true
+          }
+        ]
+      }
+    ]
+  }
+}

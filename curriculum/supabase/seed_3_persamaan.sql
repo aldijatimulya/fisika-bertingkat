@@ -6,6 +6,7 @@ delete from equation_applied_in;
 delete from equation_deps;
 delete from equation_steps;
 insert into equations(id,concept_id,title,latex,kind,assumptions,validity,meaning) values
+  ('eq.vel_avg','k.kecepatan','Kecepatan rata-rata','\bar v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}','definisi','["Posisi x(t) diketahui pada dua saat t1 dan t2", "Gerak satu dimensi; arah dinyatakan dengan tanda"]'::jsonb,'Selang waktu berhingga. Hanya memuat posisi awal dan akhir: tidak memberi tahu apa yang terjadi di antaranya (benda bisa berbalik arah), dan tidak sama dengan laju rata-rata (jarak tempuh dibagi waktu).','Kecepatan rata-rata bisa nol walau benda bergerak (pergi lalu kembali ke titik awal); laju rata-rata tidak bisa nol bila benda bergerak.'),
   ('eq.vel','k.kecepatan','Kecepatan sesaat','v = \frac{dx}{dt}','definisi','["Posisi x(t) fungsi kontinu dan terdiferensialkan"]'::jsonb,'Gerak 1D; berlaku umum pada mekanika klasik.','Laju perubahan posisi terhadap waktu; tanda menunjukkan arah.'),
   ('eq.acc','k.percepatan','Percepatan sesaat','a = \frac{dv}{dt} = \frac{d^2x}{dt^2}','definisi','["v(t) terdiferensialkan"]'::jsonb,'Gerak 1D; versi vektor berlaku per komponen.','Seberapa cepat kecepatan berubah; nol bila kecepatan konstan.'),
   ('eq.vt','k.glbb','Kecepatan pada percepatan konstan','v = v_0 + at','turunan','["a konstan terhadap waktu"]'::jsonb,'Hanya untuk percepatan KONSTAN; kerangka inersial; mekanika Newton.','Kecepatan berubah linear terhadap waktu bila percepatan tetap.'),
@@ -40,6 +41,9 @@ insert into equations(id,concept_id,title,latex,kind,assumptions,validity,meanin
   ('eq.carnot','t.carnot','Efisiensi Carnot','\eta=1-\frac{T_c}{T_h}','turunan','["Gas ideal dengan gamma konstan", "Siklus reversibel (proses kuasi-statik)", "Dua isoterm dan dua adiabat; T adalah suhu gas ideal (setara suhu termodinamika)"]'::jsonb,'Efisiensi siklus Carnot gas ideal. Bahwa ini batas atas untuk SEMUA mesin kalor antara T_h dan T_c dibuktikan terpisah dengan hukum II termodinamika (t.hukum2), bukan oleh derivasi ini.','Efisiensi hanya bergantung pada dua suhu reservoir. (Teorema Carnot: tidak ada mesin yang lebih efisien - dibuktikan dengan hukum II.)')
 on conflict (id) do update set concept_id=excluded.concept_id, title=excluded.title, latex=excluded.latex, kind=excluded.kind, assumptions=excluded.assumptions, validity=excluded.validity, meaning=excluded.meaning;
 insert into equation_steps(equation_id,step_no,latex,reason) values
+  ('eq.vel_avg',1,'x_1 = x(t_1),\quad x_2 = x(t_2)','Ambil posisi pada dua saat yang berbeda.'),
+  ('eq.vel_avg',2,'\Delta x = x_2 - x_1,\quad \Delta t = t_2 - t_1','Hitung perpindahan (bukan jarak tempuh) dan selang waktu; tanda Delta x membawa informasi arah.'),
+  ('eq.vel_avg',3,'\bar v = \frac{\Delta x}{\Delta t}','Definisi: perpindahan per satuan waktu. Satuannya m/s. Secara grafik, ini kemiringan garis sekan yang menghubungkan dua titik pada grafik x-t.'),
   ('eq.vel',1,'\bar v = \frac{\Delta x}{\Delta t}','Kecepatan rata-rata didefinisikan sebagai perpindahan per selang waktu.'),
   ('eq.vel',2,'v = \lim_{\Delta t \to 0} \frac{x(t+\Delta t)-x(t)}{\Delta t}','Kecepatan sesaat adalah limit kecepatan rata-rata saat selang waktu menuju nol (konsep limit).'),
   ('eq.vel',3,'v = \frac{dx}{dt}','Limit tersebut adalah definisi turunan x terhadap t.'),
@@ -206,6 +210,7 @@ insert into equation_deps(equation_id,depends_on_id) values
   ('eq.kinetic_p','eq.pcons')
 ;
 insert into equation_applied_in(equation_id,concept_id) values
+  ('eq.vel_avg','k.percepatan'),
   ('eq.vel','k.percepatan'),
   ('eq.vel','k.vektor2d'),
   ('eq.acc','k.glbb'),

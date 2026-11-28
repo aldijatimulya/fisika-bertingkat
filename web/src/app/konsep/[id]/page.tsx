@@ -40,6 +40,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
           {area?.proposed && <span className="kind">tambahan usulan</span>}
         </div>
         <h1>{n.title}</h1>
+        {M && <p className="ui small status-badge" data-s={M.status ?? "draf"}>{(M.status ?? "draf") === "draf" ? "Modul draf: belum ditinjau pakar fisika. Gunakan bersama buku rujukan." : M.status === "ditinjau" ? "Modul sudah ditinjau pakar." : "Modul terbit."}</p>}
         <div style={{ marginTop: 18 }}><MasteryButton id={id} /></div>
       </div>
 
@@ -60,7 +61,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
           </section>
 
           <section className="module" id="derivasi">
-            <h2>Derivasi <span className={`state ${eqs.length ? "ready" : ""}`}>{eqs.length ? `${eqs.length} persamaan siap` : "belum ditulis"}</span></h2>
+            <h2>Derivasi <span className={`state ${eqs.length || M ? "ready" : ""}`}>{eqs.length ? `${eqs.length} persamaan siap` : M ? "tersedia" : "belum ditulis"}</span></h2>
             {M?.derivasiPengantar}
             {eqs.length ? (
               <div className="stack" style={{ marginTop: 8 }}>
@@ -79,17 +80,20 @@ export default async function ConceptPage({ params }: { params: Promise<{ id: st
                   </div>
                 ))}
               </div>
-            ) : (
+            ) : M ? null : (
               <p className="todo">Derivasi untuk konsep ini belum ditulis. Format yang dipakai: tiap langkah beralasan, dengan asumsi dan batas berlaku.</p>
             )}
+            {M?.derivasiTambahan?.map((e) => (
+              <div key={e.id} style={{ marginTop: 16 }}><Ledger eq={e} /></div>
+            ))}
             {M?.derivasiPenutup}
           </section>
 
           <section className="module" id="interpretasi">
-            <h2>Interpretasi fisis <span className={`state ${eqs.length ? "ready" : ""}`}>{eqs.length ? "tersedia" : "belum ditulis"}</span></h2>
+            <h2>Interpretasi fisis <span className={`state ${eqs.length || M ? "ready" : ""}`}>{eqs.length || M ? "tersedia" : "belum ditulis"}</span></h2>
             {eqs.length ? eqs.map((e) => (
               <p key={e.id}><Tex tex={e.latex} /> — <Linked text={e.meaning} /></p>
-            )) : <p className="todo">Makna fisis dari hasil akan dituliskan di sini.</p>}
+            )) : M ? null : <p className="todo">Makna fisis dari hasil akan dituliskan di sini.</p>}
             {M?.interpretasi}
           </section>
 

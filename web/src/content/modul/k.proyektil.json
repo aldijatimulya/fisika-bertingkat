@@ -1,0 +1,526 @@
+{
+  "id": "k.proyektil",
+  "status": "draf",
+  "fenomena": [
+    "Pemain sepak bola mengambil tendangan bebas. Bola meninggalkan kaki, naik melengkung di atas pagar pemain, lalu turun ke arah gawang. Dari tribun, lengkungan itu tampak mulus, dan bola tidak pernah tampak berbelok secara tiba-tiba. Di mana pun bola berada, kita bisa bertanya: seberapa tinggi, seberapa jauh, dan kapan sampai di situ?",
+    "Contoh lain: air dari selang yang diarahkan miring membentuk lengkung yang sama bentuknya dengan lintasan bola. Sudut selang yang berbeda memberi lengkung yang berbeda. Banyak orang yang pernah bermain dengan selang tahu bahwa mengangkat ujung selang terlalu tinggi tidak membuat air mendarat lebih jauh.",
+    "Satu demonstrasi yang sering ditunjukkan di kelas: dua bola dilepas pada saat yang sama dari ketinggian yang sama. Satu hanya dijatuhkan, satu lagi ditembakkan mendatar. Keduanya menyentuh lantai bersamaan. Hasil ini terasa janggal bagi banyak orang, padahal ia memberi kunci untuk seluruh modul ini.",
+    "Pertanyaan penuntun: bagaimana menjelaskan lengkung seluruh lintasan, dan bagaimana menentukan tinggi, waktu, dan jarak, memakai hasil penguraian komponen dari k.vektor2d dan persamaan percepatan konstan dari k.glbb?"
+  ],
+  "konsep": [
+    {
+      "h": "Apa itu proyektil"
+    },
+    "Proyektil adalah benda yang dilepaskan dengan kecepatan awal, lalu bergerak sendiri tanpa didorong atau ditarik lagi, kecuali oleh gravitasi. Contohnya bola yang ditendang, lembing, dan percikan air. Modul ini membahas model paling sederhana: tidak ada hambatan udara, dan benda berada dekat permukaan Bumi.",
+    {
+      "h": "Masukan dari pengamatan"
+    },
+    "Ada dua hal yang kita ambil sebagai masukan model. Pertama, pengamatan benda jatuh di dekat permukaan Bumi menunjukkan bahwa percepatannya sekitar $g\\approx9{,}8$ m/s² ke bawah, sama untuk semua benda bila hambatan udara bisa diabaikan, dan tidak bergantung pada massa. Kedua, dalam model ini tidak ada percepatan mendatar sama sekali. Modul ini tidak menjelaskan mengapa $g$ bernilai itu; ia memakainya sebagai data. Pembahasan penyebabnya datang di modul lain, yang disebut di bagian Keterkaitan.",
+    {
+      "h": "Gagasan utama: dua gerak yang saling bebas"
+    },
+    "Dari k.vektor2d kita tahu bahwa gerak di bidang dapat diuraikan menjadi komponen x dan y, dan masing-masing dihitung sendiri. Untuk proyektil, hasilnya sederhana:",
+    {
+      "table": {
+        "head": [
+          "Arah",
+          "Percepatan",
+          "Jenis gerak",
+          "Akibatnya"
+        ],
+        "rows": [
+          [
+            "Mendatar (x)",
+            "Nol",
+            "Kecepatan tetap",
+            "Bola maju dengan laju mendatar yang sama sepanjang waktu"
+          ],
+          [
+            "Tegak (y)",
+            "$g$ ke bawah, tetap",
+            "Percepatan konstan (GLBB)",
+            "Naik makin pelan, berhenti sesaat, lalu turun makin cepat"
+          ]
+        ]
+      }
+    },
+    "Dua gerak ini berjalan bersamaan dan memakai waktu yang sama. Waktu adalah satu-satunya penghubung antara keduanya. Karena itu bola yang dijatuhkan dan bola yang ditembakkan mendatar dari ketinggian sama tiba bersamaan: gerak tegak keduanya identik, dan gerak mendatar tidak memengaruhi gerak tegak.",
+    {
+      "h": "Menguraikan kecepatan awal"
+    },
+    "Bila kecepatan awal $v_0$ membentuk sudut $\\theta$ di atas bidang mendatar, komponennya $v_{0x}=v_0\\cos\\theta$ dan $v_{0y}=v_0\\sin\\theta$. Komponen mendatar tidak berubah sampai bola mendarat. Komponen tegak berkurang, nol di puncak, lalu berbalik arah.",
+    {
+      "h": "Apa yang terjadi di puncak"
+    },
+    "Di titik tertinggi, hanya komponen tegak yang bernilai nol. Komponen mendatar tetap ada, sehingga bola masih bergerak mendatar, dan percepatan ke bawah $g$ tetap bekerja. Bola tidak berhenti, dan percepatannya tidak nol.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Kecepatan mendatar tidak berkurang di udara dalam model ini. Yang berubah hanya komponen tegak.",
+        "Di puncak, kecepatan tidak nol kecuali bola dilempar lurus ke atas. Yang nol adalah komponen tegaknya.",
+        "Massa tidak muncul dalam persamaan lintasan, waktu, tinggi, maupun jangkauan. Yang muncul hanya $v_0$, $\\theta$, dan $g$."
+      ]
+    },
+    "Hasil lengkap (waktu terbang, tinggi maksimum, jangkauan, bentuk lintasan) diturunkan di bagian Derivasi."
+  ],
+  "matematika": [
+    "Modul ini memakai empat alat, semuanya dari prasyarat yang sudah ada.",
+    {
+      "ul": [
+        "Trigonometri dasar. Penguraian $v_{0x}=v_0\\cos\\theta$ dan $v_{0y}=v_0\\sin\\theta$, serta $\\tan\\theta=\\sin\\theta/\\cos\\theta$ (lihat m.trigo). Identitas $\\sin2\\theta=2\\sin\\theta\\cos\\theta$ dipakai untuk jangkauan, dan $1/\\cos^2\\theta=1+\\tan^2\\theta$ untuk bentuk lintasan.",
+        "Penguraian vektor. Dua komponen yang saling tegak lurus dapat ditangani terpisah (lihat k.vektor2d).",
+        "Persamaan kuadrat sederhana. Posisi tegak $y(t)$ berbentuk kuadrat dalam $t$. Akarnya memberi saat bola di tanah, dan titik puncaknya memberi tinggi maksimum.",
+        "Percepatan konstan. $v=v_0+at$ dan $x=x_0+v_0t+\\tfrac12at^2$ dari k.glbb dipakai pada tiap komponen."
+      ]
+    },
+    "Contoh pemakaian trigonometri: untuk $v_0=20$ m/s dan $\\theta=30^\\circ$, $v_{0x}=20\\cos30^\\circ\\approx17{,}32$ m/s dan $v_{0y}=20\\sin30^\\circ=10{,}00$ m/s. Cek: $\\sqrt{17{,}32^2+10{,}00^2}=20$ m/s."
+  ],
+  "derivasi": {
+    "intro": [
+      "Persamaan jangkauan $\\text{eq.range}$ dan persamaan yang dipakainya ($\\text{eq.vt}$ dan $\\text{eq.xt}$) tampil otomatis di atas dan tidak diulang di sini. Perhatikan bahwa waktu terbang dan jangkauan di sana diturunkan dengan tiga asumsi: tanpa hambatan udara, $g$ konstan, dan ketinggian awal sama dengan ketinggian akhir.",
+      "Dua turunan tambahan di bawah ini melengkapinya: (1) bentuk lintasan $y(x)$ dengan menghilangkan waktu, dan (2) tinggi maksimum dan waktu naik. Semuanya berangkat dari penguraian komponen pada k.vektor2d dan dari persamaan percepatan konstan pada k.glbb. Titik lempar dipilih sebagai titik asal, $x_0=0$ dan $y_0=0$, dengan sumbu y ke atas positif."
+    ],
+    "extra": [
+      {
+        "title": "Lintasan parabola y(x): menghilangkan waktu",
+        "steps": [
+          {
+            "tex": "x=v_0\\cos\\theta\\;t",
+            "why": "Komponen mendatar: $a_x=0$, sehingga $\\text{eq.xt}$ dengan $a=0$, $x_0=0$, dan $v_{0x}=v_0\\cos\\theta$ memberi persamaan ini."
+          },
+          {
+            "tex": "y=v_0\\sin\\theta\\;t-\\tfrac12gt^2",
+            "why": "Komponen tegak: $a_y=-g$ (sumbu y ke atas positif), $y_0=0$, dan $v_{0y}=v_0\\sin\\theta$, dimasukkan ke $\\text{eq.xt}$."
+          },
+          {
+            "tex": "t=\\frac{x}{v_0\\cos\\theta}",
+            "why": "Selesaikan langkah pertama untuk $t$. Ini perlu $\\cos\\theta\\neq0$, yaitu bukan lemparan tegak lurus. Karena $x$ naik terus terhadap $t$, tiap nilai $x$ sesuai tepat satu nilai $t$, sehingga penggantian ini sah."
+          },
+          {
+            "tex": "y=v_0\\sin\\theta\\cdot\\frac{x}{v_0\\cos\\theta}-\\tfrac12g\\left(\\frac{x}{v_0\\cos\\theta}\\right)^2",
+            "why": "Substitusikan $t$ ke persamaan tegak. Waktu hilang, dan sekarang tinggi dinyatakan langsung sebagai fungsi jarak mendatar."
+          },
+          {
+            "tex": "y=x\\tan\\theta-\\frac{g}{2v_0^2\\cos^2\\theta}\\,x^2",
+            "why": "Pada suku pertama $v_0$ saling meniadakan dan $\\sin\\theta/\\cos\\theta=\\tan\\theta$. Pada suku kedua kuadrat dibuka sehingga muncul $x^2$ dan $\\cos^2\\theta$."
+          },
+          {
+            "tex": "y=x\\tan\\theta-\\frac{g\\,(1+\\tan^2\\theta)}{2v_0^2}\\,x^2",
+            "why": "Identitas $1/\\cos^2\\theta=1+\\tan^2\\theta$. Bentuk ini hanya berisi $\\tan\\theta$, berguna bila yang diketahui kemiringan lintasan awal."
+          },
+          {
+            "tex": "y=x\\tan\\theta\\left(1-\\frac{x}{R}\\right),\\qquad R=\\frac{v_0^2\\sin2\\theta}{g}",
+            "why": "Cek konsistensi: $\\tan\\theta/R=\\dfrac{\\sin\\theta}{\\cos\\theta}\\cdot\\dfrac{g}{2v_0^2\\sin\\theta\\cos\\theta}=\\dfrac{g}{2v_0^2\\cos^2\\theta}$, jadi bentuk ini sama dengan langkah kelima. Akarnya $x=0$ dan $x=R$ cocok dengan $\\text{eq.range}$."
+          }
+        ],
+        "validity": "Tanpa hambatan udara, $g$ konstan, Bumi dianggap datar, titik lempar di $x=0,y=0$, dan $\\cos\\theta\\neq0$. Bentuk terakhir dengan $R$ hanya berlaku bila ketinggian akhir sama dengan ketinggian awal. Pada jangkauan yang sangat jauh, kelengkungan Bumi dan perubahan $g$ tidak bisa diabaikan."
+      },
+      {
+        "title": "Tinggi maksimum, waktu naik, dan waktu terbang",
+        "steps": [
+          {
+            "tex": "v_y=v_0\\sin\\theta-gt",
+            "why": "Komponen tegak dari $\\text{eq.vt}$ dengan $a_y=-g$ dan $v_{0y}=v_0\\sin\\theta$. Komponen ini berkurang secara merata terhadap waktu."
+          },
+          {
+            "tex": "v_y=0\\ \\text{di titik tertinggi}",
+            "why": "Selama $v_y>0$, bola masih naik. Setelah $v_y<0$, bola turun. Karena $v_y$ berkurang merata, ia melewati nol tepat sekali, dan pada saat itu bola berhenti naik dan belum mulai turun: itulah titik tertinggi."
+          },
+          {
+            "tex": "t_\\text{naik}=\\frac{v_0\\sin\\theta}{g}",
+            "why": "Selesaikan $v_0\\sin\\theta-gt=0$ untuk $t$. Hasilnya wajar: makin besar komponen tegak awal, makin lama bola naik, dan makin besar $g$, makin singkat."
+          },
+          {
+            "tex": "H=v_0\\sin\\theta\\,t_\\text{naik}-\\tfrac12g\\,t_\\text{naik}^2",
+            "why": "Masukkan $t_\\text{naik}$ ke persamaan posisi tegak, karena $H$ adalah $y$ pada saat itu."
+          },
+          {
+            "tex": "H=\\frac{v_0^2\\sin^2\\theta}{g}-\\frac{v_0^2\\sin^2\\theta}{2g}=\\frac{v_0^2\\sin^2\\theta}{2g}",
+            "why": "Suku pertama menjadi $v_0^2\\sin^2\\theta/g$ dan suku kedua separuhnya. Selisihnya separuh suku pertama."
+          },
+          {
+            "tex": "y=t\\left(v_0\\sin\\theta-\\tfrac12gt\\right)=0\\ \\Rightarrow\\ T=\\frac{2v_0\\sin\\theta}{g}=2\\,t_\\text{naik}",
+            "why": "Faktorkan $y(t)$. Akar $t=0$ adalah titik lempar dan akar lainnya adalah saat kembali ke ketinggian awal. Waktu terbang tepat dua kali waktu naik, sehingga naik dan turun simetris, dan hasilnya sama dengan waktu terbang pada $\\text{eq.range}$."
+          },
+          {
+            "tex": "v_y(T)=v_0\\sin\\theta-g\\,\\frac{2v_0\\sin\\theta}{g}=-v_0\\sin\\theta",
+            "why": "Komponen tegak saat mendarat besarnya sama dengan saat dilempar tetapi arahnya berbalik. Karena $v_x$ tetap, laju mendarat sama dengan $v_0$ (hanya bila ketinggian akhir sama dengan awal)."
+          },
+          {
+            "tex": "\\frac{H}{R}=\\frac{v_0^2\\sin^2\\theta/(2g)}{2v_0^2\\sin\\theta\\cos\\theta/g}=\\frac{\\tan\\theta}{4}",
+            "why": "Cek silang antara hasil tinggi dan jangkauan: $v_0$ dan $g$ saling meniadakan, dan perbandingannya hanya bergantung pada sudut. Pada $\\theta=45^\\circ$, tinggi adalah seperempat jangkauan."
+          }
+        ],
+        "validity": "Tanpa hambatan udara, $g$ konstan, Bumi dianggap datar, dan $0<\\theta<90^\\circ$. $T=2t_\\text{naik}$, laju mendarat sama dengan $v_0$, dan $H/R=\\tan\\theta/4$ hanya berlaku bila ketinggian awal sama dengan ketinggian akhir. $H$ diukur dari titik lempar, bukan dari tanah, bila keduanya berbeda."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: semua hasil memakai model tanpa hambatan udara. Hambatan udara membuat kecepatan mendatar berkurang, lintasan tidak lagi parabola, dan jangkauan lebih pendek. Pengaruhnya dibahas di d.hambat, di luar modul ini."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Makna lintasan parabola"
+    },
+    "Lintasan berbentuk parabola karena $y$ kuadrat dalam $t$ sedangkan $x$ linear dalam $t$. Kuadrat itu berasal dari percepatan tegak yang konstan. Bila tidak ada percepatan sama sekali, lintasannya garis lurus. Bentuk $y=x\\tan\\theta\\,(1-x/R)$ juga menunjukkan simetri: puncak tepat di tengah, yaitu di $x=R/2$.",
+    {
+      "h": "Mengapa 45 derajat paling jauh, dan mengapa ada pasangan sudut"
+    },
+    "Jangkauan $R=v_0^2\\sin2\\theta/g$ paling besar saat $\\sin2\\theta=1$, yaitu $\\theta=45^\\circ$. Sudut yang berpasangan $\\theta$ dan $90^\\circ-\\theta$ memberi jangkauan sama, karena $\\sin2\\theta=\\sin(180^\\circ-2\\theta)$. Sudut besar memberi waktu terbang panjang tetapi komponen mendatar kecil. Sudut kecil memberi komponen mendatar besar tetapi waktu terbang pendek. Titik tengahnya 45 derajat. Hasil ini bersyarat: tanah datar dan ketinggian akhir sama dengan awal.",
+    {
+      "h": "Hubungan dengan $v_0$"
+    },
+    "Dengan sudut tetap, tinggi maksimum $H$ dan jangkauan $R$ sebanding dengan $v_0^2$: melipatduakan $v_0$ membuat keduanya empat kali, sedangkan waktu terbang hanya dua kali.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "$g\\approx9{,}8$ m/s²; untuk perkiraan cepat sering dibulatkan 10. Nilainya sedikit berbeda antar tempat di Bumi.",
+        "Bola ditendang dengan laju 20 m/s (72 km/jam) pada sudut 45 derajat menjangkau sekitar 41 m menurut model tanpa hambatan udara. Laju tendangan nyata bervariasi dan angka 20 m/s hanyalah perkiraan untuk membangun rasa ukuran.",
+        "Hambatan udara pada bola sepak, apalagi bulu tangkis, membuat jangkauan nyata lebih pendek dari model ini. Besarnya bergantung pada bola dan laju, dan tidak diukur di modul ini.",
+        "Atlet lompat jauh melepas diri dengan sudut yang jauh di bawah 45 derajat (perkiraan: sekitar 20 derajat), karena laju lari tidak dapat sepenuhnya dialihkan ke arah atas dan titik lepas lebih tinggi daripada titik mendarat. Ini contoh bahwa syarat 'ketinggian awal sama dengan akhir' tidak selalu terpenuhi."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Tanpa hambatan udara. Ini asumsi terbesar, dan sering kali yang paling tidak realistis untuk benda ringan atau cepat.",
+        "$g$ konstan dan Bumi datar. Berlaku untuk jangkauan yang kecil dibanding jari-jari Bumi.",
+        "Benda dianggap titik, tanpa putaran. Bola yang berputar mengalami efek lain yang tidak dimodelkan.",
+        "Simulasi interaktif di situs ini baru mendukung gerak lurus satu dimensi, jadi modul ini belum memiliki simulasi. Visualisasi lintasan 2D (parabola, panah $\\vec v$ dan komponennya sepanjang lintasan) menyusul. Sementara itu, gambarlah sendiri lintasan pada contoh soal dan tandai $v_x$ dan $v_y$ di beberapa titik."
+      ]
+    }
+  ],
+  "simulasi": null,
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Dijatuhkan atau ditembakkan mendatar",
+      "problem": [
+        "Dua bola kecil dilepas pada saat yang sama dari ketinggian 5 m di atas lantai datar. Bola A dijatuhkan tanpa kecepatan awal. Bola B ditembakkan mendatar dengan laju 8 m/s. Abaikan hambatan udara. (a) Bola mana yang menyentuh lantai lebih dulu? (b) Bola mana yang menyentuh lantai dengan laju lebih besar? Jelaskan tanpa menghitung dahulu."
+      ],
+      "answer": [
+        "(a) Bersamaan. Gerak tegak kedua bola identik: keduanya mulai dengan $v_y=0$ dan mengalami percepatan $g$ ke bawah yang sama. Kecepatan mendatar tidak memengaruhi gerak tegak, karena komponen diuraikan terpisah dan hanya waktu yang dipakai bersama. Bola B hanya menempuh jarak mendatar lebih jauh dalam waktu yang sama.",
+        "(b) Bola B. Keduanya punya $v_y$ yang sama saat tiba, tetapi B masih membawa $v_x=8$ m/s. Besar kecepatan $=\\sqrt{v_x^2+v_y^2}$, sehingga lajunya lebih besar daripada A, yang hanya punya $v_y$.",
+        "Pengecekan angka: waktu jatuh $t=\\sqrt{2h/g}=\\sqrt{2\\cdot5/9{,}8}\\approx1{,}01$ s untuk keduanya. $v_y=gt\\approx9{,}9$ m/s ke bawah. Laju A $\\approx9{,}9$ m/s, laju B $=\\sqrt{8^2+9{,}9^2}\\approx12{,}7$ m/s, dan B mendarat sekitar $8\\times1{,}01\\approx8{,}1$ m dari titik lepas.",
+        {
+          "note": "Asumsi: tanpa hambatan udara, $g=9{,}8$ m/s² konstan, lantai datar. Bola dianggap titik."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Semua besaran satu lemparan",
+      "problem": [
+        "Sebuah benda dilempar dari tanah datar dengan $v_0=20$ m/s pada sudut $30^\\circ$ di atas mendatar. Pakai $g=9{,}8$ m/s² dan abaikan hambatan udara. Tentukan (1) komponen kecepatan awal, (2) waktu naik, tinggi maksimum, waktu terbang, dan jangkauan, (3) persamaan lintasan $y(x)$ dan tinggi di $x=10$ m, (4) posisi, kecepatan, dan laju pada $t=1{,}5$ s, serta (5) laju dan arah saat mendarat."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$v_{0x}=20\\cos30^\\circ\\approx17{,}32$ m/s dan $v_{0y}=20\\sin30^\\circ=10{,}00$ m/s.",
+            "$t_\\text{naik}=10/9{,}8\\approx1{,}02$ s. $H=10^2/(2\\cdot9{,}8)\\approx5{,}10$ m. $T=2\\cdot1{,}02\\approx2{,}04$ s. $R=v_{0x}T=17{,}32\\times2{,}041\\approx35{,}35$ m, sama dengan $v_0^2\\sin60^\\circ/g=400\\times0{,}866/9{,}8\\approx35{,}35$ m. Cek silang: $H/R=0{,}1443$ dan $\\tan30^\\circ/4=0{,}1443$.",
+            "$y=x\\tan30^\\circ-\\dfrac{g}{2v_0^2\\cos^2\\theta}x^2\\approx0{,}5774\\,x-0{,}01633\\,x^2$. Pada $x=10$ m: $y\\approx5{,}774-1{,}633\\approx4{,}14$ m. Cek lewat waktu: $t=10/17{,}32\\approx0{,}577$ s, dan $y=10(0{,}577)-4{,}9(0{,}577)^2\\approx4{,}14$ m. Hasilnya sama.",
+            "$x=17{,}32\\times1{,}5\\approx25{,}98$ m dan $y=10(1{,}5)-4{,}9(1{,}5)^2\\approx3{,}98$ m. $v_x=17{,}32$ m/s dan $v_y=10-9{,}8(1{,}5)=-4{,}7$ m/s (sudah turun). Laju $=\\sqrt{17{,}32^2+4{,}7^2}\\approx17{,}95$ m/s, arah $\\tan^{-1}(-4{,}7/17{,}32)\\approx-15{,}2^\\circ$ (miring ke bawah).",
+            "Pada $t=T$: $v_y=-10$ m/s dan $v_x=17{,}32$ m/s. Laju $=\\sqrt{17{,}32^2+10^2}=20$ m/s, sama dengan $v_0$. Arahnya $-30^\\circ$ di bawah mendatar. Itu masuk akal karena ketinggian akhir sama dengan awal."
+          ]
+        },
+        {
+          "note": "Pada $t=1{,}5$ s, yang lebih besar dari $t_\\text{naik}=1{,}02$ s, $v_y$ sudah negatif: benda sedang turun. Hanya $v_y$ yang melewati nol di puncak, sedangkan $v_x$ tetap 17,32 m/s."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Tendangan bebas melewati pagar",
+      "problem": [
+        "Sebuah tendangan bebas dilepas dari tanah dengan laju 20 m/s (perkiraan) pada sudut $20^\\circ$. Pagar pemain berdiri 9,15 m dari bola dan, sebagai perkiraan, setinggi 1,8 m. Gawang berjarak 20 m dari bola, dengan mistar setinggi 2,44 m. Abaikan hambatan udara dan putaran bola. (a) Apakah bola melewati pagar? (b) Berapa tinggi bola saat sampai di garis gawang, dan masukkah ke gawang menurut model ini? (c) Berapa jangkauan dan tinggi maksimum bila tidak dihalangi?"
+      ],
+      "answer": [
+        "Komponen awal: $v_{0x}=20\\cos20^\\circ\\approx18{,}79$ m/s dan $v_{0y}=20\\sin20^\\circ\\approx6{,}84$ m/s.",
+        {
+          "ol": [
+            "Di $x=9{,}15$ m: $t=9{,}15/18{,}79\\approx0{,}487$ s, $y=6{,}84(0{,}487)-4{,}9(0{,}487)^2\\approx2{,}17$ m. Bola lewat di atas pagar 1,8 m dengan selisih sekitar 0,37 m. Ia masih naik ($v_y\\approx+2{,}07$ m/s).",
+            "Di $x=20$ m: $t\\approx1{,}064$ s, $y\\approx6{,}84(1{,}064)-4{,}9(1{,}064)^2\\approx1{,}73$ m, di bawah mistar 2,44 m. Bola sudah turun ($v_y\\approx-3{,}59$ m/s). Menurut model, bola masuk gawang di bawah mistar. Cek dengan $y(x)$: $20\\tan20^\\circ-\\dfrac{9{,}8\\cdot20^2}{2\\cdot20^2\\cos^220^\\circ}\\approx7{,}28-5{,}55\\approx1{,}73$ m.",
+            "$R=20^2\\sin40^\\circ/9{,}8\\approx26{,}24$ m dan $H=6{,}84^2/(2\\cdot9{,}8)\\approx2{,}39$ m, dicapai pada $x\\approx13{,}1$ m."
+          ]
+        },
+        "Pada 20 m bola sudah melewati puncak (puncak di 13,1 m) dan sedang turun, maka masuk akal bahwa ketinggiannya lebih rendah dari mistar.",
+        {
+          "note": "Asumsi dan keterbatasan: tanpa hambatan udara dan putaran. Pada tendangan nyata, hambatan udara memperpendek jangkauan dan putaran membelokkan lintasan, sehingga hasil ini hanya perkiraan awal. Tinggi pagar dan laju bola adalah perkiraan, bukan data pengukuran. Tinggi mistar 2,44 m adalah ukuran standar gawang sepak bola."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.vektor2d (penguraian komponen dan kenyataan bahwa gerak di bidang dapat dipecah menjadi dua gerak 1D), k.glbb (persamaan percepatan konstan, dipakai pada komponen tegak), dan m.trigo (sinus, kosinus, dan identitas sudut ganda).",
+    "Ke depan: k.jatuhbebas adalah kasus khusus proyektil yang hanya punya komponen tegak ($v_{0x}=0$). k.melingkar memakai penguraian komponen untuk lintasan lain. k.relatif membahas bila pengamat sendiri bergerak. Penjelasan mengapa percepatan benda jatuh bernilai $g$ dan tidak bergantung pada massa, serta cara memasukkan hambatan udara, ada di d.hukum2, d.gayaberat, dan d.hambat. Itu semua belum dipakai di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "P1": {
+        "title": "Mengira kecepatan mendatar berkurang selama bola di udara",
+        "fix": "Dalam model tanpa hambatan udara tidak ada percepatan mendatar, jadi $v_x$ tetap sampai mendarat. Yang berubah oleh $g$ hanya $v_y$."
+      },
+      "P2": {
+        "title": "Mengira kecepatan nol di titik tertinggi",
+        "fix": "Yang nol di puncak hanya komponen tegak $v_y$. Komponen mendatar $v_x=v_0\\cos\\theta$ tetap, jadi bola masih bergerak mendatar."
+      },
+      "P3": {
+        "title": "Mengira massa memengaruhi lintasan, waktu, atau jangkauan",
+        "fix": "Persamaan $x(t)$, $y(t)$, $T$, $H$, dan $R$ tidak memuat massa. Tanpa hambatan udara semua benda dipercepat sama oleh gravitasi (pengamatan), sehingga yang menentukan hanya $v_0$, $\\theta$, dan $g$."
+      },
+      "P4": {
+        "title": "Mengira percepatan nol di puncak, atau berubah sepanjang lintasan",
+        "fix": "Percepatan tegak adalah $g$ ke bawah di setiap titik lintasan, termasuk puncak. Bola yang $v_y$-nya nol sesaat tetap sedang berubah $v_y$-nya."
+      },
+      "P5": {
+        "title": "Salah mengenai sudut yang memberi jangkauan terjauh",
+        "fix": "Di tanah datar tanpa hambatan, $R=v_0^2\\sin2\\theta/g$ maksimum pada $45^\\circ$. Sudut lebih besar menambah waktu tetapi mengurangi komponen mendatar, dan sebaliknya."
+      },
+      "P6": {
+        "title": "Mencampur komponen: gerak mendatar dianggap memengaruhi gerak tegak, atau sebaliknya",
+        "fix": "$x$ hanya ditentukan oleh $a_x=0$ dan $y$ hanya oleh $a_y=-g$. Keduanya hanya berbagi waktu. Kecepatan mendatar tidak mengubah waktu jatuh, dan percepatan tegak tidak mengubah $v_x$."
+      },
+      "P7": {
+        "title": "Salah bentuk lintasan",
+        "fix": "Lintasan adalah parabola, bukan garis lurus lalu jatuh tegak, bukan segitiga, dan bukan lingkaran. Bentuknya mengikuti $y=x\\tan\\theta-gx^2/(2v_0^2\\cos^2\\theta)$."
+      },
+      "P8": {
+        "title": "Salah menguraikan atau menjumlahkan komponen kecepatan awal",
+        "fix": "Komponen mendatar memakai $\\cos\\theta$ dan komponen tegak memakai $\\sin\\theta$ (sudut dari mendatar). Waktu naik dan terbang memakai $v_0\\sin\\theta$, bukan $v_0$ penuh atau $v_0\\cos\\theta$."
+      },
+      "P9": {
+        "title": "Mengira waktu terbang sama dengan waktu naik",
+        "fix": "Waktu terbang $T=2t_\\text{naik}$ karena bola harus turun kembali ke ketinggian awal. Waktu naik hanya separuh perjalanan."
+      },
+      "P10": {
+        "title": "Salah hubungan $H$, $R$ dengan $v_0$ (bukan kuadrat)",
+        "fix": "Tinggi dan jangkauan sebanding dengan $v_0^2$: $H=v_0^2\\sin^2\\theta/(2g)$ dan $R=v_0^2\\sin2\\theta/g$. Melipatduakan $v_0$ membuatnya empat kali."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Bola ditendang miring dari tanah. Abaikan hambatan udara. Bagaimana komponen mendatar kecepatan bola selama ia di udara?",
+        "options": [
+          {
+            "text": "Berkurang sedikit demi sedikit sejak bola lepas, seperti komponen tegak saat bola naik.",
+            "why": "Komponen tegak berkurang karena ada percepatan $g$ ke bawah. Pada arah mendatar tidak ada percepatan, jadi komponen mendatar tidak berkurang.",
+            "tag": "P1"
+          },
+          {
+            "text": "Menjadi nol di titik tertinggi, lalu bertambah lagi saat bola turun.",
+            "why": "Hanya $v_y$ yang nol di puncak. $v_x$ tetap bernilai $v_0\\cos\\theta$ di titik itu.",
+            "tag": "P2"
+          },
+          {
+            "text": "Tetap, karena tidak ada percepatan pada arah mendatar.",
+            "why": "$a_x=0$, sehingga $v_x=v_0\\cos\\theta$ konstan dari lepas sampai mendarat.",
+            "correct": true
+          },
+          {
+            "text": "Bertambah saat bola turun, karena percepatan ke bawah mempercepat bola.",
+            "why": "Percepatan ke bawah hanya mengubah $v_y$. Ia tidak menambah komponen mendatar, karena komponen-komponen itu terpisah.",
+            "tag": "P6"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Benda dilempar dari tanah dengan $v_0=20$ m/s pada sudut $30^\\circ$ di atas mendatar. Pakai $g=9{,}8$ m/s². Apa kecepatan dan percepatannya di titik tertinggi?",
+        "options": [
+          {
+            "text": "Kecepatan nol dan percepatan nol, karena benda berhenti sesaat.",
+            "why": "Kecepatan tidak nol: $v_x\\approx17{,}3$ m/s masih ada. Percepatan tidak nol: $g$ tetap bekerja di semua titik.",
+            "tag": "P2"
+          },
+          {
+            "text": "Kecepatan $17{,}3$ m/s mendatar, percepatan $9{,}8$ m/s² ke bawah.",
+            "why": "Di puncak $v_y=0$ dan $v_x=20\\cos30^\\circ\\approx17{,}3$ m/s. Percepatan tetap $g$ ke bawah.",
+            "correct": true
+          },
+          {
+            "text": "Kecepatan $10$ m/s mendatar, percepatan $9{,}8$ m/s² ke bawah.",
+            "why": "$10$ m/s adalah $v_{0y}=20\\sin30^\\circ$, komponen tegak awal. Komponen mendatar memakai kosinus, bukan sinus.",
+            "tag": "P8"
+          },
+          {
+            "text": "Kecepatan $17{,}3$ m/s mendatar, percepatan nol karena benda berada di puncak.",
+            "why": "Percepatan tidak bergantung pada posisi di lintasan. Di puncak $a_y=-g$, sama seperti titik lain.",
+            "tag": "P4"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Dua bola berukuran sama, satu bermassa 0,2 kg dan satu bermassa 0,4 kg, ditembakkan dari tanah di tempat yang sama dengan laju dan sudut yang sama. Abaikan hambatan udara. Bagaimana jangkauan keduanya?",
+        "options": [
+          {
+            "text": "Sama, karena massa tidak muncul dalam persamaan lintasan.",
+            "why": "$R=v_0^2\\sin2\\theta/g$ hanya memuat $v_0$, $\\theta$, dan $g$. Tanpa hambatan udara, semua benda dipercepat sama.",
+            "correct": true
+          },
+          {
+            "text": "Bola 0,4 kg lebih jauh, karena lebih berat sehingga lebih 'kuat' melaju.",
+            "why": "Massa tidak ada dalam $R$. Berat tidak menambah jangkauan bila $v_0$ sama.",
+            "tag": "P3"
+          },
+          {
+            "text": "Bola 0,2 kg lebih jauh, karena lebih ringan sehingga lebih mudah terbawa.",
+            "why": "Ringan atau berat tidak mengubah $R$ dalam model ini. Yang membuat benda ringan sering lebih pendek di dunia nyata adalah hambatan udara, yang diabaikan.",
+            "tag": "P3"
+          },
+          {
+            "text": "Jangkauan sama, tetapi bola yang lebih berat lebih lama di udara.",
+            "why": "Waktu terbang $T=2v_0\\sin\\theta/g$ juga tidak memuat massa, jadi keduanya sama lamanya di udara.",
+            "tag": "P3"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Di tanah datar tanpa hambatan udara, sebuah benda ditembakkan dengan laju awal tertentu yang tetap. Pada sudut berapa jangkauannya paling besar?",
+        "options": [
+          {
+            "text": "$90^\\circ$ (lurus ke atas), karena benda naik paling tinggi dan paling lama di udara.",
+            "why": "Pada $90^\\circ$ komponen mendatar nol sehingga jangkauan nol: $\\sin180^\\circ=0$. Waktu panjang tidak berguna tanpa gerak mendatar.",
+            "tag": "P5"
+          },
+          {
+            "text": "$60^\\circ$, karena terlalu rendah membuat benda cepat jatuh dan terlalu tinggi membuatnya kurang maju.",
+            "why": "$60^\\circ$ memberi jangkauan sama dengan $30^\\circ$, yang lebih pendek dari $45^\\circ$ karena $\\sin120^\\circ<\\sin90^\\circ$.",
+            "tag": "P5"
+          },
+          {
+            "text": "$30^\\circ$, karena sudut kecil membuat komponen mendatar besar.",
+            "why": "Sudut kecil memperbesar $v_x$ tetapi memperpendek waktu terbang. Hasil kali keduanya maksimum di $45^\\circ$.",
+            "tag": "P5"
+          },
+          {
+            "text": "$45^\\circ$.",
+            "why": "$R\\propto\\sin2\\theta$, maksimum bila $2\\theta=90^\\circ$, yaitu $\\theta=45^\\circ$.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Bola A dijatuhkan tanpa kecepatan awal dan bola B ditembakkan mendatar dengan laju besar, keduanya pada saat yang sama dari ketinggian yang sama di atas lantai datar. Abaikan hambatan udara. Mana yang menyentuh lantai lebih dulu?",
+        "options": [
+          {
+            "text": "Bola A, karena lintasannya lebih pendek.",
+            "why": "Panjang lintasan tidak menentukan waktu jatuh. Waktu jatuh ditentukan oleh gerak tegak, yang identik untuk kedua bola.",
+            "tag": "P6"
+          },
+          {
+            "text": "Keduanya bersamaan, karena gerak tegaknya identik.",
+            "why": "Keduanya $v_{0y}=0$ dan $a_y=-g$, sehingga $t=\\sqrt{2h/g}$ sama. Gerak mendatar tidak memengaruhi gerak tegak.",
+            "correct": true
+          },
+          {
+            "text": "Bola B, karena lajunya lebih besar.",
+            "why": "Laju mendatar tidak mempercepat jatuhnya. Komponen mendatar dan tegak terpisah.",
+            "tag": "P6"
+          },
+          {
+            "text": "Tidak bisa ditentukan sebelum massa kedua bola diketahui.",
+            "why": "Waktu jatuh tidak memuat massa. Syaratnya hanya ketinggian dan $g$.",
+            "tag": "P3"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Bagaimana bentuk lintasan bola yang ditendang miring dari tanah, bila hambatan udara diabaikan?",
+        "options": [
+          {
+            "text": "Naik lurus miring sampai sebuah titik, lalu jatuh tegak lurus.",
+            "why": "Tidak ada saat ketika komponen mendatar tiba-tiba hilang. $v_x$ tetap, jadi bola terus maju sambil turun.",
+            "tag": "P7"
+          },
+          {
+            "text": "Busur lingkaran dengan pusat di titik lempar.",
+            "why": "Lingkaran akan memerlukan percepatan yang selalu menuju pusat. Di sini percepatan selalu ke bawah dan tetap, yang memberi parabola.",
+            "tag": "P7"
+          },
+          {
+            "text": "Parabola, simetris terhadap titik tertinggi.",
+            "why": "$x$ linear dalam $t$ dan $y$ kuadrat dalam $t$, sehingga $y$ kuadrat dalam $x$. Dengan ketinggian akhir sama, puncaknya di $x=R/2$.",
+            "correct": true
+          },
+          {
+            "text": "Dua garis lurus membentuk segitiga: naik miring, lalu turun miring.",
+            "why": "Garis lurus miring akan berarti $v_y$ tetap. Padahal $v_y$ berubah merata oleh $g$, sehingga lintasan melengkung.",
+            "tag": "P7"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": true,
+        "prompt": "Benda dilempar dari tanah datar dengan $v_0=20$ m/s pada sudut $30^\\circ$. Pakai $g=9{,}8$ m/s². Berapa lama benda berada di udara?",
+        "options": [
+          {
+            "text": "1,02 s",
+            "why": "Itu hanya waktu naik, $v_0\\sin\\theta/g$. Benda masih harus turun kembali, sehingga waktu terbang dua kali lipat.",
+            "tag": "P9"
+          },
+          {
+            "text": "4,08 s",
+            "why": "Itu memakai $v_0=20$ m/s penuh, $2\\cdot20/9{,}8$. Yang menentukan gerak tegak hanya komponen tegak $v_0\\sin\\theta=10$ m/s.",
+            "tag": "P8"
+          },
+          {
+            "text": "3,53 s",
+            "why": "Itu memakai $v_0\\cos\\theta\\approx17{,}3$ m/s, $2\\cdot17{,}3/9{,}8$. Waktu terbang ditentukan komponen tegak, yang memakai sinus.",
+            "tag": "P8"
+          },
+          {
+            "text": "2,04 s",
+            "why": "$T=2v_0\\sin\\theta/g=2\\cdot10/9{,}8\\approx2{,}04$ s.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "core": false,
+        "prompt": "Pengayaan. Sebuah benda ditembakkan dari tanah datar pada sudut tetap. Bila laju awalnya dijadikan dua kali lipat, bagaimana tinggi maksimumnya (tanpa hambatan udara)?",
+        "options": [
+          {
+            "text": "Menjadi empat kali, karena $H\\propto v_0^2$.",
+            "why": "$H=v_0^2\\sin^2\\theta/(2g)$. Melipatduakan $v_0$ mengalikan $H$ dengan $2^2=4$.",
+            "correct": true
+          },
+          {
+            "text": "Menjadi dua kali, karena sebanding dengan $v_0$.",
+            "why": "$H$ sebanding dengan kuadrat $v_0$, bukan $v_0$. Hanya waktu terbang yang menjadi dua kali.",
+            "tag": "P10"
+          },
+          {
+            "text": "Menjadi $\\sqrt2$ kali.",
+            "why": "Hubungan akar tidak muncul di sini. $H$ sebanding dengan $v_0^2$, jadi faktornya 4.",
+            "tag": "P10"
+          },
+          {
+            "text": "Menjadi delapan kali, karena $v_0$ muncul di $t$ dan $y$.",
+            "why": "$v_0$ muncul dalam $t_\\text{naik}$ dan dalam $y$, tetapi hasil akhirnya hanya $v_0^2$, bukan $v_0^3$.",
+            "tag": "P10"
+          }
+        ]
+      }
+    ]
+  }
+}

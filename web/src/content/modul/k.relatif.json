@@ -1,0 +1,421 @@
+{
+  "id": "k.relatif",
+  "status": "draf",
+  "fenomena": [
+    "Di dalam gerbong kereta yang melaju mulus, secangkir teh di meja kecil terlihat diam. Penumpang yang melempar bola ke atas melihatnya naik dan turun lurus. Dari peron, orang yang sama melihat teh dan bola itu ikut meluncur ke depan bersama kereta.",
+    "Contoh lain: dua mobil di jalan tol dengan laju sama dan arah sama tampak hampir diam satu terhadap yang lain. Sebaliknya, mobil yang berpapasan dari arah berlawanan lewat dengan cepat. Hujan yang jatuh lurus bagi orang yang berdiri tampak miring bagi pengendara, dan makin miring bila mobil makin kencang.",
+    "Dalam semua kasus itu benda yang sama diberi nilai kecepatan yang berbeda oleh pengamat yang berbeda. Namun beberapa hal terasa tidak berubah, misalnya jarak antara dua tempat duduk di gerbong, atau seberapa cepat bola jatuh kembali ke tangan.",
+    "Pertanyaan penuntun: bagaimana mengubah posisi dan kecepatan dari satu pengamat ke pengamat lain, besaran mana yang ikut berubah dan mana yang tetap, dan apakah aturan itu berlaku untuk kecepatan berapa pun? Modul ini memakai vektor posisi dan kecepatan dari k.vektor2d."
+  ],
+  "konsep": [
+    "Modul ini membahas gerak relatif: cara dua pengamat yang bergerak terhadap satu sama lain menyatakan gerak benda yang sama. Yang dibahas hanya penggambaran geraknya (kinematika). Penyebab gerak belum menjadi dasar penjelasan di sini.",
+    {
+      "h": "Kerangka acuan"
+    },
+    "Kerangka acuan adalah pengamat bersama sumbu koordinat dan jam. Semua nilai posisi dan kecepatan selalu dinyatakan terhadap suatu kerangka. Kalimat \"kecepatan benda itu 20 m/s\" tidak lengkap sebelum disebut terhadap apa. Bila tidak disebut, biasanya yang dimaksud adalah tanah.",
+    "Modul ini memakai dua kerangka: S (misalnya peron, diam di tanah) dan S' (misalnya gerbong kereta). Sumbu-sumbu S' dianggap sejajar dengan sumbu S, dan S' bergerak terhadap S tanpa berputar.",
+    {
+      "h": "Kerangka yang bergerak lurus beraturan"
+    },
+    "Di sini S' bergerak terhadap S dengan kecepatan tetap $\\vec V$ (laju dan arah tidak berubah). Bila S sendiri kerangka inersial (tanah kita anggap inersial sebagai pendekatan, karena Bumi berotasi), kerangka S' seperti ini juga disebut kerangka inersial. Kereta yang melaju mulus di rel lurus dengan laju tetap adalah contoh yang baik, selama tidak ada guncangan, tikungan, atau perubahan laju.",
+    {
+      "h": "Posisi, kecepatan, percepatan antar kerangka"
+    },
+    "Posisi benda di S' sama dengan posisinya di S dikurangi posisi titik asal S'. Kecepatan benda di S' sama dengan kecepatannya di S dikurangi $\\vec V$. Percepatan benda sama di kedua kerangka. Rumusnya diturunkan di bagian Derivasi. Tiga hasil ini disebut transformasi Galileo.",
+    {
+      "h": "Kecepatan bergantung pada kerangka, percepatan tidak"
+    },
+    "Kecepatan bukan sifat benda saja, melainkan sifat benda terhadap suatu kerangka. Benda yang diam di S' (teh di meja gerbong) punya kecepatan nol di S' tetapi sebesar $\\vec V$ di S. Tidak ada kerangka inersial yang istimewa sebagai pemilik kecepatan sebenarnya.",
+    "Percepatan lain. Dua pengamat inersial selalu sepakat tentang percepatan benda. Bola yang jatuh di gerbong dan dilihat dari peron punya percepatan yang sama, walau lintasannya terlihat berbeda: lurus bagi penumpang, melengkung (parabola) bagi pengamat di peron.",
+    {
+      "h": "Kecepatan adalah vektor"
+    },
+    "Penjumlahan kecepatan antar kerangka harus memperhatikan arah. Perahu dengan laju 4 m/s tegak lurus arus sungai 3 m/s tidak punya laju 7 m/s terhadap tanah. Komponen yang tegak lurus tidak saling menambah. Lajunya $\\sqrt{4^2+3^2}=5$ m/s.",
+    {
+      "h": "Batas: kecepatan mendekati kecepatan cahaya"
+    },
+    "Aturan Galileo bekerja sangat baik untuk kereta, mobil, dan pesawat. Untuk benda yang kecepatannya sebanding dengan kecepatan cahaya $c$ (sekitar $3\\times10^8$ m/s), aturan ini gagal, termasuk untuk cahaya itu sendiri. Kegagalan ini memotivasi relativitas khusus yang dimulai di sr.postulat, dengan penjumlahan kecepatan yang benar di sr.kecepatan. Keduanya belum dipakai di modul ini.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Kecepatan benda tidak punya satu nilai mutlak. Nilainya bergantung pada kerangka.",
+        "Kerangka bergerak lurus beraturan tidak mengubah percepatan. Percepatan sama di semua kerangka inersial.",
+        "Dari kerangka yang bergerak, kecepatan benda dikurangi kecepatan kerangka, bukan ditambah. Penjumlahan dan pengurangan ini bersifat vektor."
+      ]
+    }
+  ],
+  "matematika": [
+    "Alat matematika yang dipakai:",
+    {
+      "ul": [
+        "Vektor di bidang. Posisi, kecepatan, dan percepatan diuraikan menjadi komponen, dan selisih vektor dihitung komponen demi komponen (lihat k.vektor2d).",
+        "Turunan terhadap waktu. Kecepatan adalah turunan posisi dan percepatan adalah turunan kecepatan. Turunan selisih sama dengan selisih turunan, dan turunan besaran tetap sama dengan nol.",
+        "Teorema Pythagoras dan trigonometri sederhana untuk besar dan arah hasil (lihat m.trigo)."
+      ]
+    },
+    "Cek kecil: perahu 4 m/s ke utara terhadap air, air mengalir 3 m/s ke timur terhadap tanah. Terhadap tanah kecepatannya $(3,\\,4)$ m/s dengan sumbu $x$ ke timur dan $y$ ke utara. Lajunya $\\sqrt{9+16}=5$ m/s, dan arahnya $\\arctan(4/3)\\approx53{,}1^\\circ$ dari arah timur ke utara."
+  ],
+  "derivasi": {
+    "intro": [
+      "Transformasi Galileo adalah turunan sederhana dari definisi kecepatan (turunan posisi terhadap waktu) dan definisi percepatan (turunan kecepatan terhadap waktu). Tidak ada hukum fisika baru yang dipakai. Yang dipakai hanya empat anggapan tentang kerangka: waktu berjalan sama di S dan S', kecepatan $\\vec V$ kerangka S' tetap, sumbu kedua kerangka sejajar dan tidak berputar, dan semua kecepatan jauh di bawah $c$.",
+      "Turunan kedua di bawah memperlihatkan mengapa aturan ini harus diganti ketika kecepatan mendekati $c$."
+    ],
+    "extra": [
+      {
+        "title": "Transformasi Galileo: r' = r − R(t), v' = v − V, a' = a",
+        "steps": [
+          {
+            "tex": "\\vec r=\\vec R(t)+\\vec r'",
+            "why": "Geometri vektor. Posisi benda terhadap titik asal S sama dengan posisi titik asal S' terhadap S, ditambah posisi benda terhadap titik asal S'. Sumbu kedua kerangka sejajar, jadi vektor-vektor ini bisa dijumlahkan komponen demi komponen."
+          },
+          {
+            "tex": "\\vec r'=\\vec r-\\vec R(t)",
+            "why": "Pindahkan $\\vec R(t)$ ke ruas kanan. Inilah posisi di S'. Waktu di S' dianggap sama dengan di S ($t'=t$), jadi $t$ tidak perlu dibedakan."
+          },
+          {
+            "tex": "\\frac{d\\vec r'}{dt}=\\frac{d\\vec r}{dt}-\\frac{d\\vec R}{dt}",
+            "why": "Turunkan kedua ruas terhadap waktu. Turunan selisih sama dengan selisih turunan. Karena $t'=t$, turunan terhadap $t'$ sama dengan turunan terhadap $t$."
+          },
+          {
+            "tex": "\\vec v'=\\vec v-\\vec V,\\qquad \\vec V=\\frac{d\\vec R}{dt}",
+            "why": "Definisi kecepatan: $\\vec v=d\\vec r/dt$, $\\vec v'=d\\vec r'/dt$, dan $d\\vec R/dt$ adalah kecepatan titik asal S' terhadap S. Ini adalah penjumlahan kecepatan Galileo."
+          },
+          {
+            "tex": "\\vec R(t)=\\vec R_0+\\vec V\\,t\\ \\Rightarrow\\ \\frac{d\\vec V}{dt}=\\vec 0",
+            "why": "Anggapan kerangka inersial: S' bergerak lurus beraturan, jadi $\\vec V$ tetap dan turunannya nol. Bila $\\vec V$ berubah, langkah berikutnya gagal."
+          },
+          {
+            "tex": "\\frac{d\\vec v'}{dt}=\\frac{d\\vec v}{dt}-\\frac{d\\vec V}{dt}=\\frac{d\\vec v}{dt}",
+            "why": "Turunkan $\\vec v'=\\vec v-\\vec V$ sekali lagi terhadap waktu. Suku $d\\vec V/dt$ sama dengan nol karena $\\vec V$ tetap."
+          },
+          {
+            "tex": "\\vec a'=\\vec a",
+            "why": "Definisi percepatan: $\\vec a=d\\vec v/dt$ dan $\\vec a'=d\\vec v'/dt$. Percepatan sama di semua kerangka yang bergerak lurus beraturan satu terhadap yang lain."
+          },
+          {
+            "tex": "\\vec v=\\vec 0\\ \\text{(benda diam di S)}\\ \\Rightarrow\\ \\vec v'=-\\vec V",
+            "why": "Cek arah tanda. Bagi penumpang kereta, peron bergerak mundur dengan kecepatan yang sama besar dan arah berlawanan. Hasilnya cocok dengan pengalaman."
+          }
+        ],
+        "validity": "Berlaku bila (1) $\\vec V$ tetap, sehingga kedua kerangka inersial, (2) sumbu kedua kerangka sejajar dan tidak berputar, (3) waktu dianggap sama di kedua kerangka, dan (4) kecepatan benda dan kerangka jauh di bawah kecepatan cahaya $c$. Bila $\\vec V$ berubah, kecepatan tetap $\\vec v'=\\vec v-\\vec V(t)$, tetapi $\\vec a'=\\vec a-d\\vec V/dt$ berbeda dari $\\vec a$, dan kerangka itu non-inersial (arah lanjutan: c.noninersial). Untuk kecepatan mendekati $c$, anggapan waktu sama gagal."
+      },
+      {
+        "title": "Mengapa Galileo gagal mendekati c",
+        "steps": [
+          {
+            "tex": "u'=c",
+            "why": "Di gerbong (S'), cahaya dari lampu depan merambat ke depan dengan laju $c$ terhadap gerbong. Ini adalah kecepatan benda di S'."
+          },
+          {
+            "tex": "u=u'+V=c+V",
+            "why": "Pakai $\\vec v'=\\vec v-\\vec V$ sejajar satu sumbu: $u=u'+V$. Galileo meramalkan cahaya di S merambat lebih cepat dari $c$ bila gerbong bergerak searah cahaya."
+          },
+          {
+            "tex": "V=0{,}5c\\ \\Rightarrow\\ u=1{,}5c",
+            "why": "Contoh angka. Galileo meramalkan laju cahaya 1,5 kali $c$ terhadap peron."
+          },
+          {
+            "tex": "u=c\\ \\text{(menurut pengukuran dan postulat relativitas khusus)}",
+            "why": "Pengukuran laju cahaya tidak menunjukkan ketergantungan pada gerak sumber atau pengamat. Ini adalah postulat sr.postulat, bukan hasil dari modul ini. Ia bertentangan dengan ramalan Galileo."
+          },
+          {
+            "tex": "\\frac{u_{\\text{Galileo}}-u_{\\text{benar}}}{u_{\\text{benar}}}\\sim\\frac{u'V}{c^2}",
+            "why": "Untuk kecepatan kecil, penjumlahan relativistik di sr.kecepatan menyimpang dari $u'+V$ dengan selisih relatif kira-kira $u'V/c^2$. Ini perkiraan orde besar, bukan rumus lengkap. Untuk $u'=1{,}5$ m/s dan $V=30$ m/s hasilnya sekitar $5\\times10^{-16}$, jauh di bawah ketelitian alat ukur sehari-hari."
+          }
+        ],
+        "validity": "Argumen ini bersifat motivasi, bukan pembuktian. Selisih Galileo dari hasil yang benar kecil bila $u'V\\ll c^2$ (kereta, mobil, pesawat, satelit) dan membesar mendekati $c$. Rumus penggantinya diturunkan di sr.postulat dan sr.kecepatan, bukan di sini."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: transformasi Galileo adalah pendekatan sangat baik untuk kecepatan jauh di bawah $c$. Yang bergantung pada kerangka: posisi dan kecepatan. Yang sama untuk kerangka inersial: percepatan dan selang waktu. Pengaruh kerangka yang dipercepat dibahas di c.noninersial, sedangkan arti sebuah hukum tetap berlaku di semua kerangka inersial dibahas di d.hukum2. Keduanya belum dipakai di modul ini."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Satu benda, banyak nilai kecepatan"
+    },
+    "Semua nilai $\\vec v$, $\\vec v'$, $\\vec v''$ untuk satu benda adalah benar, masing-masing terhadap kerangkanya. Menanyakan mana yang sebenarnya sama seperti menanyakan arah kiri yang sebenarnya. Pertanyaan baru bermakna bila disertai kerangka acuan.",
+    {
+      "h": "Lintasan juga bergantung kerangka"
+    },
+    "Bola yang dilempar lurus ke atas di gerbong yang bergerak mendatar bergerak lurus naik-turun di S', tetapi parabola di S. Posisi mendatar di S bertambah $Vt$. Bentuk lintasan bukan sifat mutlak benda.",
+    {
+      "h": "Percepatan sebagai besaran yang disepakati"
+    },
+    "Karena $\\vec a'=\\vec a$ untuk kerangka inersial, percepatan adalah ukuran yang disepakati semua pengamat inersial. Ini alasan percepatan nanti menjadi pusat deskripsi gerak. Penjelasan lanjutan ada di d.hukum2.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "Kereta 30 m/s (108 km/jam). Penumpang berjalan 1,5 m/s ke depan terhadap gerbong: 31,5 m/s terhadap tanah. Ke belakang: 28,5 m/s.",
+        "Hujan jatuh lurus 8 m/s (perkiraan, bergantung jenis hujan) dan mobil melaju 15 m/s: hujan tampak datang dengan laju 17 m/s dari arah depan, miring sekitar $62^\\circ$ dari arah vertikal.",
+        "Cahaya sekitar $3{,}0\\times10^8$ m/s. Kereta 30 m/s hanya sekitar $10^{-7}$ kali $c$. Karena itu Galileo bekerja sangat baik di kehidupan sehari-hari."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Kerangka bergerak dengan kecepatan tetap dan tidak berputar. Bila kerangka dipercepat atau berputar, percepatan tidak lagi sama (c.noninersial).",
+        "Waktu dianggap sama di semua kerangka. Anggapan ini gagal pada kecepatan mendekati $c$ (sr.postulat).",
+        "Benda dianggap titik. Rotasi dan ukuran benda tidak dibahas.",
+        "Simulasi di situs ini hanya mendukung gerak lurus satu dimensi dengan percepatan konstan untuk satu pengamat. Gerak relatif antar kerangka tidak termasuk, jadi modul ini belum punya simulasi. Gambarlah sendiri vektor $\\vec v$, $\\vec V$, dan $\\vec v'$ pada contoh perahu."
+      ]
+    }
+  ],
+  "simulasi": null,
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Bola jatuh di gerbong yang melaju",
+      "problem": [
+        "Kereta melaju lurus dengan kecepatan tetap 20 m/s. Penumpang melepas bola dari tangannya (diam terhadap gerbong) pada ketinggian 1,25 m di atas lantai. Percepatan jatuh bebas dianggap 9,8 m/s² (nilai pendekatan). (a) Bagaimana lintasan bola menurut penumpang dan menurut pengamat di peron? (b) Berapa waktu jatuhnya, dan berapa jauh bola bergeser mendatar menurut peron? (c) Bandingkan percepatan bola di kedua kerangka."
+      ],
+      "answer": [
+        "(a) Menurut penumpang, bola jatuh lurus ke bawah. Menurut peron, bola ikut bergerak mendatar 20 m/s dan jatuh, sehingga lintasannya parabola.",
+        "(b) $t=\\sqrt{2h/g}=\\sqrt{2\\times1{,}25/9{,}8}\\approx0{,}505$ s. Selama itu, menurut peron bola bergeser mendatar $20\\times0{,}505\\approx10{,}1$ m. Menurut penumpang, bola tetap tepat di bawah tangan (0 m mendatar).",
+        "(c) Sama: $a=9{,}8$ m/s² ke bawah di kedua kerangka. Komponen mendatar bernilai konstan 20 m/s menurut peron dan nol menurut penumpang, jadi tidak ada percepatan mendatar di keduanya. Kecepatan saat mendarat berbeda: sekitar 4,95 m/s (lurus ke bawah) menurut penumpang dan $\\sqrt{20^2+4{,}95^2}\\approx20{,}6$ m/s menurut peron.",
+        {
+          "note": "Asumsi: kereta tidak dipercepat dan tidak berbelok, hambatan udara diabaikan, dan 9,8 m/s² adalah nilai pendekatan."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Perahu menyeberangi sungai",
+      "problem": [
+        "Sungai selebar 100 m mengalir ke timur dengan laju 3 m/s terhadap tanah. Perahu bergerak 4 m/s terhadap air, dengan haluan tegak lurus arus (ke utara). Tentukan (1) kecepatan perahu terhadap tanah, (2) waktu menyeberang, (3) pergeseran ke timur saat tiba di seberang, dan (4) bila perahu mempercepat 0,2 m/s² ke utara terhadap air, berapa percepatannya terhadap tanah?"
+      ],
+      "answer": [
+        {
+          "ol": [
+            "Pakai $\\vec v=\\vec v'+\\vec V$ dengan $\\vec v'=(0,\\,4)$ m/s dan $\\vec V=(3,\\,0)$ m/s (sumbu $x$ ke timur, $y$ ke utara): $\\vec v=(3,\\,4)$ m/s. Lajunya $\\sqrt{3^2+4^2}=5$ m/s, arahnya $\\arctan(4/3)\\approx53{,}1^\\circ$ dari timur ke utara.",
+            "Lebar sungai ada di arah utara, dan komponen utara adalah 4 m/s. $t=100/4=25$ s.",
+            "Selama 25 s, komponen timur 3 m/s membawa perahu $3\\times25=75$ m ke timur.",
+            "$\\vec a=\\vec a'$ karena air bergerak dengan kecepatan tetap relatif terhadap tanah: tetap 0,2 m/s² ke utara, dengan komponen timur nol."
+          ]
+        },
+        {
+          "note": "Asumsi: arus sama di seluruh lebar sungai dan tetap, dan kecepatan 4 m/s adalah terhadap air. Dalam soal ini bagian (4) mengubah laju perahu terhadap air, tetapi tidak mengubah jawaban bagian (2) dan (3) yang memakai 4 m/s tetap."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Hujan tampak miring bagi pengendara",
+      "problem": [
+        "Hujan jatuh lurus ke bawah dengan laju sekitar 8 m/s terhadap tanah (perkiraan; bergantung ukuran tetes). Mobil melaju lurus 15 m/s. Berapa laju dan arah hujan menurut pengendara? Bila kecepatan mobil dijadikan 30 m/s, apa yang berubah? Apakah percepatan tetes hujan terhadap mobil berubah?"
+      ],
+      "answer": [
+        "Pakai $\\vec v'=\\vec v-\\vec V$. Dengan $x$ searah mobil dan $y$ ke atas: $\\vec v=(0,\\,-8)$ m/s dan $\\vec V=(15,\\,0)$ m/s. Maka $\\vec v'=(-15,\\,-8)$ m/s, yaitu tetes bergerak mundur dan turun terhadap mobil.",
+        "Lajunya $\\sqrt{15^2+8^2}=17$ m/s. Sudut terhadap vertikal: $\\arctan(15/8)\\approx61{,}9^\\circ$. Hujan tampak datang dari arah depan, miring sekitar $62^\\circ$ dari vertikal.",
+        "Untuk $V=30$ m/s: $\\vec v'=(-30,\\,-8)$ m/s, laju $\\sqrt{900+64}\\approx31{,}0$ m/s, sudut $\\arctan(30/8)\\approx75{,}1^\\circ$ dari vertikal. Hujan tampak lebih datar dan lebih cepat.",
+        "Percepatan tidak berubah. Bila tetes jatuh dengan laju tetap terhadap tanah (percepatan nol), maka percepatannya nol juga menurut pengendara selama mobil bergerak lurus beraturan.",
+        {
+          "note": "Asumsi: tidak ada angin, mobil bergerak lurus beraturan, dan laju hujan 8 m/s adalah perkiraan orde besar yang dianggap tetap."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.vektor2d (vektor posisi dan kecepatan serta cara mengurangkannya komponen demi komponen).",
+    "Ke depan: c.noninersial membahas kerangka yang dipercepat atau berputar, tempat percepatan tidak lagi sama. sr.postulat memulai relativitas khusus yang menggantikan penjumlahan kecepatan Galileo untuk kecepatan mendekati $c$, dan sr.kecepatan memberi penjumlahan kecepatan relativistik. d.hukum2 membahas kaitan percepatan dengan penyebabnya. Semuanya belum dipakai di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "M1": {
+        "title": "Mengira kecepatan benda bersifat mutlak, tidak bergantung kerangka",
+        "fix": "Kecepatan selalu terhadap suatu kerangka. Benda yang diam di kereta punya kecepatan nol terhadap kereta dan $V$ terhadap tanah, dan kedua nilai itu benar. Tidak ada nilai kecepatan sebenarnya yang berlaku untuk semua pengamat."
+      },
+      "M2": {
+        "title": "Mengira percepatan berubah antar kerangka inersial",
+        "fix": "Bila $\\vec V$ tetap, $d\\vec V/dt=0$, sehingga $\\vec a'=\\vec a$. Dua pengamat inersial selalu sepakat soal percepatan. Percepatan hanya berbeda bila kerangkanya sendiri dipercepat."
+      },
+      "M3": {
+        "title": "Salah tanda atau arah dalam v' = v − V",
+        "fix": "Kecepatan di kerangka yang bergerak adalah kecepatan di S dikurangi kecepatan kerangka: $\\vec v'=\\vec v-\\vec V$. Benda yang searah dengan kerangka tampak lebih lambat, dan yang berlawanan arah tampak lebih cepat. Pegang arah dengan vektor, bukan hanya laju."
+      },
+      "M4": {
+        "title": "Mengira lintasan benda sama di semua kerangka",
+        "fix": "Bentuk lintasan bergantung kerangka. Bola jatuh lurus bagi penumpang, tetapi parabola bagi pengamat di peron, karena posisi mendatarnya bertambah $Vt$ di S."
+      },
+      "M5": {
+        "title": "Mengira transformasi Galileo berlaku untuk semua kecepatan",
+        "fix": "Hanya untuk kecepatan jauh di bawah $c$. Pada kecepatan mendekati $c$, penjumlahan $u=u'+V$ memberi hasil di atas $c$ untuk cahaya, bertentangan dengan pengukuran. Pembahasan lanjutan ada di sr.postulat dan sr.kecepatan."
+      },
+      "M6": {
+        "title": "Menjumlah laju sebagai skalar, bukan vektor",
+        "fix": "Kecepatan dijumlah sebagai vektor. Komponen yang tegak lurus tidak saling menambah. Perahu 4 m/s tegak lurus arus 3 m/s punya laju $\\sqrt{4^2+3^2}=5$ m/s, bukan 7 m/s."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Mobil A melaju 25 m/s terhadap tanah. Mana pernyataan yang paling tepat tentang kecepatan mobil itu?",
+        "options": [
+          {
+            "text": "Kecepatan 25 m/s adalah kecepatan sebenarnya mobil, yang sama bagi semua pengamat.",
+            "why": "Kecepatan bergantung kerangka. Pengamat di mobil lain yang bergerak punya nilai yang berbeda.",
+            "tag": "M1"
+          },
+          {
+            "text": "Kecepatan 25 m/s adalah nilai terhadap tanah. Terhadap mobil lain yang bergerak, nilainya bisa berbeda, dan keduanya benar.",
+            "why": "Kecepatan selalu terhadap suatu kerangka. $\\vec v'=\\vec v-\\vec V$ memberi nilai lain di kerangka lain, dan tidak ada yang lebih benar.",
+            "correct": true
+          },
+          {
+            "text": "Terhadap mobil A sendiri kecepatannya 25 m/s juga, karena ia yang bergerak.",
+            "why": "Terhadap dirinya sendiri, kecepatan mobil nol. Yang bergerak 25 m/s adalah tanah terhadap mobil, dengan arah berlawanan.",
+            "tag": "M1"
+          },
+          {
+            "text": "Mobil lain yang melaju 25 m/s searah melihat mobil A bergerak 50 m/s.",
+            "why": "$\\vec v'=\\vec v-\\vec V=25-25=0$. Dua mobil yang searah dengan laju sama tampak diam satu terhadap yang lain.",
+            "tag": "M3"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Dalam kereta yang melaju tetap, bola dilepas dari tangan dan jatuh ke lantai. Mana pernyataan yang benar?",
+        "options": [
+          {
+            "text": "Lintasan bola lurus ke bawah bagi semua pengamat, karena bola hanya jatuh.",
+            "why": "Bentuk lintasan bergantung kerangka. Bagi pengamat di peron bola juga bergerak mendatar bersama kereta, sehingga lintasannya parabola.",
+            "tag": "M4"
+          },
+          {
+            "text": "Lintasan parabola bagi penumpang, lurus bagi pengamat di peron.",
+            "why": "Terbalik. Penumpang ikut bergerak bersama kereta dan melihat bola jatuh lurus.",
+            "tag": "M4"
+          },
+          {
+            "text": "Bola punya percepatan yang lebih besar bagi pengamat di peron karena kereta bergerak.",
+            "why": "Kereta bergerak dengan kecepatan tetap, jadi $\\vec a'=\\vec a$. Percepatan bola sama di kedua kerangka.",
+            "tag": "M2"
+          },
+          {
+            "text": "Lurus ke bawah bagi penumpang dan parabola bagi pengamat di peron, dengan percepatan yang sama di kedua kerangka.",
+            "why": "Bagi penumpang, bola hanya jatuh. Bagi peron, ada komponen mendatar $V$ yang konstan. Percepatan sama karena $\\vec V$ tetap.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Perahu bergerak 4 m/s terhadap air dengan haluan tegak lurus arus. Arus sungai 3 m/s terhadap tanah. Berapa laju perahu terhadap tanah?",
+        "options": [
+          {
+            "text": "5 m/s",
+            "why": "$\\vec v=\\vec v'+\\vec V=(3,\\,4)$ m/s, lajunya $\\sqrt{3^2+4^2}=5$ m/s.",
+            "correct": true
+          },
+          {
+            "text": "7 m/s",
+            "why": "Itu menjumlah laju sebagai skalar. Kecepatan adalah vektor, dan dua komponen yang saling tegak lurus tidak saling menambah.",
+            "tag": "M6"
+          },
+          {
+            "text": "1 m/s",
+            "why": "Itu mengurangkan laju sebagai skalar, padahal arahnya tegak lurus. Kedua vektor tidak sejajar, jadi harus dijumlah per komponen.",
+            "tag": "M6"
+          },
+          {
+            "text": "4 m/s",
+            "why": "Itu hanya laju terhadap air. Terhadap tanah ada tambahan komponen 3 m/s dari arus.",
+            "tag": "M1"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Kereta melaju 30 m/s ke timur. Seorang penumpang berjalan 1,5 m/s terhadap gerbong ke arah barat (ke belakang). Berapa kecepatan penumpang terhadap tanah?",
+        "options": [
+          {
+            "text": "31,5 m/s ke timur",
+            "why": "Itu menambah 1,5 m/s. Berjalan ke barat berarti komponen kecepatan penumpang terhadap gerbong negatif: $v=V+v'=30-1{,}5$.",
+            "tag": "M3"
+          },
+          {
+            "text": "1,5 m/s ke barat",
+            "why": "Itu hanya nilai terhadap gerbong. Terhadap tanah, penumpang ikut terbawa kereta 30 m/s.",
+            "tag": "M1"
+          },
+          {
+            "text": "28,5 m/s ke timur",
+            "why": "$v=V+v'=30+(-1{,}5)=28{,}5$ m/s ke timur. Penumpang tetap bergerak ke timur terhadap tanah, tetapi lebih lambat dari kereta.",
+            "correct": true
+          },
+          {
+            "text": "30 m/s ke timur, karena penumpang berada di dalam kereta.",
+            "why": "Gerak penumpang terhadap gerbong ikut dihitung. Kecepatan terhadap tanah adalah penjumlahan vektor keduanya.",
+            "tag": "M1"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Terhadap tanah, mobil di jalan lurus dipercepat 2 m/s² ke depan. Pengamat di kereta yang melaju tetap 20 m/s sejajar jalan mengamati mobil itu. Berapa percepatan mobil menurut kereta?",
+        "options": [
+          {
+            "text": "22 m/s² ke depan",
+            "why": "Itu menambah laju kereta ke percepatan, padahal satuannya berbeda. Percepatan tidak dipengaruhi kecepatan tetap kerangka.",
+            "tag": "M2"
+          },
+          {
+            "text": "2 m/s² ke depan, sama dengan menurut tanah.",
+            "why": "$\\vec a'=\\vec a$ karena kereta bergerak dengan kecepatan tetap, jadi $d\\vec V/dt=0$.",
+            "correct": true
+          },
+          {
+            "text": "Nol, karena kereta ikut bergerak.",
+            "why": "Kereta bergerak dengan kecepatan tetap, bukan dengan percepatan yang sama dengan mobil. Percepatan mobil tidak hilang di kerangka kereta.",
+            "tag": "M2"
+          },
+          {
+            "text": "$2-20=-18$ m/s² karena kecepatan kereta dikurangkan.",
+            "why": "Yang dikurangkan hanya kecepatan, dan tidak mengubah percepatan. Kecepatan tetap kereta memberi $d\\vec V/dt=0$.",
+            "tag": "M3"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Sebuah lampu di gerbong yang melaju 0,5c menyorotkan cahaya ke depan. Aturan Galileo meramalkan laju cahaya 1,5c terhadap tanah, padahal pengukuran memberi c. Apa kesimpulan yang tepat?",
+        "options": [
+          {
+            "text": "Aturan Galileo gagal untuk kecepatan mendekati c, dan ini memotivasi relativitas khusus.",
+            "why": "Benar. Galileo baik untuk kecepatan jauh di bawah c dan gagal mendekati c, sehingga perlu aturan baru (sr.postulat dan sr.kecepatan).",
+            "correct": true
+          },
+          {
+            "text": "Aturan Galileo tetap benar, dan pengukuran laju cahaya perlu diperbaiki.",
+            "why": "Pengukuran laju cahaya konsisten. Galileo hanya pendekatan untuk kecepatan jauh di bawah c.",
+            "tag": "M5"
+          },
+          {
+            "text": "Galileo gagal karena percepatan cahaya berbeda di kedua kerangka.",
+            "why": "Cahaya tidak dipercepat di sini. Masalahnya ada pada penjumlahan kecepatan. Selain itu, antar kerangka inersial percepatan memang sama.",
+            "tag": "M2"
+          },
+          {
+            "text": "Galileo hanya salah untuk cahaya. Untuk benda biasa, aturan itu benar pada kecepatan berapa pun.",
+            "why": "Kegagalan bukan khusus cahaya. Untuk benda apa pun yang kecepatannya mendekati c, Galileo menyimpang. Untuk kecepatan kecil, penyimpangannya sangat kecil sehingga tidak terukur.",
+            "tag": "M5"
+          }
+        ]
+      }
+    ]
+  }
+}

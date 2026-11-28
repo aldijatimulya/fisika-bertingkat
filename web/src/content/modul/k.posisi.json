@@ -1,0 +1,423 @@
+{
+  "id": "k.posisi",
+  "status": "draf",
+  "fenomena": [
+    "Anda menunggu di halte dan seorang teman bertanya lewat telepon, 'Kamu di mana?' Jawaban 'di halte' belum cukup. Teman itu perlu tahu halte yang mana, dan sering kali juga ke arah mana ia harus berjalan. Jawaban yang berguna berbunyi seperti 'tiga puluh meter dari gerbang, ke arah jalan raya'. Di situ ada tiga hal: titik acuan, arah, dan jarak.",
+    "Contoh lain: patok kilometer di tepi jalan lurus. Tulisan 'km 12' tidak berarti perjalanan sudah 12 km. Angka itu hanya menyatakan letak patok terhadap titik nol yang dipilih pengelola jalan. Dua orang yang sama-sama berhenti di km 12 berada di tempat yang sama, walau yang satu baru berangkat dan yang lain sudah berkendara jauh.",
+    "Satu situasi lagi: seseorang berjalan dari rumah ke warung, lalu kembali ke rumah. Pedometer di sakunya mencatat ratusan langkah. Tetapi bila ditanya 'berapa jauh posisimu sekarang dari posisi awal?', jawabannya nol. Dua jawaban yang tampak bertentangan ternyata menjawab dua pertanyaan berbeda.",
+    "Pertanyaan penuntun: bagaimana menyatakan letak benda dengan angka yang tidak ambigu, apa bedanya posisi dengan perpindahan dan jarak tempuh, dan seberapa yakin kita pada angka hasil ukur itu?"
+  ],
+  "konsep": [
+    {
+      "h": "Posisi butuh kerangka acuan"
+    },
+    "Posisi tidak bisa dinyatakan sendirian. Ia selalu merupakan letak benda terhadap sesuatu. Untuk gerak sepanjang garis lurus (satu dimensi), kita membuat kerangka acuan sederhana yang terdiri atas tiga pilihan:",
+    {
+      "ul": [
+        "Titik asal. Satu titik di garis yang kita beri angka nol.",
+        "Arah positif. Salah satu dari dua arah sepanjang garis yang kita sebut positif. Arah sebaliknya otomatis negatif.",
+        "Skala dan satuan. Cara menyatakan jarak sebagai angka, misalnya meter, sehingga tiap titik di garis memiliki satu angka."
+      ]
+    },
+    "Garis berskala ini disebut sumbu, misalnya sumbu x. Posisi benda adalah angka $x$ yang cocok dengan titik tempat benda berada. Tanda $x$ menyatakan sisi mana dari titik asal, dan besar $|x|$ menyatakan seberapa jauh dari titik asal.",
+    {
+      "h": "Titik asal dan arah positif adalah pilihan kita"
+    },
+    "Alam tidak menandai satu titik asal yang 'benar'. Kita memilihnya sesuai kenyamanan, dan dua pilihan yang berbeda sama-sama sah. Akibatnya, nilai posisi bergantung pada pilihan itu. Benda yang sama, di tempat yang sama, bisa punya $x=+30$ m dalam satu kerangka dan $x=0$ dalam kerangka lain. Letak fisik bendanya tidak berubah. Yang berubah hanya angka yang kita pakai untuk menamainya.",
+    {
+      "h": "Posisi sebagai fungsi waktu"
+    },
+    "Bila benda bergerak, posisinya berubah terhadap waktu. Kita menuliskannya sebagai $x(t)$: untuk tiap waktu $t$ ada satu posisi $x$. Ini adalah fungsi dalam arti m.fungsi. Waktu $t$ adalah masukan dan posisi $x$ adalah keluaran. Daftar pasangan $(t,x)$ atau grafik $x$ terhadap $t$ adalah dua cara menyajikan fungsi yang sama.",
+    "Satu peringatan penting: grafik $x(t)$ bukan gambar lintasan. Pada gerak satu dimensi benda hanya bergerak di sepanjang garis lurus. Lengkungan pada grafik $x(t)$ berarti posisi berubah dengan cara tertentu terhadap waktu, bukan benda yang bergerak melengkung di ruang.",
+    {
+      "h": "Perpindahan dan jarak tempuh"
+    },
+    "Dua besaran ini menjawab dua pertanyaan berbeda.",
+    {
+      "table": {
+        "head": [
+          "Besaran",
+          "Pertanyaan yang dijawab",
+          "Tanda",
+          "Bergantung pada titik asal?"
+        ],
+        "rows": [
+          [
+            "Posisi $x$",
+            "Di mana benda berada?",
+            "Positif atau negatif (sisi titik asal)",
+            "Ya"
+          ],
+          [
+            "Perpindahan $\\Delta x$",
+            "Posisi akhir berubah berapa dari posisi awal, ke arah mana?",
+            "Positif atau negatif (arah)",
+            "Tidak (bila arah positif sama)"
+          ],
+          [
+            "Jarak tempuh",
+            "Berapa panjang seluruh jalur yang dilalui?",
+            "Tidak pernah negatif",
+            "Tidak"
+          ]
+        ]
+      }
+    },
+    "Perpindahan hanya memperhatikan posisi awal dan posisi akhir. Apa yang terjadi di antaranya tidak berpengaruh. Jarak tempuh memperhatikan seluruh jalur, termasuk bolak-balik. Karena itu orang yang pergi lalu pulang punya perpindahan nol tetapi jarak tempuh yang besar.",
+    {
+      "h": "Tanda adalah arah"
+    },
+    "Pada garis lurus hanya ada dua arah, sehingga tanda plus atau minus sudah cukup untuk menyatakan arah. Perpindahan $+8$ m berarti 8 m ke arah positif. Perpindahan $-8$ m berarti 8 m ke arah negatif. Tanda minus bukan berarti 'lebih sedikit' atau 'tidak ada'. Ia hanya arah sebaliknya. Bila kita membalik arah sumbu, semua tanda berubah, tetapi besarnya tidak.",
+    {
+      "h": "Satuan SI dan ketidakpastian"
+    },
+    "Satuan SI untuk posisi dan perpindahan adalah meter (m). Jarak yang jauh sering dinyatakan dalam kilometer, dengan $1\\ \\text{km}=1000\\ \\text{m}$ (lihat m.satuan). Angka posisi hasil ukur tidak pernah eksak. Penggaris, pita ukur, atau GPS memiliki skala terkecil dan kesalahan pembacaan, sehingga hasil ukur sebaiknya dipahami sebagai nilai di dalam suatu kisaran. Secara kualitatif:",
+    {
+      "ul": [
+        "Alat dengan skala lebih halus memberi kisaran yang lebih sempit, tetapi tidak pernah nol.",
+        "Perpindahan diperoleh dari dua pengukuran posisi, sehingga untuk galat acak yang bebas, ketidakpastiannya tidak lebih kecil daripada ketidakpastian tiap posisi. Galat sistematis yang sama pada kedua pembacaan, misalnya titik nol yang bergeser, justru saling meniadakan pada selisih. Selisih dua angka yang berdekatan bisa sangat tidak pasti dibanding nilainya sendiri.",
+        "Menulis angka dengan banyak digit tidak membuatnya lebih akurat. Jumlah digit sebaiknya mengikuti kemampuan alat."
+      ]
+    },
+    "Modul ini tidak menghitung ketidakpastian secara kuantitatif. Ia hanya meminta kita ingat bahwa angka posisi adalah hasil ukur, bukan kebenaran mutlak."
+  ],
+  "matematika": [
+    "Modul ini hanya memakai alat matematika yang sederhana.",
+    {
+      "ul": [
+        "Garis bilangan. Sumbu posisi adalah garis bilangan: titik di kanan titik asal bernilai positif (bila arah kanan dipilih positif), titik di kiri bernilai negatif. Mengurangkan bilangan negatif sama dengan menambah: $2-(-4)=6$.",
+        "Selisih. Perpindahan adalah posisi akhir dikurangi posisi awal, $\\Delta x=x_\\text{akhir}-x_\\text{awal}$. Ini definisi. Urutannya penting: membalik urutan membalik tanda.",
+        "Nilai mutlak. $|a|$ adalah besar $a$ tanpa tanda. Jarak tempuh adalah jumlah nilai mutlak perpindahan tiap segmen yang searah. Untuk satu segmen lurus tanpa putar balik, jaraknya $|\\Delta x|$.",
+        "Fungsi. $x(t)$ memetakan waktu ke posisi, lihat m.fungsi. Membaca $x(5\\ \\text{s})$ berarti mengambil posisi benda pada $t=5$ s.",
+        "Satuan. Selalu tulis satuan di belakang angka, dan ubah km ke m bila perlu, lihat m.satuan."
+      ]
+    },
+    "Contoh: bila benda berpindah dari $x=+5$ m ke $x=-3$ m tanpa putar balik, maka $\\Delta x=-3-5=-8$ m dan jarak tempuhnya $|-8|=8$ m. Kalau titik asal digeser 2 m ke kanan, posisinya menjadi $+3$ m dan $-5$ m, tetapi $\\Delta x=-5-3=-8$ m, tidak berubah."
+  ],
+  "derivasi": {
+    "intro": [
+      "Modul ini tidak memuat derivasi. Perpindahan $\\Delta x=x_\\text{akhir}-x_\\text{awal}$ dan jarak tempuh adalah definisi, bukan hasil turunan dari hukum lain. Karena itu tidak ada persamaan di basis data untuk konsep ini, dan tidak ada langkah yang perlu dibuktikan. Yang perlu dipahami adalah mengapa definisi itu dipilih: perpindahan dibuat sebagai selisih supaya tidak bergantung pada pilihan titik asal, sedangkan jarak tempuh dibuat dari panjang jalur supaya menjawab 'berapa jauh sudah ditempuh'.",
+      "Satu hal yang bisa dicek langsung dari definisi: bila titik asal digeser sejauh $d$ (posisi baru $x'=x-d$), maka $\\Delta x'=(x_\\text{akhir}-d)-(x_\\text{awal}-d)=x_\\text{akhir}-x_\\text{awal}=\\Delta x$. Suku $d$ saling meniadakan. Ini pemeriksaan satu baris, bukan derivasi."
+    ],
+    "extra": [],
+    "outro": [
+      "Catatan keberlakuan: pembahasan ini berlaku untuk gerak sepanjang garis lurus dengan satu sumbu. Di bidang atau ruang, posisi dan perpindahan adalah vektor dengan beberapa komponen. Itu dibahas di k.vektor2d."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Posisi itu relatif, perpindahan itu tahan banting"
+    },
+    "Karena titik asal adalah pilihan, hanya besaran yang tidak berubah bila titik asal digeser yang bisa dianggap sifat 'nyata' gerak itu. Perpindahan lolos uji itu. Posisi tidak. Inilah salah satu alasan kecepatan, yang dibahas di k.kecepatan, dibangun dari perubahan posisi dan bukan dari posisi itu sendiri.",
+    {
+      "h": "Dua pertanyaan, dua jawaban"
+    },
+    "Perpindahan dan jarak tempuh sama besar hanya bila benda bergerak ke satu arah saja. Begitu ada putar balik, jarak tempuh menjadi lebih besar daripada besar perpindahan. Jarak tempuh tidak pernah lebih kecil daripada $|\\Delta x|$. Bagian yang lebih lanjut tentang hubungan keduanya dengan kecepatan rata-rata dan laju rata-rata ada di modul k.kecepatan.",
+    {
+      "h": "Membaca tanda"
+    },
+    "Tanda negatif pada posisi berarti benda ada di sisi negatif titik asal. Tanda negatif pada perpindahan berarti arah gerak bersih menuju sisi negatif. Memilih arah positif ke kanan atau ke kiri tidak mengubah fisika, hanya mengubah tanda angka. Pilihan yang konsisten yang penting: bila arah positif sudah ditentukan, semua besaran dalam soal harus memakainya.",
+    {
+      "h": "Patokan ukuran (untuk intuisi)"
+    },
+    {
+      "ul": [
+        "Satu langkah orang dewasa kira-kira 0,7 m (perkiraan kasar, bervariasi antar orang).",
+        "Penggaris sekolah biasanya memiliki skala terkecil 1 mm. Sebagai patokan umum, kesalahan baca dapat dianggap kira-kira setengah skala terkecil, tetapi aturan ini bergantung pada alat dan pembacanya.",
+        "Posisi dari GPS telepon genggam sering hanya akurat dalam kisaran beberapa meter (perkiraan, bergantung pada kondisi langit dan perangkat). Karena itu GPS kurang cocok untuk mengukur perpindahan beberapa sentimeter."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Hanya gerak sepanjang garis lurus. Benda dianggap titik, jadi letaknya cukup dinyatakan satu angka.",
+        "Kerangka acuan dianggap diam dan tidak berputar. Kerangka yang bergerak dibahas di modul lain, di luar modul ini.",
+        "Ketidakpastian hanya dibahas secara kualitatif. Penghitungan galat dan perambatannya tidak dibahas.",
+        "Modul ini belum memiliki simulasi. Sementara itu, gambarlah garis bilangan di kertas, tandai titik asal dan arah positif, lalu letakkan beberapa titik dan hitung selisihnya."
+      ]
+    }
+  ],
+  "simulasi": null,
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Dua pengamat, dua titik asal, satu perpindahan",
+      "problem": [
+        "Dina dan Eko mengamati seekor kucing yang berjalan lurus dari halte A ke halte B di sepanjang jalan lurus. Dina memakai gerbang sekolah sebagai titik asal. Halte A ada 30 m dari gerbang, halte B ada 90 m dari gerbang, keduanya di sisi yang sama dengan arah ke jalan raya yang Dina pilih sebagai positif. Eko memakai halte A sebagai titik asal dengan arah positif yang sama. (a) Berapa posisi A dan B menurut masing-masing? (b) Berapa perpindahan dan jarak tempuh kucing menurut masing-masing? (c) Apa yang berubah bila Eko memilih arah positif berlawanan?"
+      ],
+      "answer": [
+        "(a) Dina: $x_A=+30$ m dan $x_B=+90$ m. Eko: $x_A=0$ dan $x_B=+60$ m. Angka posisi berbeda karena titik asalnya berbeda. Letak fisik halte sama.",
+        "(b) Dina: $\\Delta x=90-30=+60$ m. Eko: $\\Delta x=60-0=+60$ m. Keduanya sama, dan jarak tempuhnya 60 m bagi keduanya, karena kucing tidak putar balik. Perpindahan tidak bergantung pada titik asal.",
+        "(c) Bila arah positif dibalik, Eko mendapat $x_A=0$ dan $x_B=-60$ m, jadi $\\Delta x=-60$ m. Tandanya berubah, karena tanda adalah arah menurut sumbu yang dipilih. Besarnya tetap 60 m dan jarak tempuh tetap 60 m.",
+        {
+          "note": "Asumsi: kucing berjalan lurus tanpa putar balik, kucing dianggap titik, dan angka jarak dianggap tepat (tanpa ketidakpastian) untuk keperluan contoh."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Pelari bolak-balik di lintasan lurus",
+      "problem": [
+        "Seorang pelari bergerak di lintasan lurus. Posisinya terhadap tiang start (titik asal, arah positif ke kanan) dicatat tiap 10 s: $x(0)=+20$ m, $x(10)=+80$ m, $x(20)=+50$ m, $x(30)=-10$ m. Anggap pada tiap selang 10 s ia bergerak ke satu arah saja. Tentukan (1) perpindahan tiap selang, (2) perpindahan total dan jarak tempuh total, dan (3) perpindahan total bila titik asal dipindah ke posisi $x=+20$ m."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$\\Delta x_{0\\to10}=80-20=+60$ m. $\\Delta x_{10\\to20}=50-80=-30$ m. $\\Delta x_{20\\to30}=-10-50=-60$ m.",
+            "Perpindahan total: $-10-20=-30$ m. Cek dengan menjumlah: $60-30-60=-30$ m. Jarak tempuh: $60+30+60=150$ m. Jarak tempuh lebih besar daripada $|\\Delta x|=30$ m karena ada putar balik di sekitar $t=10$ s.",
+            "Titik asal baru di $+20$ m, sehingga posisi baru $x'=x-20$: $0,\\,60,\\,30,\\,-30$ m. Perpindahan total: $-30-0=-30$ m. Hasilnya sama dengan sebelumnya."
+          ]
+        },
+        {
+          "note": "Asumsi: selang 10 s tanpa putar balik di dalamnya, sehingga jarak tempuh dari tabel mencukupi. Bila pelari berbalik di tengah selang, jarak tempuhnya lebih besar daripada yang dihitung dari tabel. Tabel tidak cukup untuk mengetahui hal itu."
+        },
+        "Catatan: pada $t=30$ s posisi pelari negatif ($-10$ m), artinya ia sudah melewati tiang start ke sisi kiri. Tanda negatif di sini hanya menyatakan sisi, bukan 'kurang'."
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Truk dan patok kilometer",
+      "problem": [
+        "Sebuah truk melaju di jalan lurus yang patok kilometernya naik ke arah timur. Truk berangkat dari patok km 12,0, melaju ke barat sampai patok km 7,5 untuk menurunkan barang, lalu berbalik ke timur dan berhenti di patok km 9,0. Ambil arah timur sebagai positif dan patok km 0 sebagai titik asal. (a) Berapa perpindahan total dan jarak tempuh total? (b) Berapa jarak truk dari tempat berangkat? (c) Bila pembacaan patok hanya dapat dipercaya sampai sekitar 0,1 km (perkiraan), apa artinya bagi perpindahan 3,0 km yang dihitung?"
+      ],
+      "answer": [
+        "(a) Segmen barat: $\\Delta x_1=7{,}5-12{,}0=-4{,}5$ km. Segmen timur: $\\Delta x_2=9{,}0-7{,}5=+1{,}5$ km. Perpindahan total: $\\Delta x=9{,}0-12{,}0=-3{,}0$ km, sama dengan $-4{,}5+1{,}5=-3{,}0$ km. Jarak tempuh: $4{,}5+1{,}5=6{,}0$ km. Dalam meter: $\\Delta x=-3000$ m dan jarak tempuh 6000 m.",
+        "(b) Jarak truk dari tempat berangkat adalah $|\\Delta x|=3{,}0$ km, ke arah barat. Tanda minus pada $\\Delta x$ memberi arahnya (barat), sedangkan besarnya 3,0 km tidak bertanda.",
+        "(c) Setiap pembacaan posisi punya kisaran sekitar 0,1 km (perkiraan). Perpindahan adalah selisih dua pembacaan, jadi kisarannya tidak lebih kecil daripada kisaran tiap pembacaan. Secara kualitatif, kita sebaiknya menulis perpindahan sekitar $-3{,}0$ km dengan ketidakpastian sekitar 0,1 sampai 0,2 km (0,2 km bila kedua galat 0,1 km searah, sekitar 0,14 km bila digabung secara kuadratik). Menulis $-3{,}0000$ km akan menyesatkan.",
+        {
+          "note": "Asumsi: jalan lurus, truk dianggap titik, tidak ada putar balik selain di km 7,5. Pembacaan patok dan kisaran 0,1 km adalah angka perkiraan untuk contoh, bukan data pengukuran. Pada jalan nyata, odometer menghitung jarak tempuh sedangkan patok memberi posisi."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: m.satuan (meter, kilometer, dan cara menulis satuan) dan m.fungsi (posisi sebagai fungsi waktu, $x(t)$).",
+    "Ke depan: k.kecepatan membangun kecepatan rata-rata dan sesaat dari perubahan posisi, dan di sana pembedaan perpindahan dan jarak dibahas lebih lanjut. k.vektor2d memperluas posisi dan perpindahan ke bidang, dengan dua komponen. Pembahasan ketidakpastian secara kuantitatif tidak dibahas di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "M1": {
+        "title": "Mengira perpindahan sama dengan jarak tempuh",
+        "fix": "Perpindahan adalah posisi akhir dikurangi posisi awal, dengan arah. Jarak tempuh adalah panjang seluruh jalur dan tidak bertanda. Keduanya sama besar hanya bila benda bergerak ke satu arah saja."
+      },
+      "M2": {
+        "title": "Mengira posisi tidak bergantung pada pilihan titik asal",
+        "fix": "Posisi adalah letak terhadap titik asal yang kita pilih. Menggeser titik asal mengubah angka posisi, walau letak fisik benda tidak berubah."
+      },
+      "M3": {
+        "title": "Mengira perpindahan selalu positif",
+        "fix": "Perpindahan punya tanda yang menyatakan arah. Bila benda bergerak ke arah negatif sumbu, perpindahannya negatif. Yang tidak pernah negatif adalah jarak tempuh dan besar $|\\Delta x|$."
+      },
+      "M4": {
+        "title": "Mengartikan tanda negatif sebagai 'kurang', 'tidak ada', atau mengabaikan tandanya",
+        "fix": "Pada garis lurus, tanda hanya menyatakan sisi atau arah. Posisi $-3$ m berarti 3 m di sisi negatif titik asal. Tanda tidak boleh dibuang atau dicampur saat mengurangkan."
+      },
+      "M5": {
+        "title": "Mengira perpindahan ikut berubah bila titik asal digeser",
+        "fix": "Perpindahan adalah selisih dua posisi. Penggeseran titik asal mengurangi kedua posisi dengan jumlah yang sama, sehingga selisihnya tetap. Posisi akhir saja bukan perpindahan, kecuali posisi awal tepat di titik asal."
+      },
+      "M6": {
+        "title": "Mengira hasil ukur posisi eksak tanpa ketidakpastian",
+        "fix": "Setiap alat ukur punya skala terkecil dan kesalahan baca. Hasil ukur adalah nilai di dalam kisaran. Jumlah digit yang ditulis tidak membuatnya lebih akurat."
+      },
+      "M7": {
+        "title": "Mengira grafik posisi terhadap waktu adalah bentuk lintasan",
+        "fix": "Grafik $x(t)$ menunjukkan posisi pada tiap waktu, bukan gambar jalur di ruang. Pada gerak satu dimensi benda hanya bergerak di sepanjang garis lurus, apa pun bentuk grafiknya."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Sebuah benda bergerak lurus dari $x=+5$ m ke $x=-3$ m tanpa putar balik. Berapa perpindahan dan jarak tempuhnya?",
+        "options": [
+          {
+            "text": "Perpindahan 8 m dan jarak tempuh 8 m, karena keduanya menyatakan seberapa jauh benda berjalan.",
+            "why": "Besar keduanya memang 8 m, tetapi perpindahan punya arah. Ke arah negatif, perpindahannya $-8$ m, sedangkan jarak tempuh 8 m tanpa tanda.",
+            "tag": "M1"
+          },
+          {
+            "text": "Perpindahan $+8$ m dan jarak tempuh 8 m, karena perpindahan selalu positif.",
+            "why": "Perpindahan tidak selalu positif. Benda bergerak ke arah negatif, jadi $\\Delta x=-3-5=-8$ m.",
+            "tag": "M3"
+          },
+          {
+            "text": "Perpindahan $-8$ m dan jarak tempuh 8 m.",
+            "why": "$\\Delta x=-3-5=-8$ m dan tidak ada putar balik, sehingga jarak tempuh $|\\Delta x|=8$ m.",
+            "correct": true
+          },
+          {
+            "text": "Perpindahan $-2$ m dan jarak tempuh 2 m, karena $5+(-3)=2$.",
+            "why": "Perpindahan adalah selisih, bukan jumlah. Menjumlah posisi mencampur tanda dan memberi angka yang tidak bermakna. Yang benar $-3-5=-8$ m.",
+            "tag": "M4"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Seekor semut berada di $x=+2$ m pada sumbu yang titik asalnya di titik O. Titik asal lalu dipindah 5 m ke arah positif (arah positif tetap sama). Semut tidak bergerak. Berapa posisi semut menurut sumbu yang baru?",
+        "options": [
+          {
+            "text": "$-3$ m, karena semut sekarang berada di sisi negatif titik asal yang baru.",
+            "why": "Posisi baru $x'=2-5=-3$ m. Titik asal bergeser melewati semut, sehingga semut ada di sisi negatifnya.",
+            "correct": true
+          },
+          {
+            "text": "$+2$ m, karena semut tidak bergerak maka posisinya tetap.",
+            "why": "Semut diam, tetapi posisi adalah letak terhadap titik asal. Titik asal berpindah, jadi angkanya berubah.",
+            "tag": "M2"
+          },
+          {
+            "text": "$+7$ m, karena titik asal menjauh 5 m dari semut.",
+            "why": "Titik asal baru berada di sisi positif semut, sehingga semut ada di sisi negatif titik asal itu. Tanda tidak boleh dibalik.",
+            "tag": "M4"
+          },
+          {
+            "text": "$3$ m, tanpa tanda, karena posisi hanyalah jarak.",
+            "why": "Posisi memuat tanda yang menyatakan sisi dari titik asal. Menghapus tanda menghilangkan informasi arah.",
+            "tag": "M4"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Pengamat A memakai titik asal di pintu. Pengamat B memakai titik asal 4 m di kanan pintu dan arah positif yang sama. Sebuah bola menggelinding lurus. Menurut A, bola bergerak dari $x=+1$ m ke $x=+6$ m. Apa yang dicatat B?",
+        "options": [
+          {
+            "text": "Perpindahan B berbeda dari A, karena posisi awal dan akhir yang dicatat B berbeda.",
+            "why": "Posisi memang berbeda, tetapi perpindahan adalah selisihnya. Selisih tidak terpengaruh oleh pergeseran titik asal yang sama untuk kedua posisi.",
+            "tag": "M5"
+          },
+          {
+            "text": "Perpindahan B $=-3$ m, yaitu posisi akhir yang ia catat.",
+            "why": "$-3$ m adalah posisi awal menurut B ($1-4$). Posisi akhir menurut B adalah $+2$ m. Posisi sendiri bukan perpindahan.",
+            "tag": "M5"
+          },
+          {
+            "text": "Perpindahan B $=+2$ m, yaitu posisi akhir yang ia catat.",
+            "why": "$+2$ m adalah posisi akhir menurut B ($6-4$), bukan perpindahan. Perpindahan adalah posisi akhir dikurangi posisi awal.",
+            "tag": "M5"
+          },
+          {
+            "text": "Perpindahan B sama dengan A, yaitu $+5$ m, walaupun posisinya ($-3$ m menjadi $+2$ m) berbeda.",
+            "why": "$\\Delta x=2-(-3)=+5$ m. Kedua posisi bergeser 4 m, dan selisihnya tetap.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Grafik posisi terhadap waktu $x(t)$ sebuah troli pada rel lurus berbentuk lengkung: $x$ naik dari 0 ke 4 m, lalu turun kembali ke 1 m. Apa yang benar tentang gerak troli?",
+        "options": [
+          {
+            "text": "Troli naik mengikuti bukit, lalu menuruni sisi lain bukit.",
+            "why": "Troli ada di rel lurus. Grafik $x(t)$ bukan gambar lintasan, jadi 'naik dan turun' pada grafik tidak berarti bergerak ke atas dan ke bawah.",
+            "tag": "M7"
+          },
+          {
+            "text": "Troli bergerak sepanjang rel ke arah positif, lalu berbalik dan bergerak ke arah negatif.",
+            "why": "$x$ naik berarti troli bergerak ke arah positif. $x$ turun berarti ia bergerak balik ke arah negatif. Semua di sepanjang rel yang lurus.",
+            "correct": true
+          },
+          {
+            "text": "Troli bergerak melengkung di bidang, mengikuti bentuk kurva pada grafik.",
+            "why": "Bentuk kurva menyatakan hubungan posisi dan waktu, bukan jalur di ruang. Troli tetap berada di rel lurus.",
+            "tag": "M7"
+          },
+          {
+            "text": "Troli bergerak naik lalu turun pada rel yang miring seperti segitiga.",
+            "why": "Kemiringan pada grafik tidak sama dengan kemiringan rel. Rel boleh datar sempurna dan grafik tetap miring atau melengkung.",
+            "tag": "M7"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Posisi ujung sebuah balok dibaca dari penggaris berskala terkecil 1 mm dan tertulis 120,0 cm. Pernyataan mana yang paling tepat?",
+        "options": [
+          {
+            "text": "Posisi ujung balok diketahui hanya dalam suatu kisaran sempit di sekitar 120,0 cm, bukan nilai eksak.",
+            "why": "Skala terkecil dan kesalahan baca membuat setiap hasil ukur berada dalam kisaran. Alat yang lebih halus mempersempit kisaran, tetapi tidak membuatnya nol.",
+            "correct": true
+          },
+          {
+            "text": "Posisi ujung balok tepat 120,0 cm, karena penggaris adalah alat ukur yang baik.",
+            "why": "Alat yang baik tetap memiliki skala terkecil dan ketidakpastian pembacaan, sehingga nilai eksak tidak bisa dipastikan.",
+            "tag": "M6"
+          },
+          {
+            "text": "Menulis 120,0000 cm akan lebih akurat, karena lebih banyak digit.",
+            "why": "Digit tambahan tidak membuat alat lebih halus. Angka yang melebihi kemampuan alat menyesatkan.",
+            "tag": "M6"
+          },
+          {
+            "text": "Ketidakpastian hanya ada bila pengukur ceroboh. Bila teliti, hasilnya pasti eksak.",
+            "why": "Ketidakpastian ada walau pengukur teliti, karena batas skala dan alat. Ketelitian hanya menghindari kesalahan tambahan.",
+            "tag": "M6"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Sebuah benda bergerak lurus dari $x=+2$ m ke $x=-4$ m. Berapa perpindahannya?",
+        "options": [
+          {
+            "text": "$+6$ m, karena perpindahan adalah besar yang selalu positif.",
+            "why": "Perpindahan memuat arah. Gerak ke arah negatif memberi $\\Delta x=-4-2=-6$ m.",
+            "tag": "M3"
+          },
+          {
+            "text": "$-4$ m, yaitu posisi akhir benda.",
+            "why": "Posisi akhir bukan perpindahan. Perpindahan adalah selisih posisi akhir dan awal. Hasil $-4$ m hanya benar bila posisi awal tepat di titik asal.",
+            "tag": "M5"
+          },
+          {
+            "text": "$-6$ m.",
+            "why": "$\\Delta x=-4-2=-6$ m: 6 m ke arah negatif.",
+            "correct": true
+          },
+          {
+            "text": "$-2$ m, karena $2+(-4)=-2$.",
+            "why": "Perpindahan adalah selisih, bukan jumlah. Menjumlah posisi memberi angka tanpa makna fisis.",
+            "tag": "M4"
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": true,
+        "prompt": "Sebuah benda berada di posisi $x=-3$ m. Apa arti posisi itu?",
+        "options": [
+          {
+            "text": "Benda berjarak $-3$ m dari titik asal, artinya jarak bisa bernilai negatif.",
+            "why": "Jarak tidak bernilai negatif. Tanda minus pada posisi menyatakan sisi, dan jaraknya dari titik asal adalah $|x|=3$ m.",
+            "tag": "M4"
+          },
+          {
+            "text": "Benda berada 3 m dari titik asal, di sisi yang berlawanan dengan arah positif.",
+            "why": "Tanda negatif menyatakan sisi negatif sumbu, dan $|x|=3$ m menyatakan jaraknya dari titik asal.",
+            "correct": true
+          },
+          {
+            "text": "Benda berjarak 3 m dari titik asal, dan tandanya hanya tambahan sehingga boleh diabaikan.",
+            "why": "Tanda menyatakan arah dan tidak boleh diabaikan. Benda di $+3$ m dan $-3$ m berada di dua tempat berbeda.",
+            "tag": "M4"
+          },
+          {
+            "text": "Benda tidak ada atau 'kurang' karena posisinya lebih kecil dari nol.",
+            "why": "Posisi negatif tetap posisi nyata. Letaknya hanya di sisi negatif titik asal yang kita pilih. Dengan titik asal lain, angkanya bisa positif.",
+            "tag": "M4"
+          }
+        ]
+      }
+    ]
+  }
+}

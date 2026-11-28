@@ -1,10 +1,9 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FREE, SCENARIOS, type Scenario } from "@/content/percepatan";
+import type { Scenario } from "@/content/percepatan";
 import { fmt, pos, sample, speedTrend, turnTime, TREND_TEXT, vel, type Motion } from "@/lib/kin";
 import { Tex } from "./Tex";
 
-const ALL: Scenario[] = [...SCENARIOS, FREE];
 const W = 300, H = 170, PADL = 44, PADR = 12, PADT = 14, PADB = 28;
 
 function niceRange(lo: number, hi: number) {
@@ -82,7 +81,8 @@ function Track({ m, T, tNow }: { m: Motion; T: number; tNow: number }) {
   );
 }
 
-export function Simulation() {
+export function Simulation({ scenarios, free: FREE }: { scenarios: Scenario[]; free: Scenario }) {
+  const ALL: Scenario[] = [...scenarios, FREE];
   const [sid, setSid] = useState(ALL[0].id);
   const sc = ALL.find((s) => s.id === sid)!;
   const [free, setFree] = useState<Motion>(FREE.motion);

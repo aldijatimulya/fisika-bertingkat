@@ -1,12 +1,14 @@
 "use client";
 import { useMemo, useState } from "react";
-import { MISCONCEPTIONS, PASS_CORE, QUESTIONS } from "@/content/percepatan";
+import type { Question } from "@/content/percepatan";
 import { logAttempt } from "@/lib/attempts";
 import { setMastery, useMasteryStore, type Mastery } from "@/lib/mastery";
 
 type Ans = { pick: number; checked: boolean };
 
-export function Quiz({ conceptId }: { conceptId: string }) {
+export function Quiz({ conceptId, questions: QUESTIONS, misconceptions: MISCONCEPTIONS, passCore: PASS_CORE }: {
+  conceptId: string; questions: Question[]; misconceptions: Record<string, { title: string; fix: string }>; passCore: number;
+}) {
   const [ans, setAns] = useState<Record<string, Ans>>({});
   const [applied, setApplied] = useState<Mastery | null>(null);
   const store = useMasteryStore();

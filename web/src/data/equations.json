@@ -1,5 +1,36 @@
 [
   {
+    "id": "eq.vel_avg",
+    "concept": "k.kecepatan",
+    "title": "Kecepatan rata-rata",
+    "latex": "\\bar v = \\frac{\\Delta x}{\\Delta t} = \\frac{x_2 - x_1}{t_2 - t_1}",
+    "kind": "definisi",
+    "depends_on": [],
+    "assumptions": [
+      "Posisi x(t) diketahui pada dua saat t1 dan t2",
+      "Gerak satu dimensi; arah dinyatakan dengan tanda"
+    ],
+    "validity": "Selang waktu berhingga. Hanya memuat posisi awal dan akhir: tidak memberi tahu apa yang terjadi di antaranya (benda bisa berbalik arah), dan tidak sama dengan laju rata-rata (jarak tempuh dibagi waktu).",
+    "steps": [
+      {
+        "latex": "x_1 = x(t_1),\\quad x_2 = x(t_2)",
+        "why": "Ambil posisi pada dua saat yang berbeda."
+      },
+      {
+        "latex": "\\Delta x = x_2 - x_1,\\quad \\Delta t = t_2 - t_1",
+        "why": "Hitung perpindahan (bukan jarak tempuh) dan selang waktu; tanda Delta x membawa informasi arah."
+      },
+      {
+        "latex": "\\bar v = \\frac{\\Delta x}{\\Delta t}",
+        "why": "Definisi: perpindahan per satuan waktu. Satuannya m/s. Secara grafik, ini kemiringan garis sekan yang menghubungkan dua titik pada grafik x-t."
+      }
+    ],
+    "meaning": "Kecepatan rata-rata bisa nol walau benda bergerak (pergi lalu kembali ke titik awal); laju rata-rata tidak bisa nol bila benda bergerak.",
+    "applied_in": [
+      "k.percepatan"
+    ]
+  },
+  {
     "id": "eq.vel",
     "concept": "k.kecepatan",
     "title": "Kecepatan sesaat",

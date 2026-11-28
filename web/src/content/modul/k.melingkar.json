@@ -1,0 +1,461 @@
+{
+  "id": "k.melingkar",
+  "status": "draf",
+  "fenomena": [
+    "Bianglala berputar pelan dan rata. Laju gondola hampir tidak berubah selama berputar, tetapi arah geraknya terus berganti: ke atas, mendatar, ke bawah, mendatar lagi. Penumpang di dalamnya mengelilingi satu titik tetap, yaitu poros.",
+    "Contoh lain: mobil menikung dengan jarum speedometer yang diam di angka yang sama, dan penumpang merasa tubuhnya bergeser ke sisi luar tikungan. Atau ujung jarum menit pada jam dinding, yang mengelilingi pusat tepat satu kali dalam 60 menit.",
+    "Perhatikan pula piringan hitam atau cakram yang berputar. Titik di tepi dan titik dekat pusat selesai satu putaran dalam waktu yang sama. Namun titik di tepi harus menempuh lingkaran yang lebih besar, jadi ia bergerak lebih cepat di sepanjang lintasannya.",
+    "Pertanyaan penuntun: bagaimana menyatakan seberapa cepat sesuatu berputar dengan satu bilangan, bagaimana bilangan itu berhubungan dengan laju sepanjang lintasan, dan mengapa gerak dengan laju tetap ini tetap punya percepatan? Kita memakai vektor kecepatan dari k.vektor2d dan arti percepatan dari k.percepatan."
+  ],
+  "konsep": [
+    "Modul ini membahas gerak melingkar beraturan: benda bergerak pada lintasan lingkaran berjari-jari $r$ tetap dengan laju sudut tetap. Yang dibahas hanya cara menggambarkan geraknya (kinematika). Pertanyaan apa yang menyebabkan benda berbelok bukan bagian modul ini.",
+    {
+      "h": "Sudut posisi dalam radian"
+    },
+    "Posisi benda pada lingkaran dinyatakan dengan sudut $\\theta$ yang diukur dari garis acuan. Satuan yang dipakai di fisika adalah radian: $\\theta=s/r$, dengan $s$ panjang busur. Satu putaran penuh adalah $2\\pi$ rad, sama dengan $360^\\circ$. Radian dipilih karena perbandingan $s/r$ tidak bergantung pada ukuran lingkaran, sehingga rumus-rumus berikutnya menjadi sederhana.",
+    {
+      "h": "Laju sudut"
+    },
+    "Laju sudut $\\omega$ menyatakan seberapa cepat sudut posisi bertambah: $\\omega=\\Delta\\theta/\\Delta t$, dalam rad/s. Pada gerak melingkar beraturan $\\omega$ tetap. Kesepakatan umum: $\\omega$ positif bila berputar berlawanan arah jarum jam.",
+    {
+      "h": "Periode dan frekuensi"
+    },
+    "Periode $T$ adalah waktu untuk satu putaran penuh (sekon). Frekuensi $f$ adalah banyaknya putaran per sekon (hertz, Hz). Keduanya saling berkebalikan, $f=1/T$, dan terhubung dengan laju sudut lewat $\\omega=2\\pi/T=2\\pi f$. Satuan rpm (putaran per menit) sering dipakai pada mesin: 60 rpm sama dengan 1 Hz.",
+    {
+      "h": "Laju dan kecepatan sepanjang lintasan"
+    },
+    "Benda menempuh busur sepanjang $s=r\\theta$, sehingga lajunya sepanjang lintasan adalah $v=\\omega r$. Arah kecepatan menyinggung lingkaran, tegak lurus jari-jari. Untuk benda tegar yang berputar, semua titik punya $\\omega$ yang sama, tetapi $v$ sebanding dengan jarak $r$ dari sumbu. Turunannya ada di bagian Derivasi.",
+    {
+      "h": "Percepatan ada walau laju tetap"
+    },
+    "Dari k.percepatan: percepatan adalah laju perubahan vektor kecepatan, bukan laju perubahan lajunya saja. Vektor punya besar dan arah. Pada gerak melingkar beraturan besar kecepatan tetap, tetapi arahnya terus berputar. Karena vektornya berubah, percepatannya tidak nol.",
+    "Gambaran geometri: dalam selang pendek $\\Delta t$, vektor kecepatan berputar sebesar $\\Delta\\theta=\\omega\\Delta t$ tanpa berubah panjang. Selisih $\\Delta\\vec v$ antara dua vektor itu menunjuk ke arah pusat lingkaran (dalam limit $\\Delta t$ kecil), dan besarnya kira-kira $v\\,\\Delta\\theta$. Jadi percepatan menuju pusat dan tegak lurus kecepatan. Percepatan yang tegak lurus kecepatan hanya mengubah arah, bukan laju. Ia disebut percepatan sentripetal, besarnya $a_c=v^2/r=\\omega^2r$ (diturunkan lengkap pada persamaan $\\text{eq.ac}$ di bagian Derivasi).",
+    {
+      "h": "Soal gaya sentrifugal"
+    },
+    "Dari kerangka acuan tanah yang diam, percepatan benda yang bergerak melingkar beraturan menuju pusat. Tidak ada percepatan ke luar. Kesan terdorong ke luar di dalam mobil yang menikung adalah kecenderungan tubuh untuk terus bergerak lurus ke arah singgung, sementara mobil berbelok. Jadi gaya sentrifugal bukan gaya nyata dalam gambaran ini. Penjelasan penyebab percepatan itu ada di d.dinamika_melingkar, dan kapan istilah sentrifugal berguna (kerangka yang ikut berputar) ada di c.noninersial. Keduanya belum dipakai di modul ini.",
+    {
+      "h": "Tiga hal yang sering tertukar"
+    },
+    {
+      "ul": [
+        "Laju tetap tidak berarti percepatan nol. Percepatan nol hanya bila vektor kecepatan tetap, termasuk arahnya.",
+        "Percepatan sentripetal menuju pusat, bukan ke luar dan bukan searah kecepatan.",
+        "$\\omega$ sama untuk semua titik pada benda tegar yang berputar, tetapi $v$ dan $a_c$ makin besar di titik yang lebih jauh dari sumbu."
+      ]
+    }
+  ],
+  "matematika": [
+    "Alat matematika yang dipakai:",
+    {
+      "ul": [
+        "Radian dan trigonometri. $\\theta=s/r$, dan koordinat titik pada lingkaran $(x,y)=(r\\cos\\theta,\\,r\\sin\\theta)$ (lihat m.trigo dan m.koord).",
+        "Vektor di bidang. Posisi dan kecepatan diuraikan menjadi komponen (lihat k.vektor2d). Besar vektor kecepatan tetap walau komponennya berubah.",
+        "Turunan fungsi vektor. Kecepatan adalah turunan posisi, percepatan adalah turunan kecepatan. Turunan $\\sin$ dan $\\cos$ dipakai pada $\\text{eq.ac}$ (lihat m.vektorfungsi).",
+        "Konversi satuan. rpm ke rad/s dikali $2\\pi/60$. Contoh: 120 rpm $=2$ Hz $=4\\pi\\approx12{,}57$ rad/s."
+      ]
+    },
+    "Cek kecil: titik pada $r=0{,}5$ m dengan $\\omega=4\\pi$ rad/s punya $v=\\omega r=2\\pi\\approx6{,}28$ m/s. Satu putaran menempuh $2\\pi r=3{,}14$ m dalam $T=0{,}5$ s, dan $3{,}14/0{,}5=6{,}28$ m/s, cocok."
+  ],
+  "derivasi": {
+    "intro": [
+      "Persamaan $\\text{eq.ac}$ (percepatan sentripetal $a_c=v^2/r$) tampil otomatis di atas dan tidak diulang di sini. Ia diturunkan dari posisi $\\vec r=r(\\cos\\omega t,\\sin\\omega t)$ dan sudah memakai hasil $v=\\omega r$ tanpa membuktikannya dari geometri busur.",
+      "Dua turunan tambahan di bawah ini melengkapinya: (1) $v=\\omega r$ dari $s=r\\theta$, dan (2) hubungan periode, frekuensi, laju sudut, serta bentuk lain $a_c$."
+    ],
+    "extra": [
+      {
+        "title": "Laju sepanjang lintasan: v = ωr dari s = rθ",
+        "steps": [
+          {
+            "tex": "s=r\\theta",
+            "why": "Definisi radian: sudut (rad) sama dengan panjang busur dibagi jari-jari. Ini benar hanya bila $\\theta$ dalam radian."
+          },
+          {
+            "tex": "\\Delta s=r\\,\\Delta\\theta",
+            "why": "Dalam selang $\\Delta t$, sudut berubah $\\Delta\\theta$ dan busur bertambah $\\Delta s$. Jari-jari $r$ tetap karena lintasan lingkaran, jadi $r$ boleh keluar sebagai faktor tetap."
+          },
+          {
+            "tex": "\\frac{\\Delta s}{\\Delta t}=r\\,\\frac{\\Delta\\theta}{\\Delta t}",
+            "why": "Bagi kedua ruas dengan $\\Delta t>0$ untuk mendapatkan laju rata-rata di kiri dan laju sudut rata-rata di kanan."
+          },
+          {
+            "tex": "v=\\frac{ds}{dt}=r\\,\\frac{d\\theta}{dt}=\\omega r",
+            "why": "Ambil $\\Delta t\\to0$. Ruas kiri menjadi laju sesaat sepanjang busur, dan $d\\theta/dt=\\omega$ menurut definisi. Karena $r$ tetap, ia tidak ikut diturunkan."
+          },
+          {
+            "tex": "\\vec r=r(\\cos\\omega t,\\ \\sin\\omega t)\\ \\Rightarrow\\ \\vec v=\\frac{d\\vec r}{dt}=\\omega r(-\\sin\\omega t,\\ \\cos\\omega t)",
+            "why": "Letakkan pusat di titik asal dan ambil $\\omega$ tetap. Turunkan tiap komponen terhadap waktu dengan aturan rantai ($d\\cos\\omega t/dt=-\\omega\\sin\\omega t$, $d\\sin\\omega t/dt=\\omega\\cos\\omega t$); $r$ tetap sehingga keluar dari turunan."
+          },
+          {
+            "tex": "(\\cos\\omega t,\\sin\\omega t)\\ \\to\\ (-\\sin\\omega t,\\cos\\omega t):\\ \\vec v\\perp\\vec r",
+            "why": "Vektor $(-\\sin\\omega t,\\cos\\omega t)$ adalah vektor $(\\cos\\omega t,\\sin\\omega t)$ yang diputar 90°. Jadi kecepatan tegak lurus jari-jari, yaitu menyinggung lingkaran, dan besarnya $\\omega r\\sqrt{\\sin^2\\omega t+\\cos^2\\omega t}=\\omega r$, sesuai langkah sebelumnya."
+          },
+          {
+            "tex": "v=\\frac{2\\pi r}{T}=\\omega r\\quad(\\omega=2\\pi/T)",
+            "why": "Cek konsistensi dengan satu putaran: busur $2\\pi r$ ditempuh dalam waktu $T$. Hasilnya sama dengan $\\omega r$."
+          }
+        ],
+        "validity": "Hanya untuk lintasan lingkaran dengan jari-jari tetap dan $\\theta$ dalam radian. $v=\\omega r$ berlaku sesaat walau $\\omega$ berubah, asalkan $r$ tetap. Bila $r$ berubah (misalnya spiral) langkah kedua gagal. Hasil $a_c=v^2/r$ pada $\\text{eq.ac}$ adalah untuk laju tetap. Bila laju berubah, komponen yang menuju pusat tetap $v^2/r$, tetapi ada tambahan percepatan sepanjang lintasan."
+      },
+      {
+        "title": "Periode, frekuensi, dan bentuk lain percepatan sentripetal",
+        "steps": [
+          {
+            "tex": "\\omega=\\frac{\\Delta\\theta}{\\Delta t}",
+            "why": "Definisi laju sudut. Untuk $\\omega$ tetap, nilainya sama untuk selang waktu berapa pun, jadi boleh dihitung dari satu putaran penuh."
+          },
+          {
+            "tex": "\\omega=\\frac{2\\pi}{T}",
+            "why": "Satu putaran penuh berarti $\\Delta\\theta=2\\pi$ rad, dan waktunya adalah periode $T$."
+          },
+          {
+            "tex": "f=\\frac1T\\ \\Rightarrow\\ \\omega=2\\pi f",
+            "why": "Frekuensi adalah putaran per sekon. Bila satu putaran butuh $T$ sekon, maka banyak putaran per sekon adalah $1/T$."
+          },
+          {
+            "tex": "v=\\omega r=2\\pi f r=\\frac{2\\pi r}{T}",
+            "why": "Substitusi $\\omega=2\\pi f$ ke $v=\\omega r$ dari turunan sebelumnya."
+          },
+          {
+            "tex": "a_c=\\omega^2r=4\\pi^2 f^2 r=\\frac{4\\pi^2 r}{T^2}",
+            "why": "Substitusi $\\omega=2\\pi f$ ke $a_c=\\omega^2r$ dari $\\text{eq.ac}$."
+          },
+          {
+            "tex": "a_c=\\frac{v^2}{r}=\\omega v",
+            "why": "Dari $v=\\omega r$: $v^2/r=\\omega^2r^2/r=\\omega^2r$, dan $\\omega^2r=\\omega(\\omega r)=\\omega v$. Tiga bentuk ini sama, tinggal pilih yang sesuai dengan data."
+          },
+          {
+            "tex": "f\\to2f\\ \\Rightarrow\\ a_c\\to4a_c\\quad(r\\text{ tetap})",
+            "why": "Cek skala: $a_c\\propto f^2$, jadi melipatduakan frekuensi membuat percepatan empat kali."
+          }
+        ],
+        "validity": "Hanya untuk gerak melingkar beraturan ($\\omega$ tetap), sehingga $T$ dan $f$ bermakna sebagai besaran yang tetap. Bila $\\omega$ berubah, $\\omega=2\\pi/T$ tidak lagi berlaku untuk satu putaran penuh, dan $a_c=\\omega^2r$ hanya benar sesaat dengan $\\omega$ saat itu."
+      }
+    ],
+    "outro": [
+      "Catatan keberlakuan: semua hasil memakai lintasan lingkaran dengan jari-jari tetap. Bila laju berubah, ada percepatan tambahan sepanjang lintasan yang dibahas lebih lanjut di r.kinematika. Penyebab percepatan menuju pusat dibahas di d.dinamika_melingkar."
+    ]
+  },
+  "interpretasi": [
+    {
+      "h": "Dua cara membaca percepatan sentripetal"
+    },
+    "Rumus $a_c=v^2/r$ dan $a_c=\\omega^2r$ sama, tetapi memberi intuisi berbeda. Bila laju tetap (mobil menikung), tikungan yang lebih sempit (r kecil) membuat percepatan lebih besar. Bila $\\omega$ tetap (titik pada piringan), titik yang lebih jauh dari sumbu punya percepatan lebih besar. Keduanya benar karena yang dipegang tetap berbeda.",
+    {
+      "h": "Mengapa laju tetap tetapi kecepatan berubah"
+    },
+    "Kecepatan adalah vektor. Selama benda mengelilingi lingkaran, ujung vektor kecepatan menggambar lingkaran sendiri dengan jari-jari $v$ dan laju sudut $\\omega$ yang sama. Karena itu besar percepatan $=v\\omega$. Percepatan ini selalu tegak lurus kecepatan, sehingga tidak pernah menambah atau mengurangi laju.",
+    {
+      "h": "Hubungan dengan benda yang bergerak lurus"
+    },
+    "Bila percepatan ke pusat tiba-tiba hilang, benda tidak melanjutkan lingkaran dan tidak melesat ke luar sepanjang jari-jari. Ia bergerak lurus ke arah kecepatan terakhirnya, yaitu menyinggung lingkaran.",
+    {
+      "h": "Patokan ukuran (untuk mengembangkan intuisi)"
+    },
+    {
+      "ul": [
+        "Titik di khatulistiwa ikut berputar bersama Bumi. Dengan jari-jari Bumi sekitar $6{,}37\\times10^6$ m (perkiraan) dan periode putar sekitar $86\\,164$ s, lajunya sekitar 465 m/s dan percepatan sentripetalnya sekitar $0{,}034$ m/s², kira-kira 0,35% dari $g\\approx9{,}8$ m/s². Itu hanya perkiraan untuk titik di khatulistiwa.",
+        "Piringan 60 rpm punya $T=1$ s dan $\\omega\\approx6{,}28$ rad/s. Titik pada jari-jari 5 cm bergerak sekitar 0,31 m/s.",
+        "Mobil menikung dengan laju 10 m/s pada jari-jari 50 m mengalami percepatan $v^2/r=2$ m/s², sekitar seperlima $g$. Angka tikungan ini hanya contoh hitungan, bukan data jalan tertentu."
+      ]
+    },
+    {
+      "h": "Batas model"
+    },
+    {
+      "ul": [
+        "Lintasan lingkaran dengan jari-jari tetap dan laju sudut tetap. Bila laju berubah, ada komponen percepatan sepanjang lintasan di luar modul ini.",
+        "Benda dianggap titik. Untuk benda yang ukurannya berarti, tiap bagian punya $r$ berbeda dan karenanya $v$ dan $a_c$ berbeda.",
+        "Gerak melingkar tidak punya percepatan konstan, sedangkan simulasi di situs ini hanya mendukung gerak lurus satu dimensi dengan percepatan konstan. Karena itu modul ini belum punya simulasi. Gambarlah sendiri vektor $\\vec v$ dan $\\vec a$ di empat titik lingkaran untuk melatih arahnya."
+      ]
+    }
+  ],
+  "simulasi": null,
+  "contoh": [
+    {
+      "level": "Konseptual",
+      "title": "Dua titik pada piringan yang berputar",
+      "problem": [
+        "Sebuah piringan berputar tetap pada 60 rpm. Titik A berjarak 5 cm dari sumbu dan titik B berjarak 15 cm. (a) Titik mana yang punya $\\omega$ lebih besar? (b) Titik mana yang lajunya lebih besar, dan berapa perbandingannya? (c) Apakah titik A punya percepatan, padahal lajunya tetap? Bagaimana arahnya, dan berapa besarnya?"
+      ],
+      "answer": [
+        "(a) Sama. Keduanya selesai satu putaran dalam waktu yang sama, jadi $T=1$ s dan $\\omega=2\\pi/T\\approx6{,}28$ rad/s untuk keduanya.",
+        "(b) Titik B, tiga kali lebih cepat. $v=\\omega r$ dengan $\\omega$ sama, jadi $v$ sebanding dengan $r$. $v_A\\approx0{,}314$ m/s dan $v_B\\approx0{,}942$ m/s, perbandingan $0{,}942/0{,}314=3$.",
+        "(c) Ada. Besar kecepatan tetap, tetapi arahnya terus berubah, sehingga vektor kecepatan berubah dan percepatannya tidak nol. Arahnya menuju pusat piringan dan tegak lurus kecepatan. Besarnya $a_c=\\omega^2r\\approx39{,}48\\times0{,}05\\approx1{,}97$ m/s². Sebagai perbandingan, $a_B\\approx5{,}92$ m/s², juga tiga kali karena $a_c\\propto r$ pada $\\omega$ tetap.",
+        {
+          "note": "Asumsi: piringan tegar dan tepat 60 rpm. Titik dianggap titik."
+        }
+      ]
+    },
+    {
+      "level": "Matematis",
+      "title": "Satu benda, semua besaran gerak melingkar",
+      "problem": [
+        "Benda bergerak melingkar beraturan pada jari-jari $0{,}50$ m dengan frekuensi $2{,}0$ Hz. Tentukan (1) periode dan laju sudut, (2) laju dan percepatan sentripetal, (3) cek $a_c$ dengan dua rumus, (4) sudut dan busur yang ditempuh dalam $0{,}10$ s, dan (5) cek bahwa percepatan memang menuju pusat lewat perubahan kecepatan pada selang pendek."
+      ],
+      "answer": [
+        {
+          "ol": [
+            "$T=1/f=0{,}50$ s dan $\\omega=2\\pi f=4\\pi\\approx12{,}57$ rad/s.",
+            "$v=\\omega r\\approx12{,}57\\times0{,}50\\approx6{,}28$ m/s. $a_c=\\omega^2r\\approx157{,}91\\times0{,}50\\approx78{,}96$ m/s².",
+            "$v^2/r=6{,}283^2/0{,}50\\approx78{,}96$ m/s², sama dengan hasil nomor 2. Juga $4\\pi^2r/T^2=39{,}478\\times0{,}50/0{,}25=78{,}96$ m/s².",
+            "$\\theta=\\omega\\Delta t\\approx1{,}257$ rad $=72^\\circ$ (satu perlima putaran, cocok karena $0{,}10/0{,}50=0{,}2$). Busur $s=r\\theta\\approx0{,}628$ m.",
+            "Besar perubahan kecepatan pada selang $\\Delta t$ adalah $|\\Delta\\vec v|=2v\\sin(\\omega\\Delta t/2)$ (dua vektor sama panjang dengan sudut $\\omega\\Delta t$ di antaranya). Untuk $\\Delta t=0{,}10$ s: $|\\Delta\\vec v|/\\Delta t\\approx73{,}9$ m/s². Untuk $\\Delta t=0{,}010$ s: $\\approx78{,}90$ m/s². Untuk $\\Delta t=0{,}001$ s: $\\approx78{,}956$ m/s². Nilainya mendekati $a_c=78{,}96$ m/s² saat selang makin pendek."
+          ]
+        },
+        {
+          "note": "Pada selang panjang, percepatan rata-rata (73,9 m/s²) lebih kecil dari percepatan sesaat karena arah $\\Delta\\vec v$ berubah selama selang itu. Percepatan sesaat adalah batas untuk $\\Delta t\\to0$."
+        }
+      ]
+    },
+    {
+      "level": "Aplikatif",
+      "title": "Percepatan sentripetal titik di khatulistiwa",
+      "problem": [
+        "Anggap Bumi bola dengan jari-jari $6{,}37\\times10^6$ m (perkiraan) yang berputar satu kali dalam $86\\,164$ s (hari bintang, perkiraan). Hitung laju dan percepatan sentripetal titik di khatulistiwa akibat rotasi Bumi, lalu bandingkan dengan $g=9{,}8$ m/s². Bagaimana jika dipakai periode 24 jam penuh?"
+      ],
+      "answer": [
+        "$\\omega=2\\pi/T=2\\pi/86\\,164\\approx7{,}29\\times10^{-5}$ rad/s.",
+        "$v=\\omega r\\approx7{,}29\\times10^{-5}\\times6{,}37\\times10^6\\approx465$ m/s (sekitar 1670 km/jam).",
+        "$a_c=\\omega^2r\\approx0{,}0339$ m/s², sama dengan $v^2/r$. Itu sekitar $0{,}35\\%$ dari $g$.",
+        "Dengan $T=86\\,400$ s: $v\\approx463$ m/s dan $a_c\\approx0{,}0337$ m/s², selisih kurang dari 1%. Hasilnya tidak peka terhadap pilihan antara dua periode itu.",
+        "Percepatan sekecil itu menuju sumbu Bumi. Titik di lintang lain berputar pada lingkaran yang lebih kecil, jadi $v$ dan $a_c$ lebih kecil.",
+        {
+          "note": "Asumsi: Bumi bola, jari-jari dan periode adalah perkiraan, dan hanya rotasi pada sumbunya yang dihitung (gerak mengelilingi Matahari tidak termasuk). Hasil ini hanya perkiraan orde besar."
+        }
+      ]
+    }
+  ],
+  "keterkaitan": [
+    "Ke belakang: k.vektor2d (vektor kecepatan dan percepatan di bidang), k.percepatan (percepatan sebagai laju perubahan vektor kecepatan, bukan sekadar laju), m.koord dan m.trigo (koordinat lingkaran dan sudut).",
+    "Ke depan: d.dinamika_melingkar menjelaskan penyebab percepatan menuju pusat, g.newton memakai percepatan sentripetal pada orbit, r.kinematika memperluas $\\omega$ menjadi percepatan sudut, dan c.noninersial membahas kerangka yang ikut berputar, tempat istilah sentrifugal berguna. Semuanya belum dipakai di modul ini."
+  ],
+  "kuis": {
+    "pass": 5,
+    "misconceptions": {
+      "M1": {
+        "title": "Mengira gaya sentrifugal adalah gaya nyata yang mendorong benda ke luar",
+        "fix": "Di kerangka tanah yang diam, percepatan benda yang melingkar menuju pusat. Tidak ada percepatan ke luar. Kesan terdorong ke luar adalah kecenderungan tubuh melanjutkan gerak lurus ke arah singgung. Penjelasan lengkap ada di d.dinamika_melingkar dan c.noninersial."
+      },
+      "M2": {
+        "title": "Mengira laju tetap berarti tidak ada percepatan",
+        "fix": "Percepatan adalah perubahan vektor kecepatan. Pada gerak melingkar beraturan besar kecepatan tetap tetapi arahnya berubah, sehingga ada percepatan sebesar $v^2/r$ menuju pusat."
+      },
+      "M3": {
+        "title": "Salah arah vektor: percepatan searah kecepatan atau menjauhi pusat",
+        "fix": "Kecepatan menyinggung lingkaran, percepatan sentripetal menuju pusat, dan keduanya saling tegak lurus. Karena tegak lurus, percepatan hanya mengubah arah."
+      },
+      "M4": {
+        "title": "Mengira $v$ (atau $\\omega$) sama di semua jarak dari sumbu",
+        "fix": "Pada benda tegar yang berputar, $\\omega$ sama untuk semua titik, tetapi $v=\\omega r$ makin besar untuk titik yang lebih jauh dari sumbu."
+      },
+      "M5": {
+        "title": "Memakai rpm atau derajat langsung dalam $v=\\omega r$",
+        "fix": "$v=\\omega r$ berlaku untuk $\\omega$ dalam rad/s. Ubah rpm dengan mengalikan $2\\pi/60$, dan derajat ke radian dengan mengalikan $\\pi/180$."
+      },
+      "M6": {
+        "title": "Menukar periode dan frekuensi",
+        "fix": "$f=1/T$. Periode adalah waktu satu putaran (sekon), frekuensi adalah putaran per sekon (Hz). Bila 5 putaran memakan 10 s, $f=0{,}5$ Hz dan $T=2$ s."
+      },
+      "M7": {
+        "title": "Salah ketergantungan $a_c$ pada $v$ dan $r$",
+        "fix": "$a_c=v^2/r$: sebanding dengan kuadrat laju dan berbanding terbalik dengan jari-jari (bila $v$ dipegang tetap). Melipatduakan $v$ membuat $a_c$ empat kali."
+      },
+      "M8": {
+        "title": "Mengira benda yang terlepas dari lintasan lingkaran bergerak radial",
+        "fix": "Benda yang terlepas bergerak lurus menyinggung lingkaran, searah kecepatan sesaatnya. Ia tidak melesat sepanjang jari-jari."
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "core": true,
+        "prompt": "Mobil melaju dengan jarum speedometer tetap di 20 m/s dan menikung mengikuti busur lingkaran. Apa yang benar tentang percepatan mobil?",
+        "options": [
+          {
+            "text": "Nol, karena lajunya tetap.",
+            "why": "Percepatan adalah perubahan vektor kecepatan. Arah kecepatan berubah di tikungan, jadi percepatan tidak nol.",
+            "tag": "M2"
+          },
+          {
+            "text": "Ada, besarnya $v^2/r$ dan arahnya menuju pusat tikungan.",
+            "why": "Arah kecepatan berubah, jadi vektor kecepatan berubah. Percepatannya $v^2/r=20^2/r$ dan menuju pusat tikungan, tegak lurus kecepatan.",
+            "correct": true
+          },
+          {
+            "text": "Ada, searah dengan gerak mobil.",
+            "why": "Percepatan searah kecepatan akan mengubah laju. Laju di sini tetap, jadi percepatan tegak lurus kecepatan.",
+            "tag": "M3"
+          },
+          {
+            "text": "Ada, arahnya ke luar tikungan, menjauhi pusat.",
+            "why": "Dalam kerangka tanah, percepatan menuju pusat. Tidak ada percepatan ke luar. Kesan terdorong ke luar berasal dari kecenderungan tubuh bergerak lurus.",
+            "tag": "M1"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "core": true,
+        "prompt": "Batu diikat tali dan diputar dalam lingkaran di atas meja datar yang licin (abaikan gesekan). Dilihat dari atas, tali tiba-tiba putus saat batu di titik P. Bagaimana batu bergerak setelah itu?",
+        "options": [
+          {
+            "text": "Lurus sepanjang jari-jari, menjauhi pusat.",
+            "why": "Itu arah radial. Kecepatan batu di P menyinggung lingkaran, dan setelah tali putus ia tetap membawa kecepatan itu.",
+            "tag": "M8"
+          },
+          {
+            "text": "Terus melengkung ke luar karena gaya sentrifugal masih mendorongnya.",
+            "why": "Tidak ada gaya sentrifugal nyata yang mendorong batu ke luar. Setelah tali putus tidak ada yang membelokkannya lagi.",
+            "tag": "M1"
+          },
+          {
+            "text": "Lurus menyinggung lingkaran di P, searah kecepatan sesaat.",
+            "why": "Setelah tali putus tidak ada yang membelokkan batu. Ia bergerak lurus dengan kecepatan sesaat di P, yang menyinggung lingkaran.",
+            "correct": true
+          },
+          {
+            "text": "Lurus menuju pusat lingkaran.",
+            "why": "Percepatan memang menuju pusat saat tali masih ada, tetapi kecepatannya menyinggung. Setelah putus, batu bergerak searah kecepatannya, bukan searah percepatan tadi.",
+            "tag": "M3"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "core": true,
+        "prompt": "Cakram tegar berputar tetap. Titik A berjarak 0,1 m dari sumbu dan titik B berjarak 0,3 m. Mana pernyataan yang benar?",
+        "options": [
+          {
+            "text": "$\\omega$ keduanya sama, dan laju B tiga kali laju A.",
+            "why": "$\\omega$ sama untuk semua titik pada benda tegar. $v=\\omega r$ sebanding dengan $r$, sehingga $v_B/v_A=0{,}3/0{,}1=3$.",
+            "correct": true
+          },
+          {
+            "text": "Laju keduanya sama, karena berada pada cakram yang sama.",
+            "why": "$v=\\omega r$ dan $\\omega$ sama, jadi $v$ sebanding dengan $r$. B menempuh lingkaran lebih besar dalam waktu yang sama.",
+            "tag": "M4"
+          },
+          {
+            "text": "$\\omega$ B tiga kali $\\omega$ A, karena B lebih jauh.",
+            "why": "Satu putaran memakan waktu yang sama untuk semua titik, jadi $\\omega$ sama. Yang berbeda adalah $v$.",
+            "tag": "M4"
+          },
+          {
+            "text": "Percepatan sentripetal A dan B sama, karena lajunya tetap.",
+            "why": "$a_c=\\omega^2r$ sebanding dengan $r$ pada $\\omega$ sama. B mengalami percepatan tiga kali lebih besar. Laju tetap tidak berarti $a_c$ sama.",
+            "tag": "M7"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "core": true,
+        "prompt": "Cakram berjari-jari 0,25 m berputar tetap pada 120 rpm. Berapa laju titik di tepinya?",
+        "options": [
+          {
+            "text": "30 m/s",
+            "why": "Itu memakai 120 sebagai rad/s ($120\\times0{,}25$). Satuannya rpm, harus diubah dahulu ke rad/s.",
+            "tag": "M5"
+          },
+          {
+            "text": "188 m/s",
+            "why": "Itu mengalikan $2\\pi$ tetapi lupa membagi 60 (rpm ke per sekon). 120 rpm adalah 2 putaran per sekon.",
+            "tag": "M5"
+          },
+          {
+            "text": "0,79 m/s",
+            "why": "Itu memakai $2\\pi rT$ dengan $T=0{,}5$ s. Periode ada di penyebut: $v=2\\pi r/T$, atau $2\\pi rf$.",
+            "tag": "M6"
+          },
+          {
+            "text": "3,14 m/s",
+            "why": "$120$ rpm $=2$ Hz, jadi $\\omega=4\\pi\\approx12{,}57$ rad/s dan $v=\\omega r\\approx12{,}57\\times0{,}25\\approx3{,}14$ m/s.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "core": true,
+        "prompt": "Sebuah mobil menikung pada lingkaran berjari-jari tetap dengan laju tetap. Bila lajunya dijadikan dua kali lipat pada tikungan yang sama, bagaimana percepatan sentripetalnya?",
+        "options": [
+          {
+            "text": "Menjadi dua kali, karena sebanding dengan $v$.",
+            "why": "$a_c=v^2/r$ sebanding dengan kuadrat $v$, bukan $v$.",
+            "tag": "M7"
+          },
+          {
+            "text": "Menjadi empat kali, karena $a_c=v^2/r$.",
+            "why": "$a_c=v^2/r$. Dengan $r$ sama dan $v\\to2v$, $a_c\\to4a_c$.",
+            "correct": true
+          },
+          {
+            "text": "Tetap sama, karena lajunya tetap.",
+            "why": "Laju tetap hanya berarti $v$ tidak berubah selama menikung. Nilai $v$ yang berbeda memberi $a_c$ yang berbeda.",
+            "tag": "M7"
+          },
+          {
+            "text": "Menjadi setengah, karena kecepatan tinggi membuat lintasan lebih lurus.",
+            "why": "Lintasan tetap lingkaran berjari-jari sama (diketahui). $a_c=v^2/r$ naik bila $v$ naik.",
+            "tag": "M7"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "core": true,
+        "prompt": "Penumpang mobil yang menikung tajam merasa terdorong ke sisi luar. Penjelasan manakah yang paling sesuai dengan gambaran dari kerangka tanah?",
+        "options": [
+          {
+            "text": "Ada gaya sentrifugal nyata yang mendorong penumpang ke luar dan mengimbangi percepatan ke pusat.",
+            "why": "Dalam kerangka tanah, tidak ada percepatan ke luar yang perlu diimbangi. Hanya ada percepatan ke pusat.",
+            "tag": "M1"
+          },
+          {
+            "text": "Penumpang tidak dipercepat sama sekali karena laju mobil tetap.",
+            "why": "Arah kecepatan penumpang berubah mengikuti mobil, jadi ia punya percepatan menuju pusat.",
+            "tag": "M2"
+          },
+          {
+            "text": "Penumpang bergerak radial ke luar terhadap tanah, menjauhi pusat tikungan.",
+            "why": "Terhadap tanah, penumpang bergerak mengikuti mobil di sepanjang tikungan. Yang terasa ke luar adalah posisinya terhadap mobil.",
+            "tag": "M8"
+          },
+          {
+            "text": "Tubuh cenderung terus bergerak lurus menyinggung tikungan, sementara mobil berbelok. Kursi dan pintu yang mengubah arah geraknya, sehingga ada percepatan menuju pusat.",
+            "why": "Dalam kerangka tanah hanya ada percepatan menuju pusat. Kesan terdorong ke luar adalah kecenderungan tubuh melanjutkan gerak lurus ke arah singgung.",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "core": true,
+        "prompt": "Roda berputar tetap dan menyelesaikan 5 putaran dalam 10 s. Berapa periode dan frekuensinya?",
+        "options": [
+          {
+            "text": "$T=0{,}5$ s dan $f=2$ Hz",
+            "why": "Itu menukar keduanya. $T$ adalah waktu satu putaran: $10/5=2$ s.",
+            "tag": "M6"
+          },
+          {
+            "text": "$T=10$ s dan $f=5$ Hz",
+            "why": "Itu menyalin angka soal. 10 s adalah waktu total 5 putaran, bukan waktu satu putaran, dan 5 adalah banyaknya putaran, bukan putaran per sekon.",
+            "tag": "M6"
+          },
+          {
+            "text": "$T=2$ s dan $f=0{,}5$ Hz",
+            "why": "$T=10\\text{ s}/5=2$ s dan $f=1/T=0{,}5$ Hz.",
+            "correct": true
+          },
+          {
+            "text": "$T=2$ s dan $f=2$ Hz",
+            "why": "$f=1/T$, bukan sama dengan $T$. Bila $T=2$ s maka $f=0{,}5$ Hz.",
+            "tag": "M6"
+          }
+        ]
+      }
+    ]
+  }
+}
